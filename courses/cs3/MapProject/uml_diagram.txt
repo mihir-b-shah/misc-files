@@ -1,0 +1,100 @@
+UML Class Diagram
+
+Food
+- name: String
+- price: double
+- eaters: Set<Pet>
+
++ Food (String name, double )
++ getName(): String
++ getPrice(): double
++ getEaters(): List<Pet>
++ hashCode(): int
++ equals(Object ): boolean
++ toString(): String
+
+Region
+- name: String
+- available: Set<Food>
+- inhabitants: Set<Pet>
+
++ Region(String )
++ hashCode(): int
++ equals(Object ): boolean
++ toString(): String
++ getName(): String
++ getAnimals(): Set<Pet>
++ getFoods(): Set<Food>
+
+Pet
+- name: String
+- dialogue: String
+- hungriness: int
+- ferocity: int
+- regions: List<?>
+- diet: List<?>
+
++ Pet(String, String, List<?>, List<?>, int, int )
++ hashCode(): int
++ equals(Object ): boolean
++ toString(): String
++ display(): String
++ setName(String ): void
++ getName(): String
++ setDialogue(String ): void
++ getDialogue(): String
++ setHungriness(int ): void
++ getHungriness(): int
++ setFerocity(int ): void
++ getFerocity(): int
++ setRegionsFound(List<?> ): void 
++ getRegionsFound(): List<Region>
++ setDiet(List<?> ): void 
++ getDiet(): List<Food>
+
+PettingZoo
+- byName: Map<String, Pet>
+- byDialogue: Map<String, Pet>
+- byHungriness: Map<Integer, Set<Pet>>
+- byFerocity: Map<Integer, Set<Pet>>
+- byRegion: Map<Region, Set<Pet>>
+- byFood: Map<Food, Set<Pet>>
+- strToRegion;: Map<String, Region>
+- strToFood;: Map<String, Food>
+
++ PettingZoo()
++ addPet(String ): void 
++ addPet(String, String, String, String, String, String ): void 
++ parseList(String, String ): List<Object> 
++ getByName(String ): Pet 
++ getByDialogue(String ): Pet 
++ getLessHungry(int ): Collection<Set<Pet>> 
++ getMoreHungry(int ): Collection<Set<<Pet>> 
++ getLessFerocious(int ): Collection<Set<<Pet>> 
++ getMoreFerocious(int ): Collection<Set<<Pet>> 
++ getRegionals(String ): Set<Pet> 
++ getFood(String ): Set<Pet> 
++ toString(): String
+
+Client
+
+- NAME: int
+- DIALOGUE: int
+- REGIONS: int
+- FOODS: int
+- HUNGRINESS: int
+- FEROCITY: int
+- possibleValues: String[]
+- fields: Object[]
+- PQNode
+
++  Client()
++ main(String[] ): void 
++ manageAdd(PettingZoo ): void 
++ manageModify(PettingZoo ): void 
++ dump(PettingZoo ): void 
++ init(PettingZoo ): void 
++ void showChains(Pet, PettingZoo )
++ init_fields(): void
++ showWeb(PettingZoo ): void 
+

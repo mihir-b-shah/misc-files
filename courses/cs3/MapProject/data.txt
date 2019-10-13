@@ -1,0 +1,11 @@
+Mr.Mickel, I'm_a_legend!, [E1309], [Mihir-1.00 Big_Bunshul-0.00 rushil_udani-0.00 shreyes_kaliyur-0.00 alex_lee-0.00 tharun-1.00], 5, 10
+saavan_myneni, i'm_a_god_at_organic_chemistry, [E2307 TOC], [Big_Bunshul-1.00 Mihir-0.00], 10, 5
+ankith, raaar, [beepbeep], [alex_yi-0.00], 2, 10
+Mudhaniu, I'm_big!, [Bombay Chennai Srinagar], [Idlis-2.47 Dosas-3.41], 10, 3
+Mihir, I_can_fit_my_whole_foot_in_your_mouth!, [Austin], [Mudhaniu-0.00 Big_Bunshul-1000.00 alex_yi-0.00], 1, 2
+Big_Bunshul, Meep_meep, [Jodhpur Austin], [Pasta-1.00 Anshul-0.50], 3, 4
+rushil_udani, mihir_you_can't_be_head_intern, [raarig], [alex_yi-0.00], 10, 5
+alex_yi, big_brain, [my_brain], [mihir_shah-0.00], 5, 5
+shreyes_kaliyur, i'm_a_legend, [Murmansk Oymyakon], [Big_Bunshul-0.50], 10, 2
+alex_lee, the_dear_leader, [DPRK DMZ Siberia], [alex_yi-1.00], 10, 5
+andy, ando_commando, [nowhere], [Big_Bunshul-0.50], 10, 5

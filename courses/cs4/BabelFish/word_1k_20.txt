@@ -1,0 +1,1001 @@
+Afrikaans	Danish	Dutch	English	Esperanto	Filipino	French	German	Hawaiian	Irish	Italian	Latin	Maori	Norwegian	Portuguese	Spanish	Swahili	Swedish	Welsh	Zulu
+as	som	als	as	kiel	bilang	comme	wie	e like me	mar	come	ut	rite	som	como	como	kama	som	fel	njengoba
+ek	jeg	ik	i	mi	ako	je	ich	wau	mé	io	sum	ahau	jeg	eu	yo	mimi	jag	yr wyf	mina
+sy	hans	zijn	his	sian	kanyang	son	seine	kona	a	il suo	eius	tona	hans	seu	su	yake	hans	ei	wakhe
+wat	at	dat	that	ke	na	que	dass	ia	go	che	quod	e	at	que	que	kwamba	att	bod	ukuthi
+hy	han	hij	he	li	siya	il	er	ka mea	sé	lui	ipse	e ia	han	ele	él	yeye	han	ef	yena
+was	var	was	was	estis	noon ay	était	war	ia	bhí	era	fuit	ko	var	foi	era	mara	var	oedd	kwaba
+vir	til	voor	for	por	para sa	pour	für	no ka mea	do	per	nam	hoki	for	para	para	kwa	för	gyfer	ngoba
+op	på	op	on	sur	sa	sur	auf	maluna o	ar	su	in	runga i	på	em	en	juu ya	på	ar	on
+is	er	zijn	are	estas	ay	sont	sind	ua	tá	sono	sunt	ko	er	são	son	wako	är	yn	kukhona
+met	med	met	with	kun	may	avec	mit	me	le	con	cum	ki	med	com	con	kwa	med	gyda	nge
+hulle	de	ze	they	ili	sila	ils	sie	lakou	siad	essi	illi	ratou	de	eles	ellos	wao	de	maent	bona
+wees	være	zijn	be	esti	maging	être	sein	e	bheith	essere	esse	kia	være	ser	ser	kuwa	vara	fod yn	kube
+op	på	bij	at	ĉe	sa	à	bei	ma	ag	a	at	i	på	em	en	katika	vid	yn	at
+een	en	een	one	unu	isa	un	ein	ʻekahi	amháin	uno	unum	kotahi	ett	uma	uno	moja	ett	un	eyodwa
+het	har	hebben	have	havos	mayroon	avoir	haben	loaa	tá	avere	habent	e	har	tem	tener	na	ha	wedi	abe
+hierdie	dette	deze	this	tiu	ito	ce	dies	keia	seo	questo	hoc	tenei	dette	este	este	hii	detta	hwn	le
+uit	fra	van	from	el	mula sa	à partir de	aus	mai	ó	da	de	mei	fra	a partir de	desde	kutoka	från	o	kusuka
+deur	ved	door	by	per	sa pamamagitan ng	par	durch	ma	ag	da	by	by	etter	por	por	na	genom	gan	by
+warm	hot	heet	hot	varmega	mainit	chaud	heiß	anal	te	caldo	calidum	wera	varm	quente	caliente	moto	het	poeth	esishisayo
+woord	ord	woord	word	vorto	salita	mot	wort	olelo	focal	parola	verbo	kupu	ordet	palavra	palabra	neno	ord	gair	igama
+maar	men	maar	but	sed	ngunit	mais	aber	aka	ach	ma	sed	engari	men	mas	pero	lakini	men	ond	kodwana
+wat	hvad	wat	what	kio	kung ano	que	was	ka mea	cad	cosa	quod	te aha	hva	o que	qué	nini	vad	beth	lokho
+sommige	nogle	sommige	some	iuj	ilang	certains	einige	kekahi	roinnt	alcuni	aliqua	etahi	noen	alguns	algunos	baadhi	några	rhai	kwezinye
+is	er	is	is	estas	ay	est	ist	ka mea	tá	è	est	ko te	er	é	es	ni	är	yw	kuyinto
+dit	det	het	it	ĝi	ito	il	es	ia	sé	esso	quod	reira	den	ele	lo	yake	den	mae’n	it
+jy	du	u	you	vi	sa iyo	vous	sie	oe	tú	voi	vos	koutou	du	você	usted	ninyi	du	chi	wena
+of	eller	of	or	aŭ	o	ou	oder	ai ole ia	nó	o	vel	ranei	eller	ou	o	au	eller	neu	noma
+moes	havde	had	had	havis	nagkaroon	eu	hatte	i	bhí	aveva	quod	ia	hadde	teve	tenido	alikuwa	hade	roedd gan	kwadingeka
+die	den	de	the	la	ang	la	die	ka	an	il	in	te	den	o	la	akaonekana	den	â’r	lo
+van	af	van	of	de	ng	de	von	a	ar	di	de	o	av	de	de	ya	av	yr	of
+te	til	aan	to	por	sa	à	zu	i	go	a	ut	ki	til	a	a	kwa	till	i’r	kuya
+en	og	en	and	kaj	at	et	und	a	agus	e	et	ka	og	e	y	na	och	a’r	futhi
+‘n	en	een	a	a	isang	un	ein	he	a	un	a	a	en	uma	un	a	en	mae	a
+in	i	in	in	en	sa	dans	bei	iloko o	i	in	in	i roto i te	i	em	en	katika	i	yn	in
+ons	vi	we	we	ni	namin	nous	wir	makou	againn	noi	nos	tatou i	vi	nós	nos	sisi	vi	rydym	thina
+kan	kan	kan	can	povas	maaari	boîte	können	hiki	is féidir	lattina	potest	taea e	kan	lata	lata	unaweza	kan	gall	okusemandleni
+uit	ud	uit	out	el	out	dehors	aus	aku	amach	fuori	ex	i roto i	ut	fora	fuera	nje	ut	allan	ukuphuma
+ander	andre	andere	other	aliaj	ibang	autre	andere	kekahi	eile	altro	alia	atu	andre	outro	otros	nyingine	andra	arall	ezinye
+was	var	waren	were	estis	ay	étaient	waren	he	bhí	erano	erant	he	var	foram	eran	walikuwa	var	roedd	babengamadoda
+wat	som	die	which	kio	kung saan	qui	die	ka mea	a	che	quibus	nei	som	que	que	ambayo	vilken	sy’n	okuyinto
+doen	gøre	doen	do	fari	gawin	faire	tun	hana	dhéanamh	fare	facite	te mahi	gjøre	fazer	hacer	kufanya	göra	wneud	enza
+hul	deres	hun	their	iliaj	ang kanilang	leur	ihre	ko lakou	n	loro	eorum	ratou	deres	seu	su	yao	deras	eu	yabo
+tyd	tid	tijd	time	tempo	oras	temps	zeit	manawa	am	tempo	tempore	te wā	tid	tempo	tiempo	wakati	tid	amser	nesikhathi
+indien	hvis	indien	if	se	kung	si	wenn	ina	más rud é	se	si	ki te	hvis	se	si	kama	om	os	uma
+sal	vil	zal	will	volo	pamanahan	volonté	werden	makemake	beidh	volontà	voluntas	e pai	vil	vontade	lo hará	mapenzi	kommer	bydd	kuthanda
+hoe	hvordan	hoe	how	kiom	kung paano	comment	wie	pehea	conas	come	quam	pehea	hvordan	como	cómo	jinsi	hur	sut	indlela
+gesê	sagde	zei	said	diris	sinabi	dit	sagte	mai la	dúirt	suddetto	dixitque	mea	sa	disse	dicho	alisema	sa	dywedodd	uthe
+‘n	en	een	an	kiel	isang	un	ein	kekahi	ar	un	an	he	en	uma	un	an	ett	mae	an
+elke	hver	elk	each	ĉiu	bawat	chaque	jeder	kela a me keia	gach	ogni	quisque	ia	hver	cada	cada	kila	varje	pob un	ngamunye
+vertel	fortælle	vertellen	tell	diru	sabihin	dire	sagen	hai aku	insint	dire	indica	korero ki	fortelle	dizer	decir	kuwaambia	berätta	dweud	ukutshela
+doen	gør	doet	does	faras	gumagana	ne	tut	hana	dhéanann	fa	quod	meatia e	gjør	faz	hace	gani	gör	gwneud	enza
+stel	sæt	set	set	aro	hanay	ensemble	satz	i	leagtha	set	set	huinga	sett	conjunto	conjunto	kuweka	uppsättning	set	setha
+drie	tre	drie	three	tri	tatlong	trois	drei	ʻekolu	trí	tre	tribus	e toru	tre	três	tres	tatu	tre	tri	amathathu
+wil	ønsker	willen	want	volas	gusto	vouloir	wollen	makemake	ba mhaith	desiderare	volo	hiahia	ønsker	quer	querer	wanataka	vill	eisiau	bafuna
+lug	luft	lucht	air	aero	naka	air	luft	ea	aer	aria	aer	hau	luft	ar	aire	hewa	luft	aer	air
+goed	godt	goed	well	bone	na rin	bien	gut	pono	go maith	bene	etiam	pai	godt	bem	así	vizuri	väl	yn dda	kahle
+ook	også	ook	also	ankaŭ	ring	aussi	auch	no hoi	freisin	anche	etiam	hoki	også	também	también	pia	också	hefyd	futhi
+speel	spille	spelen	play	ludos	maglaro	jouer	spielen	paani	imirt	giocare	fabula	te tākaro	spille	jogar	jugar	kucheza	spela	chwarae	udlale
+klein	lille	klein	small	malgranda	maliit	petit	klein	uuku	beag	piccolo	parva	iti	liten	pequeno	pequeño	ndogo	liten	bach	amancane
+einde	ende	end	end	fino	pagtatapos	fin	ende	hopena	deireadh	fine	finem	mutunga	ende	fim	fin	mwisho	ände	pen	ukuphela
+sit	sætte	zetten	put	metita	ilagay	mettre	setzen	kau	chur	mettere	posuit	maka	sette	colocar	poner	kuweka	sätta	rhoi	abeke
+huis	hjem	thuis	home	hejmo	tahanan	maison	zuhause	ka hale	baile	casa	domum	te kāinga	hjem	casa	casa	nyumbani	hem	cartref	ikhaya
+lees	læse	lezen	read	legi	basahin	lire	lesen	heluhelu mai o	léamh	leggere	lego	tai’o	lese	ler	leer	kusoma	läsa	darllen	funda
+hand	hånd	de hand	hand	manoj	kamay	main	seits	lima	lámh	mano	manibus	ringa	hånd	mão	mano	mkono	sidan	llaw	isandla
+hawe	havn	poort	port	port	port	port	hafen	ke awa	calafoirt	porto	portus	tauranga	port	port	puerto	bandari	port	porthladd	echwebeni
+groot	stor	grote	large	granda	malaki	grand	groß	nui	mór	grande	magna	nui	stor	grande	grande	kubwa	stor	mawr	ende
+spel	stave	spell	spell	literumi	oras ng paggawa	épeler	buchstabieren	wale	litriú	compitare	eamque	takikupu	stave	soletrar	deletrear	spell	stava	sillafu	luzosho
+voeg	tilføje	toevoegen	add	aldoni	magdagdag	ajouter	hinzufügen	hui	cuir	aggiungere	addunt	tāpiri i	legge	adicionar	añadir	kuongeza	lägg	ychwanegu	ukwengeza
+selfs	selv	zelfs	even	eĉ	kahit na	même	auch	a hiki	fiú	anche	etiam	ara	selv	mesmo	incluso	hata	även	hyd yn oed	yebo
+land	jord	land	land	lando	lupa	terre	lande	aina	talamh	terra	terra	te whenua	landet	terra	tierra	ardhi	mark	tir	izwe
+hier	her	hier	here	tien	dito	ici	hier	maanei	anseo	qui	hic	i konei	her	aqui	aquí	hapa	här	yma	lapha
+moet	skal	moet	must	devas	kailangan	il faut	muss	pono	ní mór	mosto	necesse	me	må	necessário	debe	lazima	must	rhaid	kumele
+groot	stor	grote	big	granda	malaki	grand	groß	nui	mór	grande	magnum	nui	big	grande	grande	kubwa	stor	mawr	enkulu
+hoë	høj	hoog	high	alta	mataas	haut	hoch	kiʻekiʻe	ard	alto	princeps	tiketike	høy	alto	alto	high	hög	uchel	high
+sodanige	sådan	dergelijke	such	tiaj	tulad	tel	so	ia	den sórt sin a	tale	talis	i taua	slik	tais	tal	kama	sådan	fath	enjalo
+volg	følg	volgen	follow	sekvi	sundin	suivre	folgen	hahai	leanúint	seguire	sequitur	te whai	følg	siga	siga	kufuata	följ	dilyn	ukulandela
+wet	handling	act	act	akto	kumilos	acte	akt	hana	gníomh	atto	actum	mahi	handle	ato	acto	tendo	handling	gweithredu	isenzo
+hoekom	hvorfor	waarom	why	kial	bakit	pourquoi	warum	no ke aha mai	cén fáth	perché	quid	he aha	hvorfor	por que	por qué	kwa nini	varför	pam	kungani
+vra	spørge	vragen	ask	demandu	magtanong	interroger	fragen	noi	a iarraidh	chiedere	quaeris	ui	spør	perguntar	preguntar	kuuliza	be	gofyn	cela
+mans	mænd	mannen	men	viroj	mga lalaki	hommes	männer	kanaka	fir	maschi	homines	tangata	menn	homens	hombres	wanaume	män	dynion	amadoda
+verandering	ændring	verandering	change	ŝanĝo	pagbabago	changement	veränderung	loli	athraithe	cambiamento	mutatio	huringa	endring	mudança	cambio	mabadiliko ya	förändring	newid	ushintsho
+gegaan	gik	ging	went	eniris	nagpunta	est allé	ging	hele	chuaigh	è andato	abiit	haere	gikk	fui	se fue	akaenda	gick	aeth	waya
+lig	lys	licht	light	malpeza	liwanag	lumière	licht	malamalama	solas	luce	lucem	te marama	lys	luz	luz	mwanga	ljus	golau	ukukhanya
+soort	slags	soort	kind	afabla	uri	genre	art	keia ano	chineál	tipo	quaedam	atawhai	kind	tipo	tipo	aina	slag	fath	uhlobo
+af	off	uitgeschakeld	off	ekstere	mula sa	de	aus	aku	amach	spento	off	atu	off	off	fuera	mbali	off	off	off
+nodig	brug	nodig hebben	need	bezonas	kailangan	besoin	müssen	pono	ní mór	bisogno	opus	me	trenger	precisa	necesitará	haja	behöver	angen	badinga
+huis	hus	huis	house	domo	bahay	maison	haus	ka hale	teach	casa	domus	whare	huset	casa	casa	nyumba	hus	tŷ	indlu
+prentjie	billede	afbeelding	picture	foton	larawan	image	bild	kiʻi	pictiúr	immagine	ipsum	pikitia	bilde	imagem	imagen	picha	bilden	llun	yendaba
+probeer	prøv	proberen	try	provu	subukan	essayer	versuchen	hoao	iarracht	provare	tentant	tamata	prøve	tentar	tratar	kujaribu	försök	ceisiwch	sizame
+ons	os	ons	us	nin	atin	nous	uns	makou	dúinn	noi	nos	tatou	oss	nós	nosotros	sisi	oss	ni	nathi
+weer	igen	weer	again	denove	muli	encore	wieder	hou	arís	di nuovo	rursus	ano	igjen	novamente	de nuevo	tena	igen	eto	futhi
+dier	dyr	dier	animal	besto	hayop	animal	tier	holoholona	ainmhithe	animale	pecus	kararehe	dyr	animais	animal	mnyama	djur	anifail	animal
+punt	punkt	punt	point	punkto	punto	point	punkt	wahi	pointe	punto	punctum	tata	punkt	ponto	punto	uhakika	punkt	pwynt	phuzu
+ma	mor	moeder	mother	patrino	nanay	mère	mutter	makuahine	máthair	madre	mater	whaea	mor	mãe	madre	mama	mor	mam	umama
+wêreld	verden	wereld	world	mondo	mundo	monde	welt	ao	domhan	mondo	orbis	te ao	verden	mundo	mundo	dunia	världen	byd	umhlaba
+naby	nær	dichtbij	near	proksime	malapit	près de	in der nähe von	kokoke	in aice le	vicino	prope	tata	nær	perto	cerca	karibu	nära	ger	tsini
+bou	bygge	bouwen	build	konstrui	magtayo	construire	bauen	hana	a thógáil	costruire	ædificabis	hanga	bygge	construir	construir	kujenga	bygga	adeiladu	ukwakha
+self	selv	zelf	self	aŭto	sarili	soi	selbst	iho	féin	se stesso	ipsum	whaiaro	selv	auto	auto	binafsi	själv	hunan	wokuzilimaza
+aarde	jord	aarde	earth	tero	lupa	terre	erde	honua	cré	terra	terra	te whenua	jorden	terra	tierra	dunia	jord	ddaear	emhlabeni
+vader	far	vader	father	patro	ama	père	vater	makuakāne	athair	padre	pater	papa	far	pai	padre	baba	far	tad	ubaba
+enige	enhver	een	any	ajna	anumang	tout	jeder	kekahi	aon	qualsiasi	aliqua	tetahi	noen	qualquer	cualquier	yoyote	någon	unrhyw	yisiphi
+nuwe	ny	nieuwe	new	nova	bago	nouveau	neu	hou	nua	nuovo	novum	hou	ny	novo	nuevo	mpya	ny	newydd	omusha
+werk	arbejde	werk	work	laboro	trabaho	travail	arbeit	hana	obair	lavoro	opus	mahi	arbeid	trabalho	trabajo	kazi	arbete	gwaith	umsebenzi
+deel	del	deel	part	parto	bahagi	partie	teil	hapa	chuid	parte	pars	wāhanga	del	parte	parte	sehemu	delen	rhan	okuyingxenye
+neem	tage	nemen	take	preni	kumuha	prendre	nehmen	lawe	ghlacadh	prendere	accipe	tango	ta	tomar	tomar	kuchukua	ta	cymryd	kuthathe
+kry	få	krijgen	get	akiri	kumuha	obtenir	erhalten	loaa	a fháil	ottenere	adepto	whiwhi	få	obter	conseguir	kupata	få	cael	uthole
+plek	sted	plaats	place	loko	lugar	lieu	ort	wahi	áit	posto	pro eo	wahi	sted	lugar	lugar	mahali	plats	lle	indawo
+gemaak	lavet	gemaakt	made	faris	ginawa	fabriqué	gemacht	hana	déanta	fatto	factum	hanga	gjort	feito	hecho	alifanya	gjort	wnaed	ezenziwe
+lewe	leve	wonen	live	vivi	mabuhay	vivre	leben	ola	beo	vivere	vivo	ora	leve	viver	vivir	kuishi	lever	byw	siphile
+waar	hvor	waar	where	kie	saan	où	wo	kahi	i gcás ina	dove	ubi	i reira	der	onde	donde	ambapo	där	lle	lapho
+na	efter	na	after	post	pagkatapos	après	nach	mahope iho o	tar éis	dopo	postquam	i muri i	etter	depois	después	baada ya	efter	ar ôl	emva
+terug	tilbage	terug	back	reen	likod	arrière	zurück	i hope	ar ais	indietro	rursus	hoki	tilbake	de volta	espalda	nyuma	tillbaka	yn ôl	back
+bietjie	lidt	weinig	little	iom	maliit	peu	wenig	iki	beag	poco	parum	iti	lite	pouco	poco	kidogo	liten	bach	kancane
+slegs	kun	alleen	only	nur	lamang	seulement	nur	wale no	ach	solo	nisi	anake	bare	apenas	sólo	tu	endast	yn unig	kodwa
+ronde	runde	ronde	round	ronda	pag-ikot	tour	runde	a	bhabhta	turno	per	tawhio	runde	rodada	ronda	pande zote	rund	rownd	nxazonke
+man	mand	man	man	viro	tao	homme	mann	kanaka	fear	uomo	hominis	te tangata	mann	homem	hombre	mtu	människa	dyn	man
+jaar	år	jaar	year	jaro	taon	année	jahr	makahiki	bliain	anno	anno	tau	år	ano	años	mwaka	år	flwyddyn	ngonyaka
+gekom	kom	kwam	came	venis	dumating	est venu	kam	hele mai	tháinig	è venuto	factum	haere mai	kom	veio	vino	alikuja	kom	daeth	weza
+show	vis	show	show	spektaklo	palabas	montrer	zeigen	hoike	thaispeáint	spettacolo	ostende	whakaatu	vis	exposição	show	onyesha	visar	sioe	bonisa
+elke	hver	elke	every	ĉiu	bawat	tous	jeder	o kela	gach	ogni	omnis	nga	alle	cada	cada	kila	varje	bob	njalo
+goeie	god	goed	good	bonaj	mabuti	bon	gut	maikaʻi loa	maith	buono	bonum	pai	god	bom	buena	nzuri	bra	dda	okuhle
+my	mig	mij	me	min	sa akin	moi	mir	mai iaʻu	dom	me	me	ahau	meg	me	me	mimi	mig	mi	me
+gee	giver	geven	give	doni	magbigay	donner	geben	haawi	thabhairt	dare	dabit	hoatu	gi	dar	dar	kutoa	ge	rhoi	pha
+ons	vores	onze	our	nian	ang aming	notre	unsere	makou	ár n	il nostro	nostrum	to tatou	vår	nossa	nuestro	wetu	vår	ein	ethu
+onder	under	onder	under	sub	sa ilalim	sous	unter	malalo o	faoi	sotto	sub	i raro i	etter	sob	bajo	chini ya	enligt	o dan	ngaphansi
+naam	navn	naam	name	nomo	pangalan	nom	name	inoa	ainm	nome	nomen	ingoa	navn	nome	nombre	jina	namn	enw	igama
+baie	meget	zeer	very	tre	napaka	très	sehr	loa	an	molto	ipsum	rawa	veldig	muito	muy	sana	mycket	iawn	kakhulu
+deur	gennem	door	through	per	sa pamamagitan ng	par	durch	ma	trí	attraverso	per	i roto i	gjennom	através	a través de	kupitia	genom	trwy	ngokusebenzisa
+net	bare	gewoon	just	simple	lamang	juste	nur	pono	ach	solo	iustus	tika	bare	justo	sólo	tu	bara	yn unig	nje
+vorm	formular	vorm	form	formo	paraan	forme	formular	ano	fhoirm	forma	forma	puka	skjema	forma	forma	aina	formulär	ffurflen	ifomu
+vonnis	sætning	zin	sentence	kondamno	pangungusap	phrase	satz	olelo	abairt	frase	sententia	rerenga kōrero	setning	sentença	frase	hukumu	meningen	dedfryd	uhlamvu
+groot	stor	grote	great	granda	mahusay	grand	groß	nui	mór	grande	magna	nui	stor	grande	gran	kubwa	bra	mawr	okukhulu
+dink	tænke	denken	think	pensas	palagay	penser	denken	manao	i mo thuairimse	pensare	puto	whakaaro	tror	acho que	pensar	kufikiri	tro	meddwl	acabange
+sê	sige	zeggen	say	diras	sabihin	dire	sagen	aku nei au	rá	dire	dicunt	mea	si	dizer	decir	kusema	säga	dweud	bathi
+help	hjælpe	helpen	help	helpi	tulungan	aider	hilfe	kokua	cabhrú	aiutare	adiuva	tauturu i te	hjelpe	ajudar	ayudar	msaada	hjälpa	helpu	usize
+lae	lav	laag	low	malalta	mababa	faible	niedrig	haahaa	íseal	basso	humilis	iti	lav	baixo	bajo	chini	låg	isel	ongaphakeme
+lyn	linje	lijn	line	linio	linya	ligne	linie	laina	líne	linea	line	raina	etter	linha	línea	line	linje	llinell	line
+verskil	afvige	verschillen	differ	diferenciĝas	mag-iba	différer	abweichen	oko	difriúil	differire	differunt	rerekē	avvike	diferir	ser distinto	tofauti	skiljer	yn wahanol	ihluke
+beurt	tur	beurt	turn	siavice	pagliko	tour	wiederum	huli	cas	turno	vicissim	tahuri	sving	vez	a su vez	upande	tur	dro	baphendukela
+oorsaak	årsag	oorzaak	cause	kaŭzo	dahilan	la cause	ursache	kumu	faoi deara	causa	causa	take	årsaken	causa	causa	sababu	orsak	achos	kwesizathu
+veel	meget	veel	much	multa	magkano	beaucoup	viel	nui	i bhfad	molto	tantum	nui	mye	muito	mucho	kiasi	mycket	llawer	okuningi
+beteken	betyde	betekenen	mean	signifus	ibig sabihin	signifier	bedeuten	ke ano o	ciallóidh	dire	significant	te tikanga	mener	significar	significará	maana	betyda	golygu	asho
+voor	før	voor	before	antaŭ	bago	avant	vor	imua o	roimh	prima	antequam	i mua i	før	antes	antes	kabla ya	före	cyn	ngaphambi
+skuif	træk	verhuizing	move	movado	paglipat	déménagement	umzug	hu	bogadh	spostare	movemur	nekehanga	flytte	mudança	movimiento	hoja	drag	symud	ukuthutha
+reg	højre	rechts	right	dekstra	karapatan	droit	recht	akau	ceart	diritto	ius	matau	høyre	direito	derecho	haki	höger	hawl	kwesokudla
+seuntjie	dreng	jongen	boy	knabo	batang lalaki	garçon	junge	keiki	buachaill	ragazzo	puer	tamaiti	gutt	menino	niño	mvulana	pojke	bachgen	mfana
+ou	gamle	oude	old	malnova	luma	vieux	alt	ka wa kahiko	d’aois	vecchio	vetus	tau	gammel	velho	viejo	umri wa	gammal	oed	endala
+te	også	ook	too	tro	masyado	trop	zu	oi aku	freisin	troppo	etiam	rawa	også	também	demasiado	pia	alltför	rhy	futhi
+dieselfde	samme	hetzelfde	same	sama	pareho	même	gleich	ia	céanna	stesso	idem	taua	samme	mesmo	misma	sawa	samma	un fath	efanayo
+sy	hun	ze	she	ŝi	siya	elle	sie	ia	sí	lei	quae	ia	hun	ela	ella	yeye	hon	hi	yena
+al	alle	alle	all	ĉiuj	lahat	tous	alle	a pau	go léir	tutto	omnes	katoa	alle	tudo	todo	kila	alla	gyd	konke
+daar	der	er	there	tie	doon	là	da	laila	ann	ci	ibi	i reira	det	lá	hay	huko	där	yno	khona
+wanneer	når	wanneer	when	kiam	kapag	quand	wenn	i ka wa	nuair	quando	cum	ka	når	quando	cuando	wakati	när	pan	lapho
+up	op	omhoog	up	supren	up	jusqu’à	nach oben	ae la	suas	su	ascendit	ake	opp	up	hasta	up	upp	i fyny	up
+gebruik	brug	gebruiken	use	uzo	gamitin	utiliser	verwendung	hoʻohana	úsáid	uso	usus	whakamahi	bruk	usar	uso	kutumia	använda	defnydd	ukusetshenziswa
+jou	deres	uw	your	via	iyong	votre	ihre	oukou	do	il tuo	tuus	koutou	din	seu	su	yako	din	eich	sakho
+manier	måde	manier	way	vojo	paraan	manière	weg	ala	bhealach	modo	modo	ara	måte	maneira	camino	njia	sätt	ffordd	indlela
+oor	om	over	about	proksimume	tungkol sa	sur	über	e pili ana i	faoi	circa	de	e pā ana ki	om	sobre	acerca	kuhusu	ca	tua	mayelana
+baie	mange	veel	many	multaj	marami	beaucoup	viele	he nui	go leor	molti	multis	maha	mange	muitos	muchos	wengi	många	llawer	abaningi
+dan	derefter	dan	then	tiam	pagkatapos	puis	dann	alaila	ansin	allora	tunc	ka	deretter	depois	entonces	kisha	sedan	yna	ke
+hulle	dem	hen	them	ilin	sila	les	sie	ia lakou	iad	loro	eorum	ratou	dem	eles	ellos	yao	dem	nhw	nabo
+skryf	skrive	schrijven	write	skribi	sumulat	écrire	schreiben	kakau	scríobh	scrivere	scribo	te tuhituhi	skrive	escrever	escribir	kuandika	skriva	ysgrifennu	ukubhala
+sou	ville	zou	would	farus	ibig	voudrais	würde	makemake	bheadh	sarebbe	utinam	pai	ville	faria	haría	ingekuwa	skulle	byddai	belungafica
+soos	ligesom	zoals	like	kiel	tulad ng	comme	wie	like me	cosúil le	come	sicut	rite	som	como	como	kama	liknande	hoffi	like
+so	så	dus	so	tiel	kaya	si	so	pela	mar sin	così	ita	na	så	assim	así	hivyo	så	felly	kanjalo
+hierdie	disse	deze	these	tiuj	mga	ces	diese	mau	na	queste	haec	enei	disse	estes	éstos	haya	dessa	rhain	la
+haar	hende	haar	her	ŝia	sa kanya	son	sie	ia	di	lei	eius	ia	henne	seu	su	yake	hennes	hi	wakhe
+lang	lang	lang	long	longajn	mahaba	long	lange	loihi	fada	lungo	longis	roa	lang	longo	largo	muda mrefu	lång	hir	eside
+maak	gøre	maken	make	fari	gumawa	faire	machen	hana	dhéanamh	rendere	fac	hanga	gjøre	fazer	hacer	kufanya	göra	gwneud	ukwenza
+ding	ting	ding	thing	afero	bagay	chose	sache	mea	rud	cosa	aliquid	mea	ting	coisa	cosa	kitu	sak	beth	into
+sien	se	zien	see	vidi	tingnan	voir	sehen	ike	féach	vedere	video	kite	se	veja	ver	kuona	se	gweld	bheka
+hom	ham	hem	him	li	sa kanya	lui	ihm	ia	air	lui	eo	ia ia	ham	ele	él	naye	honom	iddo	naye
+twee	to	twee	two	du	dalawang	deux	zwei	ʻelua	dhá	due	duobus	e rua	to	dois	dos	mbili	två	dau	ezimbili
+het	har	heeft	has	havas	may	a	hat	i	tá	ha	habet	he	har	tem	tiene	ina	har	mae gan	ine
+kyk	se	kijken	look	rigardi	tumingin	regarder	suchen	nana	breathnú	guardare	respice	titiro	se	olhar	buscar	kuangalia	ser	edrych	bhekani
+meer	mere	meer	more	pli	higit pa	plus	mehr	hou	níos mó	di più	more	atu	mer	mais	más	zaidi	mer	mwy	ngaphezulu
+dag	dag	dag	day	tagon	araw	jour	tag	lā	lá	giorno	die	ra	dag	dia	día	siku	dag	diwrnod	usuku
+kon	kunne	kon	could	povis	ng dati	pourrait	könnte	hiki	d’fhéadfadh	potuto	potuit	taea	kunne	poderia	podía	inaweza	kunde	gallai	okusemandleni
+gaan	gå	gaan	go	iri	pumunta	aller	gehen	hele	dul	andare	vade	haere	gå	ir	ir	kwenda	gå	fynd	hamba
+kom	komme	komen	come	venu	dumating	venir	kommen	hele mai	teacht	venire	venit	haere mai	kommer	vir	venir	kuja	komma	dod	uze
+het	gjorde	deed	did	faris	ginawa	fait	tat	hana	rinne	ha fatto	feceruntque	i mea ai	gjorde	fez	hizo	alifanya	gjorde	wnaeth	wenza
+aantal	nummer	aantal	number	nombro	numero	nombre	anzahl	helu	líon	numero	numerus	te tau	nummer	número	número	simu	antal	rhif	inombolo
+klink	lyd	klinken	sound	soni	tunog	son	klingen	hookani	fuaim	suono	tuba canerent	tangi	høres	som	sonar	sauti	sund	sain	kuzwakale
+geen	nej	geen	no	neniu	walang	aucun	nicht	ʻaʻole	aon	no	nulla	kahore	no	não	no	hakuna	nej	dim	akukho
+mees	mest	meest	most	plej	karamihan	plus	am meisten	loa	an chuid is mó	più	maxime	te nuinga	mest	mais	más	zaidi	mest	y rhan fwyaf	iningi
+mense	mennesker	mensen	people	homoj	mga tao	personnes	menschen	kanaka	daoine	persone	populus	te iwi	folk	pessoas	personas	watu	människor	pobl	abantu
+my	min	mijn	my	mian	ko	ma	meine	i koʻu	mo	il mio	mea	toku	min	meu	mi	yangu	min	fy	yami
+oor	løbet	meer dan	over	super	sa ibabaw	sur	über	maluna o	níos mó ná	oltre	supra	ki runga	løpet	sobre	sobre	juu ya	över	dros	phezu
+weet	kende	weten	know	scias	alam	savoir	wissen	ike	tá a fhios	sapere	scitis	e mohio ana	vet	sei	saber	kujua	vet	gwybod	bazi
+water	vand	water	water	akvo	tubig	eau	wasser	ka wai	uisce	acqua	aquam	wai	vann	água	agua	maji	vatten	dŵr	kwamanzi
+as	end	dan	than	ol	kaysa	que	als	mamua o	ná	di	quam	atu	enn	que	que	kuliko	än	nag	kunalokho
+oproep	opkald	roep	call	alvoko	tawag	appel	anruf	kahea	glao	chiamata	call	karanga	samtale	chamada	llamada	simu	samtal	alwad	call
+eerste	første	eerste	first	unua	unang	première	erste	ka mua	ar dtús	primo	prima	tuatahi	første	primeiro	primero	kwanza	först	yn gyntaf	okokuqala
+wat	der	die	who	kiuj	kung sino	qui	die	ka mea	a	che	qui	nei	som	que	que	ambao	som	pwy	ngubani
+mag	kan	kan	may	may	maaari	peut	können	mei	féadfaidh	può	ut	kia	kan	pode	puede	inaweza	får	gall	may
+af	ned	naar beneden	down	malsupren	pababa	vers le bas	nach unten	iho	síos	giù	descendit	ki raro	ned	para baixo	abajo	chini	ner	i lawr	phasi
+kant	side	kant	side	flanko	gilid	côté	seite	aoao	taobh	lato	latere	taha	side	lado	lado	upande	sida	ochr	side
+gewees	været	geweest	been	estintaj	naging	été	gewesen	i	curtha	stato	fuit	kua	vært	sido	estado	imekuwa	varit	bod	kwaba
+nou	nu	nu	now	nun	ngayon	maintenant	jetzt	ano	anois	ora	nunc	i teie nei	nå	agora	ahora	sasa	nu	awr	manje
+vind	finde	vinden	find	trovi	hanapin	trouver	finden	loaa	aimsiú	trovare	invenies	kitea	finne	encontrar	encontrar	kupata	hitta	dod o hyd i	thola
+hoof	hoved	hoofd	head	kapo	ulo	tête	kopf	poo	ceann	testa	caput	upoko	hode	cabeça	cabeza	kichwa	huvud	pen	ikhanda
+staan	stå	staan	stand	staras	tumayo	supporter	stehen	ku	seasamh	stare in piedi	stant	tu	stå	ficar	de pie	kusimama	stå	sefyll	nime
+eie	egen	eigen	own	propra	sarili	propre	besitzen	iho	féin	proprio	ipse	ake	egen	próprio	propio	mwenyewe	egen	eu hunain	siqu
+bladsy	side	pagina	page	paĝo	pahina	page	seite	palapala	leathanach	pagina	page	whārangi	side	página	página	ukurasa	sida	dudalen	page
+behoort	bør	moeten	should	devus	dapat	devrait	sollte	e	ba chóir	dovrebbe	ut	kia	bør	deveria	debería	lazima	bör	dylai	kufanele
+land	land	land	country	lando	bansa	pays	land	aina	tír	paese	patriae	whenua	landet	país	país	nchi	land	gwlad	izwe
+gevind	fundet	gevonden	found	trovita	natagpuan	trouvé	gefunden	loaa	fuair	fondare	invenit	kitea	funnet	encontrado	encontrado	kupatikana	funnen	dod o hyd i	wathola
+antwoord	svar	antwoord	answer	respondo	sagot	réponse	antwort	pane	freagra	risposta	dicendum	ka whakahoki	svar	resposta	respuesta	jibu	svar	ateb	impendulo
+skool	skole	de school	school	lernejo	paaralan	école	schule	kula	scoil	scuola	scholae	te kura	skole	escola	escuela	shule	skola	ysgol	esikoleni
+groei	vokse	groeien	grow	kreski	lumaki	croître	wachsen	ulu	fás	crescere	crescat	tupu	vokse	crescer	crecer	kukua	växa	tyfu	ukhule
+studie	undersøgelse	studie	study	studo	pag-aaral	étude	studie	like	staidéar	studio	studiorum	te tai’oraa i te	studien	estudo	estudio	utafiti	studie	astudiaeth	ukutadisha
+steeds	stadig	nog	still	ankoraŭ	pa rin	encore	noch	malie	fós	ancora	etiam	tonu	fortsatt	ainda	todavía	bado	fortfarande	dal	namanje
+leer	lære	leren	learn	lerni	malaman	apprendre	lernen	e ao	foghlaim	imparare	discant	ako	lære	aprender	aprender	kujifunza	lära	dysgu	ufunde
+plant	plante	planten	plant	planto	halaman	usine	anlage	kanu	plandaí	impianto	herba	te tipu	anlegg	planta	planta	kupanda	växt	planhigion	plant
+dekking	dæksel	afdekking	cover	kovrilo	pabalat	couvercle	abdeckung	aloha	chlúdach	copertura	cover	cover	dekselet	cobertura	cubierta	cover	lock	clawr	embesa
+voedsel	mad	voedsel	food	nutraĵo	pagkain	nourriture	lebensmittel	ai	bia	cibo	cibum	kai	mat	alimentos	alimentos	chakula	mat	bwyd	ngokudla
+son	sol	zon	sun	suno	sun	soleil	sonne	lā	ghrian	sole	solis	ra	sol	sol	sol	jua	sol	haul	sun
+vier	fire	vier	four	kvar	apat	quatre	vier	ʻehā	ceithre	quattro	quatuor	e wha	fire	quatro	cuatro	nne	fyra	pedwar	ezine
+tussen	mellem	tussen	between	inter	sa pagitan ng	entre	zwischen	waena o	idir	fra	inter	i waenganui i	mellom	entre	entre	kati ya	mellan	rhwng	emkhatsini
+staat	stat	staat	state	ŝtata	estado	état	zustand	mokuʻāina	stáit	stato	status	kāwanatanga	stat	estado	estado	hali	tillstånd	cyflwr	isimo
+hou	holde	houden	keep	konservi	panatilihin	garder	halten	malama	choinneáil	mantenere	custodi	kia mau	holde	manter	mantener	kuweka	hålla	cadw	qhubeka
+oog	øje	oog	eye	okulo	mata	œil	auge	maka	súl	occhio	oculus	kanohi	øye	olho	ojo	jicho	öga	llygad	iso
+nooit	aldrig	nooit	never	neniam	hindi kailanman	jamais	nie	loa	riamh	mai	numquam	kore	aldri	nunca	nunca	kamwe	aldrig	byth	bonaze
+laaste	sidste	laatste	last	lasta	huli	dernier	letzte	hope	seo caite	ultimo	novissime	whakamutunga	siste	último	último	mwisho	sista	diwethaf	okokugcina
+laat	lad	laten	let	lasu	ipaalam	laisser	lassen	e	a ligean	lasciare	dimitte	kia	la	deixar	dejar	basi	låt	gadewch	ake
+gedink	tænkte	gedachte	thought	pensis	pag-iisip	pensée	gedanken	manaʻo	shíl	pensiero	cogitavit	whakaaro	trodde	pensava	pensado	wazo	trodde	meddwl	bacabanga
+stad	by	stad	city	urbo	lungsod	ville	stadt	kulanakauhale	cathair	città	urbem	pa	by	cidade	ciudad	mji	ort	ddinas	dolobha
+boom	træ	boom	tree	arbo	puno	arbre	baum	laau	crann	albero	lignum	rakau	tre	árvore	árbol	ya mti	träd	goeden	isihlahla
+steek	krydse	oversteken	cross	transiri	tumawid	traverser	überqueren	kela aoao	tras	attraversare	transire	whakawhiti	krysse	atravessar	cruzar	msalaba	korsa	croesi	ukuwela
+plaas	gård	boerderij	farm	farm	sakahan	ferme	bauernhof	mahiʻai	feirme	fattoria	fundum	pāmu	gård	fazenda	granja	shamba	gård	fferm	ipulazi
+hard	hårdt	hard	hard	malfacila	matapang	dur	schwer	paakiki	crua	difficile	difficile	pakeke	vanskelig	difícil	duro	ngumu	hård	caled	kanzima
+begin	begyndelse	begin	start	komenco	simula	début	beginn	hoʻomaka	tús	inizio	initium	tīmatanga	start	começo	inicio	kuanza	start	cychwyn	isiqalo
+mag	måske	zou	might	potenco	lakas	puissance	macht	ikaika	d’fhéadfadh	forza	ut	te kaha	kanskje	poder	podría	nguvu	kanske	allai	izikhwepha
+storie	historie	verhaal	story	rakonto	kuwento	histoire	geschichte	moʻolelo	scéal	storia	fabula	kōrero	historien	história	historia	hadithi	berättelse	stori	indaba
+saag	sav	zaag	saw	segilo	nakita	scie	säge	i ike ai	chonaic	sega	viderunt omnes	kite	sag	serra	sierra	saw	sågen	welodd	okwabonwa
+ver	langt	ver	far	malproksime	malayo	loin	weit	loa	i bhfad	lontano	tantum	tawhiti	langt	longe	ahora	mbali	långt	yn hyn	le
+see	hav	zee	sea	maro	dagat	mer	meer	kai	farraige	mare	mare	te moana	sea	mar	mar	bahari	hav	môr	ulwandle
+trek	tegne	tekenen	draw	desegni	gumuhit	tirer	ziehen	huki	a tharraingt	disegnare	hauriret	te utu	tegne	desenhar	dibujar	kuteka	rita	tynnu	udwebe
+verlaat	venstre	links	left	maldekstra	ang natitira	gauche	links	hema	chlé	sinistra	reliquit	mahue	venstre	esquerda	izquierda	kushoto	vänster	gadawodd	kwesokunxele
+laat	sent	laat	late	malfrue	late	tard	spät	hopena o	déanach	tardi	quondam	te mutunga	sent	tarde	tarde	marehemu	sen	hwyr	sekwephuzile
+hardloop	køre	lopen	run	run	tumakbo	courir	laufen	mokuʻāina	rith	run	currunt	oma	kjøre	run	ejecutar	kukimbia	köra	rhedeg	sigijime
+doen nie	ikke	niet	don’t	ne	hindi	needs a context	unterlassen sie	hana aole	nach	non	non	te mahi e kore e	ikke gjør	não	no	kufanya si	inte	peidiwch â	ungenzi
+terwyl	mens	terwijl	while	dum	habang	tandis que	während	oiai	cé go	mentre	cum	ia	mens	enquanto	mientras	wakati	medan	tra	ngenkathi
+pers	presse	pers	press	gazetaro	pindutin ang	presse	presse	kaomi	preas	stampa	turba	press	trykk	imprensa	prensa	vyombo vya habari	tryck	wasg	cindezela
+naby	tæt	dicht	close	fermi	malapit	proche	schließen	kokoke	gar	close	proxime	tata	nær	perto	cerrar	karibu	nära	agos	ngokuminyanisa
+nag	nat	nacht	night	nokto	gabi	nuit	nacht	pō	oíche	notte	noctis	te po	natt	noite	noche	usiku	natt	nos	ebusuku
+werklike	real	echt	real	reala	tunay	réel	realen	maoli	fíor	reale	ipsum	tūturu	real	reais	reales	halisi	verklig	go iawn	kwangempela
+lewe	liv	leven	life	vivo	buhay	vie	leben	ola	saol	vita	vita	ora	livet	vida	vida	maisha	liv	bywyd	kuphila
+paar	få	weinig	few	malmultaj	ilan	peu	wenige	kakaikahi	beag	pochi	pauci	torutoru	noen	poucos	pocos	chache	några	ychydig	ambalwa
+noord	nord	noorden	north	norde	hilaga	nord	norden	ke akau	ó thuaidh	nord	aquilonem	ki te raki	nord	norte	norte	kaskazini	norr	gogledd	enyakatho
+boek	bog	boek	book	libro	aklat	livre	buch	buke	leabhar	libro	liber	pukapuka	bok	livro	libro	kitabu	boken	llyfr	incwadi
+voer	bære	dragen	carry	porti	nagtitinda	porter	tragen	lawe	iompar	portare	ferte	kawe	bære	carregam	llevar	kubeba	bära	cario	athwale
+het	tog	nam	took	prenis	kinuha	a pris	nahm	lawe	ghlac	ha preso	tulit	ka tango	tok	tomou	tomó	alichukua	tog	cymerodd	wathatha
+wetenskap	videnskab	wetenschap	science	scienco	agham	science	wissenschaft	nauka	eolaíocht	scienza	scientia	pūtaiao	vitenskap	ciência	ciencia	sayansi	vetenskap	gwyddoniaeth	isayensi
+eet	spise	eet	eat	manĝi	kumain	manger	essen	ai	ithe	mangiare	manducare	kai	spise	comer	comer	kula	äta	bwyta	udle
+kamer	værelse	kamer	room	ĉambro	room	chambre	zimmer	lumi	seomra	camera	locus	ruma	rom	quarto	habitación	chumba	rum	ystafell	igumbi
+vriend	ven	vriend	friend	amiko	kaibigan	ami	freund	hoaaloha	cara	amico	amicitia	hoa	venn	amigo	amigo	rafiki	vän	ffrind	umngani
+begin	begyndte	begon	began	komencis	sinimulan ni	a commencé	begann	hoomaka ae	thosaigh	ha iniziato	coeperunt	ka timata	begynte	começou	comenzó	alianza	började	dechreuodd	waqala
+idee	idé	idee	idea	ideon	idea	idée	idee	manaʻo	smaoineamh	idea	idea	whakaaro	ide	idéia	gusta	wazo	idé	syniad	umqondo
+vis	fisk	vis	fish	fiŝo	isda	poisson	fisch	iʻa	iasc	pesce	pisces	ika	fisk	peixe	peces	samaki	fisk	pysgod	izinhlanzi
+berg	bjerg	berg	mountain	monto	bundok	montagne	berg	mauna	sliabh	montagna	montem	maunga	fjellet	montanha	montaña	mlima	berg	mynydd	ntaba
+stop	stoppe	stop	stop	ĉesi	itigil	arrêtez	stopp	hooki	stad	stop	subsisto	mutu	stoppe	pare	deténgase	kuacha	stoppa	rhoi’r gorau i	ima
+keer	en gang	eenmaal	once	unufoje	sabay-sabay	une fois	einmal	pākahi	uair amháin	una volta	quondam	kotahi	gang	uma vez	una vez	mara moja	en gång	unwaith	kanye
+basis	basen	base	base	bazo	base	base	basis	kumu	bonn	base	basi	turanga	basen	base	base de	msingi	bas	sylfaen	isiza
+hoor	høre	hear	hear	aŭdi	pakinggan	entendre	hören	lohe	chloisteáil	sentire	audite	rongo	høre	ouvir	escuchar	kusikia	höra	clywed	zwa
+perd	hest	paard	horse	ĉevalo	kabayo	cheval	pferd	ka lio	capall	cavallo	equo	hoiho	hest	cavalo	caballo	farasi	häst	ceffyl	ihhashi
+cut	cut	gesneden	cut	tranĉo	hiwa	coupe	schnitt	e oki ai	gearrtha	taglio	sectis	tapahia	kutt	corte	cortada	kata	snitt	torri	ukusika
+seker	sikker	zeker	sure	certas	sigurado	sûr	sicher	paa	cinnte	sicuro	certus	tino	sikker	certo	seguro	uhakika	säker	siwr	isiqiniseko
+kyk	ser	kijken	watch	spekti	panoorin	regarder	beobachten	kiai	féachaint ar	orologio	vigilate	mataara	se	assista	ver	kuangalia	klocka	gwylio	qaphela
+kleur	farve	kleur	color	koloro	kulay	couleur	farbe	kala like ʻole	dath	colore	colorem	te tae	farge	cor	colores	rangi	färg	lliw	umbala
+gesig	ansigt	gezicht	face	vizaĝo	mukha	face	gesicht	maka	aghaidh	volto	faciem	kanohi	ansikt	rosto	cara	uso	ansikte	wyneb	ubuso
+hout	træ	hout	wood	ligno	wood	bois	holz	laau	adhmad	legno	lignum	rakau	tre	madeira	madera	mbao	trä	pren	izinkuni
+hoof	main	belangrijkste	main	ĉefa	pangunahin	principal	haupt	ka papa kuhikuhie	príomh	principale	main	matua	hoved	principal	principal	kuu	huvud	prif	eziyinhloko
+oop	åben	geopend	open	malfermita	bukas	ouvert	geöffnet	hamama	oscailte	aperto	aperi	tuwhera	åpent	aberto	abierta	wazi	öppen	agored	evulekile
+lyk	synes	lijken	seem	ŝajnas	mukhang	paraître	scheinen	he	is cosúil go	sembrare	videtur	te mea	synes	parecem	parecer	wanaonekana	tyckas	ymddangos	babonakala
+saam	sammen	samen	together	kune	magkasama	ensemble	zusammen	pu	le chéile	insieme	simul	tahi	sammen	juntos	juntos	pamoja	tillsammans	gyda’i gilydd	ndawonye
+volgende	næste	volgende	next	sekva	susunod	suivant	nächste	aʻe	seo chugainn	prossimo	postero	i muri	neste	próximo	próximo	ijayo	nästa	nesaf	olandelayo
+wit	hvid	wit	white	blanka	puting	blanc	weiß	kala like ʻole	bán	bianco	album	white	hvit	branco	blanco	nyeupe	vit	gwyn	elimhlophe
+kinders	børn	kinderen	children	infanoj	mga bata	enfants	kinder	keiki	leanaí	bambini	filii	tamariki	barn	crianças	niños	watoto	barn	plant	izingane
+begin	begynde	beginnen	begin	komenci	simulan	commencer	start	hoomaka	tús a chur	inizio	incipe	timata	begynne	início	comenzar	kuanza	börja	dechrau	uqale
+het	fik	kreeg	got	akiris	nakakuha	eu	bekam	loaʻa	fuair	ottenuto	obtinuit	ka	fikk	tem	conseguido	got	fick	got	wavuka
+loop	gang	lopen	walk	marŝi	lumakad	marcher	gehen	hele	siúl	camminare	ambulate	haere	gå	andar	caminar	kutembea	gå	cerdded	uhambe
+byvoorbeeld	eksempel	voorbeeld	example	ekzemplo	halimbawa	exemple	beispiel	eia	mar shampla	esempio	exemplum	tauira	eksempel	exemplo	ejemplo	mfano	exempel	enghraifft	isibonelo
+verlig	lethed	gemak	ease	faciligi	luwag	facilité	erleichtern	hoopau i	maolú ar	alleviare	relevare	mamatanga	lette	facilidade	aliviar	kupunguza	lindra	leddfu	ekudambiseni
+papier	papir	papier	paper	papero	papel	papier	papier	pepa	páipéar	carta	cartam	pepa	papir	papel	papel	karatasi	papper	papur	ephepheni
+groep	gruppe	groep	group	grupo	pangkat	groupe	gruppe	hui	grúpa	gruppo	group	rōpū	gruppe	grupo	grupo	kundi	grupp	grŵp	iqoqo
+altyd	altid	altijd	always	ĉiam	palagi	toujours	immer	mau	i gcónaí	sempre	semper	tonu	alltid	sempre	siempre	daima	alltid	bob amser	njalo
+musiek	musik	muziek	music	muziko	musika	musique	musik	aloha	ceol	musica	musica	waiata	musikk	música	música	muziki	musik	cerddoriaeth	umculo
+diegene	dem	die	those	tiuj	iyon	ceux	diejenigen	mau	sin	quelli	eorum	te hunga	de	aqueles	los	wale	de som	y rhai	nalabo
+beide	både	beide	both	ambaŭ	kapwa	tous les deux	beide	elua	dá	entrambi	et	e rua	både	tanto	ambos	wote wawili	båda	ddau	kokubili
+merk	mark	mark	mark	markon	mark	marque	marke	mark	marc	marchio	caracterem	tohu	mark	marca	marca	alama	märke	marc	uphawu
+dikwels	ofte	vaak	often	ofte	madalas	souvent	oft	pinepine	is minic	spesso	saepe	maha	ofte	muitas vezes	menudo	mara nyingi	ofta	yn aml	ngokuvamile
+brief	brev	brief	letter	letero	sulat	lettre	schreiben	palapala	litir	lettera	litteris	reta	brev	carta	carta	barua	bokstav	llythyr	incwadi
+totdat	indtil	tot	until	ĝis	hanggang sa	jusqu’à ce que	bis	a hiki i	go dtí	fino a quando	usque	tae noa ki	før	até	hasta	mpaka	tills	nes	kuze
+myl	mile	mijl	mile	mejlo	milya	mile	meile	ka mile	míle	miglio	mille passuum	mile	mile	milha	milla	maili	mil	milltir	lwamakhilomitha
+rivier	flod	rivier	river	rivero	ilog	rivière	fluss	muliwai	abhainn	fiume	fluvio	te awa	elv	rio	río	mto	flod	afon	emfuleni
+motor	bil	auto	car	aŭto	kotse	voiture	auto	kaʻa	carr	auto	car	motokā	bil	carro	coche	gari	bil	car	imoto
+voete	fødder	voeten	feet	piedojn	paa	pieds	füße	wawae	cosa	piedi	pedes	waewae	føtter	pés	pies	miguu	fot	traed	izinyawo
+sorg	pleje	zorg	care	prizorgi	pag-aalaga	soins	pflege	mālama	cúram	cura	cura	tiaki	omsorg	cuidados	cuidado	huduma	vård	gofal	ukunakekelwa
+tweede	sekund	tweede	second	dua	pangalawa	deuxième	zweite	ka lua	an dara	secondo	secundo	tuarua	andre	segunda	segundo	pili	andra	yn ail	kwesibili
+genoeg	nok	genoeg	enough	sufiĉa	sapat	assez	genug	lawa	leor	abbastanza	sufficit	nui	nok	suficiente	suficiente	kutosha	tillräckligt	ddigon	ngokwanele
+vlakte	plain	vlakte	plain	ebenaĵo	plain	plaine	ebene	maopopo	plain	pianura	patet	mania	plain	plain	llano	wazi	vanlig	plaen	ithafa
+meisie	pige	meisje	girl	knabino	batang babae	fille	mädchen	kaikamahine	cailín	ragazza	puella	kotiro	jente	menina	chica	msichana	flicka	merch	ntombazane
+gewone	sædvanlig	gebruikelijke	usual	kutima	karaniwan	habituel	üblich	mau	gnách	solito	more	mua	vanlig	habitual	habitual	kawaida	vanligt	arferol	evamile
+jong	unge	jonge	young	junulo	batang	jeune	jung	opiopio	óg	giovane	adulescens	taitamariki	ung	jovem	joven	vijana	ung	ifanc	young
+gereed	klar	klaar	ready	preta	handa	prêt	bereit	makaukau	réidh	pronto	parata	rite	klar	pronto	listo	tayari	klar	barod	ngomumo
+bo	ovenfor	boven	above	supre	sa itaas	au-dessus	oben	luna	thuas	sopra	supra	i runga	ovenfor	acima	por encima de	juu	ovan	uchod	ngenhla
+ooit	nogensinde	ooit	ever	iam	kailanman	jamais	je	loa	riamh	mai	in perpetuum	ake	noensinne	sempre	nunca	milele	någonsin	erioed	njalo
+rooi	rød	rood	red	ruĝa	pula	rouge	rot	ʻulaʻula	dearg	rosso	red	whero	red	vermelho	rojo	nyekundu	röd	coch	obomvu
+lys	liste	lijst	list	lerta	listahan	liste	liste	papa	liosta	elenco	album	rārangi	liste	lista	lista	orodha	lista	rhestr	uhlu
+alhoewel	selv	hoewel	though	kvankam	bagaman	bien que	obwohl	nae	cé go	anche se	tametsi	ahakoa	skjønt	embora	aunque	ingawa	though	er bod	noma
+voel	føler	voelen	feel	sentas	pakiramdam	sentir	fühlen	haha aku	bhraitheann	sentire	sentio	ite	føler	sentir	sentir	kujisikia	känna	teimlo	bazizwa
+besprekings	snak	overleg	talk	diskuto	talk	parler	vortrag	o anakuhi	plé	discussioni	disputatio	korero	diskusjon	discussão	charla	majadiliano	diskussion	sgwrs	inkulumo
+voël	fugl	vogel	bird	birdo	ibon	oiseau	vogel	manu	éan	uccello	avem	manu	fugl	pássaro	pájaro	ndege	fågel	adar	nyoni
+gou	snart	spoedig	soon	baldaŭ	sa lalong madaling panahon	bientôt	bald	koke	go luath	presto	mox	hohoro	snart	em breve	pronto	hivi karibuni	snart	yn fuan	ngokushesha
+liggaam	krop	lichaam	body	korpo	katawan	corps	körper	kino	comhlacht	corpo	corpus	tinana	kroppen	corpo	cuerpo	mwili	kropp	corff	umzimba
+hond	hund	hond	dog	hundo	aso	chien	hund	ʻīlio	madra	cane	canem	kuri	hund	cão	perro	mbwa	hund	ci	inja
+gesin	familie	familie	family	familio	pamilya	famille	familie	ohana	teaghlach	famiglia	familia	whānau	familie	família	familia	familia	familj	teulu	umndeni
+direkte	direkte	rechtstreeks	direct	rekta	direct	direct	direkt	kauoha	díreach	diretto	dirige	tika	direkte	direto	directa	moja kwa moja	direkt	uniongyrchol	ngqo
+inhou	udgøre	pose	pose	supozi	imungkahi	pose	pose	oweliweli	údar	posa	aut statum	tūpono	posere	representar	plantear	litasababisha	pose	peri	abalona
+verlaat	forlade	vertrekken	leave	forlasi	mag-iwan	laisser	verlassen	waiho	saoire	lasciare	relinquo	waiho	forlate	deixar	dejar	kuondoka	lämna	gadael	ushiye
+lied	sang	lied	song	kanto	kanta	chanson	lied	mele	song	canzone	canticum	waiata	sangen	canção	canción	wimbo	sång	cân	song
+meet	måle	meten	measure	mezuri	sukatin	mesurer	messen	ana	a thomhas	misurare	metiretur	whanganga	måle	medir	medir	kupima	mäta	mesur	ukulinganisa
+deur	dør	deur	door	pordo	pinto	porte	tür	puka	doras	porta	ostium	tatau	dør	porta	puerta	mlango	dörr	drws	umnyango
+produk	produkt	artikel	product	produkto	produkto	produit	produkt	huahana	táirge	prodotto	vestibulum	hua	produkt	produto	producto	bidhaa	produkt	cynnyrch	umkhiqizo
+swart	sort	zwart	black	nigra	itim	noir	schwarz	ʻeleʻele	dubh	nero	nigrum	mangu	svart	preto	negro	nyeusi	svart	du	omnyama
+kort	kort	korte	short	mallonga	maikling	court	kurz	pōkole	gearr	breve	breves	poto	kort	curta	corto	mfupi	kort	byr	okufutshane
+syfer	talord	cijfer	numeral	numeralo	numeral	chiffre	zahl	numeral	uimhreán	numerale	numerales	whika	tall	numeral	numeral	numeral	siffran	rhifolyn	inani
+klas	klasse	klasse	class	klaso	klase	classe	klasse	papa	rang	classe	class	te piha	klasse	classe	clase	darasa	klass	dosbarth	ikilasi
+wind	vind	wind	wind	vento	hangin	vent	wind	makani	gaoithe	vento	spiritus	hau	vind	vento	viento	upepo	vind	gwynt	ovunguzayo
+vraag	spørgsmål	vraag	question	demando	tanong	question	frage	ninau	ceist	domanda	quaestio	pātai	spørsmål	pergunta	pregunta	swali	fråga	cwestiwn	umbuzo
+gebeur	ske	gebeuren	happen	okazi	mangyari	arriver	passieren	hiki mai ana	tharlóidh	accadere	fieri	tupu	skje	acontecer	suceder	kutokea	hända	yn digwydd	kwenzeke
+volledige	komplet	compleet	complete	kompleta	kumpleto na ang	complète	vollständig	loa	críochnaithe	integrale	completum	oti	komplett	completo	completo	kamili	fullständig	cwblhau	kuqedile
+skip	skib	schip	ship	ŝipo	barko	navire	schiff	moku	long	nave	navem	kaipuke	skip	navio	buque	meli	skepp	llong	umkhumbi
+gebied	område	gebied	area	spaco	lugar	zone	bereich	wahi	limistéar	area	area	rohe	område	área	zona	eneo	område	ardal	indawo
+helfte	halvdelen	helft	half	duono	kalahati	moitié	hälfte	hapalua	leath	metà	dimidiam	hawhe	halv	metade	medio	nusu	halv	hanner	isigamu
+rock	sten	rots	rock	roko	rock	rock	stein	pohaku	carraig	rock	petræ	toka	stein	rocha	roca	mwamba	vagga	graig	idwala
+orde	ordre	orde	order	ordon	pagkakasunud-sunod	ordre	bestellen	aoao	ordú	ordine	ut	kia	rekkefølge	ordem	orden	ili	för	gorchymyn	oda
+vuur	brand	brand	fire	fajro	sunog	feu	feuer	ke ahi	dóiteáin	fuoco	ignis	te ahi	brann	fogo	fuego	moto	eld	tân	umlilo
+suid-	syd	zuiden	south	sude	timog	sud	süden	ka hema	ó dheas	sud	austri	ki te tonga	sør	sul	sur	kusini	söder	de	eningizimu
+probleem	problem	probleem	problem	problemo	problema	problème	problem	pilikia	fhadhb	problema	forsit	raruraru	problem	problema	problema	tatizo	problemet	problem	inkinga
+stukkie	stykke	stuk	piece	peco	piraso	pièce	stück	kauwahi	píosa	pezzo	frustrum	wahi	piece	peça	pieza	kipande	stycke	darn	ucezu
+vertel	fortalt	vertelde	told	rakontis	sinabi	dit	sagte	haʻi	inis	ha detto	nuntiavit	ka korerotia	fortalte	disse	dicho	aliiambia	sa	gwybod	utshele
+geweet	vidste	wist	knew	sciis	alam	savait	wusste	ike	bhí a fhios	sapeva	cognovit	i mohio	visste	sabia	sabía	alijua	visste	gwybod	wayazi
+slaag	pass	passeren	pass	pasi	pumasa	passer	passieren	kekahi	pas a fháil	passare	factum	haere	passere	passar	pasar	kupita	passera	pasio	kudlula
+sedert	siden	sinds	since	ekde	mula noong	depuis	seit	mai	ós rud é	da	cum	mai	siden	desde	desde	tangu	sedan	ers	kusukela
+top	top	boven	top	supro	tuktok	haut	obere	luna	barr	top	top	runga	toppen	topo	cima	juu	topp	top	phezulu
+geheel	hele	geheel	whole	aro	kabuuan	ensemble	ganze	a pau	fad	tutto	omnis	katoa	hele	inteiro	todo	zima	hela	cyfan	wonke
+koning	konge	king	king	reĝo	king	roi	könig	ke alii	rí	re	rex	te kingi	king	rei	rey	mfalme	kung	brenin	inkosi
+straat	gade	straat	street	strato	kalye	rue	straße	alanui	ainm	strada	platea	street	street	rua	calle	mitaani	gata	stryd	isitaladi
+duim	tommer	inch	inch	colo	inch	pouce	zoll	ʻīniha	orlach	pollice	inch	inihi	tommers	polegada	pulgadas	inchi	tum	modfedd	ngamasentimitha
+vermeerder	formere	vermenigvuldigen	multiply	multipliki	paramihin	multiplier	multiplizieren	hoonui	iolrú	moltiplicare	multiplicabo	kia tini	multiplisere	multiplicar	multiplicar	kuzidisha	multiplicera	lluosi	phindaphinda
+niks	intet	niets	nothing	nenio	walang anuman	rien	nichts	aole	aon rud	niente	aliquid	kahore	ingenting	nada	nada	chochote	ingenting	dim byd	lutho
+natuurlik	kursus	cursus	course	kompreneble	siyempre	cours	kurs	ana	cúrsa	corso	scilicet	akoranga	kurs	curso	curso	bila shaka	naturligtvis	cwrs	inkambo
+bly	ophold	blijven	stay	resti	manatili	rester	bleiben	noho	fanacht	soggiornare	manete	noho	opphold	ficar	quedarse	kukaa	bo	aros	uhlale
+wiel	hjul	wiel	wheel	radon	gulong	roue	rad	huila	roth	ruota	rotam	wira	wheel	roda	rueda	gurudumu	hjul	olwyn	sondo
+volle	fuld	volledige	full	plena	ganap	plein	voll	piha	lán	completo	pleni	tonu	fullt	completo	completo	full	fullständig	llawn	egcwele
+krag	kraft	kracht	force	forto	puwersa	force	kraft	ikaika	bhfeidhm	vigore	vi	kaha	kraft	força	fuerza	nguvu	kraft	grym	isicindezelo
+blou	blå	blauw	blue	blua	asul	bleu	blau	polū	gorm	blu	hyacintho	puru	blå	azul	azul	bluu	blå	glas	eluhlaza
+voorwerp	objekt	object	object	objekto	bagay	objet	objekt	mea	réad	oggetto	obiectum	ahanoa	objekt	objeto	objeto	kitu	objektet	gwrthrych	intfo
+besluit	beslutte	beslissen	decide	decidi	magpasiya	décider	entscheiden	hooholo	cinneadh a dhéanamh	decidere	decernere	whakatau	bestemme	decidir	decidir	kuamua	besluta	penderfynu	unqume
+oppervlak	overflade	oppervlak	surface	surfaco	pang-ibabaw	surface	oberfläche	ili	dromchla	superficie	superficies	mata	overflaten	superfície	superficie	uso	yta	wyneb	ngaphandle
+diep	dyb	diepe	deep	profunda	malalim	profond	tief	hohonu	domhain	profondità	abyssus	hohonu	dyp	profunda	profunda	kina	djup	dwfn	ezijulile
+maan	månen	maan	moon	luno	gumala	lune	mond	luna	gealach	luna	lunam	marama	månen	lua	luna	mwezi	månen	lleuad	inyanga
+eiland	ø	eiland	island	insulo	isla	île	insel	mokupuni	oileán	isola	insulam	motu	øy	ilha	isla	kisiwa	ö	ynys	esiqhingini
+voet	fod	voet	foot	piedo	paa	pied	fuß	wawae	cos	piede	pede	waewae	foten	pé	pie	mguu	fot	droed	ngezinyawo
+stelsel	systemet	systeem	system	sistemo	sistema	système	system	nenoaiu	córas	sistema	ratio	pūnaha	system	sistema	sistema	mfumo	systemet	system	uhlelo
+besig	travlt	drukke	busy	okupata	maraming ginagawa	occupé	beschäftigt	ʻō i	gnóthach	occupato	occupatus	pukumahi	opptatt	ocupado	ocupado	busy	upptagen	brysur	umatasa
+toets	test	toets	test	testo	pagsubok	test	prüfung	hōʻike	tástáil	test	aliquam	whakamātautau	test	teste	prueba	mtihani	testet	prawf	ukulinga
+rekord	rekord	opnemen	record	rekordo	talaan	record	rekord	mooolelo	taifead	record	testimonium	record	rekord	registro	registro	rekodi	register	cofnod	amarekhodi
+boot	båd	boot	boat	kruĉo	bangka	bateau	boot	moku	bád	barca	navicula	kaipuke	båt	barco	barco	mashua	båt	cwch	isikebhe
+gemeenskaplike	fælles	gemeenschappelijke	common	komunaj	karaniwan	commun	gemeinsam	like	coitianta	comune	commune	noa	felles	comum	común	kawaida	gemensam	gyffredin	ezivamile
+goud	guld	goud	gold	oro	ginto	or	goldenen	gula	óir	oro	aurum	koura	gull	ouro	oro	dhahabu	guld	aur	igolide
+moontlik	mulig	mogelijk	possible	ebla	posible	possible	möglich	hiki	féidir	possibile	potest	taea	mulig	possível	posible	iwezekanavyo	möjlig	bosibl	kunokwenzeka
+vliegtuig	planet	vliegtuig	plane	ebeno	eroplano	plan	flugzeug	pelane	eitleán	piano	planum	plane	planet	avião	plano	ndege	plan	awyren	indiza
+plek	stedet	plaats	stead	anstataux	stead	place	statt	wahi	ionad	vece	pro eo	i muri ia ia	stedet	lugar	lugar	badala	stead	le ef	esikhundleni
+droë	tør	droge	dry	seka	dry	sec	trocken	maloo	tirim	asciutto	siccum	maroke	tørk	seca	seco	kavu	torka	sych	eyomile
+wonder	spekulerer	afvragen	wonder	demandas	wonder	se demander	wunder	hoohuoi	wonder	meraviglia	admiramini	uiui nei	rart	pergunto	maravilla	ajabu	undra	tybed	bayazibuza
+lag	grine	lachen	laugh	ridon	patawanin	rire	lachen	akaaka	gáire	ridere	rideat	i kata	latter	risada	risa	kucheka	skratt	chwerthin	uhleko
+duisend	tusinde	duizend	thousand	milo	libo	mille	tausend	tausani	míle	migliaia	milia	mano	tusen	mil	mil	elfu	tusen	mil	abayizinkulungwane
+gelede	siden	geleden	ago	monato	nakaraan	il ya	vor	aku nei	ó shin	fa	ago	i ma’iri a’e nei	siden	atrás	hace	iliyopita	sedan	yn ôl	edlule
+hardloop	løb	ran	ran	kuris	pinatatakbo ng	ran	lief	holo	rith	corse	cucurrit	rere	ran	ran	corrió	mbio	ran	rhedodd	wagijimela
+kyk	tjek	controleren	check	kontroli	suriin	vérifier	überprüfen	huli	seiceáil	controllare	reprehendo	taki	sjekk	verifique	comprobar	kuangalia	ta	gwirio	hlola
+spel	spil	spel	game	ludo	laro	jeu	spiel	hihiu	cluiche	gioco	ludum	game	spill	jogo	juego	mchezo	spel	gêm	mdlalo
+vorm	form	vorm	shape	formo	hugis	forme	form	helehelena	cruth	forma	figura	hanga	form	forma	forma	sura	form	siâp	uhlobo
+gelyk	sidestille	gelijk	equate	egaligas	tutumbas	assimiler	gleichsetzen	equate	ionann	uguagliare	aequat	whakaōrite i	likestille	equiparar	equiparar	wanalinganisha	likställa	cyfateb	bathi
+warm	varmt	heet	hot	varmega	mainit	chaud	heiß	anal	te	caldo	calidum	wera	hot	quente	caliente	moto	het	poeth	ashisayo
+mis	miss	miss	miss	miss	tamaan	manquer	fehl	miss	chailleann	perdere	requisierit	pahemo	savner	senhorita	señorita	miss ya	miss	miss	miss
+gebring	bragt	bracht	brought	alportis	nagdala	apporté	gebracht	lawe mai	thug	portato	adduxerunt	kawea	brakte	trouxe	traído	kuletwa	bringas	dwyn	baletha
+hitte	varme	warmte	heat	varmo	init	chaleur	wärme	wela	teas	calore	calor	wera	hete	calor	calor	joto	hetta	gwres	ukushisa
+sneeu	sne	sneeuw	snow	neĝo	snow	neige	schnee	hau	sneachta	neve	nix	hukarere	snø	neve	nieve	theluji	snö	eira	iqhwa
+band	dæk	band	tire	pneŭo	gulong	pneu	reifen	kaea	bonn	pneumatico	piget	mauiui	dekk	pneu	neumáticos	tairi	däcket	teiars	isondo
+bring	bringe	brengen	bring	alporti	dalhin	apporter	bringen	lawe mai	thabhairt	portare	adducet	kawea	bringe	trazer	traer	kuleta	bringa	dod â	ukuletha
+ja	ja	ja	yes	jes	yes	oui	ja	ʻae	yes	sì	etiam	ae	ja	sim	sí	ndiyo	ja	ie	yebo
+verre	fjernt	verre	distant	malproksima	malayo	lointain	entfernt	ke kaawale ana	i bhfad i gcéin	lontano	distant	tawhiti	fjernt	distante	distante	mbali	avlägsen	bell	ezikude
+vul	fylde	vullen	fill	plenigi	punuin	remplir	füllen	hoopiha	líonadh	riempire	imple	whakakiia e	fylle	preencher	llenar	kujaza	fylla	llenwi	ukugcwalisa
+oos	øst	oosten	east	oriente	silangan	est	osten	ka hikina	soir	est	orientem	rawhiti	øst	leste	al este	mashariki	öst	ddwyrain	empumalanga
+verf	maling	schilderen	paint	pentri	pintahan	peindre	malen	pena	péint	dipingere	pingere	peita	maling	pintar	pintar	rangi	måla	paent	ukupenda
+taal	sprog	taal	language	lingvo	wika	langue	sprache	ʻōlelo	teanga	lingua	lingua	te reo	språk	linguagem	idioma	lugha	språk	iaith	lulwimi
+onder	blandt	onder	among	inter	kasama ng	entre	unter	mawaena o	i measc	tra	in	i roto i	blant	entre	entre	kati ya	bland	ymhlith	phakathi
+eenheid	enhed	eenheid	unit	unuo	yunit	unité	einheit	pa alima	aonad	unità	unitas	kōwae	enhet	unidade	unidad	kitengo	enhet	uned	unit
+krag	magt	kracht	power	potenco	kapangyarihan	puissance	macht	mana	cumhacht	potenza	potestatem	mana	makt	poder	potencia	nguvu	kraft	pŵer	amandla
+dorp	by	stad	town	urbo	bayan	ville	stadt	kulanakauhale	baile	città	urbem	pa	byen	cidade	ciudad	mji	stad	dref	town
+fyn	bøde	fijne	fine	fajna	mainam	fin	fein	uku	fíneáil	fine	postremo	pai	bot	multa	fina	faini	fin	dirwy	emihle
+sekere	vis	bepaalde	certain	certaj	tiyak	certain	sicher	kekahi	áirithe	certo	quaedam	etahi	viss	certo	cierto	baadhi ya	viss	penodol	ezithile
+vlieg	flyve	vliegen	fly	muŝo	lumipad	voler	fliegen	lele	eitilt	volare	fuge	rere	fly	voar	volar	kuruka	flyga	hedfan	ijeka manzi
+val	falde	vallen	fall	fali	mahulog	tomber	fallen	haule	titim	cadere	ceciderit	hinga	høst	cair	caer	kuanguka	falla	disgyn	awe
+lei	føre	leiden	lead	konduki	pangunahan	conduire	führen	alakai	luaidhe	portare	ducit	arahi	føre	conduzir	conducir	kusababisha	bly	arwain	kuholele
+geroep	råb	huilen	cry	krio	sigaw	cri	schrei	kahea ana	caoin	grido	clamor	karanga	gråte	grito	grito	kilio	rop	crio	khala
+donker	mørk	donker	dark	mallumo	dark	sombre	dunkel	pouli	dorcha	scuro	obscuro	pouri	mørk	escuro	oscuro	giza	mörk	tywyll	amnyama
+masjien	maskine	apparaat	machine	maŝino	makina	machine	maschine	maker	meaisín	macchina	apparatus	mihini	maskin	máquina	máquina	mashine	maskin	peiriant	umshini
+noot	notat	noot	note	noto	tala	note	note	palapala aie	nóta	nota	note	tuhipoka	notat	nota	nota	note	anteckning	nodyn	inothi
+wag	vente	wachten	wait	atendi	maghintay	patienter	warten	kali	fan	aspettare	exspecta	tatari	vente	esperar	espere	kusubiri	vänta	aros	ulinde
+plan	plan	plannen	plan	plano	plano	plan	plan	kuka	plean	piano	consilium	mahere	planen	plano	plan de	mpango	planen	cynllun	hlela
+figuur	figur	figuur	figure	cifero	pigura	figure	abbildung	huahelu	figiúr	figura	figura	ahua	figur	figura	figura	takwimu	figur	ffigur	ukulinganisa
+ster	stjerne	ster	star	stelo	star	étoile	stern	hoku	réalta	stella	stella	whetu	stjerners	estrela	estrella	nyota	stjärna	seren	ikhwezi
+box	kasse	doos	box	skatolo	kahon	boîte	kasten	pahu	bosca	scatola	box	pouaka	boks	caixa	caja	sanduku	låda	blwch	ibhokisi
+naamwoord	navneord	zelfstandig naamwoord	noun	substantivo	pangngalan	nom	nomen	noun	ainmfhocail	sostantivo	noun	noun	substantiv	substantivo	sustantivo	nomino	subst	enw	ibizo
+gebied	felt	veld	field	kampo	patlang	domaine	feld	mahinaʻai	réimse	campo	agro	mara	felt	campo	campo	shamba	fält	maes	ifusi
+res	hvile	rest	rest	resto	pahinga	reste	rest	maha	chuid eile	resto	reliqua	era atu	resten	resto	resto	wengine	resten	gorffwys	ukuphumula
+korrekte	korrekt	juist	correct	ĝusta	tama	correct	richtig	pololei	ceart	corretto	recte	tika	riktig	correto	correcta	sahihi	korrekt	gywir	lobenele
+staat	stand	in staat	able	povis	magagawa	capable	fähig	hiki	ann	in grado di	potest	taea	stand	capaz	capaz	uwezo	kunna	gallu	ekwazi
+pond	pund	pond	pound	funto	pound	livre	pfund	paona	punt	libbra	libra	pauna	pund	libra	libra	chupa	pund	punt	ipondo
+gedoen	gjort	gedaan	done	farita	tapos	terminé	getan	hana	rinneadh	done	factum	mea ai	gjort	done	hecho	kutenda	klar	da	wenziwe
+skoonheid	skønhed	schoonheid	beauty	beleco	beauty	beauté	schönheit	nani	áilleacht	bellezza	pulchritudo	ataahua	skjønnhet	beleza	belleza	uzuri	skönhet	harddwch	ubuhle
+ry	køretur	rijden	drive	disko	biyahe	entraînement	antriebs	a holo	tiomáint	unità	coegi	puku	kjøring	unidade	unidad	gari	enhet	gyriant	qhuba
+staan	stod	stond	stood	staris	nakatayo	résisté	stand	ku	sheas	sorgeva	stetit	tu	sto	se	destacado	alisimama	stod	sefyll	wema
+bevat	indeholder	bevatten	contain	enhavi	may	contenir	enthalten	no	go bhfuil	contenere	continent	kei roto i	inneholde	contêm	contener	vyenye	innehålla	cynnwys	aqukethe
+front	forside	voorzijde	front	antaŭa	front	avant	front	alo	tosaigh	frontale	ante	mua	foran	frente	delante	mbele	främre	blaen	phambili
+leer	undervise	leren	teach	instruos	magturo	enseigner	lehren	ao	mhúineadh	insegnare	docebit	e whakaako	undervise	ensinar	enseñar	kufundisha	undervisa	dysgu	sifundise
+week	uge	week	week	semajno	linggo	semaine	woche	pule	seachtain	settimana	week	wiki	uke	semana	semana	wiki	vecka	wythnos	ngesonto
+finale	endelig	finale	final	lasta	panghuling	finale	finale	hope loa	deiridh	finale	ultima	whakamutunga	endelig	finais	último	mwisho	slutlig	terfynol	sokugcina
+gegee	gav	gaf	gave	donis	ibinigay	donné	gab	haawi	thug	ha dato	deditque	i hoatu	ga	deu	dio	alitoa	gav	rhoddodd	wanikela
+groen	grøn	groen	green	verda	berde	vert	grün	ʻōlelo	glas	verde	viridem	matomato	grønn	verde	verde	kijani	grön	gwyrdd	oluhlaza
+o	oh	oh	oh	oh	oh	oh	oh	oh la	curfá	oh	o	oh	oh	ó	oh	oh	ack	oh	awu
+vinnige	hurtig	snel	quick	rapida	mabilis	rapide	schnell	poe ola	tapaidh	veloce	acutus	tere	rask	rápida	rápido	haraka	sammanfattning	cyflym	okusheshayo
+ontwikkel	udvikle	ontwikkelen	develop	evoluigi	bumuo	développer	entwickeln	hoʻomōhala	fhorbairt	sviluppare	evolvere	whakawhanake	utvikle	desenvolver	desarrollar	kuendeleza	utveckla	datblygu	ukuthuthukisa
+oseaan	havet	oceaan	ocean	oceano	karagatan	océan	ozean	moana	farraige	oceano	oceanus	moana	ocean	oceano	océano	bahari	ocean	cefnfor	ulwandle olukhulu
+warm	varm	warme	warm	varma	mainit-init	chaud	warme	pumehana	te	caldo	calidum	mahana	varm	quente	caliente	joto	varm	gynnes	afudumele
+gratis	fri	gratis	free	senpaga	libre	gratuit	kostenlos	like me	saor in aisce	gratuito	absque	noa	gratis	livre	libre	bure	fri	rhad ac am ddim	khulula
+minuut	minut	minuut	minute	minuto	minutong	minute	minute	minuke	nóiméad	minuto	minute	meneti	minutt	minuto	minuto	dakika	minut	munud	ngeminithi
+sterk	stærk	sterke	strong	forta	malakas	fort	stark	ikaika	láidir	forte	confortare	kaha	sterk	forte	fuerte	nguvu	stark	gryf	oqinile
+spesiale	særlige	speciaal	special	speciala	espesyal na	spécial	besondere	kūikawā	speisialta	speciale	peculiarem	motuhake	spesiell	especial	especial	maalum	speciell	arbennig	ekhethekile
+gedagte	sind	geest	mind	menso	isip	esprit	geist	manao	aigne	mente	animus	whakaaro	sinn	mente	mente	akili	sinne	meddwl	kwengqondo
+agter	bag	achter	behind	malantaŭ	sa likod ng	derrière	hinter	mahope	taobh thiar	dietro	retro	ki muri	bak	atrás	detrás	nyuma ya	bakom	y tu ôl i	ngemuva
+duidelik	klar	duidelijk	clear	evidenta	malinaw	clair	klar	maopopo	soiléir	chiaro	patet	mārama	klar	claro	claro	wazi	klar	glir	ecacile
+stert	hale	staart	tail	vosto	buntot	queue	schwanz	huelo	eireaball	coda	caudae	hiku	halen	cauda	cola	mkia	svans	gynffon	umsila
+produseer	producere	produceren	produce	produkti	gumawa	produire	produzieren	paka	ar aird	produrre	producere	te whakaputa	produsere	produzir	produce	kuzalisha	producera	cynhyrchu	khiqiza
+trouens	kendsgerning	feit	fact	fakto	katunayan	fait	tatsache	mea	go deimhin	fatto	eo	meka	faktisk	fato	hecho	ukweli	faktum	ffaith	empeleni
+ruimte	rum	ruimte	space	spaco	puwang	espace	raum	makahiki	spás	spazio	locus	wāhi	plass	espaço	espacio	nafasi	space	gofod	isikhala
+gehoor	hørt	gehoord	heard	aŭdis	narinig	entendu	gehört	lohe	éisteacht	sentito	audivit	rongo	hørt	ouvido	oído	habari	hört	clywed	wezwa
+beste	bedst	best	best	bona	pinakamahusay	meilleur	beste	pono	fearr	migliore	optimum	pai	beste	melhor	mejor	bora	bäst	gorau	umhlabeleli
+uur	time	uur	hour	horo	oras	heure	stunde	hola	uair an chloig	ora	hora	haora	time	horas	horas	saa	timme	awr	ngehora
+beter	bedre	beter	better	pli	mas mabuti	mieux	besser	maikai	níos fearr	meglio	melius	pai	bedre	melhor	mejor	bora	bättre	gwell	kangcono
+ware	sand	ware	true	vera	totoo	vrai	wahr	oiaio	fíor	vero	verum	pono	sant	verdade	verdadero	kweli	sant	yn wir	kuyiqiniso
+tydens	i løbet af	tijdens	during	dum	sa panahon ng	pendant	während	iloko o	le linn	durante	per	i roto i	under	durante	durante	wakati wa	under	yn ystod	ngesikhatsi
+honderd	hundrede	honderd	hundred	cent	daang	cent	hundert	haneri	céad	cento	centum	rau	hundre	cem	cien	mia	hundra	cant	angamakhulu
+vyf	fem	vijf	five	kvin	lima	cinq	fünf	ʻelima	cúig	cinque	quinque	e rima	fem	cinco	cinco	tano	fem	pump	ezinhlanu
+onthou	huske	onthouden	remember	memori	tandaan	rappeler	merken	no	cuimhnigh	ricordare	memores	mahara	huske	lembre-se	recordar	kumbuka	minnas	cofio	ukhumbule
+stap	trin	stap	step	paŝo	hakbang	étape	schritt	ʻanuʻu	céim	passo	step	taahiraa	trinn	passo	paso	hatua	steg	cam	isinyathelo
+vroeë	tidligt	vroeg	early	frua	maagang	tôt	früh	koke	go luath	presto	mane	wawe	tidlig	cedo	temprana	mapema	tidig	gynnar	zakuqala
+hou	holde	houden	hold	teni	matagalan	tenir	halten	paa	shealbhú	tenere	tenent	mau	holde	segurar	mantenga	kushikilia	håll	dal	ubambe
+west	vest	west	west	okcidenta	kanluran	ouest	westen	komohana	siar	ovest	occasu	hauauru	vest	oeste	oeste	magharibi	väster	orllewin	ngasentshonalanga
+grond	jorden	grond	ground	tero	lupa	sol	boden	honua	talamh	terra	terra	whenua	bakken	solo	suelo	ardhi	jord	ddaear	emhlabathini
+belangstelling	interesse	rente	interest	intereson	interes	intérêt	interesse	panee	ús	interesse	interest	pānga	interesse	juros	interés	maslahi	intresse	llog	isithakazelo
+bereik	nå	bereiken	reach	alveni	maabot	atteindre	erreichen	hiki	a bhaint amach	raggiungere	attingere	tae	nå	alcançar	llegar	kufikia	nå	cyrraedd	afinyelele
+vinnig	hurtigt	snel	fast	rapida	mabilis	rapide	schnell	hookeai	tapa	veloce	ieiunium	nohopuku	rask	rápido	rápido	haraka	snabb	cyflym	bambelela
+werkwoord	verbum	werkwoord	verb	verbo	pandiwa	verbe	verbum	verb	briathar	verbo	verbo	verb	verb	verbo	verbo	kitenzi	verb	berf	sento
+sing	synge	zingen	sing	kanti	kantahin	chanter	singen	mele	chanadh	cantare	cantabo	waiata	synge	cantar	cantar	kuimba	sjunger	canu	sihlabelele
+luister	lytte	luisteren	listen	aŭskulti	makinig	écouter	hören	hoolohe	éisteacht	ascoltare	audite	whakarongo	lytte	ouça	escuchar	kusikiliza	lyssna	gwrando	ulalele
+ses	seks	zes	six	ses	anim	six	sechs	ʻanuʻu	sé	sei	sex	e ono	seks	seis	seis	sita	sex	chwech	eziyisithupha
+tafel	tabel	tafel	table	tablo	talahanayan	table	tabelle	papaʻaina	tábla	tavolo	mensamque	tepu	bord	mesa	mesa	meza	tabell	tabl	ithebula
+reis	rejser	reizen	travel	vojaĝado	paglalakbay	voyage	reise	hele	taisteal	viaggi	peregrinationes	haere	reise	viagens	viajes	usafiri	resor	teithio	hamba amazwe
+minder	mindre	minder	less	malpli	mas	moins	weniger	emi	níos lú	meno	minor	iti iho	mindre	menos	menos	chini ya	mindre	llai	esingaphansi
+oggend	formiddag	ochtend	morning	mateno	umaga	matin	morgen	kakahiaka	maidin	mattina	mane	ata	morgen	manhã	mañana	asubuhi	morgon	bore	ekuseni
+tien	ti	tien	ten	dek	sampu	dix	zehn	ʻumi	deich	dieci	decem	tekau	ti	dez	diez	kumi	tio	deg	eziyishumi
+eenvoudige	simpelt	eenvoudig	simple	simpla	simple	simple	einfach	mea	simplí	semplice	simplex	simple	enkel	simples	sencilla	rahisi	enkel	syml	elula
+verskeie	flere	verscheidene	several	pluraj	ilang	plusieurs	mehrere	mau	roinnt	alcuni	plures	e rave rahi	flere	vários	varios	kadhaa	flera	nifer	eziningana
+vokaal	vokal	klinker	vowel	vokalo	patinig	voyelle	vokal	vowel	guta	vocale	vocali	oropuare	vokal	vogal	vocal	vowel	vokal	llafariad	unkamisa
+teenoor	mod	in de richting van	toward	rilate	patungo	vers	auf	ma	i dtreo	verso	in	ki	mot	direção	hacia	kuelekea	mot	tuag	bubheke
+oorlog	krig	oorlog	war	milito	digmaan	guerre	krieg	kaua	cogadh	guerra	bellum	te whawhai	krig	guerra	guerra	vita	krig	rhyfel	ukulwa
+lê	lægge	leggen	lay	kuŝis	mag-ipon	poser	legen	waiho	leagan	porre	dormivitque	takoto	lå	lay	sentar	kuweka	låg	lleyg	walala
+teen	mod	tegen	against	kontraŭ	laban	contre	gegen	ku	i gcoinne	contro	contra	ki	mot	contra	contra	dhidi ya	mot	erbyn	ngokumelene
+patroon	mønster	patroon	pattern	ŝablono	pattern	modèle	muster	kumu	patrún	modello	exemplar	tauira	mønster	padrão	patrón	muundo	mönster	patrwm	iphethini
+stadig	langsom	langzaam	slow	malrapida	mabagal	lent	schleppend	kali	mall	lento	tardus	puhoi	langsom	lento	lenta	polepole	långsam	araf	wephuza
+sentrum	centrum	centrum	center	centro	center	centre	zentrum	kikowaena	ionad	centro	centrum	te pokapū	senter	centro	centro	kituo cha	centrum	canolfan	isikhungo
+liefde	elsker	liefde	love	love	pag-ibig	amour	liebe	aloha	grá	amore	amant	aroha	elsker	amo	amar	upendo	kärlek	wrth eu bodd	athande
+persoon	person	persoon	person	persono	tao	personne	person	kanaka	duine	persona	aliquis	tangata	personer	pessoa	persona	mtu	personen	person	umuntu
+geld	penge	geld	money	monon	pera	argent	geld	kala	airgead	soldi	pecuniam	moni	penger	dinheiro	dinero	fedha	pengar	arian	imali
+dien	tjene	dienen	serve	servas	maghatid	servir	dienen	malama	freastal	servire	serviant	e mahi	tjene	servir	servir	kutumika	tjäna	gwasanaethu	ukukhonza
+verskyn	synes	verschijnen	appear	aperi	lumitaw	apparaître	erscheinen	hele mai	le feiceáil	apparire	appareant	puta	vises	aparecer	aparecerá	itaonekana	synas	ymddangos	avele
+pad	vej	weg	road	vojo	kalsada	route	straße	alanui	bóthar	strada	via	te ara	vei	estrada	carretera	barabara	väg	ffordd	umgwaqo
+kaart	kort	kaart	map	mapo	mapa	carte	karte	palapala ʻāina	léarscáil	mappa	tabula	map	kartet	mapa	mapa	ramani	karta	fap	ibalazwe
+reën	regn	regen	rain	pluvo	ulan	pluie	regen	ka ua	báisteach	pioggia	pluviae	ua	regn	chuva	lluvia	mvua	regn	glaw	nemvula
+reël	regel	regel	rule	regulo	panuntunan	règle	regel	rula	riail	regola	imperium	tikanga	regelen	regra	regla	utawala	regel	rheol	ukubusa
+regeer	regere	regeren	govern	regi	namamahala sa	gouverner	regieren	hoomalu	rialaíonn	governare	regunt	faatere i	regulerer	governar	gobernar	serikali	regera	llywodraethu	phatha
+trek	træk	trek	pull	tiri	hilahin	tirer	ziehen	huki	tarraingt	tirare	attrahendam	hutia	trekke	puxe	halar	kuvuta	dra	tynnu	donsa
+koue	kold	koude	cold	malvarma	malamig	froid	kälte	anu	fuar	freddo	frigus	matao	kaldt	frio	frío	baridi	förkylning	oer	ezibandayo
+kennisgewing	varsel	kennisgeving	notice	anonco	notice	avis	hinweis	hoike	fógra	avviso	observate	pānui	varsel	aviso	aviso	ilani	meddelande	rhybudd	isaziso
+stem	stemme	stem	voice	voĉo	boses	voix	stimme	leo	guth	voce	vox	reo	stemme	voz	voz	sauti	röst	llais	ngezwi
+energie	energi	energie	energy	energion	enerhiya	énergie	energie	ikehu	fuinnimh	energia	navitas	pūngao	energi	energia	energía	nishati	energi	ynni	amandla
+jag	jagt	hunt	hunt	ĉasi	hunt	chasse	jagd	i hoʻohālua	fiach	caccia	hunt	whaiwhai	jakt	caça	caza	kuwinda	jakt	helfa	ukuhlasela
+waarskynlike	sandsynlig	waarschijnlijk	probable	probabla	malamang	probable	wahrscheinlich	paha	is dócha	probabile	probabile	pea	sannsynlig	provável	probable	kinachowezekana	trolig	tebygol	kungenzeka
+bed	seng	bedden	bed	lito	kama	lit	bett	moe	leaba	letto	cubili	moenga	seng	cama	cama	kitanda	bädd	gwely	embhedeni
+broer	bror	broer	brother	fraton	kapatid na lalaki	frère	bruder	kaikuaʻana kaikaina	deartháir	fratello	frater	teina	bror	irmão	hermano	ndugu	bror	brawd	umfowabo
+eier	æg	ei	egg	ovo	itlog	œuf	ei	hua	ubh	uovo	ovum	hua	egg	ovo	huevo	yai	ägg	wy	iqanda
+rit	tur	rit	ride	ride	pagsakay	tour	fahrt	no lilo	marcaíochta	giro	ride	tere	ride	passeio	paseo	safari	ritt	taith	gibela
+sel	celle	cel	cell	ĉelo	cell	cellule	zelle	aeea	cill	cella	cell	pūtau	celle	celular	celular	kiini	cell	cell	iseli
+glo	tro	geloven	believe	kredas	maniwala	croire	glauben	manaoio	creidim	credere	credere	te whakapono	tror	acreditar	creer	amini	tro	yn credu	bakholwe
+miskien	måske	misschien	perhaps	eble	marahil	peut-être	vielleicht	paha	b’fhéidir	forse	forsan	pea	kanskje	talvez	quizás	labda	kanske	efallai	mhlawumbe
+kies	pick	pick	pick	pick	pumili	choisir	pflücken	e koho i	pioc	scegliere	colligunt	tangohia	plukke	escolher	recoger	kuchukua	plocka	ddewis	vuna
+skielike	pludselige	plotseling	sudden	subita	walang anu-ano	soudain	plötzlich	ulia	tobann	improvviso	repentino	ohorere	plutselige	súbita	repentina	ghafla	plötslig	sydyn	engazelelwe
+tel	tælle	tellen	count	kalkuli	bilangin	compter	zählen	helu	comhaireamh	contare	numerabitis	tatau	teller	contar	contar	kuhesabu	räkna	cyfrif	ukubala
+vierkante	firkantet	square	square	kvadrata	parisukat	carré	platz	pāhoʻonui	cearnach	piazza	quadratum	tapawha	square	quadrado	plaza	mraba	kvadrat	sgwâr	igceke
+rede	årsag	reden	reason	kialo	dahilan	raison	grund	kumu	chúis	motivo	ideo	take	grunnen	razão	razón	sababu	anledningen	rheswm	isizathu
+lengte	længde	lengte	length	longo	haba	longueur	dauer	loa	fad	lunghezza	longitudinis	roa	lengde	comprimento	longitud	urefu	längd	hyd	ubude
+verteenwoordig	repræsentere	vertegenwoordigen	represent	reprezentas	katawanin	représenter	vertreten	ho i	ionadaíocht a dhéanamh	rappresentare	repraesentant	tohu	representerer	representar	representar	kuwakilisha	representerar	cynrychioli	bamele
+kuns	kunst	kunst	art	arto	sining	art	kunst	oe	ealaín	arte	art	koe	kunst	arte	arte	sanaa	teknikområdet	celf	yobuciko
+onderwerp	emne	onderwerp	subject	subjekto	paksa	sujet	thema	kumuhana	ábhar	soggetto	subiectum	i raro	lagt	assunto	sujeto	somo	ämne	pwnc	isihloko
+streek	regionen	regio	region	regiono	rehiyon	région	region	māhele	réigiún	regione	regionem	rohe	region	região	región	kanda	region	rhanbarth	isifunda
+grootte	størrelse	grootte	size	grandeco	laki	taille	größe	ka nui	méid	dimensione	amplitudo	rahi	størrelse	tamanho	tamaño	ukubwa	storlek	maint y	usayizi
+wissel	variere	variëren	vary	varios	mag-iba	varier	variieren	lauwili	athrú	variare	variant	rerekē	variere	variar	variar	kutofautiana	varierar	amrywio	ziyehluka
+vestig	bosætte	vestigen	settle	starigi	tumira	régler	regeln	hoonoho au	réiteach	risolvere	habita	whakatau	bosette	resolver	resolver	kuishi	sedimentera	setlo	hlela
+praat	tale	spreken	speak	paroli	magsalita	parler	sprechen	olelo	labhairt	parlare	dicere	korero	snakke	falar	hablar	kusema	tala	siarad	ukhulume
+gewig	vægt	gewicht	weight	pezo	timbang	poids	gewicht	kaumaha	meáchan	peso	pondus	taimaha	vekt	peso	peso	uzito	vikt	pwysau	isisindo
+algemene	generelt	algemeen	general	ĝenerala	pangkalahatan	général	allgemein	nui	ginearálta	generale	generalis	whānui	generell	geral	general	ujumla	allmän	gyffredinol	jikelele
+ys	is	ijs	ice	glacio	yelo	glace	eis	hau	oighear	ghiaccio	glaciem	te huka	is	gelo	hielo	barafu	is	iâ	iqhwa
+saak	stof	aangelegenheid	matter	afero	bagay	question	materie	mea	ábhar	materia	materia	mea	saken	assunto	materia	jambo	materia	mater	udaba
+sirkel	cirkel	cirkel	circle	rondo	lupon	cercle	kreis	kaiapili	ciorcal	cerchio	circulus	porowhita	sirkel	círculo	círculo	mzunguko	cirkel	cylch	jikeleza
+paar	pair	paar	pair	paro	pares	paire	paar	mau	péire	coppia	par	takirua	pair	par	par	jozi	par	pâr	okubili
+sluit	omfatter	omvatten	include	inkluzivi	isama	inclure	umfassen	nā	i measc na	includere	comprehendo	ngā	inkludere	incluir	incluir	ni pamoja na	inkluderar	cynnwys	zihlanganisa
+verdeel	kløft	kloof	divide	dividi	hatiin	fracture	kluft	māhele	deighilt	divide	divide	wehenga	dividere	dividir	brecha	mgawanyiko	divide	rhaniad	ahlukanisa
+lettergreep	stavelse	lettergreep	syllable	silabo	pantig	syllabe	silbe	syllable	siolla	sillaba	syllabae	haukūoro	stavelse	sílaba	sílaba	silabi	stavelse	sillaf	uhlamvu
+gevoel	filt	vilt	felt	sentis	pyeltro	feutre	filz	manaʻo	bhraith	feltro	sensi	ua	følte	sentido	sentido	waliona	kände	teimlwyd	wazizwa
+grand	store	grand	grand	grandioza	malaki at maganda	grandiose	groß	luna nui	mhór	grande	magnificum	rahi	grand	grande	gran	kuu	stors	mawreddog	omkhulu
+bal	kugle	bal	ball	pilko	ball	balle	kugel	poepoe	liathróid	palla	pila	pōro i	ballen	bola	bola	mpira	boll	pêl	ngebhola
+nog	endnu	nog	yet	ankoraŭ	pa	encore	noch	aka	fós	ancora	sed	ano	ennå	ainda	aún	bado	ännu	eto	nokho
+golf	bølge	wave	wave	ondo	alon	vague	welle	hawewe	tonn	onda	unda	poipoi	wave	onda	ola	wimbi	våg	don	qhweba
+drop	drop	laten vallen	drop	faligi	drop	tomber	fallen	papa	titim	cadere	concrescunt	maturuturu	slipp	cair	caer	kuacha	släpp	gollwng	yokwehlisela
+hart	hjerte	hart	heart	koro	puso	cœur	herz	puʻuwai	croí	cuore	cor	ngakau	hjerte	coração	corazón	moyo	hjärta	galon	inhliziyo
+is	am	ben	am	estas	am	h	uhr	no	rn	am	sum	ahau	am	am	am	ni	jag	wyf	ngiyindlela
+huidige	til stede	aanwezig	present	ĉeestanta	kasalukuyan	présent	vorhanden	keia	i láthair	presente	praesens	reira	stede	presente	presente	sasa	föreliggande	bresennol	okwamanje
+swaar	tung	zwaar	heavy	peza	mabigat	lourd	schwer	kaumaha	trom	pesante	magna	taimaha	tung	pesado	pesada	nzito	tung	trwm	esindayo
+dans	dans	dans	dance	danco	sayaw	danse	tanz	hula	rince	danza	chorea	kanikani	dans	dança	danza	ngoma	dans	dawns	dance
+enjin	motor	motor	engine	motoro	engine	moteur	motor	engine	inneall	motore	engine	pūkaha	motor	motor	motor	injini	motor	peiriant	injini
+posisie	stilling	positie	position	pozicion	posisyon	position	position	wahi	seasamh	posizione	locus	tūnga	stilling	posição	posición	nafasi	ställning	sefyllfa	isikhundla
+arm	armen	arm	arm	brako	braso	bras	arm	lima	lámh	braccio	brachium	ringa	arm	braço	brazo	mkono	beväpnar	braich	ingalo
+wye	bred	breed	wide	larĝa	malawak	large	breit	ka laula	ar fud an	ampio	wide	whānui	wide	ampla	amplio	pana	bred	eang	ububanzi
+vaar	sejl	zeil	sail	velo	layag	voile	segel	holo	seol	vela	vela	rere	seil	vela	vela	meli	segel	hwylio	useyili
+materiaal	materiale	materiaal	material	materialon	materyal	matériel	material	mea	ábhar	materiale	material	rauemi	material	material de	materiales	vifaa	materialet	deunydd	material
+breuk	fraktion	fractie	fraction	frakcio	maliit na bahagi	fraction	fraktion	mahele	chodán	frazione	fractionem	hautanga	brøkdel	fração	fracción	sehemu	fraktion	ffracsiwn	ingxenyenamba
+bos	skov	bos	forest	arbaro	gubat	forêt	wald	nahele	foraoise	foresta	saltus	ngahere	skog	floresta	bosque	msitu	skog	goedwig	ihlathi
+sit	sidde	zitten	sit	sidiĝi	umupo	s’asseoir	sitzen	noho	suí	sedersi	sedebitis	noho	sitte	sentar-se	sentarse	kukaa	sitta	eistedd	ahlale
+ras	løb	ras	race	raso	lahi	course	rennen	lāhui	cine	gara	generis	iwi	veddeløp	corrida	carrera	mbio	ras	hil	uhlanga
+venster	vindue	venster	window	fenestro	window	fenêtre	fenster	puka makani	fuinneog	finestra	fenestram	matapihi	vindu	janela	ventana	dirisha	fönster	ffenestr	iwindi
+winkel	butik	winkel	store	vendejo	tindahan	magasin	speicher	hale kūʻai	siopa	negozio	store	toa	butikken	loja	tienda	kuhifadhi	lagra	siop	esitolo
+somer	sommer	zomer	summer	someron	tag-araw	été	sommer	ke kau	samhradh	estate	aestas	raumati	sommer	verão	verano	majira ya joto	sommar	haf	ehlobo
+trein	tog	trein	train	trajno	tren	train	zug	nalowale	traein	treno	erant	tereina	tog	trem	tren	treni	tåg	trên	isitimela
+slaap	søvn	slaap	sleep	dormo	tulog	sommeil	schlaf	hiamoe	codlata	sonno	somnum	moe	søvn	sono	sueño	usingizi	sömn	cysgu	sokulala
+bewys	bevise	bewijzen	prove	elprovi	patunayan	prouver	beweisen	hoao	chruthú	dimostrare	probant	hei whakamatautau	bevise	provar	demostrar	kuthibitisha	bevisa	profi	afakazele
+eensaam	enlig	eenzame	lone	lone	kaisa-isa	seul	einsam	lone	aonaracha	solitario	agitur	ana’e	lone	solitário	solitario	ya lone	ensam	eich pen eich hun	oyedwa waba
+been	ben	been	leg	kruro	binti	jambe	bein	wawae	cos	gamba	leg	waewae	leg	perna	pierna	mguu	ben	goes	emlenzeni
+oefening	motion	oefening	exercise	ekzerco	pagsasanay	exercice	übung	me ka	a fheidhmiú	esercizio	exercitium	mahi	trening	exercício	ejercicio	zoezi	övning	ymarfer corff	umsebenzi
+muur	væg	muur	wall	muro	pader	mur	wand	pa	balla	muro	murum	taiepa	veggen	parede	pared	ukuta	vägg	wal	udonga
+vangs	fangst	vangst	catch	catch	catch	capture	fang	hoopahele ae la i	ghabháil	prendere	captiones	hao	fangst	captura	capturas	kukamata	fångst	dal	bamba
+berg	monteringstid	berg	mount	monto	may kabit	monture	berg	mauna	mount	monte	montem	maunga	mount	mount	monte	mlima	fäste	mynydd	khweza
+wens	ønske	wensen	wish	deziri	nais	souhaiter	wünschen	makemake	is mian	desiderio	volunt	hiahia	ønsker	desejo	desear	unataka	vill	dymuno	ufisa
+lug	himmel	hemel	sky	ĉielo	langit	ciel	himmel	lani	spéir	cielo	caelum	rangi	himmel	céu	cielo	anga	himmelsblå	awyr	isibhakabhaka
+direksie	bord	boord	board	surŝipe	board	conseil	board	papa	bord	pensione	tabulam	poari	brett	conselho	bordo	bodi	ombord	bwrdd	ebhodini
+vreugde	glæde	vreugde	joy	ĝojo	kagalakan	joie	freude	olioli	áthas	gioia	gaudium	hari	glede	alegria	alegría	furaha	glädje	llawenydd	injabulo
+winter	vinter	de winter	winter	vintro	taglamig	hiver	winter	hooilo	gheimhridh	inverno	winter	hotoke	vinter	inverno	invierno	majira ya baridi	vinter	gaeaf	ubusika
+sat	lør	zat	sat	sat	sab	sat	sa	pōʻaono	shuigh	sat	sat	rahoroi	sat	sat	satélite	ameketi	satellit	sat	wahlala
+geskryf	skriftlig	geschreven	written	skribita	nakasulat	écrit	geschrieben	kakauia	scríofa	scritto	scriptum	i tuhituhia	skrevet	escrito	escrito	imeandikwa	skriven	ysgrifenedig	ebhaliwe
+wilde	vild	wild	wild	sovaĝa	ligaw	sauvage	wilden	hihiu	fiáin	selvaggio	fera	mohoao	vill	selvagem	salvaje	pori	vild	gwyllt	sasendle
+instrument	redskab	instrument	instrument	instrumento	instrumento	instrument	instrument	hana	ionstraim	strumento	instrumentum	taputapu	instrument	instrumento	instrumento	chombo	instrumentet	offeryn	instrument
+gehou	holdt	gehouden	kept	konservis	pinananatiling	conservé	gehalten	malama	choimeád	tenere	custodivit	pupuri	holdt	guardado	guardado	naendelea	hålls	cadw	igcinwe
+glas	glas	glas	glass	vitro	salamin	verre	glas	aniani	gloine	vetro	vitro	karaihe	glass	vidro	vidrio	kioo	glas	gwydr	ingilazi
+gras	græs	gras	grass	herbo	damo	herbe	gras	ka mauu	féar	erba	fœnum	tarutaru	gress	grama	hierba	nyasi	gräs	glaswellt	utshani
+koei	ko	koe	cow	bovino	baka	vache	kuh	bipi	bó	mucca	vitulus	kau	ku	vaca	vaca	ng’ombe	ko	buwch	eyensikazi
+werk	job	werk	job	laboro	trabaho	emploi	arbeit	oihana	post	lavoro	officium	mahi	jobb	trabalho	trabajo	kazi	jobb	swydd	umsebenzi
+rand	kant	edge	edge	eĝo	gilid	bord	rand	lihi	imeall	bordo	ore	mata	kanten	borda	borde	makali	kanten	ymyl	emaphethelweni
+teken	tegn	teken	sign	signo	lagdaan	signe	zeichen	hoailona	comhartha	segno	signum	tohu	skilt	sinal	signo	ishara	tecken	arwydd	isibonakaliso
+besoek	besøg	bezoek	visit	vizito	pagbisita	visite	besuch	makaikai	cuairt a thabhairt ar	visita	visit	haerenga	besøk	visita	visita	ziara	besök	ymweliad	ukuvakasha
+verlede	fortid	verleden	past	estinteco	nakalipas	passé	vergangenheit	i hala iho nei	am atá thart	passato	past	mua	fortid	passado	pasado	siku za nyuma	förbi	gorffennol	esidlule
+sagte	blød	zachte	soft	mola	malambot	doux	weich	pahee	bog	morbido	molli	ngohengohe	myk	suave	suave	laini	mjuk	meddal	esithambile
+pret	sjov	lol	fun	amuza	magsaya	amusement	spaß	leʻaleʻa	spraoi	divertimento	fun	pārekareka	moro	diversão	diversión	furaha	kul	hwyl	kumnandi
+helder	lyse	heldere	bright	brila	maliwanag	clair	hell	ao alohilohi i	geal	luminoso	splendidum	kanapa	lyse	brilhante	brillante	mkali	ljust	llachar	egqamile
+gas	gas	gas	gas	gaso	gas	gaz	gases	kinoea	gáis	gas	vestibulum	hau	gass	gás	gas	gesi	gas	nwy	negesi
+weer	vejr	weer	weather	vetero	lagay ng panahon	temps	wetter	map	aimsir	tempo	tempestas	rangi	vær	tempo	tiempo	hali ya hewa	väder	tywydd	sezulu
+maand	måned	maand	month	monato	buwan	mois	monat	mahina	mí	mese	mense	marama	måned	mês	mes	mwezi	månad	mis	ngenyanga
+miljoen	millioner	miljoen	million	miliono	milyon	million	million	miliona	milliún	milione	million	miriona	millioner	milhão	millones	milioni	miljoner	miliwn	isigidi
+dra	bære	dragen	bear	elporti	madala	porter	tragen	lawe	iompróidh	sopportare	ferre	e mau	bære	suportar	soportar	kubeba	bära	arth	athwale
+afwerking	slut	afwerking	finish	fini	tapusin	finition	finish	hoʻopau	chríochnú	finitura	peroratum	whakaoti	ferdig	acabamento	acabado	kumaliza	yta	gorffen	sekugcineni
+gelukkig	glad	happy	happy	feliĉa	masaya	heureux	glücklich	hauʻoli	sásta	felice	beati	hari	lykkelig	feliz	feliz	furaha	lycklig	hapus	ojabulayo
+hoop	håber	hopen	hope	atendi	umaasa	espoir	hoffen	manaolana	tá súil	speranza	spero	te ti’aturi nei	håper	esperamos	esperanza	matumaini	hoppas	gobeithio	ngethemba
+blom	blomst	bloem	flower	floro	bulaklak	fleur	blume	pua	bláth	fiore	flos	puawai	blomst	flor	flor	ua	blomma	blodyn	mbali
+beklee	iklæde	kleden	clothe	vestu	damitan	vêtir	kleiden	hoaahu	clothe	vestire	induere	e kakahu ana io	ikle	vestir	vestir	nguo	kläder	dilladu	wembathise
+vreemde	mærkelig	vreemd	strange	stranga	kakaiba	étrange	seltsam	malihini	aisteach	strano	mirum	ke	merkelig	estranho	extraño	ajabu	främmande	rhyfedd	ongaziwa
+weg	væk	weg	gone	iritaj	nawala	disparu	vorbei	hana party	imithe	gone	abiit	riro	borte	gone	se ha ido	kuondoka	borta	wedi mynd	esehambile
+handel	handel	handel	trade	komerco	kalakalan	commerce	handel	kuai	trádáil	commercio	commercia	hokohoko	handel	comércio	comercio	biashara	handel	masnach	ezohwebo
+melodie	melodi	melodie	melody	melodio	melody	mélodie	melodie	e hoʻonui i	séis	melodia	melodiam	e waiata ana	melodi	melodia	melodía	kuimba	melodi	alaw	ihubo
+reis	tur	reis	trip	vojaĝo	paglalakbay	voyage	reise	huakai	turas	viaggio	trinus	haerenga	tur	viagem	viaje	safari	resa	daith	uhambo
+kantoor	kontor	kantoor	office	oficejo	opisina	bureau	büro	oihana	oifig	ufficio	officium	tari	kontor	escritório	oficina	ofisi	kontor	swyddfa	ihhovisi
+ontvang	modtage	ontvangen	receive	ricevos	tumanggap	recevoir	empfangen	loaa	fháil	ricevere	accipiet	ia farii i	motta	receber	recibir	kupokea	motta	derbyn	thola
+ry	række	rij	row	vico	hilera	rangée	reihe	lalani	as a chéile	fila	row	rarangi	rad	linha	fila	mstari	rad	rhes	irowu
+mond	mund	mond	mouth	buŝo	bibig	bouche	mund	waha	béal	bocca	os	mangai	munn	boca	boca	kinywa	mun	geg	umlomo
+presiese	eksakt	exacte	exact	ĝusta	eksaktong	exact	genau	mau	cruinn	esatto	exactam	tangohia	eksakte	exata	exacta	halisi	exakta	union	oluqondile
+simbool	symbolet	symbool	symbol	simbolo	simbolo	symbole	zeichen	hōʻailona	siombail	simbolo	signum	tohu	symbol	símbolo	símbolo	ishara	symbol	arwydd	uphawu
+sterf	dø	sterven	die	morti	mamatay	mourir	sterben	make	bás	morire	mortuus	mate	dø	morrer	morir	kufa	dö	marw	fa
+minste	mindst	minste	least	almenaŭ	hindi bababa sa	moins	am wenigsten	ka liʻiliʻi loa	ar a laghad	meno	minimus	te iti rawa	minst	menos	menos	angalau	minst	lleiaf	okungenani
+moeilikheid	besvær	problemen	trouble	malfelicxo	pag-	difficulté	ärger	pilikia	dtrioblóid	difficoltà	angustia	raruraru	trøbbel	dificuldade	problema	shida	besvär	trafferth	enkingeni
+skree	råbe	schreeuw	shout	krio	sigaw	cri	schrei	hooho	shout	shout	jubila	hamama	rop	grito	grito	kelele	rop	gweiddi	memeza
+behalwe	undtagen	behalve	except	krom	maliban sa	sauf	außer	koe nae	ach amháin	tranne	nisi	ki te kahore	bortsett fra	exceto	excepto	ila	utom	ac eithrio	kuphela
+geskryf	skrev	schreef	wrote	skribis	isinulat ni	écrit	schrieb	kakau iho la	scríobh	ha scritto	scripsit	i tuhituhi	skrev	escreveu	escribió	aliandika	skrev	ysgrifennodd	wabhala
+saad	frø	zaad	seed	semoj	buto	semence	samen	hua	síol	seme	semen	uri	seedet	semente	semilla	mbegu	frö	hadau	inzalo
+toon	tone	toon	tone	tono	tono	ton	ton	leo	ton	tono	tone	reo	tonen	tom	tono	tone	ton	tôn	umbala
+sluit	slutte	toetreden tot	join	aliĝi	sumali	joindre	beitreten	hui	páirt a	aderire	iungere	amui atu	bli med	juntar-se	unirse	kujiunga na	ansluta	ymuno	ukujoyina
+stel	tyder	suggereren	suggest	sugesti	iminumungkahi	suggérer	vorschlagen	paipai	fios	suggerire	suadeant	whakaaro	foreslå	sugerir	sugerir	kupendekeza	föreslår	awgrymu	basikisela
+skoon	ren	schoon	clean	purigi	malinis	propre	sauber	maemae	glan	pulito	mundi	ma	ren	limpo	limpia	safi	ren	lân	zihlanzekile
+break	pause	break	break	paŭzo	bakasyon	pause	pause	ʻoluʻolu o	sos	pausa	aspiret	break	pause	pausa	rotura	mapumziko	paus	egwyl	ukwephuka
+lady	dame	dame	lady	lady	ginang ng bansa	dame	dame	wahine	bhean	signora	dominae	wahine	damen	senhora	dama	mwanamke	damen	wraig	inenekazi
+agterplaas	værftet	yard	yard	jardo	bakuran	cour	hof	iwilei	clós	cantiere	navale	iari	tunet	quintal	patio	yadi	gård	iard	egcekeni
+styg	stige	stijgen	rise	supreniri	tumaas	augmenter	steigen	ala	ardú	salire	surgere	whakatika	stige	subir	aumentando	kupanda	stiga	codi	sukuma
+slegte	dårlig	slecht	bad	malbona	masama	mauvais	schlecht	ino	dona	male	malum	kino	dårlig	ruim	mal	mbaya	dålig	drwg	okubi
+blow	slag	klap	blow	baton	pumutok	coup	schlag	puupuu	buille	colpo	ictus	pupuhi	slag	golpe	golpe	pigo	smäll	ergyd	igalelo
+olie	olie	olie	oil	petrolo	langis	huile	öl	aila	ola	olio	olei	hinu	olje	óleo	aceite	mafuta	olja	olew	uwoyela
+bloed	blod	bloed	blood	sango	dugo	sang	blut	ke koko	fuil	sangue	sanguis	toto	blod	sangue	sangre	damu	blod	gwaed	negazi
+raak	røre	aanraken	touch	tuŝi	kalabitin	toucher	berühren	hoopa aku	teagmháil	toccare	tangerent	pa ki	røre	tocar	tocar	kugusa	rör	cyffwrdd	uthinte
+gegroei	voksede	groeide	grew	kreskis	lumago	a augmenté	wuchs	ulu	d’fhás	è cresciuto	crevit	tupu	vokste	cresceu	creció	ilikua	växte	tyfodd	lakhula
+persent	procent	procent	cent	cendo	sentimo	cent	cent	keneta	cent	cent	cent	ōrau	prosent	cento	ciento	cent	cent	cant	angu
+meng	mix	mengen	mix	miksi	paghaluin	mélanger	mischen	hui	meascán	mescolare	miscere	uru	bland	misturar	mezclar	kuchanganya	blanda	cymysgu	xuba
+span	hold	team	team	teamo	koponan	équipe	mannschaft	hui	fhoireann	team	bigas	rōpū	teamet	equipe	equipo	timu	lag	tîm	ithimba
+draad	ledning	draad	wire	drato	wire	fil	draht	uea	sreang	filo	wire	waea	ledning	fio	alambre	waya	tråd	gwifren	ucingo
+koste	omkostninger	kosten	cost	kosto	gastos	coût	kosten	kāki	costas	costo	cost	utu	kostnader	custo	costo	gharama	kostnad	chost	izindleko
+verloor	tabt	verloren	lost	perdita	nawala	perdu	verloren	nalowale	caillte	perso	perierat	ngaro	tapt	perdido	perdido	waliopotea	förlorat	gollwyd	walahlekelwa
+bruin	brun	bruin	brown	bruna	kayumanggi	brun	braun	palaunu	donn	marrone	brunneis	parauri	brun	marrom	marrón	kahawia	brun	brown	onsundu
+dra	slid	dragen	wear	surhavi	magsuot	porter	tragen	komo	chaitheamh	indossare	induere	kakahu	slitasje	desgaste	desgaste	kuvaa	slitage	gwisgo	bagqoke
+tuin	haven	tuin	garden	ĝardeno	hardin	jardin	garten	kīhāpai	gairdín	giardino	hortum	kari	hage	jardim	jardín	bustani	trädgård	gardd	yensimu
+gelyke	lige	gelijk	equal	egalaj	kapantay	égal	gleich	like	comhionann	pari	aequales	rite	lik	igual	igual	sawa	lika	gyfartal	alinganayo
+gestuur	sendt	verzonden	sent	sendis	ipinadala	expédié	gesendet	hoouna	sheoladh	inviato	misit	ka tonoa	sendt	enviado	enviado	alimtuma	skickat	anfon	wathumela
+kies	vælge	kiezen	choose	elekti	piliin	choisir	wählen	koho	roghnaigh	scegliere	elige	te whiriwhiri	velge	escolher	elegir	kuchagua	välja	dewis	akhethe
+val	faldt	viel	fell	falis	patumbahin	est tombé	fiel	haule iho la	thit	caduto	cecidit	hinga	falt	caiu	cayó	akaanguka	föll	syrthiodd	bawa
+pas	passe	passen	fit	persvadis	umangkop	s’adapter	passen	pono	oiriúnach	adattarsi	apta	uru	passe	caber	encajar	fit	passa	ffitio	linganisa
+vloei	flow	stromen	flow	fluas	dumaloy	débit	fließen	kahe ana	sreabhadh	flusso	influunt	rere	flyte	fluir	fluir	kati yake	flöde	llif	kopoza
+billike	retfærdig	eerlijk	fair	bela	makatarungan	juste	messe	maikai	cóir	fiera	pulchrae	ataahua	rettferdig	feira	justo	haki	verkligt	deg	ukujabulisa
+bank	bank	bank	bank	bordo	bangko	banque	bank	pali	banc	banca	ripam	pēke	bank	banco	banco	benki	bank	banc	ebhange
+versamel	indsamle	verzamelen	collect	kolekti	mangolekta	recueillir	sammeln	ohi	bhailiú	raccogliere	colligunt	kohikohi	samle	recolher	recoger	kukusanya	samla	casglu	ukuqoqa
+red	spare	besparen	save	ŝpari	i-save ang	sauver	sparen	hoola	shábháil	salvare	salvum	whakaora	spare	salvar	guardar	kuokoa	spara	arbed	ukusindisa
+beheer	kontrol	controle	control	kontrolo	kontrol	contrôle	kontrolle	hooponopono	rialú	controllo	imperium	mana	kontroll	controle	el control	kudhibiti	kontroll	rheoli	amandla okuphatha
+desimale	decimal	decimaal	decimal	dekuma	decimal	décimal	dezimal	kekimala	dheachúlach	decimale	decimales	ira	desimal	decimal	decimal	decimal	decimala	degol	zamadesimali
+oor	øre	oor	ear	orelo	tainga	oreille	ohr	pepeiao	cluas	orecchio	aurem	taringa	øret	ouvido	oído	sikio	örat	clust	indlebe
+anders	andet	anders	else	alia	iba pa	autre	sonst	e ae	eile	altro	aliud	atu	annet	mais	demás	mwingine	annars	arall	futhi
+baie	helt	heel	quite	tute	medyo	tout à fait	ganz	loa	go leor	abbastanza	prorsus	tino	ganske	bastante	bastante	kabisa	ganska	eithaf	ngempela
+gebreek	brød	brak	broke	rompis	sinira	cassé	pleite	uhai	bhris	rotto	fregit	whawhati	brøt	quebrado	rompió	kuvunja	bröt	torrodd	waphula
+geval	tilfælde	geval	case	okazo	kaso	cas	fall	hihia	cás	caso	ita	take	case	caso	caso	kesi	fall	achos	icala
+middel	midten	midden	middle	mezo	gitna	milieu	mitte	waena	lár	mezzo	mediam	waenganui	midten	meio	medio	katikati	mitten	canol	maphakathi
+dood te maak	dræbe	doden	kill	mortigi	pumatay	tuer	töten	pepehi	mharú	uccidere	occides	te whakamate	drepe	matar	matar	kuua	döda	lladd	babulale
+seun	søn	zoon	son	filo	anak	fils	sohn	keikikāne	mac	figlio	filius	tama	sønn	filho	hijo	mwana	son	mab	indodana
+meer	sø	meer	lake	lago	dagat-dagatan	lac	see	lake	loch	lago	stagnum	roto	innsjø	lago	lago	ziwa	sjö	llyn	ichweba
+oomblik	øjeblik	momenteel	moment	momenton	sandali	moment	moment	manawa	nóiméad	momento	momento	taime	øyeblikk	momento	momento	wakati	ögonblick	hyn o bryd	mzuzu
+skaal	skala	schaal	scale	skalo	iskala	échelle	maßstab	pālākiō	scála	scala	statera	tauine	skala	escala	escala	wadogo	skala	graddfa	isikali
+hard	højt	luid	loud	laŭta	malakas	fort	laut	loa	glórach	forte	magna	nui	høyt	alto	fuerte	kubwa	högt	uchel	elikhulu
+die lente	fjeder	voorjaar	spring	printempo	tagsibol	printemps	frühling	waipuna	earrach	primavera	ver	puna	våren	primavera	primavera	chemchemi	fjäder	gwanwyn	entwasahlobo
+neem	observere	waarnemen	observe	observi	obserbahan	observer	beobachten	malama	breathnú ar	osservare	observa	puritia e	observere	observar	observar	kuchunguza	observera	arsylwi	bona
+kind	barn	kind	child	infano	anak	enfant	kind	keiki	leanbh	bambino	puer	tamaiti	barn	criança	niño	mtoto	barn	plentyn	ingane
+reguit	lige ud	straight	straight	rektaj	tuwid	droit	gerade	pololei	díreach	dritto	rectas	tika tonu	rett	reta	recta	moja kwa moja	rak	syth	iqonde
+konsonant	konsonant	medeklinker	consonant	konsonanto	katinig	consonne	konsonant	leokanipū	consan	consonante	consonans	orokati	konsonant	consoante	consonante	consonant	konsonant	cytseiniaid	lehamba
+nasie	nation	natie	nation	nacio	bansa	nation	nation	lahuikanaka	náisiún	nazione	gentem	iwi	nasjon	nação	nación	taifa	nation	cenedl	isizwe
+woordeboek	ordbog	woordenboek	dictionary	vortaro	diksyunaryo	dictionnaire	wörterbuch	puke weheweheʻōlelo	foclóir	dizionario	dictionary	papakupu	ordbok	dicionário	diccionario	kamusi	ordbok	geiriadur	isichazamazwi
+melk	mælk	melk	milk	lakto	gatas	lait	milch	waiu	bainne	latte	lac	te waiu	melk	leite	leche	maziwa	mjölk	llaeth	ubisi
+spoed	hastighed	snelheid	speed	rapido	bilis	vitesse	geschwindigkeit	ka māmā holo	luas	velocità	celeritate	tere	hastighet	velocidade	velocidad	kasi	hastighet	cyflymder	isivinini
+metode	metode	methode	method	metodo	pamamaraan	méthode	verfahren	hana	modh	metodo	methodo	tikanga	metode	método	método	njia	metod	dull	indlela
+orrel	orgel	orgel	organ	organo	organ	organe	orgel	hui	orgán	organo	organo	whēkau	organ	órgão	órgano	chombo	organ	organ	sitho
+betaal	betale	betalen	pay	pagi	bayaran	payer	zahlen	uku	íoc	pagare	redde	aufau i te	betale	pagar	pagar	kulipa	betala	talu	ukhokhe
+ouderdom	alder	leeftijd	age	aĝo	edad	âge	alter	makahiki	aois	età	saeculi	tau	alder	idade	edad	umri	okänd	oedran	yobudala
+artikel	sektion	sectie	section	sekcio	seksyon	section	abschnitt	pauku	alt	sezione	section	wāhanga	seksjon	seção	sección	sehemu	sektion	adran	ingxenye
+rok	kjole	kleding	dress	robo	damit	robe	kleid	male	gúna	vestito	habitus	kākahu	kjole	vestido	vestido	mavazi	klänning	gwisg	ingubo
+wolk	sky	wolk	cloud	nubo	cloud	nuage	wolke	ao	scamall	nube	nubes	kapua	skyen	nuvem	nube	wingu	moln	cwmwl	ifu
+verrassing	overraskelse	verrassing	surprise	surprizo	sorpresa	surprise	überraschung	haohao	iontas	sorpresa	mirantique	maere	overraskelse	surpresa	sorpresa	mshangao	överraskning	syndod	ngamangala
+stil	stille	rustig	quiet	trankvila	tahimik	calme	ruhig	mālie	ciúin	tranquillo	quietum	ata	stille	calma	tranquila	utulivu	ro	dawel	onokuthula
+klip	sten	steen	stone	ŝtono	bato	pierre	stein	pohaku	cloch	pietra	lapis	kohatu	stein	pedra	piedra	jiwe	sten	cerrig	tshe
+klein	lille	minuscuul	tiny	etajn	maliit na maliit	minuscule	winzig	wahi	beag bídeach	piccolo	vegrandis	iti	tiny	minúsculo	pequeño	vidogo	liten	bach	omncanyana
+klim	klatre	klimmen	climb	grimpo	umakyat	montée	aufstieg	pii ana	tóg	salita	ascenditur	piki	klatre	subida	ascenso	kupanda	klättra	dringo	enyuka
+modern	køligt	koele	cool	malvarmeta	malamig	frais	kühlen	anu	fionnuar	fresco	frigus	hauhautanga	kult	legal	fresco	baridi	sval	oer	abandayo
+ontwerp	konstruktion	ontwerp	design	dezajno	disenyo	conception	entwurf	manao	dearadh	design	consilium	hoahoa	utforming	projeto	diseño	kubuni	konstruktion	dylunio	songoza
+swak	dårlig	slechte	poor	malriĉa	mahirap	pauvres	arm	ilihune	droch	povero	pauper	rawakore	dårlig	pobre	pobre	maskini	dålig	gwael	abampofu
+baie	parti	veel	lot	multa	marami	lot	menge	puu	leor	lotto	multum	rota	mye	muito	mucho	mengi	mycket	llawer	uquqaba
+eksperiment	eksperiment	experiment	experiment	eksperimento	eksperimento	expérience	versuch	hoʻokolohua	turgnamh	esperimento	experimento	whakamātau	eksperiment	experiência	experimento	majaribio	experiment	arbrawf	lokulinga
+onderkant	bund	onderzijde	bottom	malsupro	ilalim	bas	boden	lalo	bun	fondo	imo	raro	bunnen	inferior	inferior	chini	botten	gwaelod	ngezansi
+sleutel	nøgle	sleutel	key	ŝlosilo	key	clé	schlüssel	kī	eochair	chiave	key	matua	nøkkel	chave	clave	ufunguo	nyckel	allweddol	isikhiye
+yster	jern	ijzer	iron	fero	bakal	fer	eisen	hao	iarann	ferro	ferrum	rino	jern	ferro	hierro	chuma	järn	haearn	nensimbi
+enkele	enkelt	enkelvoudige	single	sola	single	unique	einzel	hookahi	singil	singolo	una	kotahi	enslig	único	sola	moja	singel	sengl	ongashadile
+stok	stick	stok	stick	bastono	stick	bâton	stick	koʻokoʻo	bata	bastone	lignum	tokotoko	stick	vara	palillo	fimbo	pinne	ffon	uthi
+plat	flad	flat	flat	plata	flat	plat	wohnung	i lalo	árasán	appartamento	flat	flat	flat	plana	plana	gorofa	platt	fflat	ifulathi
+twintig	tyve	twintig	twenty	dudek	dalawampu’t	vingt	zwanzig	ʻiwakālua	fiche	venti	viginti	e rua tekau	tjue	vinte	veinte	ishirini	tjugo	ugain	amabili
+vel	hud	huid	skin	haŭto	balat	peau	haut	ili	craiceann	pelle	pelle	kiri	hud	pele	piel	ngozi	hud	croen	isikhumba
+glimlag	smil	glimlach	smile	rideto	ngiti	sourire	lächeln	minoʻaka	aoibh gháire	sorriso	risu	ataata	smil	sorriso	sonrisa	tabasamu	le	gwenu	emomotheka
+toename	krølle	vouw	crease	crease	crease	pli	falte	crease	crease	piega	rimula	pae	krøll	vinco	pliegue	na crease	veck	cris	dile
+gat	hul	gat	hole	truo	butas	trou	loch	puka	poll	foro	violet	rua	hull	buraco	agujero	shimo	hål	twll	emgodini
+spring	hoppe	springen	jump	salti	tumalon	sauter	springen	lele	léim	salto	salire	peke	hopp	saltar	saltar	kuruka	hoppa	neidio	eqa
+baba	barn	kindje	baby	bebo	sanggol	bébé	kind	pēpē	leanbh	bambino	praesent	te tamaiti	babyen	bebê	bebé	mtoto	barn	babi	umntwana
+agt	otte	acht	eight	ok	walo	huit	acht	ʻewalu	ocht	otto	octo	e waru	åtte	oito	ocho	nane	åtta	wyth	eziyisishiyagalombili
+dorpie	landsby	dorp	village	vilaĝo	nayon	village	dorf	kauhale	sráidbhaile	villaggio	villa	kainga	landsby	aldeia	pueblo	kijiji	by	pentref	emzaneni
+ontmoet	mød	ontmoeten	meet	kunvenas	matugunan	se rencontrent	treffen	ku i	le chéile	si incontrano	concurrunt	hui	møtes	meet	se reúnen	kukutana	möts	cwrdd	hlangana
+wortel	rod	wortel	root	radiko	ugat	racine	wurzel	aa	fréimhe	radice	radix	pakiaka	rot	raiz	raíz	mizizi	rot	gwraidd	impande
+koop	købe	kopen	buy	aĉeti	bumili	acheter	kaufen	kuai	cheannach	acquistare	emptum	hoko	kjøpe	comprar	comprar	kununua	köpa	prynu	thenga
+verhoog	hæve	verhogen	raise	enspezi	taasan	augmenter	erhöhen	hoala mai	ardú	aumentare	resuscitabo	whakaara	heve	levantar	aumentar	kuongeza	höja	codi	iphakamisa
+los	løse	op te lossen	solve	solvi	malutas	résoudre	lösen	ke hoʻoponopono	réiteach	risolvere	solve	te whakaoti	løse	resolver	resolver	kutatua	lösa	datrys	ukuxazulula
+metaal	metal	metalen	metal	metalo	metal	métal	metall	metala	miotail	metallo	ferrum	whakarewa	metall	de metal	de metal	chuma	metall	metel	sensimbi
+of	hvorvidt	of	whether	ĉu	kung	si	ob	paha	cé acu	se	sive	ahakoa	enten	se	si	kama	huruvida	p’un a	noma
+stoot	skub	duw	push	puŝo	push	pousser	drücken	pale wale	bhrú	spingere	dis	pana	push	empurre	empujar	kushinikiza	tryck	gwthio	phusha
+sewe	syv	zeven	seven	sep	pito	sept	sieben	ʻehiku	seacht	sette	septem	e whitu	syv	sete	siete	saba	sju	saith	eziyisikhombisa
+paragraaf	afsnit	paragraaf	paragraph	paragrafo	talata	paragraphe	absatz	paukū	mír	paragrafo	paragraph	kōwae	avsnitt	parágrafo	párrafo	aya	punkt	paragraff	indzima
+derde	tredje	derde	third	triono	ikatlong	troisième	dritte	ke kolu	tríú	terzo	tertia	te toru	tredje	terceiro	tercero	tatu	tredje	trydydd	okwesithathu
+sal	skal	zal	shall	mortigu	tiyak	doit	wird	e	déanfaidh	deve	numquid	ka	skal	deve	deberá	atakuwa	skall	rhaid	kufanele
+gehou	held	gehouden	held	tenis	pinigilang	en attente	hand	paa ana	seilbh	tenuto	posside	pūpuri	holdt	held	en espera	uliofanyika	vänt	a gedwir yn	owawuzoba
+hare	hår	haar	hair	haroj	buhok	cheveux	haar	lauoho	gruaig	capelli	capillum	makawe	hår	cabelo	pelo	nywele	hår	gwallt	izinwele
+beskryf	beskrive	beschrijven	describe	priskribi	ilarawan	décrire	beschreiben	kakau	cur síos a dhéanamh	descrivere	describere	whakaahua	beskrive	descrever	describir	kuelezea	beskriva	disgrifio	uchaze
+kok	kok	kok	cook	kuiristino	tagaluto	cuisinier	koch	kapena kuke	cócaireacht	cuoco	cocus	tuari	kokk	cozinheiro	cocinero	mpishi	kock	cogydd	umpheki
+vloer	gulv	vloer	floor	planko	palapag	étage	boden	papahele	urlár	piano	pavimentum	papa	etasje	piso	piso	sakafu	våningen	llawr	phansi
+óf	enten	ofwel	either	ĉu	alinman sa	chaque	entweder	kekahi	ceachtar	o	aut	rānei	enten	ou	ya sea	ama	antingen	naill ai	noma
+gevolg	resultat	resultaat	result	rezulto	resulta	résultat	ergebnis	result	toradh	risultato	ex	hua	resultat	resultado	resultado	matokeo	resultat	canlyniad	japan
+brand	brænde	verbranden	burn	bruligi	sumunog	brûler	brennen	puhi	sruthán	bruciare	comburet	tahu	brenne	queimar	quemar	kuchoma	bränna	llosgi	bashise
+hill	bakke	hill	hill	monto	burol	colline	hügel	puu	cnoc	collina	tumulus	pukepuke	hill	hill	colina	kilima	kulle	bryn	igquma
+veilig	sikker	veilig	safe	sekura	ligtas	coffre-fort	sicher	maluhia	sábháilte	sicuro	salvum	haumaru	trygg	seguro	seguro	salama	säker	yn ddiogel	ephephile
+kat	kat	kat	cat	kato	pusa	chat	katze	popoki	cat	gatto	cat	ngeru	katt	cat	gato	paka	cat	cath	likati
+eeu	århundrede	eeuw	century	jarcento	siglo	siècle	jahrhundert	kenekulia	haois	secolo	century	rau	århundre	século	siglo	karne ya	talet	ganrif	leminyaka
+oorweeg	overveje	overwegen	consider	konsideri	isaalang-alang	envisager	betrachten	noonoo	a mheas	considerare	considerate	whakaaro	vurdere	considerar	considerar	kufikiria	överväga	ystyried	cabangela
+tipe	typen	soort	type	tipo	uri ng	type	typ	ʻano	cineál	tipo	type	momo	typen	tipo	tipo	aina	typ	math	uhlobo
+wet	lov	wet	law	leĝo	batas	droit	gesetz	kanawai	dlí	legge	legem	te ture	lov	direito	ley	sheria	lag	gyfraith	umthetho
+bietjie	bit	beetje	bit	iom	bit	peu	bit	iki	giotán	bit	aliquam	moka	bit	bit	bit	kidogo	bitars	bit	ihhashi
+kus	kyst	kust	coast	marbordo	baybayin	côte	küste	mokuna	chósta	costa	litore	rohe	kysten	costa	costa	pwani	kust	arfordir	ugu
+afskrif	kopi	kopie	copy	kopio	kopya	copie	kopie	kope	cóip	copia	rescriptum	tārua	kopi	cópia	copia	nakala	kopia	copi	ikhophi
+frase	sætning	zinsnede	phrase	frazon	parirala	phrase	ausdruck	hopunaʻōlelo	frása	frase	phrase	kīanga	frase	frase	frase	maneno	fras	ymadrodd	isisho
+stil	lydløs	stil	silent	malbrua	walang sinasabi	silencieux	still	hāmau	adh	silenzioso	silentium	puku	taus	silenciosa	silencio	kimya	tyst	dawel	buthule
+hoë	høj	hoog	tall	altkreska	matangkad	haut	hoch	kiʻekiʻe	ard	alto	tall	roroa	høyt	alto	de altura	mrefu	tall	tal	abade
+sand	sandet	zand	sand	sablon	ng buhangin	sable	sand	one	gaineamh	sabbia	arenam	onepu	sand	areia	arena	mchanga	sand	tywod	isihlabathi
+grond	jord	bodem	soil	planko	lupa	sol	boden	aina	ithir	suolo	solum	oneone	jord	solo	suelo	udongo	jord	pridd	inhlabathi
+roll	rulle	rol	roll	rulo	roll	rouleau	rolle	ʻōwili	rolla	rotolo	volumen	pukapuka	rulle	rolo	rollo	orodha	rulle	gofrestr	qoqa
+temperatuur	temperatur	temperatuur	temperature	temperaturo	temperatura	température	temperatur	wela	teocht	temperatura	temperatus	pāmahana	temperatur	temperatura	temperatura	joto	temperatur	tymheredd	lokushisa
+vinger	finger	vinger	finger	fingro	daliri	doigt	finger	manamana lima	mhéar	dito	digitus	maihao	fingeren	dedo	dedo	kidole	finger	bys	ngomunwe
+bedryf	industri	industrie	industry	industrio	industriya	industrie	industrie	hana	tionscal	industria	industria	ahumahi	industrien	indústria	industria	sekta ya	industrin	diwydiant	imboni
+waarde	værdi	waarde	value	valoro	halaga	valeur	wert	waiwai	luach	valore	value	uara	verdi	valor	valor	thamani	värde	gwerth	azisa
+stryd	kamp	strijd	fight	lukto	lumaban	lutte	kampf	kaua	troid i	lotta	pugna	whawhai	kampen	luta	lucha	kupambana	slagsmål	frwydr	impi
+leuen	løgn	leugen	lie	mensogo	kasinungalingan	mensonge	lüge	moe	bréag	bugia	mendacium	teka	løgn	mentira	mentira	uongo	lie	gorwedd	manga
+klop	slå	verslaan	beat	venki	matalo	battre	schlagen	pepehi	buille	battere	percute	whiua	slå	bater	batir	kuwapiga	slå	guro	bhula
+opgewonde	ophidse	excite	excite	eksciti	gumising	exciter	begeistern	ka naita	spreagfaidh	eccitare	excitant	tokomauri	opphisse	excitar	excitar	kuchochea	excitera	cyffroi	ethusa
+natuurlike	naturlig	natuurlijke	natural	natura	natural	naturel	natürlich	maoli	nádúrtha	naturale	naturalis	māori	naturlig	naturais	naturales	asili	naturlig	naturiol	natural
+view	udsigt	view	view	vido	pagtingin	vue	blick	hawaii	dearcadh	vista	visum	tiro	visning	vista	vista	mtazamo	vy	barn	buka
+sin	fornuft	sense	sense	sento	pakiramdam	sens	sinn	hoohalike	ciall	senso	sensum	tikanga	følelse	sentido	sentido	maana	känsla	synnwyr	ngomqondo
+kapitaal	kapital	hoofdstad	capital	ĉefurbo	kapital	capital	hauptstadt	hopunaʻōlelo	caipitil	capitale	capitale	whakapaipai	kapital	capital	de capital	mji mkuu wa	kapital	cyfalaf	komkhulu
+sal nie	vil ikke	zal niet	won’t	ne faros	hindi maaari	ne sera pas	wird nicht	e ole	ní bheidh	non sarà	nolo	e kore e	vil ikke	não vai	no lo hará	si	kommer inte	ni fydd	ngeke
+stoel	stol	stoel	chair	seĝo	silya	chaise	stuhl	noho	cathaoir	sedia	cathedra	heamana	stol	cadeira	silla	kiti	stol	gadeirydd	isitulo
+gevaar	fare	gevaar	danger	danĝero	panganib	danger	achtung	weliweli	contúirt	pericolo	periculum	mōrearea	fare	perigo	peligro	hatari	fara	perygl	ingozi
+vrugte	frugt	fruit	fruit	fruktoj	prutas	fruit	obst	hua	torthaí	frutta	fructus	hua	frukt	frutas	fruta	matunda	frukt	ffrwythau	izithelo
+ryk	rig	rijk	rich	riĉa	mayaman	riche	reich	waiwai	saibhir	ricco	dives	taonga	rik	rico	rica	tajiri	rik	gyfoethog	ocebile
+dik	tyk	dikke	thick	dikaj	makapal	épais	dick	manoanoa	tiubh	spesso	densa	matotoru	tykk	grossa	de espesor	nene	tjock	trwchus	aminyene
+soldaat	soldat	soldaat	soldier	soldato	kawal	soldat	soldat	koa	saighdiúir	soldato	miles	hoia	soldat	soldado	soldado	askari	soldat	milwr	sosha
+proses	proces	proces	process	procezo	proseso	processus	prozess	kaʻina	próiseas	processo	aliquid	tukanga	prosessen	processo	proceso	mchakato	processen	broses	inqubo
+bedryf	operere	werken	operate	funkcii	magpatakbo	fonctionner	betreiben	hana	oibriú	operare	operantur	whakahaere	betjene	operar	operar	kazi	fungera	gweithredu	sebenzisa
+praktyk	praksis	praktijk	practice	praktiko	kasanayan	pratique	praxis	hana	cleachtas	pratica	praxi	mahi	praksis	prática	práctica	mazoezi	praktiken	ymarfer	umkhuba
+afsonderlike	særskilt	apart	separate	apartaj	hiwalay	séparé	trennen	ana	ar leithligh	separato	separatum	wehe	separat	separado	separada	tofauti	separat	ar wahân	ahlukene
+moeilik	svært	moeilijk	difficult	malfacila	mahirap	difficile	schwierig	ʻōwili	deacair	difficile	difficile	uaua	vanskelig	difícil	difícil	vigumu	svårt	anodd	nzima
+dokter	læge	arts	doctor	kuracisto	manggagamot	médecin	arzt	kauka	dochtúir	medico	medicus	tākuta	lege	médico	médico	daktari	läkare	meddyg	udokotela
+asseblief	venligst	aub	please	bonvolu	mangyaring	s’il vous plaît	bitte	e ʻoluʻolu	le do thoil	per favore	obsecro	tēnā	vennligst	por favor	por favor	tafadhali	vänligen	os gwelwch yn dda	sicela
+beskerm	beskytte	beschermen	protect	protekti	ipagtanggol	protéger	schützen	hoomalu	chosaint	proteggere	protegat	te tiaki	beskytte	proteger	proteger	kulinda	skydda	amddiffyn	ukuvikela
+middag	middag	middag	noon	tagmezo	tanghali	midi	mittag	awakea	meán lae	mezzogiorno	meridies	te poutumarotanga	noon	meio-dia	mediodía	saa sita mchana	middagstid	canol dydd	emini
+oes	afgrøde	gewas	crop	kropo	crop	récolte	ernte	iʻohiʻia	barr	raccolto	seges	hua	avling	colheita	de cultivos	mazao	gröda	cnwd	isitshalo
+moderne	moderne	moderne	modern	modernaj	modernong	moderne	modernen	kēia	nua-aimseartha	moderno	modern	hou	moderne	moderno	moderno	kisasa	moderna	modern	yesimanje
+element	elementet	onderdeel	element	elemento	elemento	élément	elementes	ʻāweʻaweʻa	eilimint	elemento	aliquid	huānga	element	elemento	elemento	kipengele	elementet	elfen	isici
+getref	hit	hit	hit	batita	pindutin ang	frapper	treffen	ku	hit	colpire	ictus	patua	rammet	acertar	golpear	hit	hit	taro	shaya
+student	studerende	leerling	student	lernantino	mag-aaral	étudiant	schüler	haumana	mac léinn	studente	discipulo	ngā ākonga	studenten	estudante	estudiante	mwanafunzi	studenten	myfyriwr	ofundayo
+hoek	hjørne	hoek	corner	angulo	sulok	coin	ecke	ke kihi	cúinne	angolo	anguli	kokonga	hjørne	canto	esquina	kona	hörn	cornel	ekhoneni
+partytjie	parti	partij	party	festo	partido	partie	partei	ʻaoʻao	páirtí	partito	pars	rōpū	fest	festa	partido	chama	parti	parti	inhlangano
+toevoer	forsyning	levering	supply	provizado	panustos	alimentation	versorgung	lako hou	soláthar	fornitura	copia	homai	forsyning	fornecimento	suministro	usambazaji	försörjning	cyflenwad	phakela
+wie se	hvis	wiens	whose	kies	kung saan ang	dont	deren	kona	a bhfuil a	la cui	cuius	tona	hvis	cuja	cuya	ambao	vars	y mae ei	ogama
+spoor	lokalisere	lokaliseren	locate	lokalizi	hanapin	localiser	lokalisieren	huli ana	aimsiú	individuare	locant	te kimi	isere	localizar	localizar	machapisho	lokalisera	o hyd	thola
+ring	ring	kookplaten	ring	ringon	singsing	anneau	rings	ke komo lima	fáinne	anello	orbis	mowhiti	ring	anel	anillo	pete	ring	ffoniwch	nkeneza
+karakter	karakter	karakter	character	gravulo	katangian	caractère	charakter	ano	charachtar	carattere	character	pūāhua	karakter	caráter	carácter	tabia ya	karaktär	cymeriad	uhlamvu
+insekte	insekt	insecten	insect	insekto	insekto	insecte	insekt	insect	feithidí	insetto	insect	pepeke	insekt	inseto	insecto	wadudu	insekt	pryfed	kwezinambuzane
+gevang	fanget	gevangen	caught	kaptita	nahuli	pris	gefangen	loaa	ghabh	catturato	captus	mau	fanget	capturados	capturado	hawakupata	fångad	dal	babanjwa
+tydperk	periode	periode	period	periodo	panahon	période	zeit	manawa	tréimhse	periodo	tempus	wā	periode	período	período	kipindi	period	cyfnod	isikhathi
+dui	angive	geven	indicate	indiki	ipahiwatig	indiquer	zeigen	hoike	léiríonn	indicare	indica	tohu	indikere	indicam	indicar	zinaonyesha	indikerar	dangos	khombisa
+radio	radio	radio in	radio	radio	radyo	radio	funk	radio	raidió	radio	radio	reo irirangi	radioen	rádio	radio	za redio	radio	cymru	umsakazo
+gepraat	talte	sprak	spoke	parolis	nagsalita	rayon	speiche	olelo	labhair	raggio	locutusque	ka korero	snakket	falou	habló	alizungumza	talade	siaradodd	wakhuluma
+atoom	atomet	atoom	atom	atomo	atom	atome	atom	ʻātoma	adamh	atomo	atom	ngota	atomet	átomo	átomo	chembe	atomen	atom	athomu
+menslike	menneske	menselijk	human	homa	pantao	humain	mensch	kanaka	daonna	umano	hominis	tangata	menneskelig	humano	humana	binadamu	humant	dynol	womuntu
+geskiedenis	historie	geschiedenis	history	historio	kasaysayan	histoire	geschichte	mōʻaukala	stair	storia	rerum	hītori	historie	história	historia	historia	historia	hanes	umlando
+uitwerking	effekt	werking	effect	efekto	epekto	effet	wirkung	kanawai	éifeacht	effetto	effectus	pānga	effekt	efeito	efecto	athari	effekt	effaith	umphumela
+elektriese	elektrisk	elektrische	electric	elektra	de-kuryenteng	électrique	elektrisch	pila nui	leictreacha	elettrico	electrica	hiko	elektrisk	elétrica	eléctrica	umeme	elektrisk	trydan	electric
+verwag	forventer	verwachten	expect	atendi	inaasahan	attendre	erwarten	makemake	ag súil leis	aspettare	sperare	e ti’aturi	forvente	esperar	esperar	kutarajia	förvänta	disgwyl	bheka
+been	knogle	bot	bone	osto	buto	os	knochen	iwi	cnámh	osso	osse	wheua	bein	osso	hueso	mfupa	ben	esgyrn	amathambo
+spoor	skinne	spoor	rail	fervoja	rail	rail	schiene	hoino aku	iarnróid	ferrovia	cogitis	whakakorekore mo	skinne	trilho	ferrocarril	reli	skena	rheilffyrdd	ujantshi
+dink	forestille	stel	imagine	imagu	isipin	imaginer	vorstellen	manao wale	shamhlú	immaginare	imaginari	whakaaro	forestille	imaginar	imaginar	kufikiria	föreställa sig	dychmygu	imagine
+verskaf	give	bieden	provide	provizi	magbigay	fournir	bieten	e hoomakaukau i	a chur ar fáil	fornire	praestare	whakarato	gi	fornecer	proporcionar	kutoa	tillhandahålla	darparu	ukuhlinzeka
+saamstem	enige	instemmen	agree	interkonsenti	sumasang-ayon	se mettre d’accord	zustimmen	ae	aontaíonn	concordare	conveniunt	whakaae	enig	concordar	acuerdo	kukubaliana	enas	cytuno	uvume
+dus	således	dus	thus	tiele	kaya	ainsi	so	pela	dá bhrí sin	così	ita	te kupu	dermed	assim	por tanto	hivyo	sålunda	felly	kanjalo
+sagte	blid	zachte	gentle	afabla	magiliw	doux	sanft	akahai	mhín	dolce	mitis	ngawari	skånsom	suave	suave	mpole	mild	ysgafn	mnene
+vrou	kvinde	vrouw	woman	virino	babae	femme	frau	wahine	bean	donna	mulier	te wahine	kvinne	mulher	mujer	mwanamke	kvinna	fenyw	owesifazane
+kaptein	kaptajn	kapitein	captain	kapitano	kapitan	capitaine	kapitän	luna	captaen	capitano	dux	rangatira	kaptein	capitão	capitán	nahodha	kapten	capten	ukaputeni
+raai	gætte	denk	guess	divenu	hulaan	deviner	erraten	koho	buille faoi thuairim	indovinare	suspicor	imi i	gjett	acho que	adivinar	nadhani	gissa	dyfalu	ukuqagela
+nodige	nødvendig	noodzakelijk	necessary	necesajn	kinakailangan	nécessaire	erforderlich	pono	gá	necessario	necesse	e tika ana	nødvendig	necessário	necesario	muhimu	nödvändig	angenrheidiol	kunesidingo
+skerp	skarp	scherpe	sharp	akra	matalim	net	scharf	oi	géar	tagliente	acutum	koi	skarp	sharp	agudo	mkali	skarp	miniog	ebukhali
+vleuel	vinge	vleugel	wing	flugilo	wing	aile	flügel	ʻēheu	sciathán	ala	alae	parirau	vinge	asa	ala	mrengo	vinge	adain	iphiko
+skep	skabe	creëren	create	krei	lumikha	créer	schaffen	hana	chruthú	creare	partum	te waihanga	skape	criar	crear	kujenga	skapa	creu	ukudala
+naaste	nabo	buurman	neighbor	proksimulo	kapit-bahay	voisin	nachbar	hoalauna	comharsa	prossimo	proximus	hoa	nabo	vizinho	vecino	jirani	granne	cymydog	umakhelwane
+wash	vask	wassen	wash	lavita	wash	lavage	wasch	holoi ai	nigh	lavaggio	lava	horoi	vask	lavagem	lavado	osha	tvätt	golchi	ukuhlamba
+kolf	flagermus	vleermuis	bat	vesperto	bat	chauve-souris	fledermaus	ʻaoʻao	bat	pipistrello	biblia	pekapeka	bat	bat	bate	bat kwa	slagträ	ystlumod	nelulwane
+eerder	snarere	eerder	rather	anstataŭ	sa lalong maliwanag	plutôt	eher	e aho	in áit	piuttosto	potius	kaua	heller	vez	más bien	badala	snarare	yn hytrach	kunalokho
+skare	mængden	menigte	crowd	amaso	karamihan ng tao	foule	menge	lehulehu	slua	folla	turba	mano	folkemengde	multidão	multitud	umati wa watu	publiken	dorf	isixuku
+koring	majs	maïs	corn	grajnoj	mais	blé	mais	palaoa	arbhar	mais	frumentum	witi	mais	milho	maíz	nafaka	majs	corn	ukolweni
+vergelyk	sammenligne	vergelijken	compare	kompari	ihambing	comparer	vergleichen	hoohalike	a chur i gcomparáid	confrontare	compare	whakatairite i	sammenligne	comparar	comparar	kulinganisha	jämföra	cymharu	qhathanisa
+gedig	digt	gedicht	poem	poemo	tula	poème	gedicht	poem	dán	poesia	poem	ruri	dikt	poema	poema	shairi	dikt	cerdd	inkondlo
+string	streng	koord	string	kordo	string	chaîne	schnur	kaula	teaghrán	stringa	nervo	string	streng	corda	cadena	kamba	sträng	llinyn	intambo
+klok	klokke	bell	bell	sonorilo	kampanilya	cloche	glocke	bele	clog	campana	tintinnabulum	pere	bell	sino	campana	kengele	klocka	cloch	insimbi
+afhang	afhænge	afhangen	depend	dependi	depende	dépendre	abhängen	hilinai	ag brath	dipendere	ex	whakawhirinaki	avhenge	dependem	dependerá	hutegemea	bero	dibynnu	bathembele
+vleis	kød	vlees	meat	viando	karne	viande	fleisch	ai	feoil	carne	cibum	kai	kjøtt	carne	carne	nyama	kött	cig	inyama
+vryf	gnide	wrijven	rub	rub	kuskusin	rub	einreiben	hamo i	rub	strofinare	fricabis	te horoitanga i	gni	esfregar	frotar	kusugua	gnida	rhwbio	deda
+buis	rør	buis	tube	tubo	tube	tube	rohr	tube	feadán	tubo	tube	ngongo	tube	tubo	tubo	tube	röret	tiwb	umbhobho
+bekende	berømt	beroemde	famous	famaj	sikat	célèbre	berühmt	kaulana	cáiliúil	famoso	celebre	rongonui	berømt	famoso	famoso	maarufu	känd	enwog	esidumile
+dollar	dollaren	deas	dollar	dolaro	dollar	dollar	dollar	dala	cheadú	dollaro	pupa	tāra	dollar	dólar	dólar	dola	dollarn	doler	izindodla zemali
+stroom	strøm	stroom	stream	fluo	stream	courant	strom	kahawai o	sruth	ruscello	fluvius	awa	stream	córrego	corriente	mkondo	ström	nant	emfudlaneni
+vrees	frygt	angst	fear	timo	takot	peur	angst	makau	eagla	paura	timore	wehi	frykt	medo	miedo	hofu	rädsla	ofn	kwesaba
+oë	syn	zicht	sight	vido	paningin	vue	blick	maka	radharc	vista	visum	titiro	synet	vista	vista	mbele	syn	golwg	ukubuka
+dun	tynd	dun	thin	maldika	manipis	mince	dünn	lahilahi	tanaí	sottile	tenuis	kikokore	tynn	fina	delgado	nyembamba	tunn	tenau	mncane
+driehoek	trekant	driehoek	triangle	triangulo	tatsulok	triangle	dreieck	triangle	triantáin	triangolo	triangulo	tapatoru	trekant	triângulo	triángulo	pembetatu	triangel	triongl	calantsatfu
+planeet	verden	planeet	planet	planedo	planeta	planète	erde	honua	pláinéad	pianeta	planeta	ao	planet	planeta	planeta	sayari	planet	blaned	iplanethi
+haastig	skynde	haast	hurry	rapidi	magmadali	se dépêcher	eile	wikiwiki	hurry	fretta	festinate	hohoro	skynde	apressar	prisa	haraka	skynda	frys	shesha
+hoof	chef	chief	chief	estro	mahalaga sa lahat	chef	chef	kahuna	príomhfheidhmeannach	capo	princeps	rangatira	sjef	chefe	jefe	wakuu	chef	prif	abakhulu
+kolonie	koloni	kolonie	colony	kolonio	kolonya	colonie	kolonie	panalaau ia	coilíneacht	colonia	coloniam	koroni	koloni	colônia	colonia	koloni	koloni	nythfa	koloni
+klok	ur	klok	clock	horloĝo	orasan	horloge	uhr	uaki	clog	orologio	horologium	karaka	klokke	relógio	reloj	saa	klocka	cloc	washi
+myn	minen	de mijne	mine	miaj	minahan	mine	mine	i koʻu	mianach	miniera	mea	oku	gruve	mina	mina	yangu	gruva	mwynglawdd	emayini
+tie	slips	stropdas	tie	egaleco	itali	lien	krawatte	ka hawai i	comhionannas vótaí	cravatta	tatem	here	slips	amarrar	empate	tie	slips	tei	ukulingana
+betree	indtaste	voeren	enter	eniri	magpasok	entrer	eingeben	komo	isteach	inserire	intrant	tomo	inn	introduzir	entrar	kuingia	ange	fynd i mewn	faka
+groot	større	grote	major	granda	pangunahing	majeur	dur	nui	mór	maggiore	major	matua	stor	maior	importante	kuu	större	mawr	ezinkulu
+vars	frisk	vers	fresh	freŝa	sariwa	frais	frisch	hawaiian	úr	fresco	recentes	hou	frisk	fresco	fresco	safi	färsk	ffres	opholile
+soek	søg	zoeken	search	serĉo	paghahanap	recherche	suche	huli	cuardach	ricerca	quaerere	rapu	søk	pesquisa	búsqueda	search	sök	chwilio	cinga
+stuur	sende	sturen	send	sendu	magpadala ng	envoyer	senden	hoouna aku	sheoladh	inviare	mitto	tukua atu	send	enviar	enviar	kutuma	skicka	anfon	thumela
+geel	gul	geel	yellow	flava	dilaw	jaune	gelb	melemele	buí	giallo	flavis	kōwhai	gul	amarelo	amarillo	njano	gul	melyn	ophuzi
+geweer	pistol	pistool	gun	pafilo	gun	pistolet	pistole	ka pū	gunna	pistola	gun	pū	pistol	pistola	pistola	bunduki	pistol	gwn	isibhamu
+toelaat	tillade	toelaten	allow	permesi	pumayag	permettre	erlauben	ae aku	ar chumas	consentire	sino	tukua	tillate	permitir	permitir	kuruhusu	tillåta	caniatáu	uvumele
+druk	udskriv	afdrukken	print	print	naka-print	impression	druck	paʻi	cló	stampa	print	tā	print	impressão	print	magazeti	tryck	print	ukubhala
+dood	død	dood	dead	mortinto	patay	mort	tot	make	marbh	morto	mortuus	mate	døde	morto	muerto	wafu	död	marw	efile
+spot	plet	plek	spot	punkto	spot	place	stelle	wahi	láthair	spot	locum	wahi	sted	local	lugar	doa	fläck	fan a’r lle	indawo
+woestyn	ørken	woestijn	desert	dezerto	disyerto	désert	wüste	waonahele	fásach	deserto	deserto	koraha	ørkenen	deserto	desierto	jangwa	öken	anialwch	hlamuka
+pak	kulør	pak	suit	kostumo	suit	costume	anzug	hoopii	oireann	tuta	sectam	take	drakt	terno	traje	suti	kostym	siwt	izembatho
+huidige	strøm	huidige	current	aktuala	kasalukuyan	courant	strom	papa	atá ann faoi láthair	corrente	current	o nāianei	nåværende	atual	actual	sasa	ström	ar hyn o bryd	yamanje
+lift	elevator	lift	lift	telfero	pag-angat	ascenseur	aufzug	ke eaʻe	ardaitheoir	ascensore	vitae	ararewa	lift	elevador	ascensor	kuinua	lift	lifft	baphakamisa
+gestyg	steget	gestegen	rose	leviĝis	tumaas	rose	stiegen	ala	ardaigh	rosa	surrexit	whakatika	rose	aumentou	rosa	kufufuka	ros	rhosyn	wasukuma
+kom	ankommer	aankomen	arrive	alveni	dumating	arriver	ankommen	hiki	teacht	arrivare	perveniunt	tae	ankomme	chegar	llegar	kuwasili	anländer	cyrraedd	finyelela
+meester	mester	meester	master	majstro	master	maître	stamm	haku	máistir	master	magister	ariki	mester	mestre	master	bwana	mästare	meistr	induna
+spoor	spor	spoor	track	aŭtoveturejo	track	piste	spur	track	rian	pista	semita	ara	spor	trilha	pista	kufuatilia	spår	trac	ithrekhi
+ouer	forælder	ouder	parent	gepatro	magulang	mère	elternteil	makua	tuismitheoir	genitore	parente	matua	forelder	pai	padre	mzazi	förälder	rhiant	umzali
+strand	kysten	oever	shore	bordo	baybayin	rivage	ufer	mauka	gcósta	riva	litore	uta	shore	costa	orilla	pwani	stranden	lan	isisekelo
+afdeling	opdeling	divisie	division	divido	dibisyon	division	teilung	mahele	roinn	divisione	divisione	te wehenga	divisjon	divisão	división	mgawanyiko	delning	is-adran	ukuhlukana
+blad	ark	blad	sheet	sheet	sheet	feuille	blatt	pepa	bileog	foglio	linteum	whārangi	ark	folha	hoja	karatasi	ark	taflen	ishidi
+stof	stof	stof	substance	substanco	bagay	substance	substanz	waiwai	substaint	sostanza	substantia	taonga	substans	substância	sustancia	dutu	substans	sylweddau	isiqa
+guns	begunstige	gunst	favor	favorus	paboran	favoriser	begünstigen	i ka lokomaikaiia	bhfabhar	favorire	gratiam	kia paingia	favorisere	favorecer	favorecer	neema	gynna	ffafrio	siza
+koppel	forbinde	aansluiten	connect	konekti	ikonekta	relier	verbinden	hoʻohui	ceangal	collegare	pertinent	hono	koble	conectar	conectar	kuungana	ansluta	cysylltu	xhuma
+post	indlæg	post	post	posteno	post	poste	nach	lāʻau kū	post	messaggio	post	pou	post	pós	mensaje	baada	inlägg	swydd	post
+spandeer	tilbringe	besteden	spend	elspezi	gumastos	passer	verbringen	ke lilo aku	chaitheamh	spendere	expendas	whakapau	bruke	passar	pasar	kutumia	spendera	gwario	khipha
+koord	akkord	akkoord	chord	chord	chord	corde	akkord	chord	corda	accordo	chorda	chord	akkord	acorde	acorde	gumzo	ackord	tant	kuzithinta
+vet	fedt	vet	fat	graso	taba	graisse	fett	kona kaikea a	saill	grasso	adipem	te ngako	fett	gordura	grasa	mafuta	fett	braster	inoni
+bly	glad	blij	glad	ĝojas	natutuwa	heureux	froh	olioli	sásta	felice	gavisus	koa	glad	feliz	contento	furaha	glad	falch	ithokoze
+oorspronklike	originale	origineel	original	originala	orihinal	original	original	kiʻi	bunaidh	originale	original	taketake	opprinnelige	original	originales	awali	original	gwreiddiol	sokuqala
+aandeel	aktie	aandeel	share	samkondiĉe	magbahagi	part	aktie	puu	scair	quota	share	share	aksje	share	cuota	kushiriki	andel	rhannu	ingxenye
+stasie	stationen	station	station	stacidomo	station	station	station	wahi	stáisiún	stazione	statio	teihana	stasjonen	estação	estación	kituo cha	station	orsaf	esiteshini
+pa	far	dad	dad	dad	ama	papa	papa	makuakāne	daidí	papà	pater	dad	pappa	pai	papá	baba	pappa	dad	ubaba
+brood	brød	brood	bread	pano	tinapay	pain	brot	ka berena	arán	pane	panem	taro	brød	pão	pan	mkate	bröd	bara	isinkwa
+hef	oplade	rekenen	charge	ŝarĝi	sumingil	charger	aufladen	kauoha	muirear	carica	testificor	he ki atu tenei	belaste	cobrar	cobrar	malipo	debitera	codi tâl	gcwalisa
+behoorlike	korrekt	behoorlijk	proper	taŭga	mga pangngalang	propre	richtig	pono	ceart	corretto	proprium	tika	riktig	adequada	adecuada	sahihi	ordentlig	briodol	efanele
+bar	bar	bar	bar	trinkejo	bar	bar	leiste	hookolokolo	barra	bar	bar	pae	bar	bar	barra	bar ya	baren	bar	ibha
+aanbod	tilbud	aanbod	offer	oferto	alok	proposition	angebot	kaumaha	tairiscint	offerta	offer	tuku	tilbudet	oferta	oferta	kutoa	erbjudandet	cynnig	umnikelo
+segment	segmentet	segmenten	segment	segmento	segment	segment	segment	hoʻohana	deighleog	segmento	segmentum	wāhanga	segment	segmento	segmento	sehemu	segment	gylchran	ingxenye
+slaaf	slave	slaaf	slave	sklavo	alipin	esclave	sklave	kauwa	daor	schiavo	servus	pononga	slave	escravo	esclavo	mtumwa	slav	gaethweision	nceku
+eend	ænder	eend	duck	anaso	pato	canard	ente	duck	lacha	anatra	anas	pārera	and	pato	pato	bata	anka	hwyaden	idada
+direkte	øjeblikkelig	onmiddellijke	instant	momenteto	instant	instant	augenblick	koi aku la lakou	toirt	immediato	instant	tonu	instant	instant	instantánea	papo	omedelbar	amrantiad	osheshayo
+mark	marked	markt	market	merkato	merkado	marché	markt	makeke	margadh	mercato	ipsum	mākete	markedet	mercado	mercado	soko	marknad	farchnad	indali
+graad	grad	graad	degree	grado	digri	degré	grad	degere	céim	grado	gradum	tohu	grad	grau	grado	shahada ya	grad	gradd	ibanga
+vul	befolke	bevolken	populate	popoli	mapuno	peupler	besiedeln	hoolahaiaʻku	populate	popolare	frequentare	huri	befolke	preencher	poblar	idadi ya	befolka	boblogi	populate
+chick	chick	kuiken	chick	ĉik	chick	poussin	küken	chick	chick	pulcino	pullus	pīpī	chick	pinto	polluelo	kifaranga	fågelunge	cyw	iphuphu
+liewe	kære	lieve	dear	kara	mahal	cher	liebe	aloha	daor	caro	carissimi	aroha	kjære	caro	querido	wapenzi	kära	annwyl	othandekayo
+vyand	fjende	vijand	enemy	malamiko	kaaway	ennemi	feind	ʻenemi	namhaid	nemico	hostem	hoariri	fiende	inimigo	enemigo	adui	fiende	gelyn	isitha
+antwoord	svar	antwoorden	reply	respondi	sumagot	répondre	antworten	pane	freagra	rispondere	respondeo	whakautu	svar	responder	responder	jibu	svara	ateb	phendula
+drink	drikke	drankje	drink	trinkaĵon	inumin	boisson	getränk	inu	deoch	bevanda	potum	inu	drikke	bebida	bebida	kunywa	dryck	diod	isiphuzo
+voorkom	forekomme	voorkomen	occur	okazi	maganap	se produire	auftreten	ana	tharlaíonn	verificarsi	incididunt	puta	forekomme	ocorrer	producirse	kutokea	inträffa	yn digwydd	zenzeka
+ondersteuning	støtte	ondersteuning	support	subteno	suporta	support	unterstützung	kākoʻo	tacaíocht	supporto	auxilium	tautoko	støtte	apoio	apoyo	msaada	stöd	cymorth	ukwesekwa
+toespraak	tale	spraak	speech	parolado	na salita	discours	rede	olelo	urlabhra	discorso	oratio	kupu	tale	discurso	discurso	hotuba	tal	lleferydd	inkulumo
+aard	natur	natuur	nature	naturo	likas na katangian	nature	natur	maoli	nádúr	natura	natura	āhua	natur	natureza	naturaleza	asili	natur	natur	isidalo
+reeks	rækkevidde	reeks	range	ventumilo	hanay	gamme	angebot	huahelu	raon	gamma	range	ngā tūmomo	range	gama	alcance	mbalimbali	intervall	amrediad	uhla
+stoom	damp	stoom	steam	vaporo	steam	vapeur	dampf	mahu	gaile	vapore	vapor	korohū	steam	vapor	vapor	mvuke	ånga	stêm	umusi
+beweging	bevægelse	beweging	motion	movado	galaw	mouvement	bewegung	ka noi	tairiscint	moto	motus	motini	bevegelse	movimento	movimiento	mwendo	rörelse	cynnig	ukunyakaza
+pad	sti	pad	path	vojo	landas	chemin	weg	ala	cosán	sentiero	semita	ara	bane	caminho	camino	njia	bana	llwybr	indlela
+vloeistof	væske	vloeistof	liquid	likva	likido	liquide	flüssigkeit	wai	leacht	liquido	liquidum	wai	væske	líquido	líquido	kioevu	vätska	hylif	uketshezi
+teken	log	aanmelden	log	ensaluti	mag-log	enregistrer	protokollieren	mōʻaukala	logáil isteach	log	stipes	takiuru	logg	log	log	kuingia	logga	log	ugongolo
+bedoel	betød	betekende	meant	signifis	nakalaan lamang ito	signifiait	gemeint	ia mea	i gceist	significava	intelligantur	te auraa	ment	significava	significado	maana	innebar	golygu	wayesho
+kwosiënt	kvotient	quotiënt	quotient	kvociento	quotient	quotient	quotient	puu	chomhrann	quoziente	quotus	huawehe	kvotient	quociente	cociente	quotient ya	kvoten	cyniferydd	sekwa
+tande	tænder	tanden	teeth	dentoj	ngipin	dents	gebiss	niho	fiacla	denti	dentium	niho	tenner	dentes	dientes	meno	tänder	dannedd	amazinyo
+dop	skallen	schelp	shell	konko	shell	coquille	schale	iwi	bhlaosc	guscio	testa	anga	shell	casca	concha	ganda	skal	cragen	igobolondo le
+nek	hals	nek	neck	kolo	leeg	cou	hals	ʻāʻī	muineál	collo	cervicibus	kaki	halsen	pescoço	cuello	shingo	hals	gwddf	intamo
+suurstof	ilt	zuurstof	oxygen	oksigeno	oxygen	oxygène	sauerstoff	ka oxygen	ocsaigin	ossigeno	dolor	hāora	oksygen	oxigênio	oxígeno	oksijeni	syre	ocsigen	oksijini
+suiker	sukker	suiker	sugar	sukero	asukal	sucre	zucker	kōpaʻa	siúcra	zucchero	sugar	huka	sukker	açúcar	azúcar	sukari	socker	siwgr	ushukela
+dood	død	dood	death	morto	kamatayan	décès	tod	make	bás	morte	mortem	te mate	død	morte	muerte	kifo	död	marwolaeth	ukufa
+mooi	temmelig	vrij	pretty	bela	medyo	assez	ziemlich	nani	deas	piuttosto	bellum	pretty	pen	bastante	bastante	wa pretty	ganska	hyfryd	muhle
+vaardigheid	færdighed	vaardigheid	skill	lerto	kasanayan	compétence	geschicklichkeit	akamai	scil	abilità	peritia	pūkenga	ferdighet	habilidade	habilidad	ujuzi	förmåga	sgiliau	ikhono
+vroue	kvinder	vrouwen	women	virinoj	kababaihan	femmes	frauen	na wahine	mná	donne	mulieres	wahine	kvinner	mulheres	mujeres	wanawake	kvinnor	menywod	abesifazane
+seisoen	årstid	seizoen	season	sezono	season	saison	saison	manawa	séasúr	stagione	tempore	wa	sesong	temporada	temporada	msimu	säsong	tymor	isizini
+oplossing	opløsning	oplossing	solution	solvo	solusyon	solution	lösung	pāʻoihana	réiteach	soluzione	solutio	otinga	løsning	solução	solución	ufumbuzi	lösning	ateb	isixazululo
+magnet	magneten	magneet	magnet	magneto	magneto	aimant	magnet	mākēneki	maighnéad	magnete	magnes	ovahine	magnet	ímã	imán	sumaku	magnet	magnet	uzibuthe
+silwer	sølv	zilver	silver	arĝento	pilak	argent	silber	kala	airgid	argento	argentum	hiriwa	sølv	prata	plata	fedha	silver	arian	zesiliva
+dankie	tak	dank	thank	dankon	pasasalamat	merci	danken	aloha	go raibh maith	grazie	gratias	whakawhetai	takk	obrigado	gracias	kuwashukuru	tack	diolch	ngiyabonga
+tak	gren	tak	branch	branĉo	sangay	branche	zweig	lala	brainse	ramo	ramum	peka	gren	ramo	rama	tawi	gren	gangen	igatsha
+wedstryd	kamp	wedstrijd	match	match	pagtutugma	rencontre	spiel	pāʻani	cluiche	partita	par	ōrite	kamp	jogo	partido	mechi	matchen	gêm	nomdlalo
+agtervoegsel	endelse	achtervoegsel	suffix	sufikso	suffix	suffixe	suffix	kau hope	iarmhír	suffisso	etiamne	pīmuri	suffiks	sufixo	sufijo	suffix	suffixet	ôl-ddodiad	isijobelelo
+veral	især	vooral	especially	ĉefe	lalo na	particulièrement	insbesondere	ka oi aku	go háirithe	particolarmente	maxime	rawa	spesielt	especialmente	especialmente	hasa	speciellt	yn enwedig	ikakhulukazi
+fig	figen	vijg	fig	figo	fig	figue	feige	laau	fige	fico	fig	piki	fig	figo	higo	mtini	fig	ffig	komkhiwane
+bang	bange	bang	afraid	timis	takot	peur	ängstlich	makau	eagla	impaurito	timere	wehi	redd	medo	miedo	hofu	rädd	ofn	ngesaba
+groot	enorm	reusachtig	huge	grandega	malaking	énorme	riesig	nui	ollmhór	enorme	ingenti	nui	stor	enorme	enorme	kubwa	enormt	enfawr	omkhulu
+suster	søster	zus	sister	fratino	kapatid na babae	sœur	schwester	kaikuaʻana kaikaina	deirfiúr	sorella	soror	tuahine	søster	irmã	hermana	dada	syster	chwaer	udadewabo
+staal	stål	staal	steel	ŝtalo	asero	acier	stahl	kila	cruach	acciaio	ferrum	maitai	stål	aço	acero	chuma	stål	dur	zensimbi
+bespreek	diskutere	bespreken	discuss	diskuti	talakayin	discuter	diskutieren	kūkākūkā	plé a dhéanamh ar	discutere	disputant	te matapaki i	diskutere	discutir	discutir	kujadili	diskutera	trafod	uxoxe
+vorentoe	fremad	vooruit	forward	antaŭen	pasulong	avant	vorwärts	mua	ar aghaidh	avanti	et deinceps	whakamua	frem	para a frente	adelante	mbele	framåt	ymlaen	phambili
+soortgelyke	lignende	gelijkaardige	similar	simila	katulad	similaire	ähnlich	ano like	den chineál céanna	simile	simile	rite	lignende	similar	similar	sawa	liknande	tebyg	efanayo
+lei	guide	begeleiden	guide	gvidi	patnubayan	guider	führen	alakai	treoir	guidare	dirige	te ārahi i	veilede	orientar	guiar	kuongoza	guide	arwain	umholi
+ervaring	erfaring	ervaring	experience	sperto	karanasan	expérience	erfahrung	ka hoao ana	taithí	esperienza	experientiam	wheako	erfaring	experiência	experiencia	uzoefu	erfarenhet	profiad	isipiliyoni
+telling	baseret	partituur	score	interpunkcio	iskor	score	partitur	manual	scór	punteggio	octoginta	kaute	poengsum	contagem	puntuación	alama	poäng	sgôr	isikolo
+appel	æble	appel	apple	pomon	mansanas	pomme	apfel	kii onohi	úll	mela	pupillam	aporo	eple	maçã	manzana	mboni	äpple	afal	apula
+gekoop	købte	gekocht	bought	aĉetinta	bumili	acheté	gekauft	kuai	cheannaigh	comprato	emptum	hokona	kjøpt	comprou	comprado	kununuliwa	köpt	brynwyd	uthenge
+gelei	ledede	geleid	led	kondukis	humantong	led	geführt	alakai	faoi stiúir	portato	ductus	arahina	ledet	conduziu	llevado	kuongozwa	ledde	arweinir	wahola
+steek	tonehøjde	toonhoogte	pitch	tonalto	pitch	pas	tonhöhe	kukulu iho	tuinairde	pece	picem	te ware	banen	campo	pitch	lami	tonhöjd	traw	iphimbo
+rok	frakke	coat	coat	ŝildo	amerikana	manteau	mantel	kapa	cóta	cappotto	tunica	koti	frakk	casaco	abrigo	kanzu	kappa	côt	isikhumba
+massa	masse	massa	mass	maso	masa	masse	masse	nuipa	mais	massa	missa	papatipu	masse	massa	masa	habari	massa	màs	isonto
+kaart	kort	kaart	card	karton	kard	carte	karte	kāleka	cárta	scheda	pecto	kāri	kortet	cartão	tarjeta	kadi	kort	cerdyn	ikhadi
+groep	bånd	band	band	bando	band	bande	band	hui	banna	banda	cohors	pēne	bandet	banda	banda	bendi	band	mand	ibhande
+tou	reb	touw	rope	ŝnuro	ng lubid	corde	seil	kaula	téad	corda	fune	taura	tau	corda	cuerda	kamba	rep	rhaff	ngentambo
+strokie	slip	slip	slip	slip	isuot na madali	glissement	rutsch	oihana	duillín	slittamento	labente	pepa	slip	deslizamento	deslizamiento	kuingizwa	halka	slip	ukushelela
+oorwinning	sejr	win	win	venko	panalo	gagner	gewinnen	lanakila	bhuachan	vittoria	vincere	wikitōria	vinne	vitória	ganar	kushinda	win	ennill	ukuphumelela
+droom	drømme	dromen	dream	sonĝi	mangarap	rêver	träumen	moe	aisling	sognare	somniatis	moe	drømme	sonhar	soñar	ndoto	dröm	freuddwyd	baphuphe
+aand	aften	avond	evening	vespero	gabi	soirée	abend	ahiahi	tráthnóna	sera	ad vesperum	ahiahi	kveld	noite	noche	jioni	kväll	gyda’r nos	ukuhlwa
+toestand	betingelse	voorwaarde	condition	kondiĉo	kalagayan	condition	zustand	ano	coinníoll	condizione	condicionis	huru	tilstand	condição	condición	hali	tillstånd	cyflwr	isimo
+voer	foder	voer	feed	feed	feed	alimentation	futtermittel	ʻai	beatha	alimentazione	pascuntur	kai	fôr	alimentação	pienso	kulisha	foder	porthiant	funga
+hulpmiddel	værktøj	gereedschap	tool	ilo	kasangkapan	outil	werkzeug	hoʻopololei	uirlis	strumento	ferramentum	taputapu	verktøy	ferramenta	herramienta	chombo	verktyg	offeryn	ithuluzi
+totale	samlede	totaal	total	entute	kabuuan	total	gesamt	huina	iomlán	totale	totalis	katoa	totalt	total de	totales	jumla	totalt	cyfanswm	inani
+basiese	grundlæggende	elementaire	basic	baza	pangunahing	de base	basis	kumu o	bunúsach	di base	prima	taketake	grunnleggende	básico	básico	msingi	grundläggande	sylfaenol	eziyisisekelo
+reuk	lugt	geur	smell	bonodoro	amoy	odeur	geruch	honi	boladh	odore	olfactus	kakara	lukt	cheiro	olor	harufu	lukt	arogl	iphunga
+vallei	dal	dal	valley	valo	lambak	vallée	tal	awāwa	gleann	valle	vallis	raorao	dalen	vale	valle	bonde	dal	dyffryn	isigodi
+of	heller ikke	noch	nor	nek	at hindi rin	ni	noch	aole	ná	né	neque	e kore	eller	nem	ni	wala	eller	nac	noma
+dubbel	dobbelt	dubbel	double	duobla	double	double	doppelt	palua	dúbailte	doppio	duplex	rua	dobbel	duplo	doble	mara mbili	dubbel	dwbl	kabili
+sitplek	sæde	zitje	seat	seĝo	upuan	siège	sitz	noho	suíochán	sedile	cathedra	nohoanga	sete	assento	asiento	kiti cha	säte	sedd	esihlalweni
+voortgaan	fortsætte	blijven	continue	daŭrigi	magpatuloy	continuer	fortsetzen	hoʻomau	leanúint ar aghaidh	continuare	perseverant	tonu	fortsette	continuar	continuar	kuendelea	fortsätta	parhau	uqhubeke
+blok	blok	blokkeren	block	bloko	bloke	bloc	block	aeie	bloc	blocco	clausus	poraka	blokk	bloco	bloque	kuzuia	blocket	bloc	isixa
+grafiek	diagram	grafiek	chart	grafikaĵo	tsart	graphique	tabelle	pakuhi	chairt	grafico	cursus	tūtohi	diagram	gráfico	tabla	chati	diagram	siart	ishadi
+hoed	hat	hoed	hat	ĉapelo	sumbrero	chapeau	hut	ua inaina i ka	hata	cappello	hat	pōtae	hat	chapéu	sombrero	kofia	keps	het	imbenge
+verkoop	sælge	verkopen	sell	vendi	ibenta	vendre	verkaufen	kuai	dhíol	vendere	vende	hoko	selge	vender	vender	kuuza	sälja	gwerthu	adayise
+sukses	succes	succes	success	sukceso	tagumpay	succès	erfolg	holomua	rath	successo	successu	angitu	suksess	sucesso	éxito	mafanikio	framgång	llwyddiant	impumelelo
+maatskappy	selskab	bedrijf	company	kompanio	kompanya	entreprise	firma	poe	cuideachta	azienda	comitatu	kamupene	selskap	companhia	empresa	kampuni	företaget	cwmni	yenkampani
+aftrek	fratrække	aftrekken	subtract	subtrahi	ibawas	soustraire	subtrahieren	unuhi	dealaigh	sottrarre	auferatur	tango	subtrahere	subtrair	restar	ondoa	subtrahera	tynnu	khipha
+gebeurtenis	begivenhed	evenement	event	okazaĵo	kaganapan	événement	veranstaltung	hanana	imeacht	evento	eventus	takahanga	hendelse	evento	evento	tukio	händelse	digwyddiad	umcimbi
+bepaalde	særlig	bijzonder	particular	aparta	partikular na	particulier	besondere	mau	ar leith	particolare	particularis	ngā	særlig	especial	particular	hasa	särskilt	penodol	ethile
+transaksie	aftale	deal	deal	interkonsento	deal	accord	viel	hana	déileáil	affare	multum	mahi	avtale	negócio	acuerdo	mpango	affär	delio	intengo
+swem	svømme	zwemmen	swim	naĝi	lumangoy	baignade	schwimmen	ʻauʻau	snámh	nuoto	natant	kaukau	svømmetur	mergulho	nadar	kuogelea	simma	nofio	bhukuda
+term	sigt	termijn	term	termino	taning	terme	begriff	manawa	téarma	termine	term	wā	term	prazo	plazo	mrefu	term	dymor	ithemu
+teenoorgestelde	modsat	tegengesteld	opposite	kontraŭa	sa tapat ng	opposé	gegenteil	ku pono ana	os coinne	opposto	oppositi	te ritenga atu	motsatt	oposto	opuesta	kinyume	motsatt	gyferbyn	obuhlukile
+vrou	kone	vrouw	wife	edzino	asawa	femme	frau	wahine	bean chéile	moglie	uxorem	wahine	kone	esposa	esposa	mke	fru	gwraig	umkakho
+skoen	sko	schoen	shoe	ŝuo	sapatos	chaussure	schuh	kāmaʻa	bróg	scarpa	calceum	hu	shoe	sapato	zapato	kiatu	sko	esgid	izicathulo
+skouer	skulder	schouder	shoulder	ŝultro	balikat	épaule	schulter	poʻohiwi	ghualainn	spalla	umero	pokohiwi	skulder	ombro	hombro	bega	skuldra	ysgwydd	ehlombe
+verspreiding	spredning	spreiding	spread	disvastiĝo	pagkalat	propagation	verbreitung	hoolaha aku	leathadh	spread	expandit	horapa	spredningen	propagação	propagación	kuenea	spridning	lledaenu	ukusabalala
+reël	arrangere	regelen	arrange	aranĝi	mag-ayos	organiser	arrangieren	hooponopono	socrú a	organizzare	disponere	whakarite	arrangere	organizar	organizar	kupanga	ordna	trefnu	ukuhlela
+kamp	lejr	kamp	camp	tendaro	kampo	camp	lager	hoomoana	campa	campo	castra	puni	leir	acampamento	campamento	kambi	läger	gwersyll	ikamu
+bedink	opfinde	uitvinden	invent	elpensi	imbentuhin	inventer	erfinden	invent	chumadh	inventare	confingunt	whakaaroa	oppfinne	inventar	inventar	mzulia	uppfinna	dyfeisio	usungula
+katoen	bomuld	katoen	cotton	kotono	koton	coton	baumwolle	pulupulu	cadás	cotone	bombicis	miro	bomull	algodão	algodón	pamba	bomull	cotwm	ukotini
+gebore	født	geboren	born	born	isinilang	né	geboren	born	rugadh	nascita	natus	matamua	født	nascido	nacido	aliyezaliwa	född	anwyd	uzalelwa
+bepaal	bestemme	bepalen	determine	determini	matukoy	déterminer	bestimmen	hooholo	chinneadh	determinare	statuere	whakatau	bestemme	determinar	determinar	kuamua	bestämma	penderfynu	linqume
+kwart	kvart	quart	quart	kvarto	quart	litre	quart	quart	leanna	quarto di gallone	quart	hine	kvart	quarto	cuarto de galón	lita moja	quart	chwart	ayilitha
+nege	ni	negen	nine	naŭ	siyam	neuf	neun	ʻeiwa	naoi	nove	novem	e iwa	ni	nove	nueve	tisa	nio	naw	eyisishiyagalolunye
+vragmotor	lastbil	vrachtwagen	truck	kamiono	trak	camion	lastwagen	kona kalaka	trucail	camion	dolor	taraka	lastebil	caminhão	camión	lori	lastbil	lori	iloli
+geraas	støj	geluidsoverlast	noise	bruo	ingay	bruit	lärm	a noise	torann	rumore	sonus	haruru	støy	ruído	ruido	kelele	buller	sŵn	ngomsindo
+vlak	niveau	niveau	level	nivelo	antas	niveau	ebene	ilikai	leibhéal	livello	plana	taumata	nivå	nível	nivel	ngazi ya	nivå	lefel	izinga
+kans	mulighed	kans	chance	ŝanco	pagkakataon	chance	chance	wale	seans	possibilità	forte	tupono	sjanse	oportunidade	oportunidad	nafasi	chans	cyfle	chance
+versamel	samle	verzamelen	gather	kolekti	magtipon	recueillir	sammeln	houluulu	bhailiú	raccogliere	congregate	kohikohi	samle	recolher	reunir	kukusanya	samla	casglu	hlangana
+winkel	butik	winkel	shop	butiko	shop	boutique	geschäft	hale kūʻai	siopa	negozio	taberna	toa	butikk	loja	tienda	duka	butik	siop	esitolo
+rek	strækning	rekken	stretch	sekcio	banatin	tronçon	stretch	ʻō	stráice	tratto	tractum	totoro	stretch	trecho	tramo	kunyoosha	sträcka	ymestyn	elula
+gooi	smide	gooien	throw	ĵeti	magtapon	jeter	werfen	hoolei	caith	gettare	mittite	maka	kaste	jogar	lanzar	kutupa	kasta	taflu	aphonse
+skyn	skinne	glans	shine	briligi	kinang	éclat	glanz	alohi	shine	shine	luceat	whiti	skinne	brilho	brillo	uangaze	glans	disgleirio	inkazimulo
+eiendom	ejendom	pand	property	propraĵo	ari-arian	propriété	immobilien	waiwai	maoin	proprietà	proprietate	rawa	eiendom	propriedade	propiedad	mali	egenskap	eiddo	impahla
+kolom	kolonne	column	column	kolono	haligi	colonne	spalte	kolamu	colún	colonna	column	tīwae	kolonne	coluna	columna	safu	kolonn	colofn	ikholomu
+molekule	molekyle	molecuul	molecule	molekulo	molekyul	molécule	molekül	molecule	móilín	molecola	moleculo	muingota	molekyl	molécula	molécula	molekuli	molekyl	moleciwl	ingqamuzana
+kies	vælg	selecteren	select	elekti	piliin	sélectionner	wählen	koho i	roghnaigh	selezionare	eligere	tīpako	velg	selecione	seleccionar	kuchagua	välj	dewis	ukhethe
+verkeerd	forkert	mis	wrong	malĝusta	mali	mal	falsch	hewa	mícheart	sbagliato	iniuriam	he	galt	errado	mal	makosa	fel	anghywir	okungalungile
+grys	grå	grijs	gray	grizaj	kulay-abo	gris	grau	hinahina	liath	grigio	gray	hina	grå	cinza	gris	kijivu	grå	llwyd	ezimpunga
+herhaling	gentagelse	herhaal	repeat	ripeto	paulit-ulit na	répétition	wiederholung	hana hou	athuair	ripetizione	iterum	tukurua	gjenta	repetição	repita	kurudia	upprepning	ailadrodd	uphinda
+vereis	kræver	vereisen	require	postuli	nangangailangan ng	exiger	erfordern	pono	a cheangal ar	richiedere	requirunt	e rapu	krever	exigir	exigir	zinahitaji	kräva	ei gwneud yn ofynnol	adinga
+breë	bred	brede	broad	larĝa	malawak	large	breit	ka laulā	leathan	ampio	lata	whanui	bred	amplo	amplio	pana	bred	eang	ebanzi
+voor te berei	forberede	bereiden	prepare	pretigi	maghanda	préparer	vorbereiten	hoomakaukau	ullmhú	preparare	praeparabit	te faaineine	forberede	preparar	preparar	kuandaa	förbereda	paratoi	ukulungiselela
+sout	salt	zout	salt	sala	asin	sel	salz	ka paʻakai	salann	sale	sal	tote	saltet	sal	sal	chumvi	salt	halen	usawoti
+neus	næse	neus	nose	nazon	ilong	nez	nase	ihu	srón	naso	nasum	ihu	nese	nariz	nariz	pua	näsa	trwyn	impumulo
+meervoud	flertal	meervoud	plural	pluralo	pangmaramihang	pluriel	mehreren	plural	iolra	plurale	plural	vahine	flertall	plural	plurales	wingi	plural	lluosog	ubuningi
+woede	vrede	woede	anger	kolero	galit	colère	zorn	huhu	fearg	rabbia	iratus	riri	sinne	raiva	cólera	hasira	ilska	dicter	intukuthelo
+eis	fordring	vordering	claim	pretendo	ang claim	revendication	anspruch	koi ana	éileamh	richiesta	clamium	kerēme	krav	reivindicação	reclamación	madai	krav	hawliad	faka isicelo
+vasteland	kontinent	werelddeel	continent	kontinento	kontinente	continent…	kontinent	kaiana	mór-roinn	continente	continentem	fenua	kontinentet	continente	continente	bara	kontinent	cyfandir	izwekazi
