@@ -15,7 +15,8 @@ public class gui extends Application {
     private static data dat;
     
     public static void main(String[] args) {
-        dat = new data();
+        dat = new data(1000);
+        System.out.printf("Mean squared error: %f%n", dat.mean_sq_error());
         launch(args);
     }
 

@@ -8,49 +8,58 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class data {
-    
-    private ArrayList<String> strings_inorder;
-    private vector_int vi;
+
     private HashMap<String, int_wrapper> hmap;
+    private ArrayList<String> test_str;
+    private vector_int test_vi;
+    private static final int NUM_DATA = 8600;
     
     public data() {
-        load();
+        this(0);
     }
     
-    private void load() {
+    public data(int skip) {
+        load(skip);
+    }
+    
+    private void load(int skip) {
         
+        skip = NUM_DATA-skip;
         String line = null;
         try {
             BufferedReader br = new BufferedReader(
                     new FileReader("moviereviews.txt"));
-            strings_inorder = new ArrayList<>();
-            vi = new vector_int();
             hmap = new HashMap<>();
+            final int size = Math.min(NUM_DATA, skip);
+            test_str = new ArrayList<>(size);
+            test_vi = new vector_int(size);
             
             int ctr = 0;
             
-            while((line = br.readLine()) != null) {
-                                
-                vi.add(line.charAt(0)-'0');
-                
-                if(line.length() <= 1) {
-                    strings_inorder.add("");
-                    vi.add(line.charAt(0)-'0');
-                    hmap.put("", new int_wrapper(line.charAt(0)-'0'));
-                    continue;
-                }
-                
-                String substr = line.substring(2);   
-                strings_inorder.add(substr);
-                
-                StringTokenizer st = new StringTokenizer(substr);
-                String ref;
-                while(st.hasMoreTokens()) {
-                    ref = st.nextToken();
-                    if(hmap.containsKey(ref)) {
-                        hmap.get(ref).incr(line.charAt(0)-'0');
+            while((line = br.readLine()) != null) {                
+                if(ctr++ < skip) {
+                    if(line.length() <= 1) {
+                        hmap.put("", new int_wrapper(line.charAt(0)-'0'));
+                        continue;
+                    }
+                    
+                    StringTokenizer st = new StringTokenizer(line.substring(2));
+                    String ref;
+                    while(st.hasMoreTokens()) {
+                        ref = st.nextToken();
+                        if(hmap.containsKey(ref)) {
+                            hmap.get(ref).incr(line.charAt(0)-'0');
+                        } else {
+                            hmap.put(ref, new int_wrapper(line.charAt(0)-'0'));
+                        }
+                    }
+                } else {
+                    if(line.length() <= 1) {
+                        test_str.add("");
+                        test_vi.add(line.charAt(0)-'0');
                     } else {
-                        hmap.put(ref, new int_wrapper(line.charAt(0)-'0'));
+                        test_str.add(line.substring(2));
+                        test_vi.add(line.charAt(0)-'0');
                     }
                 }
             }
@@ -64,6 +73,16 @@ public class data {
         }
     }
     
+    public float mean_sq_error() {
+        final int len = test_str.size();
+        float sum = 0f;
+        for(int i = 0; i<len; ++i) {
+            sum += Math.pow(gen_rating(test_str.get(i))-test_vi.get(i),2);
+        }
+        sum /= len;
+        return sum;
+    }
+    
     public float gen_rating(String text) {
         StringTokenizer tk = new StringTokenizer(text);
         float fsum = 0;
@@ -71,9 +90,14 @@ public class data {
         String token;
         while(tk.hasMoreTokens()) {
             int_wrapper iw = hmap.get(tk.nextToken());
-            fsum += iw != null ? iw.avg() : --ctr;
+            fsum += iw != null ? iw.avg() : --ctr;         
             ++ctr;
         }
+        
+        if(Float.isInfinite(fsum)) {
+            System.err.println(text);
+        }
+        
         return fsum/ctr;
     }
 }
