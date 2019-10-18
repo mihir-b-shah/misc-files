@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
@@ -12,6 +13,7 @@ public class data {
     private HashMap<String, int_wrapper> hmap;
     private ArrayList<String> test_str;
     private vector_int test_vi;
+    private final tf_idf tfidf;
     private static final int NUM_DATA = 8600;
     
     public data() {
@@ -19,7 +21,7 @@ public class data {
     }
     
     public data(int skip) {
-        tf_idf tfidf = new tf_idf();
+        tfidf = new tf_idf();
         load(skip);
     }
     
@@ -28,8 +30,9 @@ public class data {
         skip = NUM_DATA-skip;
         String line = null;
         try {
-            BufferedReader br = new BufferedReader(
+            final BufferedReader br = new BufferedReader(
                     new FileReader("moviereviews.txt"));
+            final ArrayDeque<String> stack = new ArrayDeque<>();
             hmap = new HashMap<>();
             final int size = Math.min(NUM_DATA, skip);
             test_str = new ArrayList<>(size);
@@ -46,6 +49,7 @@ public class data {
                 substr = substr.replaceAll("\\s+", " ");
                 StringTokenizer st = new StringTokenizer(substr);
                 String ref;
+                stack.push(substr);
                 while(st.hasMoreTokens()) {
                     ref = st.nextToken();
                     if(hmap.containsKey(ref)) {
@@ -54,6 +58,10 @@ public class data {
                         hmap.put(ref, new int_wrapper(line.charAt(0)-'0'));
                     }
                 }
+            }
+            
+            while(!stack.isEmpty()) {
+                tfidf.reduce(stack.pop());
             }
             
             final int size2 = NUM_DATA-skip;
@@ -87,6 +95,7 @@ public class data {
     }
     
     public float gen_rating(String text) {
+        System.out.println(tfidf.get_import(text));
         text = text.toLowerCase();
         StringTokenizer tk = new StringTokenizer(text);
         float fsum = 0;

@@ -14,7 +14,12 @@ public class tf_idf {
         idf_helper = new HashMap<>();
     }
     
-    public String reduce(String word) {
+    public float get_import(String word) {
+        Float ret = tfidf_map.get(word);
+        return ret != null ? ret : 0;
+    }
+    
+    public void reduce(String word) {
         StringTokenizer tk = new StringTokenizer(word);
         HashMap<String, int_wrapper> freq_table = new HashMap<>();
         String iter;
@@ -49,9 +54,5 @@ public class tf_idf {
             tfidf_map.put(s.getKey(), s.getValue().avg()/tf_reg*(float) 
                     Math.log(tot_words/idf_helper.get(s.getKey()).ct_reg()));
         }
-        
-        System.out.println(tfidf_map);
-        
-        return null;
     }
 }
