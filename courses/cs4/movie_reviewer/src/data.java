@@ -19,6 +19,7 @@ public class data {
     }
     
     public data(int skip) {
+        tf_idf tfidf = new tf_idf();
         load(skip);
     }
     
@@ -40,15 +41,13 @@ public class data {
                     continue;
                 }
 
-                StringTokenizer st = new StringTokenizer(line.substring(2));
+                String substr = line.substring(2);
+                substr = substr.replaceAll("[^ A-Za-z]+", "");
+                substr = substr.replaceAll("\\s+", " ");
+                StringTokenizer st = new StringTokenizer(substr);
                 String ref;
                 while(st.hasMoreTokens()) {
                     ref = st.nextToken();
-                    if(ref.matches("[A-Za-z]+")) {
-                        ref = ref.toLowerCase();
-                    } else {
-                        continue;
-                    }
                     if(hmap.containsKey(ref)) {
                         hmap.get(ref).incr(line.charAt(0)-'0');
                     } else {

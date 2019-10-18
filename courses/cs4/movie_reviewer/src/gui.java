@@ -2,7 +2,7 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.BorderPane;
@@ -28,7 +28,7 @@ public class gui extends Application {
         VBox layout = new VBox();
         Text prompt = new Text("Enter your review: \n");
         layout.getChildren().add(prompt);
-        TextField tf = new TextField();
+        TextArea tf = new TextArea();
         layout.getChildren().add(tf);
         Button button = new Button("Submit");
         layout.getChildren().add(button);
