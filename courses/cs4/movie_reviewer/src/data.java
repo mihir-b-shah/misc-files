@@ -34,33 +34,37 @@ public class data {
             test_str = new ArrayList<>(size);
             test_vi = new vector_int(size);
             
-            int ctr = 0;
-            
-            while((line = br.readLine()) != null) {                
-                if(ctr++ < skip) {
-                    if(line.length() <= 1) {
-                        hmap.put("", new int_wrapper(line.charAt(0)-'0'));
+            for(int i = 0; i<NUM_DATA-skip; ++i) {           
+                if((line = br.readLine()).length() <= 1) {
+                    hmap.put("", new int_wrapper(line.charAt(0)-'0'));
+                    continue;
+                }
+
+                StringTokenizer st = new StringTokenizer(line.substring(2));
+                String ref;
+                while(st.hasMoreTokens()) {
+                    ref = st.nextToken();
+                    if(ref.matches("[A-Za-z]+")) {
+                        ref = ref.toLowerCase();
+                    } else {
                         continue;
                     }
-                    
-                    StringTokenizer st = new StringTokenizer(line.substring(2));
-                    String ref;
-                    while(st.hasMoreTokens()) {
-                        ref = st.nextToken();
-                        if(hmap.containsKey(ref)) {
-                            hmap.get(ref).incr(line.charAt(0)-'0');
-                        } else {
-                            hmap.put(ref, new int_wrapper(line.charAt(0)-'0'));
-                        }
-                    }
-                } else {
-                    if(line.length() <= 1) {
-                        test_str.add("");
-                        test_vi.add(line.charAt(0)-'0');
+                    if(hmap.containsKey(ref)) {
+                        hmap.get(ref).incr(line.charAt(0)-'0');
                     } else {
-                        test_str.add(line.substring(2));
-                        test_vi.add(line.charAt(0)-'0');
+                        hmap.put(ref, new int_wrapper(line.charAt(0)-'0'));
                     }
+                }
+            }
+            
+            final int size2 = NUM_DATA-skip;
+            for(int i = 0; i<size2; ++i) {
+                if((line = br.readLine()).length() <= 1) {
+                    test_str.add("");
+                    test_vi.add(line.charAt(0)-'0');
+                } else {
+                    test_str.add(line.substring(2));
+                    test_vi.add(line.charAt(0)-'0');
                 }
             }
             
@@ -84,20 +88,16 @@ public class data {
     }
     
     public float gen_rating(String text) {
+        text = text.toLowerCase();
         StringTokenizer tk = new StringTokenizer(text);
         float fsum = 0;
         int ctr = 0;
-        String token;
         while(tk.hasMoreTokens()) {
             int_wrapper iw = hmap.get(tk.nextToken());
             fsum += iw != null ? iw.avg() : --ctr;         
             ++ctr;
         }
-        
-        if(Float.isInfinite(fsum)) {
-            System.err.println(text);
-        }
-        
-        return fsum/ctr;
+
+        return ctr == 0 ? 2f : fsum/ctr;
     }
 }

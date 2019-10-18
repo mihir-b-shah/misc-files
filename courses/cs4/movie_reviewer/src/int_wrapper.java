@@ -17,7 +17,7 @@ public class int_wrapper {
     private static final long FIRST = 0x7fff_ffff;
     
     public int_wrapper(int v) {
-        val = v;
+        val = (MASK+v);
     }
     
     public void incr(int i) {
