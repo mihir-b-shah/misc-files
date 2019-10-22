@@ -49,7 +49,8 @@ public class data {
                 substr = substr.replaceAll("\\s+", " ");
                 StringTokenizer st = new StringTokenizer(substr);
                 String ref;
-                stack.push(substr);
+                stack.push(substr.toLowerCase());
+                tfidf.init(substr);
                 while(st.hasMoreTokens()) {
                     ref = st.nextToken();
                     if(hmap.containsKey(ref)) {
@@ -87,25 +88,57 @@ public class data {
     public float mean_sq_error() {
         final int len = test_str.size();
         float sum = 0f;
+        float v = 0;
         for(int i = 0; i<len; ++i) {
-            sum += Math.pow(gen_rating(test_str.get(i))-test_vi.get(i),2);
+            v = gen_rating_opt1(test_str.get(i));
+            System.out.printf("Test %d:%nString: %s%nPrediction: %f, "
+                    + "Actual: %d%nRegrating: %f%n%n", i, test_str.get(i), 
+                    v, test_vi.get(i), gen_rating(test_str.get(i)));
+            sum += Math.pow(v-test_vi.get(i),2);
         }
         sum /= len;
         return sum;
     }
     
     public float gen_rating(String text) {
-        System.out.println(tfidf.get_import(text));
         text = text.toLowerCase();
         StringTokenizer tk = new StringTokenizer(text);
         float fsum = 0;
         int ctr = 0;
+        String word;
         while(tk.hasMoreTokens()) {
-            int_wrapper iw = hmap.get(tk.nextToken());
-            fsum += iw != null ? iw.avg() : --ctr;         
-            ++ctr;
+            int_wrapper iw = hmap.get(word = tk.nextToken());
+            if(iw != null) {
+                fsum += iw.avg();
+                ++ctr;
+            }
         }
 
         return ctr == 0 ? 2f : fsum/ctr;
+    }
+    
+    public float gen_rating_opt1(String text) {
+        text = text.toLowerCase();
+        StringTokenizer tk = new StringTokenizer(text);
+        float fsum = 0;
+        int ctr = 0;
+        String word;
+        float weight = 0;
+        float wsum = 0;
+        while(tk.hasMoreTokens()) {
+            int_wrapper iw = hmap.get(word = tk.nextToken());
+            weight = tfidf.get_import(word);
+            wsum += weight;
+            if(iw != null) {
+                fsum += (iw.avg()-2f)*weight;
+                ++ctr;
+            }
+        }
+
+        return 2f + (ctr == 0 ? 0 : fsum/(ctr*wsum));
+    }
+    
+    public float gen_rating_opt_fi(String text) {
+        return 0.0f;
     }
 }

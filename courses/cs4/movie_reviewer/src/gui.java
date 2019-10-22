@@ -42,8 +42,10 @@ public class gui extends Application {
         stage.show();
         
         button.addEventHandler(MouseEvent.MOUSE_CLICKED, e->{
-            result.setText(result.getText()+
-                    String.format("%.2f", dat.gen_rating(tf.getText())));
+            String res = tf.getText().toLowerCase().
+                    replaceAll("[^ A-Za-z]+", "").replaceAll("\\s+"," ");
+            result.setText("Rating: " + String.format("%.2f", 
+                    dat.gen_rating(res)));
         });
     }
 }
