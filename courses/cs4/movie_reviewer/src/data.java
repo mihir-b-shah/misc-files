@@ -5,17 +5,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class data {
 
-    private HashMap<String, int_wrapper> hmap;
+    private ctr_map hmap;
     private ArrayList<String> test_str;
     private vector_int test_vi;
     private final tf_idf tfidf;
     private static final int NUM_DATA = 8600;
-    
+    private static final int SHIFT = 1 << 17;
+
     public data() {
         this(0);
     }
@@ -23,6 +23,14 @@ public class data {
     public data(int skip) {
         tfidf = new tf_idf();
         load(skip);
+    }
+    
+    private int constr_avg(int e) {
+        return SHIFT+e;
+    }
+
+    private float iw_avg(int e) {
+        return ((float) (e & 0x1_ffff))/(e >>> 17);
     }
     
     private void load(int skip) {
@@ -33,30 +41,32 @@ public class data {
             final BufferedReader br = new BufferedReader(
                     new FileReader("moviereviews.txt"));
             final ArrayDeque<String> stack = new ArrayDeque<>();
-            hmap = new HashMap<>();
+            hmap = new ctr_map(skip);
             final int size = Math.min(NUM_DATA, skip);
             test_str = new ArrayList<>(size);
             test_vi = new vector_int(size);
             
             for(int i = 0; i<NUM_DATA-skip; ++i) {           
                 if((line = br.readLine()).length() <= 1) {
-                    hmap.put("", new int_wrapper(line.charAt(0)-'0'));
+                    hmap.put("", constr_avg(line.charAt(0)-'0'));
                     continue;
                 }
 
                 String substr = line.substring(2);
                 substr = substr.replaceAll("[^ A-Za-z]+", "");
                 substr = substr.replaceAll("\\s+", " ");
+                substr = substr.toLowerCase();
                 StringTokenizer st = new StringTokenizer(substr);
                 String ref;
-                stack.push(substr.toLowerCase());
+                stack.push(substr);
                 tfidf.init(substr);
                 while(st.hasMoreTokens()) {
                     ref = st.nextToken();
-                    if(hmap.containsKey(ref)) {
-                        hmap.get(ref).incr(line.charAt(0)-'0');
+                    
+                    if(hmap.get(ref) != -1) {
+                        hmap.incr_str(ref, line.charAt(0)-'0');
                     } else {
-                        hmap.put(ref, new int_wrapper(line.charAt(0)-'0'));
+                        hmap.put(ref, constr_avg(line.charAt(0)-'0'));
                     }
                 }
             }
@@ -98,8 +108,8 @@ public class data {
         }
         sum /= len;
         return sum;
-    }
-    
+    }  
+  
     public float gen_rating(String text) {
         text = text.toLowerCase();
         StringTokenizer tk = new StringTokenizer(text);
@@ -107,9 +117,9 @@ public class data {
         int ctr = 0;
         String word;
         while(tk.hasMoreTokens()) {
-            int_wrapper iw = hmap.get(word = tk.nextToken());
-            if(iw != null) {
-                fsum += iw.avg();
+            int iw = hmap.get(word = tk.nextToken());
+            if(iw != -1) {
+                fsum += iw_avg(iw);
                 ++ctr;
             }
         }
@@ -126,11 +136,11 @@ public class data {
         float weight = 0;
         float wsum = 0;
         while(tk.hasMoreTokens()) {
-            int_wrapper iw = hmap.get(word = tk.nextToken());
+            int iw = hmap.get(word = tk.nextToken());
             weight = tfidf.get_import(word);
             wsum += weight;
-            if(iw != null) {
-                fsum += (iw.avg()-2f)*weight;
+            if(iw != -1) {
+                fsum += (iw_avg(iw)-2f)*weight;
                 ++ctr;
             }
         }
