@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 public class data {
 
-    private ctr_map hmap;
+    private ctr_map<String> hmap;
     private ArrayList<String> test_str;
     private vector_int test_vi;
     private final tf_idf tfidf;
@@ -101,9 +101,10 @@ public class data {
         float v = 0;
         for(int i = 0; i<len; ++i) {
             v = gen_rating_opt1(test_str.get(i));
+            /*
             System.out.printf("Test %d:%nString: %s%nPrediction: %f, "
                     + "Actual: %d%nRegrating: %f%n%n", i, test_str.get(i), 
-                    v, test_vi.get(i), gen_rating(test_str.get(i)));
+                    v, test_vi.get(i), gen_rating(test_str.get(i)));   */
             sum += Math.pow(v-test_vi.get(i),2);
         }
         sum /= len;
