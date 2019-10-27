@@ -47,13 +47,15 @@ public class data {
             final int size = Math.min(NUM_DATA, skip);
             test_str = new ArrayList<>(size);
             test_vi = new vector_int(size);
-            int rating = 0;
+            int rating;
             
             for(int i = 0; i<NUM_DATA-skip; ++i) {    
                 if((line = br.readLine()).length() <= 1) {
                     rating = line.charAt(0)-'0';
                     hmap.put("", constr_avg(rating));
                     continue;
+                } else {
+                    rating = line.charAt(0)-'0';
                 }
 
                 String substr = line.substring(2);
@@ -84,13 +86,18 @@ public class data {
             }
             
             final int size2 = NUM_DATA-skip;
+            int val;
             for(int i = 0; i<size2; ++i) {
                 if((line = br.readLine()).length() <= 1) {
                     test_str.add("");
                     test_vi.add(line.charAt(0)-'0');
                 } else {
-                    test_str.add(line.substring(2));
-                    test_vi.add(line.charAt(0)-'0');
+                    val = line.charAt(0)-'0';
+                    line = line.substring(2);
+                    line = line.replaceAll("[^ A-Za-z]+", "");
+                    line = line.replaceAll("\\s+", " ");
+                    test_str.add(line);
+                    test_vi.add(val);
                 }
             }
             
@@ -108,7 +115,7 @@ public class data {
         float sum = 0f;
         float v = 0;
         for(int i = 0; i<len; ++i) {
-            v = gen_rating_opt1(test_str.get(i));
+            v = gen_rating(test_str.get(i));
             /*
             System.out.printf("Test %d:%nString: %s%nPrediction: %f, "
                     + "Actual: %d%nRegrating: %f%n%n", i, test_str.get(i), 
