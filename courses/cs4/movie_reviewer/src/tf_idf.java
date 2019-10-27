@@ -1,4 +1,3 @@
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -7,13 +6,17 @@ import java.util.StringTokenizer;
 public class tf_idf {
     
     private final HashMap<String,Float> tfidf_map;
+    private final HashMap<String,Float> tf_helper;
     private final HashMap<String,int_wrapper> idf_helper;
+    private final short[] weights;
     
-    public tf_idf() {
+    public tf_idf(short[] weights) {
         tfidf_map = new HashMap<>();
         idf_helper = new HashMap<>();
+        tf_helper = new HashMap<>();
+        this.weights = weights;
     }
-    
+
     public float get_import(String word) {
         Float ret = tfidf_map.get(word);
         return ret != null ? ret : 0;
@@ -50,10 +53,11 @@ public class tf_idf {
             } else {
                 freq_table.put(iter, new int_wrapper());
             }
-
-            
             ++ctr;
         }
+        
+        
+        
         // divide by (ctr*tf_reg) as the tf-idf normalization constant
         // idf calculation
         // THIS IS OVERWRITING THE CURRENT VALUES NO PERSISTENT STORAGE!!
@@ -66,7 +70,10 @@ public class tf_idf {
         for(Map.Entry<String,int_wrapper> s: iter_set) {
             val = s.getValue().ct_reg()/tf_reg*(float) 
                     Math.log(tot_words/idf_helper.get(s.getKey()).ct_reg());
-            tfidf_map.put(s.getKey(), val);
+            tfidf_map.put(s.getKey(), s.getValue().ct_reg()/tf_reg);
         }
     }
 }
+
+/*
+*/

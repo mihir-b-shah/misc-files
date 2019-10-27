@@ -13,6 +13,7 @@ public class data {
     private ArrayList<String> test_str;
     private vector_int test_vi;
     private final tf_idf tfidf;
+    private final short[] weights;
     private static final int NUM_DATA = 8600;
     private static final int SHIFT = 1 << 17;
 
@@ -21,7 +22,8 @@ public class data {
     }
     
     public data(int skip) {
-        tfidf = new tf_idf();
+        weights = new short[NUM_DATA-skip];
+        tfidf = new tf_idf(weights);
         load(skip);
     }
     
@@ -45,10 +47,12 @@ public class data {
             final int size = Math.min(NUM_DATA, skip);
             test_str = new ArrayList<>(size);
             test_vi = new vector_int(size);
+            int rating = 0;
             
-            for(int i = 0; i<NUM_DATA-skip; ++i) {           
+            for(int i = 0; i<NUM_DATA-skip; ++i) {    
                 if((line = br.readLine()).length() <= 1) {
-                    hmap.put("", constr_avg(line.charAt(0)-'0'));
+                    rating = line.charAt(0)-'0';
+                    hmap.put("", constr_avg(rating));
                     continue;
                 }
 
@@ -60,17 +64,21 @@ public class data {
                 String ref;
                 stack.push(substr);
                 tfidf.init(substr);
+                int ctr = 0;
+                
                 while(st.hasMoreTokens()) {
                     ref = st.nextToken();
-                    
+                    ++ctr;
                     if(hmap.get(ref) != -1) {
-                        hmap.incr_str(ref, line.charAt(0)-'0');
+                        hmap.incr_str(ref, rating);
                     } else {
-                        hmap.put(ref, constr_avg(line.charAt(0)-'0'));
+                        hmap.put(ref, constr_avg(rating));
                     }
                 }
+                
+                weights[i] = (short) (Math.abs(2-rating)*ctr);
             }
-            
+
             while(!stack.isEmpty()) {
                 tfidf.reduce(stack.pop());
             }
