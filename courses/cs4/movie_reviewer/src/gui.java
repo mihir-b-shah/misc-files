@@ -21,7 +21,8 @@ public class gui extends Application {
     }
     
     public static void main(String[] args) {
-        System.out.printf("Mean squared error: %f%n", dat.mean_sq_error());
+        System.out.printf("Mean squared error: %f%n", 
+                dat.mean_sq_error(dat::gen_rating_opt1));
         launch(args);
     }
 
@@ -53,7 +54,7 @@ public class gui extends Application {
             String res = tf.getText().toLowerCase().
                     replaceAll("[^ A-Za-z]+", "").replaceAll("\\s+"," ");
             result.setText("Rating: " + String.format("%.2f", 
-                    dat.gen_rating(res)));
+                    dat.gen_rating_opt1(res)));
         });
     }
 }
