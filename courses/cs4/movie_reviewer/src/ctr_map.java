@@ -6,7 +6,7 @@ public class ctr_map<T> {
     private static final int incr = 1 << 17;
     
     public ctr_map(int N) {
-        map = new vector_long[Math.min(N<<1,100_000)];
+        map = new vector_long[Math.min(N<<1,1_000_000)];
     }
 
     public void incr_str(T k, int v) {

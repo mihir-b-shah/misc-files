@@ -7,12 +7,12 @@ public class tf_idf {
     
     private final HashMap<String,Float> tfidf_map;
     private final HashMap<String,Float> tf_helper;
-    private final HashMap<String,int_wrapper> idf_helper;
+    private final ctr_map<String> idf_helper;
     private final short[] weights;
     
     public tf_idf(short[] weights) {
         tfidf_map = new HashMap<>();
-        idf_helper = new HashMap<>();
+        idf_helper = new ctr_map(100_000);
         tf_helper = new HashMap<>();
         this.weights = weights;
     }
@@ -29,10 +29,10 @@ public class tf_idf {
         StringTokenizer tk = new StringTokenizer(word);
         while(tk.hasMoreTokens()) {
             iter = tk.nextToken();
-            if((ref = idf_helper.get(iter)) != null) {
-                ref.incr_reg();
+            if(idf_helper.get(iter) != -1) {
+                idf_helper.incr_str_reg(iter);
             } else {
-                idf_helper.put(iter, new int_wrapper());
+                idf_helper.put(iter, 1);
             }
         }
     }
@@ -55,22 +55,20 @@ public class tf_idf {
             }
             ++ctr;
         }
-        
-        
-        
+
         // divide by (ctr*tf_reg) as the tf-idf normalization constant
         // idf calculation
         // THIS IS OVERWRITING THE CURRENT VALUES NO PERSISTENT STORAGE!!
         
-        int tot_words = idf_helper.size();
+        int tot_words = idf_helper.get_size();
         final Set<Map.Entry<String,int_wrapper>> iter_set = 
                 freq_table.entrySet();
         float val;
         
         for(Map.Entry<String,int_wrapper> s: iter_set) {
             val = s.getValue().ct_reg()/tf_reg*(float) 
-                    Math.log(tot_words/idf_helper.get(s.getKey()).ct_reg());
-            tfidf_map.put(s.getKey(), s.getValue().ct_reg()/tf_reg);
+                    Math.log(tot_words/idf_helper.get(s.getKey()));
+            tfidf_map.put(s.getKey(), idf_helper.flt_avg(s.getKey())/tf_reg);
         }
     }
 }

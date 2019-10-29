@@ -17,7 +17,7 @@ public class gui extends Application {
     private static final data dat;
     
     static {
-        dat = new data(1_000);
+        dat = new data(10);
     }
     
     public static void main(String[] args) {
