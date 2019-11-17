@@ -1,8 +1,8 @@
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
@@ -40,8 +40,8 @@ public class data {
         skip = NUM_DATA - skip;
         String line = null;
         try {
-            final BufferedReader br = new BufferedReader(
-                    new FileReader("moviereviews.txt"));
+            final BufferedReader br = new BufferedReader(new InputStreamReader(
+                    this.getClass().getResourceAsStream("moviereviews.txt")));
             final ArrayDeque<String> stack = new ArrayDeque<>();
             hmap = new ctr_map(skip);
             final int size = Math.min(NUM_DATA, skip);
