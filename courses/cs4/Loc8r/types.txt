@@ -1,0 +1,35 @@
+accounting
+air travel
+auto
+auto repair
+bakery
+banking
+biomedical
+camping
+coffee shop
+dentist
+education
+festival
+financial service
+government
+grocery store
+hospital
+hotel
+interior design
+jewelry
+landscaping
+livery service
+museum
+office supplies
+pest control
+physician
+plumbing
+public relations
+recreation
+restaurant
+retail
+technology
+theater
+transportation
+travel
+venue
