@@ -26,11 +26,12 @@ public class GUI {
     }
     
     public static void main(String[] args) {
-        partOne();
+        Input input = partOne();
+        Backend.setInput(input);
         partTwo();
     }
     
-    public static void partOne() {
+    public static Input partOne() {
         JPanel[] panels =  new JPanel[9];
         for(int i = 0; i<panels.length; ++i) {
             panels[i] = new JPanel();
@@ -49,13 +50,13 @@ public class GUI {
         jtf2.setFont(fontNB);
         panels[1].add(new JLabel("\n\n"));
         
-        JLabel longit = new JLabel("Longitude: ");
-        longit.setFont(fontB);
-        panels[2].add(longit);
-        panels[2].add(jtf1);
-        JLabel lat = new JLabel("     Latitude: ");
+        JLabel lat = new JLabel("Latitude: ");
         lat.setFont(fontB);
         panels[2].add(lat);
+        panels[2].add(jtf1);
+        JLabel longit = new JLabel("     Longitude: ");
+        longit.setFont(fontB);
+        panels[2].add(longit);
         panels[2].add(jtf2);
         panels[3].add(new JLabel("\n\n"));
         
@@ -93,6 +94,9 @@ public class GUI {
         panels[7].add(afield);
 
         JOptionPane.showMessageDialog(null, panels);
+        Input input = new Input(jtf1.getText(), jtf2.getText(), kfield.getText(),
+          andor.getSelectedIndex(), tbox.getSelectedIndex(), address.getText());
+        return input;
     }
     
     public static void partTwo() {
@@ -125,7 +129,6 @@ public class GUI {
         DefaultTableCellRenderer center = new DefaultTableCellRenderer();
         center.setHorizontalAlignment(SwingConstants.CENTER);
         table.getColumnModel().getColumn(0).setCellRenderer(center);
-        table.getColumnModel().getColumn(1).setCellRenderer(center);
         table.getColumnModel().getColumn(2).setCellRenderer(center);
         
         Object[] header = {"Rank", "Description", "Rate!"};
