@@ -5,6 +5,7 @@ public class Location implements Comparable<Location>, Comparable2D<Location> {
 
     private static final String TAB = "\t";
     private static final String EMPTY_STRING = "";
+    private boolean visited;
     private final String name;
     private final String address;
     private final String type;
@@ -33,6 +34,16 @@ public class Location implements Comparable<Location>, Comparable2D<Location> {
     @Override
     public float getX() {
         return longitude;
+    }
+    
+    @Override
+    public boolean getVisited() {
+        return visited;
+    }
+    
+    @Override
+    public void setVisited() {
+        visited = true;
     }
     
     @Override
