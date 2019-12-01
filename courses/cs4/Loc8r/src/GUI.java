@@ -128,8 +128,9 @@ public class GUI {
         
         DefaultTableCellRenderer center = new DefaultTableCellRenderer();
         center.setHorizontalAlignment(SwingConstants.CENTER);
-        table.getColumnModel().getColumn(0).setCellRenderer(center);
-        table.getColumnModel().getColumn(2).setCellRenderer(center);
+        for(int i = 0; i<3; ++i) {
+            table.getColumnModel().getColumn(i).setCellRenderer(center);
+        }
         
         Object[] header = {"Rank", "Description", "Rate!"};
         dtm.addRow(header);

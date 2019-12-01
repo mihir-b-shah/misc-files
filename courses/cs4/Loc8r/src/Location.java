@@ -1,7 +1,7 @@
 
 import java.util.StringTokenizer;
 
-public class Location implements Comparable<Location> {
+public class Location implements Comparable<Location>, Comparable2D<Location> {
 
     private static final String TAB = "\t";
     private static final String EMPTY_STRING = "";
@@ -23,6 +23,16 @@ public class Location implements Comparable<Location> {
     private float dist() {
         return (float) Math.sqrt(Math.pow(latitude-Backend.getGlobalLat(),2)+
                                 Math.pow(longitude-Backend.getGlobalLong(),2));
+    }
+    
+    @Override
+    public float getY() {
+        return latitude;
+    }
+    
+    @Override
+    public float getX() {
+        return longitude;
     }
     
     @Override
