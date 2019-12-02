@@ -12,13 +12,16 @@ public class KDTree<T extends Comparable2D<T>> {
     private final T[] objects;
     private final Comparator<T> xsort;
     private final Comparator<T> ysort;
-    private Comparator<T> xysort;
-    private float x, y;
-    private T optObj;
-    private float optDist;
+    private final Comparator<T> xysort;
+    private final float x, y;
     private final PriorityQueue<T> items;
+    private final BoundedMaxheap<T> threshold;
+    private float minDist;
+    private final int numItems;
 
-    public KDTree(T[] array, int Kmax) {
+    public KDTree(float refX, float refY, T[] array, int Kmax) {
+        x = refX; y = refY;
+        numItems = Kmax;
         objects = (T[]) new Comparable2D[array.length];
         System.arraycopy(array, 0, objects, 0, array.length);
         xsort = (T one, T two) -> Float.compare(one.getX(), two.getX());
@@ -28,6 +31,7 @@ public class KDTree<T extends Comparable2D<T>> {
 
         generate(0, objects.length - 1, 0);
         items = new PriorityQueue(Kmax, xysort);
+        threshold = new BoundedMaxheap(Kmax, xysort);
     }
     
     @Override
@@ -100,12 +104,10 @@ public class KDTree<T extends Comparable2D<T>> {
         float loc;
         if (lower >= upper) {
             return;
-        } else if(lower == upper-1) {
-            if((loc = objects[lower].getDist(x, y)) < optDist && 
-                    !objects[lower].getVisited()) {
-                optDist = loc;
-                optObj = objects[lower];
-            }
+        } else if(lower == upper-1 && !objects[lower].getVisited()) {
+            items.offer(objects[lower]);
+            threshold.insert(objects[lower]);
+            objects[lower].setVisited();
             return;
         }
 
@@ -115,38 +117,42 @@ public class KDTree<T extends Comparable2D<T>> {
 
         if (one <= two) {
             getNearestNeighbor(lower,mid-1,lvl+1);
-            if((loc = objects[mid].getDist(x, y)) < optDist 
-                    && !objects[mid].getVisited()) {
-                optDist = loc;
-                optObj = objects[mid];
+            if(!objects[mid].getVisited()) {
+                items.offer(objects[mid]);
+                threshold.insert(objects[mid]);
+                objects[mid].setVisited();
             }
             switch(lvl&1) {
                 case 0:
-                    if(objects[mid].getXsqDist(x) < optDist) {
+                    if(objects[mid].getXsqDist(x) < 
+                            threshold.getKthElement().getDist(x, y)) {
                         getNearestNeighbor(mid+1,upper,lvl+1);
                     }
                     break;
                 case 1:
-                    if(objects[mid].getYsqDist(y) < optDist) {
+                    if(objects[mid].getYsqDist(y) < 
+                            threshold.getKthElement().getDist(x, y)) {
                         getNearestNeighbor(mid+1,upper,lvl+1);
                     }
                     break;
             }
         } else {
             getNearestNeighbor(mid+1,upper,lvl+1);
-            if((loc = objects[mid].getDist(x, y)) < optDist
-                    && !objects[mid].getVisited()) {
-                optDist = loc;
-                optObj = objects[mid];
+            if(!objects[mid].getVisited()) {
+                items.offer(objects[mid]);
+                objects[mid].setVisited();
             }
+            
             switch(lvl&1) {
                 case 0:
-                    if(objects[mid].getXsqDist(x) < optDist) {
+                    if(objects[mid].getXsqDist(x) < 
+                            threshold.getKthElement().getDist(x, y)) {
                         getNearestNeighbor(lower,mid-1,lvl+1);
                     }
                     break;
                 case 1:
-                    if(objects[mid].getYsqDist(y) < optDist) {
+                    if(objects[mid].getYsqDist(y) < 
+                            threshold.getKthElement().getDist(x, y)) {
                         getNearestNeighbor(lower,mid-1,lvl+1);
                     }
                     break;
@@ -154,68 +160,29 @@ public class KDTree<T extends Comparable2D<T>> {
         }
     }
 
-    public T[] getKNN(float x, float y, int K) {
-        this.x = x;
-        this.y = y;
+    public T[] getKNN(int K) {
         T[] nearest = (T[]) new Comparable2D[Math.min(K, objects.length)];
-        for(int i = 0; i<K; ++i) {
-            optDist = Float.MAX_VALUE;
-            optObj = null;
-            
+        
+        while(items.size()<nearest.length<<1) {
             getNearestNeighbor(0, objects.length, 0);
-            optObj.setVisited();
-            nearest[i] = optObj;
+        }
+        
+        for(int i = 0; i<K; ++i) {
+            nearest[i] = items.poll();
         }
         
         return nearest;
     }
-    
-    private static class XYPair implements Comparable2D<XYPair> {
-        private final float x;
-        private final float y;
-        private boolean visited;
-        
-        public XYPair(float x, float y) {
-            this.x = x;
-            this.y = y;
-        }
-        
-        @Override
-        public float getX() {
-            return x;
-        }
-        
-        @Override
-        public float getY() {
-            return y;
-        }
-        
-        @Override
-        public boolean getVisited() {
-            return visited;
-        }
-        
-        @Override
-        public void setVisited() {
-            visited = true;
-        }
-        
-        @Override
-        public String toString() {
-            return String.format("<%f,%f>, dist=%f", x, y, 
-                    Math.sqrt(Math.pow(0.55-x,2)+Math.pow(0.7-y,2)));
-        }
-    }
-    
+   
     public static void main(String[] args) {
         XYPair[] array = 
                 {new XYPair(0.1f,0.9f), new XYPair(0.2f,0.3f), new XYPair(0.4f,0.2f),
                  new XYPair(0.7f,0.2f), new XYPair(0.8f,0.1f), new XYPair(0.5f,0.5f),
                  new XYPair(0.6f,0.6f)};
         
-        KDTree kdtree = new KDTree(array);
+        KDTree kdtree = new KDTree(0.55f, 0.7f, array, 7);
         System.out.println(kdtree.toString());
-        Comparable2D[] res = kdtree.getKNN(0.55f, 0.7f, 7);
+        Comparable2D[] res = kdtree.getKNN(3);
         System.out.println(Arrays.toString(res));
     }
 }
