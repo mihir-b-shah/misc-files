@@ -1,11 +1,15 @@
 
+package view;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.util.List;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -13,6 +17,9 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import application.*;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
 
 public class GUI { 
     private static final Font fontNB;
@@ -68,22 +75,23 @@ public class GUI {
         kfield.setFont(fontNB);
         panels[4].add(kfield);
         
-        JLabel andorxor = new JLabel("And/Or/Xor: ");
+        JLabel andorxor = new JLabel("And/Or: ");
         andorxor.setFont(fontB);
         panels[5].add(andorxor);
-        JComboBox andor = new JComboBox();
-        andor.addItem("AND"); andor.addItem("OR"); andor.addItem("XOR");
-        panels[5].add(andor);
+        JRadioButton and = new JRadioButton("And");
+        and.setFont(fontNB);
+        JRadioButton or = new JRadioButton("Or");
+        or.setFont(fontNB);
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(and); bg.add(or);
+        panels[5].add(and); panels[5].add(or);
         
         JLabel type = new JLabel("Type: ");
         type.setFont(fontB);
         panels[6].add(type);
-        JComboBox tbox = new JComboBox();
         String[] set = Backend.getTypes();
-        for(int i = 0; i<set.length; ++i) {
-            tbox.addItem(set[i]);
-        }
-        panels[6].add(tbox);
+        JList tbox = new JList(set);
+        panels[6].add(new JScrollPane(tbox));
         
         JLabel address = new JLabel("Address: ");
         address.setFont(fontB);
@@ -93,9 +101,11 @@ public class GUI {
         afield.setFont(fontNB);
         panels[7].add(afield);
 
-        JOptionPane.showMessageDialog(null, panels);
+        JOptionPane.showMessageDialog(null, panels, 
+                "The coolest application ever", JOptionPane.INFORMATION_MESSAGE);
         Input input = new Input(jtf1.getText(), jtf2.getText(), kfield.getText(),
-          andor.getSelectedIndex(), tbox.getSelectedIndex(), address.getText());
+          and.isSelected() ? 2 : or.isSelected() ? 1 : 0, 
+                tbox.getSelectedIndices(), address.getText());
         return input;
     }
     
@@ -110,7 +120,7 @@ public class GUI {
         icon.setImage(icon.getImage().getScaledInstance(900, 300, 0));
         panels[0].add(img);
         
-        String[] results = Backend.genResults();
+        List<String> results = Backend.genResults();
         DefaultTableModel dtm;
         JTable table = new JTable(
                 dtm = new DefaultTableModel(0,3){
@@ -136,14 +146,15 @@ public class GUI {
         dtm.addRow(header);
         panels[1].add(table);
         
-        for(int i = 0; i<results.length; ++i) {
+        for(int i = 0; i<results.size(); ++i) {
             Object[] array = new Object[3];
             array[0] = i+1;
-            array[1] = results[i];
+            array[1] = results.get(i);
             array[2] = "";
             dtm.addRow(array);
         }
         
-        JOptionPane.showMessageDialog(null, panels);
+        JOptionPane.showMessageDialog(null, panels, 
+                "The coolest application ever", JOptionPane.INFORMATION_MESSAGE);
     }
 }

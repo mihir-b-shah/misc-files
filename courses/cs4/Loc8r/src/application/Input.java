@@ -1,19 +1,24 @@
 
+package application;
+
 public class Input {
     private final float latitude;
     private final float longitude;
-    private final String keyword;
+    private String keyword;
     private final byte aox;
-    private final int idx;
+    private final long indexes;
     private final String addr;
     
     public Input(String la, String lo, String kw, int saox, 
-            int idx, String addr) {
+            int[] idx, String addr) {
         latitude = Float.parseFloat(la);
         longitude = Float.parseFloat(lo);
-        keyword = kw;
-        aox = (byte) (saox+1);
-        this.idx = idx;
+        aox = (byte) saox;
+        long buf = 0;
+        for(int i = 0; i<idx.length; ++i) {
+            buf += 1L << idx[i];
+        }
+        indexes = buf;
         this.addr = addr;
     }
     
@@ -22,7 +27,7 @@ public class Input {
     }
     
     public float getLong() {
-        return latitude;
+        return longitude;
     }
     
     public String getKeyword() {
@@ -33,8 +38,8 @@ public class Input {
         return aox;
     }
     
-    public int getIndex() {
-        return idx;
+    public long getIndexes() {
+        return indexes;
     }
     
     public String getAddress() {

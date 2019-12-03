@@ -1,8 +1,12 @@
+package utils;
+
 
 public class XYPair implements Comparable2D<XYPair> {
     private final float x;
     private final float y;
     private boolean visited;
+    private int left;
+    private int right;
 
     public XYPair(float x, float y) {
         this.x = x;
@@ -14,6 +18,26 @@ public class XYPair implements Comparable2D<XYPair> {
         return x;
     }
 
+    @Override
+    public int getNumLeft() {
+        return left;
+    }
+    
+    @Override
+    public int getNumRight() {
+        return right;
+    }
+    
+    @Override
+    public void decrLeft() {
+        --left;
+    }
+    
+    @Override
+    public void decrRight() {
+        --right;
+    }
+    
     @Override
     public float getY() {
         return y;

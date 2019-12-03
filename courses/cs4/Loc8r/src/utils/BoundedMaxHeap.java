@@ -1,13 +1,15 @@
+package utils;
+
 
 import java.util.Comparator;
 
-public class BoundedMaxheap<T extends Comparable2D<T>> {
+public class BoundedMaxHeap<T extends Comparable2D<T>> {
 
     private final T[] heap;
     private final Comparator<T> comp;
     private int pos; // for the first K insertions
 
-    public BoundedMaxheap(int K, Comparator<T> comp) {
+    public BoundedMaxHeap(int K, Comparator<T> comp) {
         heap = (T[]) new Comparable2D[K];
         this.comp = comp;
     }

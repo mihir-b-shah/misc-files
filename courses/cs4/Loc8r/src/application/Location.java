@@ -1,5 +1,8 @@
+package application;
+
 
 import java.util.StringTokenizer;
+import utils.Comparable2D;
 
 public class Location implements Comparable<Location>, Comparable2D<Location> {
 
@@ -8,15 +11,17 @@ public class Location implements Comparable<Location>, Comparable2D<Location> {
     private boolean visited;
     private final String name;
     private final String address;
-    private final String type;
+    private final int type;
     private final float longitude;
     private final float latitude;
+    private int left;
+    private int right;
     
     public Location(String line) {
         StringTokenizer st = new StringTokenizer(line, TAB);
         name = st.nextToken();
         address = st.nextToken();
-        type = st.nextToken();
+        type = Backend.getMapIndex(st.nextToken());
         longitude = Float.parseFloat(st.nextToken());
         latitude = Float.parseFloat(st.nextToken());
     }
@@ -24,6 +29,26 @@ public class Location implements Comparable<Location>, Comparable2D<Location> {
     private float dist() {
         return (float) Math.sqrt(Math.pow(latitude-Backend.getGlobalLat(),2)+
                                 Math.pow(longitude-Backend.getGlobalLong(),2));
+    }
+    
+    @Override
+    public int getNumLeft() {
+        return left;
+    }
+    
+    @Override
+    public int getNumRight() {
+        return right;
+    }
+    
+    @Override
+    public void decrLeft() {
+        --left;
+    }
+    
+    @Override
+    public void decrRight() {
+        --right;
     }
     
     @Override
@@ -59,7 +84,7 @@ public class Location implements Comparable<Location>, Comparable2D<Location> {
         return address;
     }
     
-    public String getType() {
+    public int getTypeIndex() {
         return type;
     }
     

@@ -1,4 +1,8 @@
+package utils;
 
+
+import utils.BoundedMaxHeap;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -9,21 +13,21 @@ import java.util.PriorityQueue;
 
 public class KDTree<T extends Comparable2D<T>> {
 
-    private final T[] objects;
+    private static final int NUM_ITER = 4;
+    private T[] objects;
     private final Comparator<T> xsort;
     private final Comparator<T> ysort;
     private final Comparator<T> xysort;
     private final float x, y;
     private final PriorityQueue<T> items;
-    private final BoundedMaxheap<T> threshold;
-    private float minDist;
+    private final BoundedMaxHeap<T> threshold;
     private final int numItems;
 
-    public KDTree(float refX, float refY, T[] array, int Kmax) {
+    public KDTree(float refX, float refY, ArrayList<T> array, int Kmax) {
         x = refX; y = refY;
         numItems = Kmax;
-        objects = (T[]) new Comparable2D[array.length];
-        System.arraycopy(array, 0, objects, 0, array.length);
+        objects = (T[]) new Comparable2D[array.size()];
+        objects = array.toArray(objects);
         xsort = (T one, T two) -> Float.compare(one.getX(), two.getX());
         ysort = (T one, T two) -> Float.compare(one.getY(), two.getY());
         xysort = (T one, T two)->
@@ -31,7 +35,7 @@ public class KDTree<T extends Comparable2D<T>> {
 
         generate(0, objects.length - 1, 0);
         items = new PriorityQueue(Kmax, xysort);
-        threshold = new BoundedMaxheap(Kmax, xysort);
+        threshold = new BoundedMaxHeap(Kmax<<1, xysort);
     }
     
     @Override
@@ -100,15 +104,14 @@ public class KDTree<T extends Comparable2D<T>> {
         return objects[mid].hashValue() == hash ? objects[mid] : null;
     }
 
-    private void getNearestNeighbor(int lower, int upper, int lvl) {
-        float loc;
+    private int getNearestNeighbor(int lower, int upper, int lvl) {
         if (lower >= upper) {
-            return;
+            return 0;
         } else if(lower == upper-1 && !objects[lower].getVisited()) {
-            items.offer(objects[lower]);
+            items.offer(objects[lower]);            
             threshold.insert(objects[lower]);
-            objects[lower].setVisited();
-            return;
+            objects[lower].setVisited(); // to mark the object
+            return 1; // to mark objects in its subtree
         }
 
         int mid = (lower + upper - 1) >>> 1;
@@ -158,31 +161,23 @@ public class KDTree<T extends Comparable2D<T>> {
                     break;
             }
         }
+        return 0;
     }
 
-    public T[] getKNN(int K) {
-        T[] nearest = (T[]) new Comparable2D[Math.min(K, objects.length)];
+    public ArrayList<T> getKNN(int K) {
+        final int size = Math.min(K, objects.length);
+        ArrayList<T> nearest = new ArrayList<>(size);
+        int ctr = 0;
         
-        while(items.size()<nearest.length<<1) {
+        while(ctr < NUM_ITER && items.size()<nearest.size()<<1) {
             getNearestNeighbor(0, objects.length, 0);
+            ++ctr;
         }
         
         for(int i = 0; i<K; ++i) {
-            nearest[i] = items.poll();
+            nearest.add(items.poll());
         }
         
         return nearest;
-    }
-   
-    public static void main(String[] args) {
-        XYPair[] array = 
-                {new XYPair(0.1f,0.9f), new XYPair(0.2f,0.3f), new XYPair(0.4f,0.2f),
-                 new XYPair(0.7f,0.2f), new XYPair(0.8f,0.1f), new XYPair(0.5f,0.5f),
-                 new XYPair(0.6f,0.6f)};
-        
-        KDTree kdtree = new KDTree(0.55f, 0.7f, array, 7);
-        System.out.println(kdtree.toString());
-        Comparable2D[] res = kdtree.getKNN(3);
-        System.out.println(Arrays.toString(res));
     }
 }
