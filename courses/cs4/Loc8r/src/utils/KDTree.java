@@ -1,10 +1,9 @@
 package utils;
 
-
-import utils.BoundedMaxHeap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 /* Cannot be mutated once constructed, only through batch updates
@@ -23,7 +22,7 @@ public class KDTree<T extends Comparable2D<T>> {
     private final BoundedMaxHeap<T> threshold;
     private final int numItems;
 
-    public KDTree(float refX, float refY, ArrayList<T> array, int Kmax) {
+    public KDTree(float refX, float refY, List<T> array, int Kmax) {
         x = refX; y = refY;
         numItems = Kmax;
         objects = (T[]) new Comparable2D[array.size()];
@@ -174,8 +173,13 @@ public class KDTree<T extends Comparable2D<T>> {
             ++ctr;
         }
         
+        T item;
+        
         for(int i = 0; i<K; ++i) {
-            nearest.add(items.poll());
+            item = items.poll();
+            if(item != null) {
+                nearest.add(item);
+            }
         }
         
         return nearest;

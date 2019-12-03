@@ -72,8 +72,10 @@ public class Backend {
             System.err.println("input not created");
         }
         
-        KDTree kd = new KDTree(input.getLong(), input.getLat(), 
-                locs, NUM_RESULTS);
+        final long indexes = input.getIndexes(); // optimize function calls
+        KDTree kd = new KDTree(input.getLong(), input.getLat(), locs.stream()
+                .filter(x->(((1L<<x.getTypeIndex())&indexes) != 0)).collect(
+                        Collectors.toList()), NUM_RESULTS);
         ArrayList<Location> result = kd.getKNN(NUM_RESULTS);
         Stream<Location> process;
         
@@ -84,9 +86,8 @@ public class Backend {
         } else {
             process = result.stream();
         }
-        
-        return process.filter(x->(x.getTypeIndex()&input.getIndexes()) != 0)
-                .map(x->x.toString()).collect(Collectors.toList());
+
+        return process.map(x->x.toString()).collect(Collectors.toList());
     }
     
     public static float getGlobalLat() {
