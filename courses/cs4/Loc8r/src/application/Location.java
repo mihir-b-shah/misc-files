@@ -3,6 +3,7 @@ package application;
 
 import java.util.StringTokenizer;
 import utils.Comparable2D;
+import utils.StringSimilarity;
 
 public class Location implements Comparable<Location>, Comparable2D<Location> {
 
@@ -73,7 +74,12 @@ public class Location implements Comparable<Location>, Comparable2D<Location> {
     
     @Override
     public int compareTo(Location loc) {
-        return Float.compare(dist(), loc.dist());
+        return Float.compare(dist()*StringSimilarity.genScore(name, 
+                Backend.getKeyword())*StringSimilarity.genScore(address, 
+                Backend.getAddress()),loc.dist()*StringSimilarity.
+                        genScore(loc.getName(), 
+                Backend.getKeyword())*StringSimilarity.genScore(loc.getAddress(), 
+                        Backend.getAddress()));
     }
     
     public String getName() {

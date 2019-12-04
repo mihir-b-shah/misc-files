@@ -21,6 +21,8 @@ public interface StringSimilarity {
     int SHIFT = 57;
     
     static float genScore(String s1, String s2) {
+        if(s1 == null || s2 == null || 
+                s1.length() == 0 || s2.length() == 0) return 1.0f;
         float score = 0;        
         TreeSet<Long> set = new TreeSet<>();
         
@@ -45,8 +47,9 @@ public interface StringSimilarity {
         }
 
         FastStack stack = new FastStack(set.size());
+        if(set.isEmpty()) return 0.9995f;
         
-        int ctr = 0;
+        int ctr = 1;
         long curr = set.first();
         
         while(ctr < set.size()) {
@@ -68,6 +71,6 @@ public interface StringSimilarity {
             score += val*val;
         }
         
-        return score/(s.length*t.length);
+        return 1-score/(s.length*t.length);
     }
 }

@@ -99,4 +99,12 @@ public class Backend {
     public static float getGlobalLong() {
         return input.getLong();
     }
+    
+    public static String getKeyword() {
+        return input.getKeyword();
+    }
+    
+    public static String getAddress() {
+        return input.getAddress();
+    }
 }

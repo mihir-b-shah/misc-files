@@ -17,9 +17,9 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import application.*;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import application.*;
 
 public class GUI { 
     private static final Font fontNB;
@@ -33,9 +33,26 @@ public class GUI {
     }
     
     public static void main(String[] args) {
-        Input input = partOne();
-        Backend.setInput(input);
-        partTwo();
+        Input input = null;
+        int ctr = 0;
+        int ret = 0;
+        do {
+            if(ctr != 0) {
+                ret = JOptionPane.showConfirmDialog(null, "Errors detected:"
+                        + "\n\n".concat(input.getErrors()), "Error",
+                        JOptionPane.OK_CANCEL_OPTION);
+                if(ret == 2) {
+                    break;
+                }
+            }
+            input = partOne();
+            ++ctr;
+        } while(input != null && input.getErrors().length() > 0 && ret == 0);
+ 
+        if(ret != 2) {
+            Backend.setInput(input);
+            partTwo();
+        }
     }
     
     public static Input partOne() {
@@ -84,6 +101,7 @@ public class GUI {
         or.setFont(fontNB);
         ButtonGroup bg = new ButtonGroup();
         bg.add(and); bg.add(or);
+        and.setSelected(true);
         panels[5].add(and); panels[5].add(or);
         
         JLabel type = new JLabel("Type: ");
@@ -105,7 +123,7 @@ public class GUI {
                 "The coolest application ever", JOptionPane.INFORMATION_MESSAGE);
         Input input = new Input(jtf1.getText(), jtf2.getText(), kfield.getText(),
           and.isSelected() ? 2 : or.isSelected() ? 1 : 0, 
-                tbox.getSelectedIndices(), address.getText());
+                tbox.getSelectedIndices(), afield.getText());
         return input;
     }
     
