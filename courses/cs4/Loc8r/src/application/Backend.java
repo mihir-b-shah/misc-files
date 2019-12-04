@@ -2,7 +2,7 @@
 package application;
 
 import utils.KDTree;
-import utils.FastIntMap;
+import utils.FastMap;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 public class Backend {
     
-    private static final FastIntMap<String> typeIndex;
+    private static final FastMap<String> typeIndex;
     private static final String[] set;
     private static final ArrayList<Location> locs;
     private static Input input;
@@ -25,7 +25,7 @@ public class Backend {
     private static final int NUM_LOCS = 625;
     
     static {       
-        typeIndex = new FastIntMap<>(1+(NUM_TYPES<<1));
+        typeIndex = new FastMap<>(1+(NUM_TYPES<<1));
         set = new String[NUM_TYPES];
         try {
             int ctr = 0;
@@ -73,15 +73,17 @@ public class Backend {
         }
         
         final long indexes = input.getIndexes(); // optimize function calls
-        KDTree kd = new KDTree(input.getLong(), input.getLat(), locs.stream()
-                .filter(x->(((1L<<x.getTypeIndex())&indexes) != 0)).collect(
-                        Collectors.toList()), NUM_RESULTS);
+        List<Location> in;
+        
+        KDTree kd = new KDTree(input.getLong(), input.getLat(), in = 
+                locs.stream().filter(x->((1L<<x.getTypeIndex())&indexes) != 0)
+                .collect(Collectors.toList()), NUM_RESULTS);
         ArrayList<Location> result = kd.getKNN(NUM_RESULTS);
         Stream<Location> process;
         
         if(result.size() < NUM_RESULTS) {
             PriorityQueue<Location> pq = new PriorityQueue<>();
-            pq.addAll(locs);
+            pq.addAll(in);
             process = Stream.generate(pq::poll).limit(NUM_RESULTS);
         } else {
             process = result.stream();

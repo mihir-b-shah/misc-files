@@ -131,7 +131,7 @@ public class Client extends Application {
         int ptr_2 = 0;
         int aux_ptr_1;
         int aux_ptr_2;
-        boolean wi_pr = false;
+        boolean wi_pr;
         boolean wi = false;
 
         // tokenize by common strings
@@ -198,8 +198,7 @@ public class Client extends Application {
 
         int st_1 = 0;
         int st_2 = 0;
-        int intermed_1 = 0;
-        int intermed_2 = 0;
+        int intermed_1,intermed_2;
         int e_1 = 0;
         int e_2 = 0;
 
