@@ -3,7 +3,6 @@ package utils;
 import java.util.Arrays;
 import java.util.function.LongBinaryOperator;
 import java.util.function.LongPredicate;
-import static utils.StringSimilarity.FIRST_BITS;
 
 /* uses linear probing and very fast bitmasks! yeeeet!
    load factor of 0.5 
@@ -39,7 +38,7 @@ public class FastMap<T> {
      *             should be used, then it should return 1. Else 0. Arg0 is 
      *             the original and Arg1 is the new element.
      */
-    public void insert(long val, final LongBinaryOperator rule) {
+    public void insert(final long val, final LongBinaryOperator rule) {
         int iter;
         long ref;
         if (size > data.length >>> 1) {
@@ -48,21 +47,23 @@ public class FastMap<T> {
             for (int i = 0; i < aux.length; ++i) {
                 iter = (int) adjustIndex(aux[i]);
                 while ((ref = data[iter %= data.length]) != 0L 
-                        && (ref&FIRST_BITS) != (aux[i]&FIRST_BITS)) {
+                        && rule.applyAsLong(aux[i], ref) == 0L) {
                     ++iter;
                 }
-                if(ref == aux[i] && rule.applyAsLong(aux[i],ref) == 1L) {
-                    data[iter] = aux[i];
+                switch((int) rule.applyAsLong(aux[i], ref)) {
+                    case 0:
+                    case 1: data[iter] = aux[i];
                 }
             }
         } else {
             iter = (int) adjustIndex(val);
             while ((ref = data[iter %= data.length]) != 0L 
-                        && (ref&FIRST_BITS) != (val&FIRST_BITS)) {
+                    && rule.applyAsLong(val, ref) == 0L) {
                 ++iter;
             }
-            if(ref == val && rule.applyAsLong(val,ref) == 1L) {
-                data[iter] = val;
+            switch((int) rule.applyAsLong(val, ref)) {
+                case 0:
+                case 1: data[iter] = val;
             }
         }
     }

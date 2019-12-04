@@ -1,32 +1,29 @@
 package utils;
 
-
 /*
  * Static stack, cannot dynamically grow
  */
-public class FastStack<T extends Comparable2D<T>> {
-    private final T[] stack;
+public class FastStack {
+    private final long[] stack;
     private int pos;
     
     public FastStack(int N) {
-        stack = (T[]) new Comparable2D[N];
+        stack = new long[N];
     }
     
-    public T pop() {
+    public long pop() {
         return stack[--pos];
     }
     
-    public void push(T obj) {
+    public void push(long obj) {
         stack[pos++] = obj;
     } 
     
-    protected T[] getArray() {
-        return stack;
+    public boolean empty() {
+        return pos == 0;
     }
     
-    // Assumes the same K. Doesnt check
-    protected void copyStack(T[] array, int pos) {
-        System.arraycopy(array, 0, stack, 0, pos);
-        this.pos = pos;
+    protected long[] getArray() {
+        return stack;
     }
 }

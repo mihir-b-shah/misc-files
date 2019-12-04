@@ -3,8 +3,7 @@ package utils;
 
 // no need to encapsulate any fields, its purely static
 
-import java.util.Arrays;
-import java.util.function.LongBinaryOperator;
+import java.util.TreeSet;
 
 public interface StringSimilarity {
     /*
@@ -17,17 +16,13 @@ public interface StringSimilarity {
     Use longs to efficiently store what strings have been combine
     Only limit is 57 items or less
     */
-    
-    long CTR_MASK = 1L<<57;
-    long FIRST_BITS = (1L<<57)-1;
-    int SHIFT_RIGHT = 57;
 
+    long FIRST_BITS = (1L<<57)-1;
+    int SHIFT = 57;
+    
     static float genScore(String s1, String s2) {
-        float score = 0;
-        final FastMap set = new FastMap(181); // prime number,3x num entries
-        final LongBinaryOperator predicate = (x,y)->{
-            return x >>> SHIFT_RIGHT > y >>> SHIFT_RIGHT ? 0L : 1L;
-        };
+        float score = 0;        
+        TreeSet<Long> set = new TreeSet<>();
         
         final String[] s = s1.replaceAll("[^A-Za-z0-9 ]+", "")
                 .toLowerCase().trim().split("\\s+");
@@ -44,13 +39,35 @@ public interface StringSimilarity {
                 }
                 table[i][j] = (i == 0 || j == 0) ? 1
                                                  : 1 + table[i - 1][j - 1];
-                System.out.printf("%#x%n", (((1L << table[i][j])-1) << (i-table[i][j]+1))+CTR_MASK*(table[i][j]));
-                set.insert((((1L << table[i][j])-1) << i-table[i][j]+1)
-                        +CTR_MASK*(table[i][j]), predicate);
+                set.add((((1L << table[i][j])-1) << i-table[i][j]+1)
+                        +(((long) table[i][j])<<SHIFT));
             }
         }
 
-        System.out.println(Arrays.toString(set.collectSet(null)));        
-        return 0.0f;
+        FastStack stack = new FastStack(set.size());
+        
+        int ctr = 0;
+        long curr = set.first();
+        
+        while(ctr < set.size()) {
+            for(long lg: set) {
+                if((lg&FIRST_BITS|curr&FIRST_BITS) == (curr&FIRST_BITS)) {
+                    stack.push(lg);
+                }
+            }
+            while(!stack.empty()) {
+                set.remove(stack.pop());
+            }
+            curr = set.higher(curr);
+            ++ctr;
+        }
+        
+        long val;
+        for(long lg: set) {
+            val = lg >>> SHIFT;
+            score += val*val;
+        }
+        
+        return score/(s.length*t.length);
     }
 }
