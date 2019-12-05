@@ -59,10 +59,9 @@ public class Backend {
         try {
             BufferedReader br = new BufferedReader(new FileReader("probs.txt"));
             String line;
-            int ctr;
+            int ctr = 0;
             while((line = br.readLine()) != null) {
-                ctr = Integer.parseInt(line);
-                locs.get(ctr).setFraction(Integer.parseInt(br.readLine()), 
+                locs.get(ctr++).setFraction(Integer.parseInt(line), 
                         Integer.parseInt(br.readLine()));
             }
         } catch (FileNotFoundException e1) {  
@@ -95,22 +94,28 @@ public class Backend {
         KDTree kd = new KDTree(input.getLong(), input.getLat(), in = 
                 locs.stream().filter(x->((1L<<x.getTypeIndex())&indexes) != 0)
                 .collect(Collectors.toList()), NUM_RESULTS);
-        ArrayList<Location> result = kd.getKNN(NUM_RESULTS);
         Stream<Location> process;
         
-        if(result.size() < NUM_RESULTS 
-                || !input.getHighKey() && !input.getAddrKey()) {
+        if(!input.getHighKey() && !input.getAddrKey()) {
             PriorityQueue<Location> pq = new PriorityQueue<>();
             pq.addAll(in);
             process = Stream.generate(pq::poll).limit(NUM_RESULTS);
         } else {
-            process = result.stream().sorted((loc1,loc2)->{
-                return Location.compare(loc2, loc1);
-            }).limit(NUM_RESULTS);
+            ArrayList<Location> result = kd.getKNN(NUM_RESULTS);
+            if(result.size() < NUM_RESULTS) {
+                process = result.stream().sorted((loc1,loc2)->{
+                    return Location.compare(loc2, loc1);
+                }).limit(NUM_RESULTS);
+            } else {
+                PriorityQueue<Location> pq = new PriorityQueue<>();
+                pq.addAll(in);
+                process = Stream.generate(pq::poll).limit(NUM_RESULTS);
+            }
         }
 
         backing = process.collect(Collectors.toList());
-        return process.map(x->x.toString()).collect(Collectors.toList());
+        return backing.stream()
+                .map(x->x.toString()).collect(Collectors.toList());
     }
     
     public static float getGlobalLat() {
@@ -131,11 +136,14 @@ public class Backend {
     
     public static void dump() {
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter("probs.txt"));
+            BufferedWriter bw = new BufferedWriter(
+                    new FileWriter("probs.txt",false));
             int[] rat = input.getRatings();
-            for(int i = 0; i<backing.size(); ++i) {
+            for(int i = 0; i<NUM_RESULTS; ++i) {
                 backing.get(i).updateFraction(rat[i]);
-                bw.write(backing.get(i).dumpString());
+            }
+            for(int i = 0; i<NUM_LOCS; ++i) {
+                bw.write(locs.get(i).dumpString());
             }
             bw.close();
         } catch (IOException ex) {

@@ -90,7 +90,7 @@ public class GUI {
         panels[3].add(new JLabel("\n\n"));
         
         JRadioButton rb1 = new JRadioButton();
-        rb1.setText("High priority");
+        rb1.setText("Low priority");
         rb1.setFont(fontNB);
         panels[4].add(rb1);
         JLabel keyword = new JLabel("Keyword: ");
@@ -109,7 +109,7 @@ public class GUI {
         panels[5].add(new JScrollPane(tbox));
         
         JRadioButton rb2 = new JRadioButton();
-        rb2.setText("High priority");
+        rb2.setText("Low priority");
         rb2.setFont(fontNB);
         panels[6].add(rb2);
         JLabel address = new JLabel("Address: ");
@@ -160,7 +160,7 @@ public class GUI {
             table.getColumnModel().getColumn(i).setCellRenderer(center);
         }
         
-        Object[] header = {"Rank", "Description", "Rate!"};
+        Object[] header = {"Rank", "Description", "Rate (0-4)"};
         dtm.addRow(header);
         panels[1].add(table);
         
