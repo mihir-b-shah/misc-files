@@ -4,7 +4,6 @@ package view;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
-import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -25,11 +24,15 @@ public class GUI {
     private static final Font fontNB;
     private static final Font fontB;
     private static final Border border;
+    private static String errors;
+    private static List<String> results;
+    private static int retTwo;
     
     static {
         fontB = new Font("Calibri", Font.BOLD, 36);
         fontNB = new Font("Calibri", Font.PLAIN, 36);
         border = new LineBorder(Color.BLACK);
+        errors = "";
     }
     
     public static void main(String[] args) {
@@ -41,22 +44,24 @@ public class GUI {
                 ret = JOptionPane.showConfirmDialog(null, "Errors detected:"
                         + "\n\n".concat(input.getErrors()), "Error",
                         JOptionPane.OK_CANCEL_OPTION);
-                if(ret == 2) {
+                if(ret == JOptionPane.CANCEL_OPTION) {
                     break;
                 }
             }
             input = partOne();
             ++ctr;
         } while(input != null && input.getErrors().length() > 0 && ret == 0);
- 
-        if(ret != 2) {
+        if(ret != JOptionPane.CANCEL_OPTION) {
             Backend.setInput(input);
-            partTwo();
+            results = Backend.genResults();
+            do {
+                partTwo(input);
+            } while(errors.length()>0&&retTwo!=JOptionPane.CANCEL_OPTION);
         }
     }
     
     public static Input partOne() {
-        JPanel[] panels =  new JPanel[9];
+        JPanel[] panels =  new JPanel[7];
         for(int i = 0; i<panels.length; ++i) {
             panels[i] = new JPanel();
         }
@@ -84,6 +89,10 @@ public class GUI {
         panels[2].add(jtf2);
         panels[3].add(new JLabel("\n\n"));
         
+        JRadioButton rb1 = new JRadioButton();
+        rb1.setText("High priority");
+        rb1.setFont(fontNB);
+        panels[4].add(rb1);
         JLabel keyword = new JLabel("Keyword: ");
         keyword.setFont(fontB);
         panels[4].add(keyword);
@@ -92,42 +101,34 @@ public class GUI {
         kfield.setFont(fontNB);
         panels[4].add(kfield);
         
-        JLabel andorxor = new JLabel("And/Or: ");
-        andorxor.setFont(fontB);
-        panels[5].add(andorxor);
-        JRadioButton and = new JRadioButton("And");
-        and.setFont(fontNB);
-        JRadioButton or = new JRadioButton("Or");
-        or.setFont(fontNB);
-        ButtonGroup bg = new ButtonGroup();
-        bg.add(and); bg.add(or);
-        and.setSelected(true);
-        panels[5].add(and); panels[5].add(or);
-        
         JLabel type = new JLabel("Type: ");
         type.setFont(fontB);
-        panels[6].add(type);
+        panels[5].add(type);
         String[] set = Backend.getTypes();
         JList tbox = new JList(set);
-        panels[6].add(new JScrollPane(tbox));
+        panels[5].add(new JScrollPane(tbox));
         
+        JRadioButton rb2 = new JRadioButton();
+        rb2.setText("High priority");
+        rb2.setFont(fontNB);
+        panels[6].add(rb2);
         JLabel address = new JLabel("Address: ");
         address.setFont(fontB);
-        panels[7].add(address);
+        panels[6].add(address);
         JTextField afield = new JTextField();
         afield.setColumns(40);
         afield.setFont(fontNB);
-        panels[7].add(afield);
+        panels[6].add(afield);
 
         JOptionPane.showMessageDialog(null, panels, 
                 "The coolest application ever", JOptionPane.INFORMATION_MESSAGE);
         Input input = new Input(jtf1.getText(), jtf2.getText(), kfield.getText(),
-          and.isSelected() ? 2 : or.isSelected() ? 1 : 0, 
-                tbox.getSelectedIndices(), afield.getText());
+                tbox.getSelectedIndices(), afield.getText(), rb1.isSelected(),
+                rb2.isSelected());
         return input;
     }
     
-    public static void partTwo() {
+    public static void partTwo(Input in) {
         JPanel[] panels =  new JPanel[3];
         for(int i = 0; i<panels.length; ++i) {
             panels[i] = new JPanel();
@@ -138,7 +139,6 @@ public class GUI {
         icon.setImage(icon.getImage().getScaledInstance(900, 300, 0));
         panels[0].add(img);
         
-        List<String> results = Backend.genResults();
         DefaultTableModel dtm;
         JTable table = new JTable(
                 dtm = new DefaultTableModel(0,3){
@@ -174,5 +174,25 @@ public class GUI {
         
         JOptionPane.showMessageDialog(null, panels, 
                 "The coolest application ever", JOptionPane.INFORMATION_MESSAGE);
+        int[] res = new int[results.size()];
+        int i = -1;
+        try {
+            String s;
+            for(i = 1; i<=results.size(); ++i) {
+                s = (String) dtm.getValueAt(i, 2);
+                if(s.length()>0) {
+                    res[i-1] = Integer.parseInt((String) dtm.getValueAt(i, 2));
+                } else {
+                    res[i-1] = 2;
+                }
+            }
+            in.setRatings(res);
+            errors = "";
+            Backend.dump();
+        } catch (NumberFormatException nfe) {
+            errors = String.format("Error in parsing rating #%d", i);
+            retTwo = JOptionPane.showConfirmDialog(null, errors, "Error", 
+                    JOptionPane.OK_CANCEL_OPTION);
+        }
     }
 }

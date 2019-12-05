@@ -5,13 +5,15 @@ public class Input {
     private float latitude;
     private float longitude;
     private final String keyword;
-    private final byte aox;
     private final long indexes;
     private final String addr;
     private final String errors;
+    private int[] ratings;
+    private final boolean highKey;
+    private final boolean highAddr;
     
-    public Input(String la, String lo, String kw, int saox, 
-            int[] idx, String addr) {
+    public Input(String la, String lo, String kw,
+            int[] idx, String addr, boolean hKey, boolean hAddr) {
         StringBuilder errorMsg = new StringBuilder();
         try {
             latitude = Float.parseFloat(la);
@@ -23,7 +25,6 @@ public class Input {
         } catch (Exception e) {
             errorMsg.append("Error encountered in parsing longitude.\n");
         }
-        aox = (byte) saox;
         keyword = kw;
         long buf = 0;
         for(int i = 0; i<idx.length; ++i) {
@@ -35,6 +36,8 @@ public class Input {
         }
         this.addr = addr;
         errors = errorMsg.toString();
+        highKey = hKey;
+        highAddr = hAddr;
     }
     
     public float getLat() {
@@ -52,16 +55,28 @@ public class Input {
     public String getKeyword() {
         return keyword;
     }
-    
-    public byte getAOX() {
-        return aox;
-    }
-    
+ 
     public long getIndexes() {
         return indexes;
     }
     
     public String getAddress() {
         return addr;
+    }
+    
+    public boolean getHighKey() {
+        return highKey;
+    }
+    
+    public boolean getAddrKey() {
+        return highAddr;
+    }
+    
+    public void setRatings(int[] a) {
+        ratings = a;
+    }
+    
+    public int[] getRatings() {
+        return ratings;
     }
 }

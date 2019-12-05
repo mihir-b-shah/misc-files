@@ -5,8 +5,10 @@ import utils.KDTree;
 import utils.FastMap;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ public class Backend {
     private static final int NUM_RESULTS = 8;
     private static final int NUM_TYPES = 35;
     private static final int NUM_LOCS = 625;
+    private static List<Location> backing;
     
     static {       
         typeIndex = new FastMap<>(1+(NUM_TYPES<<1));
@@ -46,7 +49,21 @@ public class Backend {
             String line;
             int ctr = 0;
             while((line = br.readLine()) != null) {
-                locs.add(new Location(line));
+                locs.add(new Location(ctr++, line));
+            }
+        } catch (FileNotFoundException e1) {  
+            System.err.println("Fatal exception encountered. File not found.");
+        } catch (IOException e2) {     
+        }
+        
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("probs.txt"));
+            String line;
+            int ctr;
+            while((line = br.readLine()) != null) {
+                ctr = Integer.parseInt(line);
+                locs.get(ctr).setFraction(Integer.parseInt(br.readLine()), 
+                        Integer.parseInt(br.readLine()));
             }
         } catch (FileNotFoundException e1) {  
             System.err.println("Fatal exception encountered. File not found.");
@@ -81,14 +98,18 @@ public class Backend {
         ArrayList<Location> result = kd.getKNN(NUM_RESULTS);
         Stream<Location> process;
         
-        if(result.size() < NUM_RESULTS) {
+        if(result.size() < NUM_RESULTS 
+                || !input.getHighKey() && !input.getAddrKey()) {
             PriorityQueue<Location> pq = new PriorityQueue<>();
             pq.addAll(in);
             process = Stream.generate(pq::poll).limit(NUM_RESULTS);
         } else {
-            process = result.stream();
+            process = result.stream().sorted((loc1,loc2)->{
+                return Location.compare(loc2, loc1);
+            }).limit(NUM_RESULTS);
         }
 
+        backing = process.collect(Collectors.toList());
         return process.map(x->x.toString()).collect(Collectors.toList());
     }
     
@@ -106,5 +127,18 @@ public class Backend {
     
     public static String getAddress() {
         return input.getAddress();
+    }
+    
+    public static void dump() {
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter("probs.txt"));
+            int[] rat = input.getRatings();
+            for(int i = 0; i<backing.size(); ++i) {
+                backing.get(i).updateFraction(rat[i]);
+                bw.write(backing.get(i).dumpString());
+            }
+            bw.close();
+        } catch (IOException ex) {
+        }
     }
 }

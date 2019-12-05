@@ -164,7 +164,7 @@ public class KDTree<T extends Comparable2D<T>> {
     }
 
     public ArrayList<T> getKNN(int K) {
-        final int size = Math.min(K<<1, objects.length);
+        final int size = Math.min(K, objects.length);
         ArrayList<T> nearest = new ArrayList<>(size);
         int ctr = 0;
         
