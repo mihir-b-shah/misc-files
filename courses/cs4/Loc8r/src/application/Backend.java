@@ -112,8 +112,24 @@ public class Backend {
                 process = Stream.generate(pq::poll).limit(NUM_RESULTS);
             }
         }
-
+        
         backing = process.collect(Collectors.toList());
+        
+        int sizePtr = 0;
+        for(int i = backing.size()-1; i>=0; --i) {
+            if(backing.get(i) == null) {
+                ++sizePtr;
+            }
+        }
+        
+        if(sizePtr > 0) {
+            PriorityQueue<Location> pq = new PriorityQueue<>();
+            pq.addAll(locs);
+            for(int i = NUM_RESULTS-sizePtr; i<NUM_RESULTS; ++i) {
+                backing.set(i, pq.poll());
+            }
+        }
+        
         return backing.stream()
                 .map(x->x.toString()).collect(Collectors.toList());
     }
