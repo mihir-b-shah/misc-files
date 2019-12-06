@@ -18,7 +18,10 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.UIManager;
+
 import application.*;
+import java.awt.Dimension;
 
 public class GUI { 
     private static final Font fontNB;
@@ -33,6 +36,7 @@ public class GUI {
         fontNB = new Font("Calibri", Font.PLAIN, 36);
         border = new LineBorder(Color.BLACK);
         errors = "";
+        UIManager.put("OptionPane.maximumSize", new Dimension(600,400));
     }
     
     public static void main(String[] args) {
@@ -67,7 +71,7 @@ public class GUI {
         }
         JLabel img = new JLabel();
         ImageIcon icon;
-        img.setIcon(icon = new ImageIcon("Loc8r_Logo_Black.png"));
+        img.setIcon(icon = new ImageIcon("/Loc8r_Logo_Black.png"));
         icon.setImage(icon.getImage().getScaledInstance(900, 300, 0));
         panels[0].add(img);
         
@@ -135,7 +139,7 @@ public class GUI {
         }
         JLabel img = new JLabel();
         ImageIcon icon;
-        img.setIcon(icon = new ImageIcon("Loc8r_Logo_Black.png"));
+        img.setIcon(icon = new ImageIcon("/Loc8r_Logo_Black.png"));
         icon.setImage(icon.getImage().getScaledInstance(900, 300, 0));
         panels[0].add(img);
         

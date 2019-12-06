@@ -168,7 +168,7 @@ public class KDTree<T extends Comparable2D<T>> {
         ArrayList<T> nearest = new ArrayList<>(size);
         int ctr = 0;
         
-        while(ctr < NUM_ITER && (items.size()<size)) {
+        while(ctr < NUM_ITER && (items.size()<(size<<1))) {
             getNearestNeighbor(0, objects.length, 0);
             ++ctr;
         }
