@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -29,8 +28,7 @@ int main() {
     int first_end = 0; // exclusive
 
     while(outer < N) {
-        inner = outer;
-        while(inner < N && diamonds[inner]-diamonds[outer]<=3) {
+        while(inner < N && diamonds[inner]-diamonds[outer]<=K) {
             ++inner;
         }
         if(inner-outer>first_end-first_start) {
@@ -38,15 +36,39 @@ int main() {
             first_end = inner;
         }
         ++outer;
+        inner = outer;
     }
 
-    cout << first_start << first_end << endl;
-    int diamonds2[N-first_end+first_start];
+    const int N2 = N-first_end+first_start;
+    int one = first_end-first_start;
 
-    memcpy(diamonds,diamonds2,first_start);
-    memcpy(diamonds+first_end,diamonds2+first_start,N-first_end);
+    int diamonds2[N2];
+
+    memcpy(diamonds2,diamonds,first_start*sizeof(int));
+    memcpy(diamonds2+first_start,diamonds+first_end,(N-first_end)*sizeof(int));
+
+    inner = 0;
+    outer = 0;
+
+    first_start = 0; // inclusive
+    first_end = 0; // exclusive
+
+    while(outer < N2) {
+        while(inner < N2 && diamonds2[inner]-diamonds2[outer]<=K) {
+            ++inner;
+        }
+        if(inner-outer>first_end-first_start) {
+            first_start = outer;
+            first_end = inner;
+        }
+        ++outer;
+        inner = outer;
+    }
+
+    int two = first_end-first_start;
 
     ofstream fout;
     fout.open("diamond.out");
+    fout << one+two << endl;
     fout.close();
 }
