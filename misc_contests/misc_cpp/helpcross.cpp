@@ -1,72 +1,74 @@
 
 #include <fstream>
 #include <iostream>
+#include <vector>
 #include <utility>
-#include <cstring>
 #include <algorithm>
 
 using namespace std;
 
-typedef struct cow {
-    int id;
-    bool start;
-    int coord;
-};
-
-bool cow_compare(cow c1, cow c2) {
-    return c1.coord == c2.coord ? c1.start-c2.start : c1.coord<c2.coord;
-}
+vector<pair<int,int>> cows;
+vector<int> chickens;
+vector<bool> used_cows;
 
 int main() {
-    ifstream fin;
-    fin.open("helpcross.in");
-    int c,n;
-    fin >> c >> n;
-    const int N = n, C = c;
+    ifstream fin("helpcross.in");
+    int C,N;
+    fin >> C >> N;
 
-    int chickens[C];
+    cows.reserve(N);
+    chickens.reserve(C);
+    used_cows.reserve(N);
+
+    int buf;
     for(int i = 0; i<C; ++i) {
-        fin >> chickens[i];
+        fin >> buf;
+        chickens.push_back(buf);
     }
-    sort(chickens,chickens+C);
-    cow endpoints[N << 1];
 
+    int buf2;
     for(int i = 0; i<N; ++i) {
-        fin >> c >> n;
-        endpoints[i<<1] = {i,1,c};
-        endpoints[1+(i<<1)] = {i,0,n+1};
+        fin >> buf >> buf2;
+        cows.push_back({buf,buf2});
+        used_cows.push_back(0);
     }
     fin.close();
-    
-    sort(endpoints, endpoints+(N<<1), cow_compare);
 
-    int sums[1+(N<<1)];
-    memset(sums, 0, (N<<1)*__SIZEOF_INT__);
-    int curr = 0;
+    sort(cows.begin(), cows.end());
+    sort(chickens.begin(), chickens.end());
 
-    for(int i = 0; i<(N<<1); ++i) {
-        curr += (endpoints[i].start << 1)-1;
-        sums[i] = curr;
-    }
-
-    for(int i = 0; i<(N<<1); ++i) {
-        cout << sums[i] << ", ";
-    }
-
+    int cow_ptr = 0;
     int chicken_ptr = 0;
-    int accumulator = 0;
+    int ctr = 0;
 
-    for(int i = 0; i<(N<<1)-1; ++i) {
-        if(endpoints[i].coord <= chickens[chicken_ptr] && chickens[chicken_ptr] < endpoints[i+1].coord) {
-            if(sums[i]-accumulator > 0) {
-                --accumulator;
+    while(cow_ptr < N && chicken_ptr < C) {
+        int chicken = chickens[chicken_ptr];
+        pair<int,int>& cow = cows[cow_ptr];
+
+        if(!used_cows[cow_ptr] && cow.first <= chicken && chicken <= cow.second) {
+            ++ctr;
+            int aux_ptr = cow_ptr+1;
+            int min_ptr = cow_ptr;
+            int min_end = cows[cow_ptr].second;
+            while(aux_ptr < N && cows[aux_ptr].second <= cow.second) {
+                if(cows[aux_ptr].second < min_end) {
+                    min_end = cows[aux_ptr].second;
+                    min_ptr = aux_ptr;
+                }
+                ++aux_ptr;
             }
+            used_cows[min_ptr] = 1;
+            if(min_ptr == cow_ptr) ++cow_ptr;
+            ++chicken_ptr;
+        } else if(chicken > cow.second) {
+            ++cow_ptr;
+        } else if(cow.first > chicken) {
             ++chicken_ptr;
         }
     }
 
-    ofstream fout;
-    fout.open("helpcross.out");
+    ofstream fout("helpcross.out");
+    fout << ctr << endl;
     fout.close();
 
     return 0;
