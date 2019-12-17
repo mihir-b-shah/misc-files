@@ -71,7 +71,7 @@ public class GUI {
         }
         JLabel img = new JLabel();
         ImageIcon icon;
-        img.setIcon(icon = new ImageIcon("/Loc8r_Logo_Black.png"));
+        img.setIcon(icon = new ImageIcon("Loc8r_Logo_Black.png"));
         icon.setImage(icon.getImage().getScaledInstance(900, 300, 0));
         panels[0].add(img);
         

@@ -32,7 +32,7 @@ public class Backend {
         set = new String[NUM_TYPES];
         try {
             int ctr = 0;
-            BufferedReader br = new BufferedReader(new FileReader("/types.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("types.txt"));
             String line;
             while((line = br.readLine()) != null) {
                 set[ctr] = line;
@@ -45,7 +45,7 @@ public class Backend {
         
         locs = new ArrayList<>(NUM_LOCS);
         try {
-            BufferedReader br = new BufferedReader(new FileReader("/locations.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("locations.txt"));
             String line;
             int ctr = 0;
             while((line = br.readLine()) != null) {
@@ -57,7 +57,7 @@ public class Backend {
         }
         
         try {
-            BufferedReader br = new BufferedReader(new FileReader("/probs.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("probs.txt"));
             String line;
             int ctr = 0;
             while((line = br.readLine()) != null) {
@@ -122,7 +122,7 @@ public class Backend {
             }
         }
         
-        if(sizePtr > 0) {
+        if(sizePtr > 0 || backing.size()<NUM_RESULTS) {
             PriorityQueue<Location> pq = new PriorityQueue<>();
             pq.addAll(locs);
             for(int i = NUM_RESULTS-sizePtr; i<NUM_RESULTS; ++i) {
