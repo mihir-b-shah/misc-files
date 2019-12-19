@@ -1,7 +1,6 @@
 
 #include <stdio.h>
 #include <assert.h>
-#include "lexer.h"
 
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
@@ -29,6 +28,5 @@ int main(int argc, char* argv[]) {
     fread(program_contents, 1, PROG_LEN, infile);
     program_contents[PROG_LEN] = '\0';
 
-    //lex(program_contents);
     return 0;
 }

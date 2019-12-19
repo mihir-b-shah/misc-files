@@ -1,1 +1,0 @@
-void lex(char* file);
