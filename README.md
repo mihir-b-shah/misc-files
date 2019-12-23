@@ -12,6 +12,8 @@
 
 **projects** are some (minor) projects I did
 
+**languages** has a regex engine I'm building in C.
+
 ## project links
 
 **Calculator**- tries to develop a polynomial representation of a Java function for optimization
