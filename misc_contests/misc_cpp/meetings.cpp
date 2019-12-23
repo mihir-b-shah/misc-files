@@ -6,14 +6,31 @@
 
 using namespace std;
 
-typedef struct cow {
+typedef struct {
     int wt;
     int pos;
-    bool right;
-};
+    int right;
+
+    inline int operator-(const cow& oth) {
+        return pos-oth.pos;
+    }
+
+    inline void operator~() {
+        right *= -1;
+    }
+
+    inline void advance() {
+        pos += right;
+    }
+
+    inline bool operator==(int pos) {
+        return this->pos = pos;
+    }
+} cow;
 
 bool compare(const cow& c1, const cow& c2) {
-    return c1.pos<c2.pos;
+    return c1.pos == c2.pos ? 
+            c1.right > c2.right : c1.pos < c2.pos;
 }
 
 int main() {
@@ -24,66 +41,39 @@ int main() {
     vector<cow> cows;
     cows.reserve(N);
 
-    int buf1,buf2,buf3;
-    int total_weight = 0;
+    int a,b,c;
+    int half_weight = 0;
 
     for(int i = 0; i<N; ++i) {
-        fin >> buf1 >> buf2 >> buf3;
-        total_weight += buf1;
-        cows.push_back({buf1,buf2,buf3==1?1:0});
+        fin >> a >> b >> c;
+        half_weight += a;
+        cows.push_back({a,b,c});
     }
 
     fin.close();
     sort(cows.begin(), cows.end(), compare);
+    half_weight = half_weight & 1 ? 
+                   (half_weight >> 1)+2 : (half_weight >> 1)+1;
 
-    int left = 0;
-    int right = N-1;
-    int accm = 0;
-    int limit = (total_weight & 1) == 0 ? total_weight >> 1 : 1+(total_weight >> 1);
-    int collision_count = 0;
+    int acc_weight = 0;
+    int t = 0;
+    int left_bound = 0; int right_bound = N-1;
 
-    while(accm < limit && left <= right) {
-        if(!cows[left].right && cows[right].right) {
-            if(cows[left].pos < L-cows[right].pos) {
-                accm += cows[left].wt;
-                ++left;
-            } else {
-                accm += cows[right].wt;
-                --right;
+    while(acc_weight < half_weight) {
+        for(int i = left_bound; i<right_bound; ++i) {
+            if(cows[i]==0) ++left_bound;
+            if(cows[i]==L) --right_bound;
+            
+            if(cows[i+1]-cows[i]<2 && cows[i+1].right == -1 && cows[i+1].right == 1) {
+                ~cows[i+1]; ~cows[i];
             }
-        } else if(!cows[left].right) {
-            accm += cows[left].wt;
-            ++left;
-        } else if(cows[right].right) {
-            accm += cows[right].wt;
-            --right;
-        } else {
-            int aux_left = left;
-            while(cows[aux_left].right) {
-                ++aux_left;
-            }
-
-            int aux_right = right;
-            while(!cows[aux_right].right) {
-                --aux_right;
-            }
-
-            if(cows[aux_left].pos-cows[left].pos<cows[right].pos-cows[aux_right].pos) {
-                collision_count += aux_left-left;
-                cows[aux_left].right = !cows[aux_left].right;
-                accm += cows[left].wt;
-                ++left;
-            } else {
-                collision_count += right-aux_right;
-                cows[aux_right].right = !cows[aux_right].right;
-                accm += cows[right].wt;
-                --right;
-            }
+            cows[i].advance();
         }
+        cows[N-1].advance();
+        ++t;
     }
 
     ofstream fout("meetings.out");
-    fout << collision_count << endl;
     fout.close();
     return 0;
 }

@@ -1,97 +1,72 @@
-
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
-#include <cstring>
-#include <set>
+#include <cmath>
 
 using namespace std;
 
 int main() {
     ifstream fin("milkvisits.in");
-    int N,M;
-    fin >> N >> M;
-    string HG;
+    int N,Q;
+    fin >> N >> Q;
 
-    getline(fin, HG);
-    getline(fin, HG);
+    string types;
+    getline(fin, types);
+    getline(fin, types);
 
-    vector<int> parent;
-    parent.reserve(N);
-    for(int i = 0; i<N; ++i) {
-        parent.push_back(-1);
-    }
+    int a,b; char c;
+    vector<int> ufds(N,0);
 
-    int buf1,buf2;
+    int ctr = 1;
+    ofstream fout("milkvisits.out");
+
     for(int i = 0; i<N-1; ++i) {
-        fin >> buf1 >> buf2;
-        buf1 -= 1; buf2 -= 1;
+        fin >> a >> b;
+        a -= 1; b -= 1;
 
-        if(parent[buf1] == -1 || parent[buf2] == -1) {
-            parent[buf2] = buf1;
-        } else if(parent[buf1] == -1) {
-            parent[buf1] = buf2;
-        } else if(parent[buf2] == -1) {
-            parent[buf2] = buf1;
+        if(ufds[a] == 0 && ufds[b] == 0) {
+            if(types[a] == types[b]) {
+                ufds[a] = (types[a] == 'G' ? 1 : -1)*ctr; 
+                ufds[b] = ufds[a];
+                ++ctr;
+            } else {
+                ufds[a] = types[a] == 'G' ? ctr : -ctr;
+                ++ctr;
+                ufds[b] = types[b] == 'G' ? ctr : -ctr;
+                ++ctr;
+            }
+        } else if(ufds[a] == 0) {
+            if(types[a] == types[b]) {
+                ufds[a] = ufds[b];
+            } else {
+                ufds[a] = types[a] == 'G' ? ctr : -ctr;
+                ++ctr;
+            }
+        } else if(ufds[b] == 0) {
+            if(types[a] == types[b]) {
+                ufds[b] = ufds[a];
+            } else {
+                ufds[b] = types[b] == 'G' ? ctr : -ctr;
+                ++ctr;
+            }
         }
     }
-
-    for(int i = 0; i<parent.size(); ++i) {
-        //cout << parent[i] << " ";
-    } //cout << endl;
-
-    char buf3;
-    vector<bool> output;
-    output.reserve(N);
-    bool no;
-
-    for(int i = 0; i<M; ++i) {
-        set<int> iset;
-        set<int> iset2;
-        no = 1;
-        
-        fin >> buf1 >> buf2 >> buf3;
-        buf1 -= 1; buf2 -= 1;
-        int latest = -1;
-        int ctr = 0;
-        bool found_1y = 0;
-
-        while(buf1 != -1) {
-            iset.insert(buf1);
-            if(!found_1y && HG[buf1] == buf3) {
-                found_1y = 1;
-                latest = buf1;
-            }
-            //cout << buf1 << " ";
-            buf1 = parent[buf1];
-        } //cout << endl;
-
-        while(buf2 != -1) {
-            if(HG[buf2] == buf3) {
-                no = 0; 
-            }
-            iset2.insert(buf2);
-            //cout << buf2 << " ";
-            if(iset.find(buf2) != iset.end()) {
-                break;
-            }
-            buf2 = parent[buf2];
-        } //cout << endl;
-
-        //cout << "no: " << no << "found: " << found_1y << "latest: " << latest << endl;
-        if(!found_1y && no) output.push_back(0);
-        else if(!no) output.push_back(1); 
-        else if(iset2.find(latest) != iset2.end()) output.push_back(1);
-        else output.push_back(0);
+    
+    for(int i = 0; i<Q; ++i) {
+        fin >> a >> b >> c;
+        a -= 1; b -= 1;
+        if(signbit(ufds[a]) != signbit(ufds[b])) fout << 1;
+        else if(ufds[a] == ufds[b]) {
+            char type = signbit(ufds[a]) ? 'H' : 'G';
+            fout << (type == c);
+        } else if(signbit(ufds[a]) == signbit(ufds[b])) {
+            fout << 1;
+        } else fout << 0;
     }
 
     fin.close();
-    ofstream fout("milkvisits.out");
-
-    for(int i = 0; i<output.size(); ++i) {
-        fout << output[i];
-    }
+    fout << endl;
     fout.close();
     return 0;
 }
