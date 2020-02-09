@@ -12,6 +12,4 @@ package collections;
  */
 public class IntBST {
     private int[] data;
-    
-    public IntBST()
 }
