@@ -1,9 +1,8 @@
 
-#include <stdio.h>
 #include "linear_algs.h"
 #include "fixed_vector.h"
 
-void perceptron(const int T, const int DIM, 
+void perceptron(const int T, const int N, const int DIM, 
         struct POINT* points, struct HYPERPLANE* plane) {
     
     struct POINT* ptr;
@@ -12,9 +11,9 @@ void perceptron(const int T, const int DIM,
     
     for(int i = 0; i<T; ++i) {
         ptr = points;
-        for(int j = 0; j<DIM; ++j) {
-            if(ptr->label*dot(DIM, ptr->coord, vect) <= 0) {
-                add(DIM, vect, ptr->coord);
+        for(int j = 0; j<N; ++j) {
+            if(ptr->label*(dot(DIM, ptr->coord, vect)+offs) <= 0) {
+                add(DIM, vect, ptr->coord, ptr->label);
                 offs += ptr->label;
             }
             ++ptr;
