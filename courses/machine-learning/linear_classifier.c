@@ -4,7 +4,7 @@
 #include "fixed_vector.h"
 #include "linear_algs.h"
 
-int main(int argc, char* argv[])
+int main()
 {
     FILE* fio = fopen("classifiers.in", "r");
     const int N,DIM;
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     float vect[DIM];
     memset(vect, 0, DIM*sizeof(float));
     struct HYPERPLANE plane = {vect, 0};
-    perceptron(atoi(argv[1]), N, DIM, points, &plane);  
+    sgd(DIM, N, points, &plane);
 
     for(int i = 0; i<DIM; ++i) {
         printf("%f ", vect[i]);
