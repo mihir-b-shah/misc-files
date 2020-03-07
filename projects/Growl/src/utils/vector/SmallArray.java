@@ -81,18 +81,27 @@ public class SmallArray {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        long loc;
         switch(ptr-1) {
             case 3:
-                sb.append(EL_MASK & (mask >>> EL4_SHIFT));
+                loc = EL_MASK & (mask >>> EL4_SHIFT);
+                sb.append(loc >>> 8); sb.append(' ');
+                sb.append(loc & 0xff); sb.append(' ');
                 sb.append(' ');
             case 2:
-                sb.append(EL_MASK & (mask >>> EL3_SHIFT));
+                loc = EL_MASK & (mask >>> EL3_SHIFT);
+                sb.append(loc >>> 8); sb.append(' ');
+                sb.append(loc & 0xff); sb.append(' ');
                 sb.append(' ');
             case 1:
-                sb.append(EL_MASK & (mask >>> EL2_SHIFT));
+                loc = EL_MASK & (mask >>> EL2_SHIFT);
+                sb.append(loc >>> 8); sb.append(' ');
+                sb.append(loc & 0xff); sb.append(' ');
                 sb.append(' ');
             case 0:
-                sb.append(EL_MASK & mask);
+                loc = EL_MASK & mask;
+                sb.append(loc >>> 8); sb.append(' ');
+                sb.append(loc & 0xff); sb.append(' ');
                 return sb.toString();
             case -1:
                 return "END";
