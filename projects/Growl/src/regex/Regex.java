@@ -1,6 +1,7 @@
 
 package regex;
 
+import utils.SmallArray;
 import java.util.Arrays;
 
 public class Regex {

@@ -1,5 +1,5 @@
 
-package regex;
+package utils.vector;
 
 /**
  * Implements the small vector optimization (sort of)
