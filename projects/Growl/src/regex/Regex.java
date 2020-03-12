@@ -46,8 +46,7 @@ public class Regex {
             return Arrays.toString(nfas);
         }
     }
-    
-    // bug, adding a + or ? to the end of the string causes some errors.
+
     public static final NFAPool genAutomaton(String regex) {
         NFAPool nfas = new NFAPool();
         nfas.add(new SmallArray()); //initial nfa
@@ -99,11 +98,18 @@ public class Regex {
         while(queue.size() > 0) {
             packet = queue.pop();
             
-            if(packet == (string.length() << CHAR_SHIFT) + nfa.size()-1) {
+            /* 
+            System.out.printf("String pos: %d/%d, NFA pos: %d/%d%n", 
+            packet >>> CHAR_SHIFT, string.length(), 
+            packet & CHAR_MASK, nfa.size());
+            */
+            
+            if(packet >= (string.length() << CHAR_SHIFT) + nfa.size()-1) {
                 return true;
             }
 
-            ch = string.charAt(packet >>> CHAR_SHIFT);
+            ch = packet >>> CHAR_SHIFT < string.length() 
+                    ? string.charAt(packet >>> CHAR_SHIFT) : '\0';
             curr = nfa.get(packet & CHAR_MASK);
             
             for(int i = 0; i<curr.size(); ++i) {
@@ -120,8 +126,9 @@ public class Regex {
     }
     
     public static void main(String[] args) {
-        String regex = "ab+cq?e";
+        String regex = "ab+cqe?";
         NFAPool gen = genAutomaton(regex);
-        System.out.println(check("abbbbbcqe", gen));
+        System.out.println(gen);
+        System.out.println(check("abbbbbcqee", gen));
     }
 }
