@@ -5,6 +5,7 @@ import utils.vector.IntStack;
 import utils.vector.SmallArray;
 import utils.queue.IntQueue;
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class Regex {
     
@@ -15,7 +16,7 @@ public class Regex {
     /**
      * Growth factor 1.5, dynamic list.
      */
-    static class NFAPool {
+    static class NFAPool implements Comparable<NFAPool> {
         private SmallArray[] nfas;
         private int ptr;
         
@@ -40,22 +41,35 @@ public class Regex {
         public final int size() {
             return ptr;
         }
+
+        public final void clear() {
+            ptr = 0;
+        }
+        
+        public final void copy(NFAPool nfas, int src) {
+            System.arraycopy(nfas, 0, nfas.nfas, src, ptr);
+        }
         
         @Override
         public String toString() {
             return Arrays.toString(nfas);
         }
+        
+        @Override
+        public int compareTo(NFAPool other) {
+            return nfas.length-other.nfas.length;
+        }
     }
 
-    public static final NFAPool genAutomaton(String regex) {
-        NFAPool nfas = new NFAPool();
+    public static final NFAPool genLinearAutomaton(String regex, int start, 
+            int end, NFAPool nfas) {
         nfas.add(new SmallArray()); //initial nfa
         int currNFA = 0;
         char curr;
         
-        IntStack positions = new IntStack(regex.length());
+        IntStack positions = new IntStack(end-start);
         
-        for(int pos = 0; pos<regex.length(); ++pos) {
+        for(int pos = start; pos<end; ++pos) {
             curr = regex.charAt(pos);
             switch(curr) {
                 case '(':
@@ -84,6 +98,40 @@ public class Regex {
         }
         
         return nfas;
+    }
+    
+    public static final void genAutomaton(String regex) {
+        IntStack stack = new IntStack();
+        TreeSet<NFAPool> freeStorage = new PriorityQueue<>();
+
+        int pos = 0;
+        int startPos;
+        char curr;
+        
+        while(pos < regex.length()) {
+            curr = regex.charAt(pos);
+            startPos = pos;
+            
+            while(curr != '(' && curr != ')') {
+                ++pos;
+            }
+            NFAPool nfa = new NFAPool();
+            genLinearAutomaton(regex, startPos, pos, nfa);
+        }
+        
+        do {
+            switch(regex.charAt(pos)) {
+                case '(':
+                    stack.push(pos);
+                    break;
+                case ')':
+                    genLinearAutomaton(regex, stack.pop()+1, pos, null);
+                    break;
+                default:
+                    
+                    break;
+            }
+        } while (pos < regex.length());
     }
     
     public static final boolean check(String string, NFAPool nfa) {
@@ -123,11 +171,11 @@ public class Regex {
             }
         }
         return false;
-    }
+    } 
     
     public static void main(String[] args) {
         String regex = "ab+cqe?";
-        NFAPool gen = genAutomaton(regex);
+        NFAPool gen = genLinearAutomaton(regex, new NFAPool());
         System.out.println(gen);
         System.out.println(check("abbbbbcqee", gen));
     }
