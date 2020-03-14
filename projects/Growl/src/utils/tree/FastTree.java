@@ -25,17 +25,19 @@ public class FastTree<T extends IntValue<T>> {
     private static final int RIGHT_PTR = 3;
     
     private static final int BLK_SHIFT = 2;
-    private static final int NULL = 0xfffff;
+    private static final int LONG_NULL = 0xfffff;
     
     private static final int PARENT_MASK = 0x3ff00000;
     private static final int COMPOSE_MASK = 0x3ff;
     private static final int PARENT_SHIFT = 10;
+    private static final int SHORT_NULL = 0x3ff;
     
     private static final int CHILD_MASK = 0xfffff;
     private static final int CHILD_SHIFT = 20;
     
     private static final int RED = 1;
     private static final int BLACK = 0;
+    private static final int RB_SHIFT = 31;
     
     /**
      * The tree is stored as follows.
@@ -64,7 +66,9 @@ public class FastTree<T extends IntValue<T>> {
         tree[0] = 0;
         dataPtr = 1; treePtr = 1;
         tree[1] = root.value();
-        tree[2] = -1; tree[3] = -1;
+        tree[2] = LONG_NULL | SHORT_NULL << CHILD_SHIFT; 
+        tree[3] = LONG_NULL | SHORT_NULL << CHILD_SHIFT; 
+        tree[0] |= BLACK << RB_SHIFT;
     }
     
     /**
@@ -104,17 +108,18 @@ public class FastTree<T extends IntValue<T>> {
         while(true) {
             comp = tree[ROOT_VAL + ptrShift];
             if(vComp > comp) {
-                if(((lrPtr = tree[ptrShift + RIGHT_PTR]) & CHILD_MASK) == NULL) {
+                if((lrPtr = tree[ptrShift + RIGHT_PTR] & CHILD_MASK) == LONG_NULL) {
                     // insert to the right
-                    tree[ptrShift+RIGHT_PTR] = treePtr;
+                    tree[ptrShift+RIGHT_PTR] = treePtr|
+                            tree[ptrShift+RIGHT_PTR]&PARENT_MASK;
                     parentPtr = ptrShift;
                     ptrShift = treePtr;
                     ptrShift <<= BLK_SHIFT;
                     tree[ptrShift + ROOT_PTR] = dataPtr;
                     tree[ptrShift + ROOT_VAL] = vComp;
-                    tree[ptrShift + LEFT_PTR] = NULL | 
+                    tree[ptrShift + LEFT_PTR] = LONG_NULL | 
                             (parentPtr & COMPOSE_MASK) << CHILD_SHIFT;
-                    tree[ptrShift + RIGHT_PTR] = NULL | 
+                    tree[ptrShift + RIGHT_PTR] = LONG_NULL | 
                             (parentPtr >>> PARENT_SHIFT) << CHILD_SHIFT;
                     break;
                 } else {
@@ -123,17 +128,18 @@ public class FastTree<T extends IntValue<T>> {
                     ptrShift <<= BLK_SHIFT;
                 }
             } else {
-                if(((lrPtr = tree[ptrShift + RIGHT_PTR]) & CHILD_MASK) == NULL) {
+                if((lrPtr = tree[ptrShift + LEFT_PTR] & CHILD_MASK) == LONG_NULL) {
                     // insert to the left
-                    tree[ptrShift+LEFT_PTR] = treePtr;
+                    tree[ptrShift+LEFT_PTR] = treePtr|
+                            tree[ptrShift+LEFT_PTR]&PARENT_MASK;
                     parentPtr = ptrShift;
                     ptrShift = treePtr;
                     ptrShift <<= BLK_SHIFT;
-                    tree[ptrShift + ROOT_PTR] = dataPtr;
+                    tree[ptrShift + ROOT_PTR] |= dataPtr;
                     tree[ptrShift + ROOT_VAL] = vComp;
-                    tree[ptrShift + LEFT_PTR] = NULL | 
+                    tree[ptrShift + LEFT_PTR] = LONG_NULL | 
                             (parentPtr & COMPOSE_MASK) << CHILD_SHIFT;
-                    tree[ptrShift + RIGHT_PTR] = NULL | 
+                    tree[ptrShift + RIGHT_PTR] = LONG_NULL | 
                             (parentPtr >>> PARENT_SHIFT) << CHILD_SHIFT;
                     break;
                 } else {
@@ -183,17 +189,17 @@ public class FastTree<T extends IntValue<T>> {
             
             int count = data[obj.bt].toString().length() >>> 1;
             int amt = convert(consoleWidth, obj.height, obj.xJust);
-            for(int i = 0; i<amt-currJustif-count; i++) {
+            for(int i = 0; i<amt-currJustif-count; ++i) {
                 sb.append(' ');
             }
-            
+
             sb.append(data[obj.bt].toString());
             currJustif = amt;
 
-            if((tree[LEFT_PTR+(obj.bt << BLK_SHIFT)] & CHILD_MASK) != NULL)
+            if((tree[LEFT_PTR+(obj.bt << BLK_SHIFT)] & CHILD_MASK) != LONG_NULL)
                 queue.push(new QueueItem(tree[LEFT_PTR+(obj.bt << BLK_SHIFT)] & CHILD_MASK,
                         obj.height+1,2*obj.xJust+0));
-            if((tree[RIGHT_PTR+(obj.bt << BLK_SHIFT)] & CHILD_MASK) != NULL)
+            if((tree[RIGHT_PTR+(obj.bt << BLK_SHIFT)] & CHILD_MASK) != LONG_NULL)
                 queue.push(new QueueItem(tree[RIGHT_PTR+(obj.bt << BLK_SHIFT)] & CHILD_MASK,
                         obj.height+1,2*obj.xJust+1));
         }
@@ -224,16 +230,22 @@ public class FastTree<T extends IntValue<T>> {
     }
     
     public static void main(String[] args) {
-        FastTree<CharWrapper> bst = new FastTree<>(new CharWrapper('b'));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('a'));
-        System.out.println(bst);
+        FastTree<CharWrapper> bst = new FastTree<>(new CharWrapper('a'));
+        //System.out.println(bst.printTree(80));
+        bst.insert(new CharWrapper('h'));
+        //System.out.println(bst.printTree(80));
+        bst.insert(new CharWrapper('c'));
+        //System.out.println(bst.printTree(80));
+        bst.insert(new CharWrapper('b'));
+        //System.out.println(bst.printTree(80));
+        bst.insert(new CharWrapper('e'));
+        //System.out.println(bst.printTree(80));
+        bst.insert(new CharWrapper('f'));
+        //System.out.println(bst.printTree(80));
+        bst.insert(new CharWrapper('g'));
+        //System.out.println(bst.printTree(80));
         bst.insert(new CharWrapper('d'));
         System.out.println(bst);
-        bst.insert(new CharWrapper('c'));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('e'));
-        System.out.println(bst);
-        System.out.println(bst.printTree(40));
+        System.out.println(bst.printTree(80));
     }
 }
