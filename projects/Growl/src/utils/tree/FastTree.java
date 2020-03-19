@@ -84,6 +84,14 @@ public class FastTree<T extends IntValue<T>> {
         rootPtr = 0;
     }
     
+    private void pureRotate() {
+        
+    }
+    
+    private void mixedRotate() {
+        
+    }
+    
     /**
      * Inserts an item into the BST.
      *
