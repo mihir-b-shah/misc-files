@@ -8,6 +8,8 @@ import utils.queue.FastQueue;
  * Current bug report
  * 1. Handling black sibling node (currently it only handles null nodes)
  * 
+ * MAX CAPACITY OF 400 million nodes.
+ * 
  * @author mihir
  * @param <T> the type.
  */
@@ -47,6 +49,8 @@ public class FastTree<T extends IntValue<T>> {
     private static final int LEFT_RIGHT = 1;
     private static final int RIGHT_LEFT = 2;
     private static final int RIGHT_RIGHT = 3;
+    
+    private static final int MAX_CAPACITY = 1 << 30;
 
     /**
      * The tree is stored as follows. Each node contains four fields:
@@ -89,8 +93,13 @@ public class FastTree<T extends IntValue<T>> {
      * tree. 5. Insert the item. 6. Rebalance the tree.
      *
      * @param v the item to insert.
+     * @return whether the item was inserted correctly. Does NOT check whether
+     *         the element already exists in the tree.
      */
-    public final void insert(T v) {
+    public final boolean insert(T v) {
+        if(treePtr > MAX_CAPACITY-1) {
+            return false;
+        }
         // grow the array if needed
         if (dataPtr == data.length) {
             T[] aux = (T[]) new IntValue[dataPtr << 1];
@@ -269,11 +278,13 @@ public class FastTree<T extends IntValue<T>> {
                     parShift = BLK_SIZE * (tree[BLK_SIZE * (tree[parShift + PARENT]
                             & KEY_MASK) + PARENT]) & KEY_MASK;
                 }
+                System.out.println(printTree(80));
             }
         }
 
         ++dataPtr;
         ++treePtr;
+        return true;
     }
 
     public final boolean contains(T val) {
