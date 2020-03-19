@@ -75,7 +75,7 @@ public class FastTree<T extends IntValue<T>> {
 
         data[ROOT_PTR] = root;
         dataPtr = 1;
-        treePtr = 1;
+        treePtr = BLK_SIZE;
         tree[ROOT_VAL] = root.value();
         tree[LEFT] = NULL;
         tree[RIGHT] = NULL;
@@ -83,7 +83,7 @@ public class FastTree<T extends IntValue<T>> {
         tree[PARENT] = NULL;
         rootPtr = 0;
     }
-
+    
     /**
      * Inserts an item into the BST.
      *
@@ -114,37 +114,36 @@ public class FastTree<T extends IntValue<T>> {
         // insert item into data table
         data[dataPtr] = v;
 
-        int ptrShift = rootPtr * BLK_SIZE;
-        int parentPtr = rootPtr * BLK_SIZE;
+        int insertPtr = rootPtr;
+        int parentPtr;
         int lrPtr;
         final int vComp = v.value();
 
         int choosePtr;
         while (true) {
-            choosePtr = vComp > tree[ROOT_VAL + ptrShift] ? RIGHT : LEFT;
-            if ((lrPtr = tree[ptrShift + choosePtr]) == NULL) {
-                tree[ptrShift + choosePtr] = treePtr;
-                ptrShift = treePtr * BLK_SIZE;
-                tree[ptrShift + ROOT_PTR] = dataPtr ^ TOGGLE;
-
-                tree[ptrShift + ROOT_VAL] = vComp;
-                tree[ptrShift + LEFT] = NULL;
-                tree[ptrShift + RIGHT] = NULL;
-                tree[ptrShift + PARENT] = parentPtr | (choosePtr - 2) << SHIFT;
+            choosePtr = vComp > tree[ROOT_VAL + insertPtr] ? RIGHT : LEFT;
+            if ((lrPtr = tree[insertPtr + choosePtr]) == NULL) {
+                tree[insertPtr + choosePtr] = treePtr;
+                tree[treePtr + ROOT_PTR] = dataPtr ^ TOGGLE;
+                tree[treePtr + ROOT_VAL] = vComp;
+                tree[treePtr + LEFT] = NULL;
+                tree[treePtr + RIGHT] = NULL;
+                tree[treePtr + PARENT] = insertPtr | (choosePtr - 2) << SHIFT;
+                parentPtr = insertPtr;
+                insertPtr = treePtr;
                 break;
             } else {
-                ptrShift = BLK_SIZE * (parentPtr = tree[lrPtr * BLK_SIZE] & KEY_MASK);
+                insertPtr = lrPtr;
             }
         }
 
         int sIndex;
         int auxVal;
-        int parShift = parentPtr * BLK_SIZE;
-        while (parShift > -1 && tree[parShift] >>> SHIFT == RED) {
-            auxVal = tree[parShift + PARENT];
-            sIndex = BLK_SIZE * (auxVal & KEY_MASK) + BLK_SIZE - 2 - (auxVal >>> SHIFT);
+        while (parentPtr > -1 && tree[parentPtr] >>> SHIFT == RED) {
+            auxVal = tree[parentPtr + PARENT];
+            sIndex = (auxVal & KEY_MASK) + BLK_SIZE - 2 - (auxVal >>> SHIFT);
 
-            if (tree[sIndex] == NULL || tree[BLK_SIZE * tree[sIndex]] >>> SHIFT == BLACK) {
+            if (tree[sIndex] == NULL) {
                 /*
                 1. LL rotation
                 2. LR rotation
@@ -153,137 +152,130 @@ public class FastTree<T extends IntValue<T>> {
                 
                 Need to manage case, what if at root node?
                  */
-                int pp = BLK_SIZE * (tree[parShift + PARENT] & KEY_MASK);
+                int pp = tree[parentPtr + PARENT] & KEY_MASK;
                 int ppp;
                 final boolean isRoot = pp == rootPtr;
                 boolean prev;
                 int top = tree[pp + PARENT] & KEY_MASK;
                 // switch between the different rotation cases
-                switch (((tree[parShift + PARENT] >>> SHIFT) << 1)
-                        + (tree[ptrShift + PARENT] >>> SHIFT)) {
+                switch (((tree[parentPtr + PARENT] >>> SHIFT) << 1)
+                        + (tree[insertPtr + PARENT] >>> SHIFT)) {
                     case LEFT_LEFT:
                         tree[pp + LEFT] = NULL;
                         ppp = tree[pp + PARENT];
-                        tree[pp + PARENT] = tree[ptrShift + PARENT];
-                        tree[parShift + RIGHT] = tree[parShift + PARENT]&KEY_MASK;
+                        tree[pp + PARENT] = tree[insertPtr + PARENT];
+                        tree[parentPtr + RIGHT] = tree[parentPtr + PARENT]&KEY_MASK;
                         if (isRoot) {
-                            tree[parShift + PARENT] = NULL;
-                            rootPtr = tree[ptrShift + PARENT] & KEY_MASK;
+                            tree[parentPtr + PARENT] = NULL;
+                            rootPtr = tree[insertPtr + PARENT] & KEY_MASK;
                         } else {
-                            tree[parShift + PARENT] = top;
+                            tree[parentPtr + PARENT] = top;
                             if (ppp >>> SHIFT == FROM_LEFT) {
-                                tree[top * BLK_SIZE + LEFT]
-                                        = tree[ptrShift + PARENT] & KEY_MASK;
-                                tree[parShift + PARENT] = top;
+                                tree[top + LEFT] = tree[insertPtr + PARENT] & KEY_MASK;
+                                tree[parentPtr + PARENT] = top;
                             } else {
-                                tree[top * BLK_SIZE + RIGHT]
-                                        = tree[ptrShift + PARENT] & KEY_MASK;
-                                tree[parShift + PARENT] = top | TOGGLE;
+                                tree[top + RIGHT] = tree[insertPtr + PARENT] & KEY_MASK;
+                                tree[parentPtr + PARENT] = top | TOGGLE;
                             }
                         }
-                        tree[parShift] ^= TOGGLE;
+                        tree[parentPtr] ^= TOGGLE;
                         tree[pp] ^= TOGGLE;
                         tree[pp + PARENT] ^= TOGGLE;
                         break;
                     case LEFT_RIGHT:
                         prev = false;
                         if (isRoot) {
-                            rootPtr = tree[parShift + RIGHT];
+                            rootPtr = tree[parentPtr + RIGHT];
                         } else {
                             if (tree[pp + PARENT] >>> SHIFT == FROM_LEFT) {
                                 prev = false;
-                                tree[top * BLK_SIZE + LEFT]
-                                        = tree[parShift + RIGHT] & KEY_MASK;
+                                tree[top + LEFT] = tree[parentPtr + RIGHT] & KEY_MASK;
                             } else {
                                 prev = true;
-                                tree[top * BLK_SIZE + RIGHT]
-                                        = tree[parShift + RIGHT] & KEY_MASK;
+                                tree[top + RIGHT] = tree[parentPtr + RIGHT] & KEY_MASK;
                             }
                         }
                         tree[pp + LEFT] = NULL;
-                        tree[pp + PARENT] = tree[parShift + RIGHT] | TOGGLE;
+                        tree[pp + PARENT] = tree[parentPtr + RIGHT] | TOGGLE;
                         tree[pp] |= TOGGLE;
-                        tree[ptrShift + LEFT] = tree[ptrShift + PARENT] & KEY_MASK;
-                        tree[ptrShift + RIGHT] = tree[parShift + PARENT] & KEY_MASK;
+                        tree[insertPtr + LEFT] = tree[insertPtr + PARENT] & KEY_MASK;
+                        tree[insertPtr + RIGHT] = tree[parentPtr + PARENT] & KEY_MASK;
                         if (isRoot) {
-                            tree[ptrShift + PARENT] = NULL;
+                            tree[insertPtr + PARENT] = NULL;
                         } else {
-                            tree[ptrShift + PARENT] = prev ? top | TOGGLE : top;
+                            tree[insertPtr + PARENT] = prev ? top | TOGGLE : top;
                         }
-                        tree[ptrShift] ^= TOGGLE;
-                        tree[parShift + PARENT] = tree[pp + PARENT] ^ TOGGLE;
-                        tree[parShift + RIGHT] = NULL;
+                        tree[insertPtr] ^= TOGGLE;
+                        tree[parentPtr + PARENT] = tree[pp + PARENT] ^ TOGGLE;
+                        tree[parentPtr + RIGHT] = NULL;
                         break;
                     case RIGHT_LEFT:
                         prev = false;
                         if (isRoot) {
-                            rootPtr = tree[parShift + LEFT];
+                            rootPtr = tree[parentPtr + LEFT];
                         } else {
                             if (tree[pp + PARENT] >>> SHIFT == FROM_LEFT) {
-                                tree[top * BLK_SIZE + LEFT]
-                                        = tree[parShift + LEFT] & KEY_MASK;
+                                tree[top + LEFT] = tree[parentPtr + LEFT] & KEY_MASK;
                                 prev = false;
                             } else {
-                                tree[top * BLK_SIZE + RIGHT]
-                                        = tree[parShift + LEFT] & KEY_MASK;
+                                tree[top + RIGHT] = tree[parentPtr + LEFT] & KEY_MASK;
                                 prev = true;
                             }
                         }
-                        tree[pp + PARENT] = tree[parShift + LEFT];
+                        tree[pp + PARENT] = tree[parentPtr + LEFT];
                         tree[pp + RIGHT] = NULL;
                         tree[pp] |= TOGGLE;
-                        tree[ptrShift + RIGHT] = tree[ptrShift + PARENT] & KEY_MASK;
-                        tree[ptrShift + LEFT] = tree[parShift + PARENT] & KEY_MASK;
+                        tree[insertPtr + RIGHT] = tree[insertPtr + PARENT] & KEY_MASK;
+                        tree[insertPtr + LEFT] = tree[parentPtr + PARENT] & KEY_MASK;
                         if (isRoot) {
-                            tree[ptrShift + PARENT] = NULL;
+                            tree[insertPtr + PARENT] = NULL;
                         } else {
-                            tree[ptrShift + PARENT] = prev ? top | TOGGLE : top;
+                            tree[insertPtr + PARENT] = prev ? top | TOGGLE : top;
                         }
-                        tree[ptrShift] ^= TOGGLE;
-                        tree[parShift + PARENT] = tree[pp + PARENT] ^ TOGGLE;
-                        tree[parShift + LEFT] = NULL;
+                        tree[insertPtr] ^= TOGGLE;
+                        tree[parentPtr + PARENT] = tree[pp + PARENT] ^ TOGGLE;
+                        tree[parentPtr + LEFT] = NULL;
                         break;
                     case RIGHT_RIGHT:
                         tree[pp + RIGHT] = NULL;
                         ppp = tree[pp + PARENT];
-                        tree[pp + PARENT] = tree[ptrShift + PARENT];
-                        tree[parShift + LEFT] = tree[parShift + PARENT]&KEY_MASK;
+                        tree[pp + PARENT] = tree[insertPtr + PARENT];
+                        tree[parentPtr + LEFT] = tree[parentPtr + PARENT]&KEY_MASK;
                         
                         if (isRoot) {
-                            rootPtr = tree[ptrShift + PARENT] & KEY_MASK;
-                            tree[parShift + PARENT] = NULL;
+                            rootPtr = tree[insertPtr + PARENT] & KEY_MASK;
+                            tree[parentPtr + PARENT] = NULL;
                         } else {
-                            tree[parShift + PARENT] = top;
+                            tree[parentPtr + PARENT] = top;
                             if (ppp >>> SHIFT == FROM_LEFT) {
-                                tree[top * BLK_SIZE + LEFT]
-                                        = tree[ptrShift + PARENT] & KEY_MASK;
-                                tree[parShift + PARENT] = top;
+                                tree[top + LEFT] = tree[insertPtr + PARENT] & KEY_MASK;
+                                tree[parentPtr + PARENT] = top;
                             } else {
-                                tree[top * BLK_SIZE + RIGHT]
-                                        = tree[ptrShift + PARENT] & KEY_MASK;
-                                tree[parShift + PARENT] = top | TOGGLE;
+                                tree[top + RIGHT] = tree[insertPtr + PARENT] & KEY_MASK;
+                                tree[parentPtr + PARENT] = top | TOGGLE;
                             }
                         }
-                        tree[parShift] ^= TOGGLE;
+                        tree[parentPtr] ^= TOGGLE;
                         tree[pp] ^= TOGGLE;
                         tree[pp + PARENT] ^= TOGGLE;
                         break;
                 }
                 break; // no while 
+            } else if(tree[tree[sIndex]] >>> SHIFT == BLACK)  {
+                break;
             } else {
-                tree[parShift] ^= TOGGLE; // toggle parent
-                tree[BLK_SIZE * tree[sIndex]] ^= TOGGLE; // toggle sibling
-                if (tree[parShift + PARENT] != -1 && (tree[parShift + PARENT] & KEY_MASK) != rootPtr) {
-                    tree[BLK_SIZE * (tree[parShift + PARENT] & KEY_MASK)] |= TOGGLE;
-                    parShift = BLK_SIZE * (tree[BLK_SIZE * (tree[parShift + PARENT]
-                            & KEY_MASK) + PARENT]) & KEY_MASK;
+                tree[parentPtr] ^= TOGGLE; // toggle parent
+                tree[tree[sIndex]] ^= TOGGLE; // toggle sibling
+                if (tree[parentPtr + PARENT] != -1 && (tree[parentPtr + PARENT] & KEY_MASK) != rootPtr) {
+                    tree[tree[parentPtr + PARENT] & KEY_MASK] |= TOGGLE;
+                    parentPtr = (tree[(tree[parentPtr + PARENT] & KEY_MASK) 
+                            + PARENT]) & KEY_MASK;
                 }
-                System.out.println(printTree(80));
             }
         }
 
         ++dataPtr;
-        ++treePtr;
+        treePtr += BLK_SIZE;
         return true;
     }
 
@@ -298,13 +290,15 @@ public class FastTree<T extends IntValue<T>> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < treePtr * BLK_SIZE; i += BLK_SIZE) {
+        for (int i = 0; i < treePtr; i += BLK_SIZE) {
+            String el1 = data[(tree[i + ROOT_PTR] & KEY_MASK)].toString();
+            String el2 = tree[i + LEFT] == -1 ? "NONE" : data[tree[i + LEFT]/BLK_SIZE].toString();
+            String el3 = tree[i + RIGHT] == -1 ? "NONE" : data[tree[i + RIGHT]/BLK_SIZE].toString();
+            String el4 = tree[i + ROOT_PTR] >>> SHIFT == BLACK ? "BLACK" : "RED";
+            String el5 = tree[i + PARENT] == -1 ? "NONE" : data[(tree[i + PARENT] & KEY_MASK)/BLK_SIZE].toString();
+            String el6 = tree[i + PARENT] >>> SHIFT == FROM_LEFT ? "LEFT" : "RIGHT";
             sb.append(String.format("Data: %s, Left=%s, Right=%s, Color=%s, "
-                    + "Parent=%s, Side=%s%n", data[tree[i + ROOT_PTR] & KEY_MASK].toString(),
-                    tree[i + LEFT] == -1 ? "NONE" : data[tree[i + LEFT]], tree[i + RIGHT] == -1
-                            ? "NONE" : data[tree[i + RIGHT]], tree[i + ROOT_PTR] >>> SHIFT
-                    == BLACK ? "BLACK" : "RED", tree[i + PARENT] == -1 ? "NONE" : data[tree[i + PARENT] & KEY_MASK].toString(),
-                    tree[i + PARENT] >>> SHIFT == FROM_LEFT ? "LEFT" : "RIGHT"));
+                    + "Parent=%s, Side=%s%n", el1, el2, el3, el4, el5, el6));
         }
         return sb.toString();
     }
@@ -339,25 +333,27 @@ public class FastTree<T extends IntValue<T>> {
                 currJustif = 0;
             }
 
-            int count = data[obj.bt].toString().length() >>> 1;
+            int count = data[tree[obj.bt]&KEY_MASK].toString().length() >>> 1;
             int amt = convert(consoleWidth, obj.height, obj.xJust);
             for (int i = 0; i < amt - currJustif - count; ++i) {
                 sb.append(' ');
             }
 
-            if (tree[BLK_SIZE * obj.bt] >>> 31 == 1) {
-                sb.append(RED_COL + data[obj.bt].toString()+obj.bt+ RESET);
+            if (tree[obj.bt] >>> 31 == 1) {
+                sb.append(RED_COL);
+                sb.append(data[tree[obj.bt]&KEY_MASK].toString());
+                sb.append(RESET);
             } else {
-                sb.append(data[obj.bt].toString()+obj.bt);
+                sb.append(data[tree[obj.bt]&KEY_MASK].toString());
             }
 
             currJustif = amt;
-            if (tree[LEFT + (obj.bt * BLK_SIZE)] != NULL) {
-                queue.push(new QueueItem(tree[LEFT + obj.bt * BLK_SIZE],
+            if (tree[LEFT + obj.bt] != NULL) {
+                queue.push(new QueueItem(tree[LEFT + obj.bt],
                         obj.height + 1, 2 * obj.xJust + 0));
             }
-            if (tree[RIGHT + (obj.bt * BLK_SIZE)] != NULL) {
-                queue.push(new QueueItem(tree[RIGHT + obj.bt * BLK_SIZE],
+            if (tree[RIGHT + obj.bt] != NULL) {
+                queue.push(new QueueItem(tree[RIGHT + obj.bt],
                         obj.height + 1, 2 * obj.xJust + 1));
             }
         }
@@ -389,29 +385,18 @@ public class FastTree<T extends IntValue<T>> {
     }
 
     public static void main(String[] args) {
+        boolean[] already = new boolean[26];
+        already[0] = true;
         FastTree<CharWrapper> bst = new FastTree<>(new CharWrapper('a'));
-        System.out.println(bst.printTree(80));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('b'));
-        System.out.println(bst.printTree(80));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('c'));
-        System.out.println(bst.printTree(80));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('d'));
-        System.out.println(bst.printTree(80));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('e'));
-        System.out.println(bst.printTree(80));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('f'));
-        System.out.println(bst.printTree(80));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('g'));
-        System.out.println(bst.printTree(80));
-        System.out.println(bst);
-        bst.insert(new CharWrapper('h'));
-        System.out.println(bst.printTree(80));
+        for(int i = 1; i<10; ++i) {
+            int val;
+            do {
+                val = (int) (1+Math.random()*25);
+            } while(already[val]);
+            already[val] = true;
+            bst.insert(new CharWrapper((char) ('a'+val)));
+        }
+        System.out.println(bst.printTree(120));
         System.out.println(bst.toString());
     }
 }
