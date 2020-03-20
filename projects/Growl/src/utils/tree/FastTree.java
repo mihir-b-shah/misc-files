@@ -4,10 +4,6 @@ import utils.queue.FastQueue;
 
 /**
  * Implements an optimized red-black binary search tree.
- *
- * Current bug report 1. Handling black sibling node (currently it only handles
- * null nodes)
- *
  * MAX CAPACITY OF 400 million nodes.
  *
  * @author mihir
@@ -40,7 +36,6 @@ public class FastTree<T extends IntValue<T>> {
     private static final int KEY_MASK = Integer.MAX_VALUE;
 
     private static final int FROM_LEFT = 0;
-    private static final int FROM_RIGHT = 1;
 
     private static final String RED_COL = "\033[0;31m";
     private static final String RESET = "\033[0m";
@@ -88,35 +83,33 @@ public class FastTree<T extends IntValue<T>> {
      * Does a pure left or right rotation.
      *
      * @param LR whether it is a left/right rotation.
-     * @param insertPtr the original insertion point.
      * @param parentPtr the parent of <param>insertPtr</param>
      * @param pp the parent of <param>parentPtr</param>
-     * @param top the parent of <param>pp</param>, else -1.
      */
-    private void pureRotate(boolean LR, int insertPtr, int parentPtr, int pp, int top) {
-        final int FORWARD = LR ? LEFT : RIGHT;
-        final int BACKWARD = LR ? RIGHT : LEFT;
-
-        tree[pp + FORWARD] = NULL;
-        int ppp = tree[pp + PARENT];
-        tree[pp + PARENT] = tree[insertPtr + PARENT];
-        tree[parentPtr + BACKWARD] = tree[parentPtr + PARENT] & KEY_MASK;
-        if (pp == rootPtr) {
-            tree[parentPtr + PARENT] = NULL;
-            rootPtr = tree[insertPtr + PARENT] & KEY_MASK;
+    private void pureRotate(boolean LR, int parentPtr, int pp) {
+        final int LEFT,RIGHT;
+        if(LR) {
+            LEFT = FastTree.LEFT;
+            RIGHT = FastTree.RIGHT;
         } else {
-            tree[parentPtr + PARENT] = top;
-            if (ppp >>> SHIFT == FROM_LEFT) {
-                tree[top + LEFT] = tree[insertPtr + PARENT] & KEY_MASK;
-                tree[parentPtr + PARENT] = top;
-            } else {
-                tree[top + RIGHT] = tree[insertPtr + PARENT] & KEY_MASK;
-                tree[parentPtr + PARENT] = top | TOGGLE;
-            }
+            RIGHT = FastTree.LEFT;
+            LEFT = FastTree.RIGHT;            
         }
-        tree[parentPtr] ^= TOGGLE;
-        tree[pp] ^= TOGGLE;
-        tree[pp + PARENT] ^= TOGGLE;
+        
+        final int PP_PARENT = tree[pp + PARENT];
+        if(PP_PARENT == -1) {
+            rootPtr = parentPtr;
+        } else {
+            tree[(PP_PARENT & KEY_MASK) + 2 + (PP_PARENT >>> SHIFT)] = parentPtr;
+        }
+        
+        tree[pp + PARENT] = parentPtr | RIGHT - 2 << SHIFT;
+        tree[pp + LEFT] = tree[parentPtr + RIGHT];
+        tree[pp] |= TOGGLE;
+        
+        tree[parentPtr + PARENT] = PP_PARENT;
+        tree[parentPtr + RIGHT] = pp;
+        tree[parentPtr] &= TOGGLE - 1;
     }
 
     /**
@@ -126,36 +119,38 @@ public class FastTree<T extends IntValue<T>> {
      * @param insertPtr the original insertion point.
      * @param parentPtr the parent of <param>insertPtr</param>
      * @param pp the parent of <param>parentPtr</param>
-     * @param top the parent of <param>pp</param>, else -1.
      */
-    private void mixedRotate(boolean LR, int insertPtr, int parentPtr, int pp, int top) {
-        boolean prev = false;
-        final int FORWARD = LR ? RIGHT : LEFT;
-        final int BACKWARD = LR ? LEFT : RIGHT;
-
-        if (pp != rootPtr) {
-            if (tree[pp + PARENT] >>> SHIFT == FROM_LEFT) {
-                prev = false;
-                tree[top + LEFT] = tree[parentPtr + FORWARD] & KEY_MASK;
-            } else {
-                prev = true;
-                tree[top + RIGHT] = tree[parentPtr + FORWARD] & KEY_MASK;
-            }
-        }
-        tree[pp + PARENT] = tree[parentPtr + FORWARD] | TOGGLE;
-        tree[pp + BACKWARD] = NULL;
-        tree[pp] |= TOGGLE;
-        tree[insertPtr + BACKWARD] = tree[insertPtr + PARENT] & KEY_MASK;
-        tree[insertPtr + FORWARD] = tree[parentPtr + PARENT] & KEY_MASK;
-        if (pp == rootPtr) {
-            tree[insertPtr + PARENT] = NULL;
-            rootPtr = tree[parentPtr + FORWARD];
+    private void mixedRotate(boolean LR, int insertPtr, int parentPtr, int pp) {
+        final int LEFT,RIGHT;
+        if(LR) {
+            LEFT = FastTree.LEFT;
+            RIGHT = FastTree.RIGHT;
         } else {
-            tree[insertPtr + PARENT] = prev ? top | TOGGLE : top;
+            RIGHT = FastTree.LEFT;
+            LEFT = FastTree.RIGHT;            
         }
-        tree[insertPtr] ^= TOGGLE;
-        tree[parentPtr + PARENT] = tree[pp + PARENT] ^ TOGGLE;
-        tree[parentPtr + FORWARD] = NULL;
+
+        final int PP_PARENT = tree[pp + PARENT];
+        if(PP_PARENT == -1) {
+            rootPtr = insertPtr;
+        } else {
+            tree[(PP_PARENT & KEY_MASK) + 2 + (PP_PARENT >>> SHIFT)] = insertPtr;
+        }
+        
+        // modify pp
+        tree[pp + PARENT] = insertPtr | (RIGHT - 2) << SHIFT;
+        tree[pp + LEFT] = tree[insertPtr + RIGHT];
+        tree[pp] |= TOGGLE;
+        
+        // modify parent
+        tree[parentPtr + PARENT] = insertPtr | (LEFT - 2) << SHIFT;
+        tree[parentPtr + RIGHT] = tree[insertPtr + LEFT];
+        
+        // modfy insert
+        tree[insertPtr + PARENT] = PP_PARENT;
+        tree[insertPtr + LEFT] = parentPtr;
+        tree[insertPtr + RIGHT] = pp;
+        tree[insertPtr] &= TOGGLE - 1;
     }
 
     /**
@@ -167,8 +162,7 @@ public class FastTree<T extends IntValue<T>> {
      * tree. 5. Insert the item. 6. Rebalance the tree.
      *
      * @param v the item to insert.
-     * @return whether the item was inserted correctly. Does NOT check whether
-     * the element already exists in the tree.
+     * @return whether the item was inserted correctly.
      */
     public final boolean insert(T v) {
         if (treePtr > MAX_CAPACITY - 1) {
@@ -195,7 +189,14 @@ public class FastTree<T extends IntValue<T>> {
 
         int choosePtr;
         while (true) {
-            choosePtr = vComp > tree[ROOT_VAL + insertPtr] ? RIGHT : LEFT;
+            if(vComp > tree[ROOT_VAL + insertPtr]) {
+                choosePtr = RIGHT;
+            } else if(vComp < tree[ROOT_VAL + insertPtr]) {
+                choosePtr = LEFT;
+            } else {
+                // element already exists.
+                return false;
+            }
             if ((lrPtr = tree[insertPtr + choosePtr]) == NULL) {
                 tree[insertPtr + choosePtr] = treePtr;
                 tree[treePtr + ROOT_PTR] = dataPtr ^ TOGGLE;
@@ -215,37 +216,33 @@ public class FastTree<T extends IntValue<T>> {
         int auxVal;
         while (parentPtr > -1 && tree[parentPtr] >>> SHIFT == RED) {
             auxVal = tree[parentPtr + PARENT];
-            sIndex = (auxVal & KEY_MASK) + BLK_SIZE - 2 - (auxVal >>> SHIFT);
+            sIndex = tree[(auxVal & KEY_MASK) + BLK_SIZE - 2 - (auxVal >>> SHIFT)];
 
-            if (tree[sIndex] == NULL) {
-                int pp = tree[parentPtr + PARENT] & KEY_MASK;
-                int top = tree[pp + PARENT] & KEY_MASK;
+            if (sIndex == NULL || tree[sIndex] >>> SHIFT == BLACK) {
+                int pp = auxVal & KEY_MASK;
                 // switch between the different rotation cases
                 switch (((tree[parentPtr + PARENT] >>> SHIFT) << 1)
                         + (tree[insertPtr + PARENT] >>> SHIFT)) {
                     case LEFT_LEFT:
-                        pureRotate(true, insertPtr, parentPtr, pp, top);
+                        pureRotate(true, parentPtr, pp);
                         break;
                     case LEFT_RIGHT:
-                        mixedRotate(true, insertPtr, parentPtr, pp, top);
+                        mixedRotate(true, insertPtr, parentPtr, pp);
                         break;
                     case RIGHT_LEFT:
-                        mixedRotate(false, insertPtr, parentPtr, pp, top);
+                        mixedRotate(false, insertPtr, parentPtr, pp);
                         break;
                     case RIGHT_RIGHT:
-                        pureRotate(false, insertPtr, parentPtr, pp, top);
+                        pureRotate(false, parentPtr, pp);
                         break;
                 }
                 break;
-            } else if (tree[tree[sIndex]] >>> SHIFT == BLACK) {
-                break;
             } else {
                 tree[parentPtr] ^= TOGGLE; // toggle parent
-                tree[tree[sIndex]] ^= TOGGLE; // toggle sibling
-                if (tree[parentPtr + PARENT] != -1 && (tree[parentPtr + PARENT] & KEY_MASK) != rootPtr) {
-                    tree[tree[parentPtr + PARENT] & KEY_MASK] |= TOGGLE;
-                    parentPtr = (tree[(tree[parentPtr + PARENT] & KEY_MASK)
-                            + PARENT]) & KEY_MASK;
+                tree[sIndex] ^= TOGGLE; // toggle sibling
+                if (auxVal != -1 && (auxVal &= KEY_MASK) != rootPtr) {
+                    tree[auxVal] |= TOGGLE;
+                    parentPtr = tree[auxVal + PARENT] & KEY_MASK;
                 } else break;
             }
         }
@@ -268,10 +265,13 @@ public class FastTree<T extends IntValue<T>> {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < treePtr; i += BLK_SIZE) {
             String el1 = data[(tree[i + ROOT_PTR] & KEY_MASK)].toString();
-            String el2 = tree[i + LEFT] == -1 ? "NONE" : data[tree[i + LEFT] / BLK_SIZE].toString();
-            String el3 = tree[i + RIGHT] == -1 ? "NONE" : data[tree[i + RIGHT] / BLK_SIZE].toString();
+            String el2 = tree[i + LEFT] == -1 ? "NONE" : data[tree[i + LEFT] 
+                    / BLK_SIZE].toString();
+            String el3 = tree[i + RIGHT] == -1 ? "NONE" : data[tree[i + RIGHT] 
+                    / BLK_SIZE].toString();
             String el4 = tree[i + ROOT_PTR] >>> SHIFT == BLACK ? "BLACK" : "RED";
-            String el5 = tree[i + PARENT] == -1 ? "NONE" : data[(tree[i + PARENT] & KEY_MASK) / BLK_SIZE].toString();
+            String el5 = tree[i + PARENT] == -1 ? "NONE" : data[(tree[i + PARENT]
+                    & KEY_MASK) / BLK_SIZE].toString();
             String el6 = tree[i + PARENT] >>> SHIFT == FROM_LEFT ? "LEFT" : "RIGHT";
             sb.append(String.format("Data: %s, Left=%s, Right=%s, Color=%s, "
                     + "Parent=%s, Side=%s%n", el1, el2, el3, el4, el5, el6));
@@ -361,19 +361,16 @@ public class FastTree<T extends IntValue<T>> {
     }
 
     public static void main(String[] args) {
-        boolean[] already = new boolean[26];
-        already[0] = true;
         FastTree<CharWrapper> bst = new FastTree<>(new CharWrapper('a'));
-        for (int i = 1; i < 10; ++i) {
-            int val;
-            do {
-                val = (int) (1 + Math.random() * 25);
-            } while (already[val]);
-            already[val] = true;
-            bst.insert(new CharWrapper((char) ('a' + val)));
-            System.out.println(bst.printTree(120));
-            System.out.println(bst.toString());
-        }
-
+        final int CONSOLE_WIDTH = 60;
+        bst.insert(new CharWrapper('b'));
+        bst.insert(new CharWrapper('c'));
+        bst.insert(new CharWrapper('d'));
+        bst.insert(new CharWrapper('e'));
+        bst.insert(new CharWrapper('f'));
+        bst.insert(new CharWrapper('g'));
+        bst.insert(new CharWrapper('h'));
+        System.out.println(bst.printTree(CONSOLE_WIDTH));
+        System.out.println(bst);
     }
 }
