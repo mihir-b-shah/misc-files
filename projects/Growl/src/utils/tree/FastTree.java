@@ -1,10 +1,12 @@
 package utils.tree;
 
+import java.util.Random;
+import java.util.TreeSet;
 import utils.queue.FastQueue;
 
 /**
- * Implements an optimized red-black binary search tree.
- * MAX CAPACITY OF 400 million nodes.
+ * Implements an optimized red-black binary search tree. MAX CAPACITY OF 400
+ * million nodes.
  *
  * @author mihir
  * @param <T> the type.
@@ -87,26 +89,31 @@ public class FastTree<T extends IntValue<T>> {
      * @param pp the parent of <param>parentPtr</param>
      */
     private void pureRotate(boolean LR, int parentPtr, int pp) {
-        final int LEFT,RIGHT;
-        if(LR) {
+        final int LEFT, RIGHT;
+        if (LR) {
             LEFT = FastTree.LEFT;
             RIGHT = FastTree.RIGHT;
         } else {
             RIGHT = FastTree.LEFT;
-            LEFT = FastTree.RIGHT;            
+            LEFT = FastTree.RIGHT;
         }
-        
+
         final int PP_PARENT = tree[pp + PARENT];
-        if(PP_PARENT == -1) {
+        if (PP_PARENT == -1) {
             rootPtr = parentPtr;
         } else {
             tree[(PP_PARENT & KEY_MASK) + 2 + (PP_PARENT >>> SHIFT)] = parentPtr;
+        }
+
+        final int T3 = tree[parentPtr + RIGHT];
+        if(T3 != NULL) {
+            tree[T3 + PARENT] = pp | LEFT - 2 << SHIFT;
         }
         
         tree[pp + PARENT] = parentPtr | RIGHT - 2 << SHIFT;
         tree[pp + LEFT] = tree[parentPtr + RIGHT];
         tree[pp] |= TOGGLE;
-        
+
         tree[parentPtr + PARENT] = PP_PARENT;
         tree[parentPtr + RIGHT] = pp;
         tree[parentPtr] &= TOGGLE - 1;
@@ -121,31 +128,41 @@ public class FastTree<T extends IntValue<T>> {
      * @param pp the parent of <param>parentPtr</param>
      */
     private void mixedRotate(boolean LR, int insertPtr, int parentPtr, int pp) {
-        final int LEFT,RIGHT;
-        if(LR) {
+        final int LEFT, RIGHT;
+        if (LR) {
             LEFT = FastTree.LEFT;
             RIGHT = FastTree.RIGHT;
         } else {
             RIGHT = FastTree.LEFT;
-            LEFT = FastTree.RIGHT;            
+            LEFT = FastTree.RIGHT;
         }
 
         final int PP_PARENT = tree[pp + PARENT];
-        if(PP_PARENT == -1) {
+
+        if (PP_PARENT == -1) {
             rootPtr = insertPtr;
         } else {
             tree[(PP_PARENT & KEY_MASK) + 2 + (PP_PARENT >>> SHIFT)] = insertPtr;
         }
         
+        final int T2 = tree[insertPtr + LEFT];
+        if(T2 != NULL) {
+            tree[T2 + PARENT] = parentPtr | RIGHT - 2 << SHIFT;
+        }
+        final int T3 = tree[insertPtr + RIGHT];
+        if(T3 != NULL) {
+            tree[T3 + PARENT] = pp | LEFT - 2 << SHIFT;
+        }
+
         // modify pp
         tree[pp + PARENT] = insertPtr | (RIGHT - 2) << SHIFT;
         tree[pp + LEFT] = tree[insertPtr + RIGHT];
         tree[pp] |= TOGGLE;
-        
+
         // modify parent
         tree[parentPtr + PARENT] = insertPtr | (LEFT - 2) << SHIFT;
         tree[parentPtr + RIGHT] = tree[insertPtr + LEFT];
-        
+
         // modfy insert
         tree[insertPtr + PARENT] = PP_PARENT;
         tree[insertPtr + LEFT] = parentPtr;
@@ -189,9 +206,9 @@ public class FastTree<T extends IntValue<T>> {
 
         int choosePtr;
         while (true) {
-            if(vComp > tree[ROOT_VAL + insertPtr]) {
+            if (vComp > tree[ROOT_VAL + insertPtr]) {
                 choosePtr = RIGHT;
-            } else if(vComp < tree[ROOT_VAL + insertPtr]) {
+            } else if (vComp < tree[ROOT_VAL + insertPtr]) {
                 choosePtr = LEFT;
             } else {
                 // element already exists.
@@ -242,8 +259,11 @@ public class FastTree<T extends IntValue<T>> {
                 tree[sIndex] ^= TOGGLE; // toggle sibling
                 if (auxVal != -1 && (auxVal &= KEY_MASK) != rootPtr) {
                     tree[auxVal] |= TOGGLE;
+                    insertPtr = auxVal & KEY_MASK;
                     parentPtr = tree[auxVal + PARENT] & KEY_MASK;
-                } else break;
+                } else {
+                    break;
+                }
             }
         }
 
@@ -253,7 +273,23 @@ public class FastTree<T extends IntValue<T>> {
     }
 
     public final boolean contains(T val) {
-        return false;
+        final int vComp = val.value();
+        int currPtr = rootPtr;
+        int currVal;
+        
+        while(true) {
+            currVal = tree[currPtr + ROOT_VAL];
+            if(currPtr < 0) {
+                return false;
+            } else if(vComp > currVal) {
+                currPtr = tree[currPtr + RIGHT];
+            } else if(vComp < currVal) {
+                currPtr = tree[currPtr + LEFT];
+            } else {
+                return true;
+            }
+        }
+        
     }
 
     public final T higher(T thr) {
@@ -265,9 +301,9 @@ public class FastTree<T extends IntValue<T>> {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < treePtr; i += BLK_SIZE) {
             String el1 = data[(tree[i + ROOT_PTR] & KEY_MASK)].toString();
-            String el2 = tree[i + LEFT] == -1 ? "NONE" : data[tree[i + LEFT] 
+            String el2 = tree[i + LEFT] == -1 ? "NONE" : data[tree[i + LEFT]
                     / BLK_SIZE].toString();
-            String el3 = tree[i + RIGHT] == -1 ? "NONE" : data[tree[i + RIGHT] 
+            String el3 = tree[i + RIGHT] == -1 ? "NONE" : data[tree[i + RIGHT]
                     / BLK_SIZE].toString();
             String el4 = tree[i + ROOT_PTR] >>> SHIFT == BLACK ? "BLACK" : "RED";
             String el5 = tree[i + PARENT] == -1 ? "NONE" : data[(tree[i + PARENT]
@@ -337,40 +373,35 @@ public class FastTree<T extends IntValue<T>> {
         return sb.toString();
     }
 
-    private final int convert(double w, int h, int j) {
+    private int convert(double w, int h, int j) {
         return (int) (w * ((j << 1) + 1) / (1 << (h + 1)));
     }
 
-    static class CharWrapper implements IntValue<CharWrapper> {
+    static class IntWrapper implements IntValue<IntWrapper>,Comparable<IntWrapper> {
 
-        private final char c;
+        private final int c;
 
-        public CharWrapper(char c) {
+        public IntWrapper(int c) {
             this.c = c;
         }
 
         @Override
         public int value() {
-            return c - '0';
+            return c;
         }
 
         @Override
         public String toString() {
             return "" + c;
         }
+        
+        @Override
+        public int compareTo(IntWrapper other) {
+            return value()-other.value();
+        }
     }
 
     public static void main(String[] args) {
-        FastTree<CharWrapper> bst = new FastTree<>(new CharWrapper('a'));
-        final int CONSOLE_WIDTH = 60;
-        bst.insert(new CharWrapper('b'));
-        bst.insert(new CharWrapper('c'));
-        bst.insert(new CharWrapper('d'));
-        bst.insert(new CharWrapper('e'));
-        bst.insert(new CharWrapper('f'));
-        bst.insert(new CharWrapper('g'));
-        bst.insert(new CharWrapper('h'));
-        System.out.println(bst.printTree(CONSOLE_WIDTH));
-        System.out.println(bst);
+
     }
 }
