@@ -13,7 +13,7 @@ import utils.queue.FastQueue;
  * @author mihir
  * @param <T> the type.
  */
-public class FastTree<T extends IntValue<T>> {
+public class FastTree2<T extends IntValue<T>> {
 
     private int[] tree; // a vector
     private int treePtr;
@@ -69,7 +69,7 @@ public class FastTree<T extends IntValue<T>> {
      *
      * @param root the root node.
      */
-    public FastTree(T root) {
+    public FastTree2(T root) {
         data = (T[]) new IntValue[4];
         tree = new int[20];
 
@@ -363,7 +363,7 @@ public class FastTree<T extends IntValue<T>> {
     public static void main(String[] args) {
         boolean[] already = new boolean[26];
         already[0] = true;
-        FastTree<CharWrapper> bst = new FastTree<>(new CharWrapper('a'));
+        FastTree2<CharWrapper> bst = new FastTree2<>(new CharWrapper('a'));
         for (int i = 1; i < 10; ++i) {
             int val;
             do {
