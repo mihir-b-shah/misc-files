@@ -11,6 +11,9 @@ import java.util.TreeSet;
  */
 public class TreeBenchmark {
 
+}
+
+/*
     private static IntTreeMap<IntWrapper> tree;
     private static TreeSet<IntWrapper> check;
     
@@ -19,18 +22,13 @@ public class TreeBenchmark {
     
     private static final int INSERT_SIZE = 9_900_000;
     private static final int QUERY_SIZE = 5_000_000;
-    
-    static class IntWrapper implements IntValue<IntWrapper>,Comparable<IntWrapper> {
+   
+    static class IntWrapper implementsComparable<IntWrapper> {
 
         private final int c;
 
         public IntWrapper(int c) {
             this.c = c;
-        }
-
-        @Override
-        public int value() {
-            return c;
         }
 
         @Override
@@ -74,9 +72,9 @@ public class TreeBenchmark {
             if(tree.find(test) != null ^ check.contains(test)) {
                 System.out.println("Accuracy error.");
                 break;
-            } */
+            } 
         }
-        /*
+        
         for(int k = 100; k<100_000_000; k*=10) {
             TreeSet<IntWrapper> treeSet = new TreeSet<>();
             treeSet.add(new IntWrapper(0));
@@ -114,6 +112,5 @@ public class TreeBenchmark {
             }
             System.out.printf("FastTree %d contains: %d%n%n%n", k, System.nanoTime()-T);
         }
-        */
-    }
-}
+        
+    } */

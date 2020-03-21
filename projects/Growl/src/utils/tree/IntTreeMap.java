@@ -3,11 +3,18 @@ package utils.tree;
 import utils.queue.RefQueue;
 
 /**
- * Implements an optimized red-black binary search tree. MAX CAPACITY OF 400
- * million nodes.
+ * Implements an optimized red-black binary search tree. The type of the input
+ * is any input that can be expressed as an integer for comparison purposes.
+ *
+ * Most types can do this. All primitive wrappers can. Strings probably can't
+ * unless you have some special size string.
+
+ * MAX CAPACITY OF 400 million nodes
  * 
- * Benchmarked as 1-1.5x faster for contains() and 1-2x faster for insert
- * than TreeMap. Based on current results, not slower for add/contains.
+ * This can also be used as a multimap.
+ *
+ * Benchmarked as 1-1.5x faster for contains() and 1-2x faster for insert than
+ * TreeMap. Based on current results, not slower for add/contains.
  *
  * @author mihir
  * @param <T> the type.
@@ -69,7 +76,7 @@ public class IntTreeMap<T> {
      * @param root the root node.
      */
     public IntTreeMap(int comp, T root) {
-        data = (T[]) new IntValue[4];
+        data = (T[]) new Object[4];
         tree = new int[20];
 
         data[ROOT_PTR] = root;
@@ -82,17 +89,17 @@ public class IntTreeMap<T> {
         tree[PARENT] = NULL;
         rootPtr = 0;
     }
-    
+
     /**
      * Constructs a FastTree object.
-     * 
+     *
      * @param comp the root's compare value.
      * @param root the root of the tree.
      * @param capacity the capacity of the array
      */
     public IntTreeMap(int comp, T root, int capacity) {
-        data = (T[]) new IntValue[capacity];
-        tree = new int[BLK_SIZE*capacity];
+        data = (T[]) new Object[capacity];
+        tree = new int[BLK_SIZE * capacity];
 
         data[ROOT_PTR] = root;
         dataPtr = 1;
@@ -130,10 +137,10 @@ public class IntTreeMap<T> {
         }
 
         final int T3 = tree[parentPtr + RIGHT];
-        if(T3 != NULL) {
+        if (T3 != NULL) {
             tree[T3 + PARENT] = pp | LEFT - 2 << SHIFT;
         }
-        
+
         tree[pp + PARENT] = parentPtr | RIGHT - 2 << SHIFT;
         tree[pp + LEFT] = tree[parentPtr + RIGHT];
         tree[pp] |= TOGGLE;
@@ -168,13 +175,13 @@ public class IntTreeMap<T> {
         } else {
             tree[(PP_PARENT & KEY_MASK) + 2 + (PP_PARENT >>> SHIFT)] = insertPtr;
         }
-        
+
         final int T2 = tree[insertPtr + LEFT];
-        if(T2 != NULL) {
+        if (T2 != NULL) {
             tree[T2 + PARENT] = parentPtr | RIGHT - 2 << SHIFT;
         }
         final int T3 = tree[insertPtr + RIGHT];
-        if(T3 != NULL) {
+        if (T3 != NULL) {
             tree[T3 + PARENT] = pp | LEFT - 2 << SHIFT;
         }
 
@@ -212,7 +219,7 @@ public class IntTreeMap<T> {
         }
         // grow the array if needed
         if (dataPtr == data.length) {
-            T[] aux = (T[]) new IntValue[dataPtr << 1];
+            T[] aux = (T[]) new Object[dataPtr << 1];
             System.arraycopy(data, 0, aux, 0, dataPtr);
             data = aux;
 
@@ -300,20 +307,23 @@ public class IntTreeMap<T> {
         final int vComp = val;
         int currPtr = rootPtr;
         int currVal;
-        
-        while(true) {
+
+        while (true) {
             currVal = tree[currPtr + ROOT_VAL];
-            if(currPtr < 0) {
+            if (currPtr < 0) {
                 return null;
-            } else if(vComp > currVal) {
+            } else if (vComp > currVal) {
                 currPtr = tree[currPtr + RIGHT];
-            } else if(vComp < currVal) {
+            } else if (vComp < currVal) {
                 currPtr = tree[currPtr + LEFT];
             } else {
                 return data[tree[currPtr] & KEY_MASK];
             }
         }
-        
+    }
+    
+    public final T erase(final int key) {
+        return null;
     }
 
     @Override
