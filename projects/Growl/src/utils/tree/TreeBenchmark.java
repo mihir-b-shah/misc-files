@@ -11,7 +11,7 @@ import java.util.TreeSet;
  */
 public class TreeBenchmark {
 
-    private static FastTree<IntWrapper> tree;
+    private static IntTreeMap<IntWrapper> tree;
     private static TreeSet<IntWrapper> check;
     
     private static IntWrapper[] insert;
@@ -45,7 +45,7 @@ public class TreeBenchmark {
     }
 
     public static void main(String[] args) {
-        tree = new FastTree(new IntWrapper(0));
+        tree = new IntTreeMap(0, new IntWrapper(0));
         check = new TreeSet<>();
         insert = new IntWrapper[INSERT_SIZE];
         rand = new Random();
@@ -56,7 +56,7 @@ public class TreeBenchmark {
         
         int ctr = 0;
         for(IntWrapper iw: insert) {
-            tree.insert(iw);
+            tree.insert(iw.value(), iw);
             check.add(iw);
             if(ctr % 100000 == 0) System.out.println(ctr/100000);
             ++ctr;
@@ -70,10 +70,11 @@ public class TreeBenchmark {
             } else {
                 test = insert[rand.nextInt(insert.length)];
             }
-            if(tree.contains(test) != check.contains(test)) {
+            /*
+            if(tree.find(test) != null ^ check.contains(test)) {
                 System.out.println("Accuracy error.");
                 break;
-            }
+            } */
         }
         /*
         for(int k = 100; k<100_000_000; k*=10) {

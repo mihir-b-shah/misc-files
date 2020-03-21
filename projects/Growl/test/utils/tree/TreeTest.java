@@ -17,7 +17,7 @@ import org.junit.runner.notification.Failure;
  * @author mihir
  */
 public class TreeTest {
-    
+    /*
     private FastTree<IntWrapper> tree;
     private TreeSet<IntWrapper> check;
     
@@ -62,4 +62,5 @@ public class TreeTest {
             assertEquals(tree.contains(test), check.add(test));
         }
     }
+    */
 }

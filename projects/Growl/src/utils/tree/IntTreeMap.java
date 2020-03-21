@@ -1,18 +1,18 @@
 package utils.tree;
 
-import utils.queue.FastQueue;
+import utils.queue.RefQueue;
 
 /**
  * Implements an optimized red-black binary search tree. MAX CAPACITY OF 400
  * million nodes.
  * 
  * Benchmarked as 1-1.5x faster for contains() and 1-2x faster for insert
- * than TreeSet. Based on current results, not slower for add/contains.
+ * than TreeMap. Based on current results, not slower for add/contains.
  *
  * @author mihir
  * @param <T> the type.
  */
-public class FastTree<T extends IntValue<T>> {
+public class IntTreeMap<T> {
 
     private int[] tree; // a vector
     private int treePtr;
@@ -65,16 +65,17 @@ public class FastTree<T extends IntValue<T>> {
      *
      * a PARENT field that points to the parent node.
      *
+     * @param comp the root's compare value.
      * @param root the root node.
      */
-    public FastTree(T root) {
+    public IntTreeMap(int comp, T root) {
         data = (T[]) new IntValue[4];
         tree = new int[20];
 
         data[ROOT_PTR] = root;
         dataPtr = 1;
         treePtr = BLK_SIZE;
-        tree[ROOT_VAL] = root.value();
+        tree[ROOT_VAL] = comp;
         tree[LEFT] = NULL;
         tree[RIGHT] = NULL;
         tree[ROOT_PTR] |= BSHIFT;
@@ -85,17 +86,18 @@ public class FastTree<T extends IntValue<T>> {
     /**
      * Constructs a FastTree object.
      * 
+     * @param comp the root's compare value.
      * @param root the root of the tree.
      * @param capacity the capacity of the array
      */
-    public FastTree(T root, int capacity) {
+    public IntTreeMap(int comp, T root, int capacity) {
         data = (T[]) new IntValue[capacity];
         tree = new int[BLK_SIZE*capacity];
 
         data[ROOT_PTR] = root;
         dataPtr = 1;
         treePtr = BLK_SIZE;
-        tree[ROOT_VAL] = root.value();
+        tree[ROOT_VAL] = comp;
         tree[LEFT] = NULL;
         tree[RIGHT] = NULL;
         tree[ROOT_PTR] |= BSHIFT;
@@ -113,11 +115,11 @@ public class FastTree<T extends IntValue<T>> {
     private void pureRotate(boolean LR, int parentPtr, int pp) {
         final int LEFT, RIGHT;
         if (LR) {
-            LEFT = FastTree.LEFT;
-            RIGHT = FastTree.RIGHT;
+            LEFT = IntTreeMap.LEFT;
+            RIGHT = IntTreeMap.RIGHT;
         } else {
-            RIGHT = FastTree.LEFT;
-            LEFT = FastTree.RIGHT;
+            RIGHT = IntTreeMap.LEFT;
+            LEFT = IntTreeMap.RIGHT;
         }
 
         final int PP_PARENT = tree[pp + PARENT];
@@ -138,7 +140,7 @@ public class FastTree<T extends IntValue<T>> {
 
         tree[parentPtr + PARENT] = PP_PARENT;
         tree[parentPtr + RIGHT] = pp;
-        tree[parentPtr] &= TOGGLE - 1;
+        tree[parentPtr] &= KEY_MASK;
     }
 
     /**
@@ -152,11 +154,11 @@ public class FastTree<T extends IntValue<T>> {
     private void mixedRotate(boolean LR, int insertPtr, int parentPtr, int pp) {
         final int LEFT, RIGHT;
         if (LR) {
-            LEFT = FastTree.LEFT;
-            RIGHT = FastTree.RIGHT;
+            LEFT = IntTreeMap.LEFT;
+            RIGHT = IntTreeMap.RIGHT;
         } else {
-            RIGHT = FastTree.LEFT;
-            LEFT = FastTree.RIGHT;
+            RIGHT = IntTreeMap.LEFT;
+            LEFT = IntTreeMap.RIGHT;
         }
 
         final int PP_PARENT = tree[pp + PARENT];
@@ -189,7 +191,7 @@ public class FastTree<T extends IntValue<T>> {
         tree[insertPtr + PARENT] = PP_PARENT;
         tree[insertPtr + LEFT] = parentPtr;
         tree[insertPtr + RIGHT] = pp;
-        tree[insertPtr] &= TOGGLE - 1;
+        tree[insertPtr] &= KEY_MASK;
     }
 
     /**
@@ -200,10 +202,11 @@ public class FastTree<T extends IntValue<T>> {
      * in the 'data' array. 4. Determines the pointer (int) value to use in
      * tree. 5. Insert the item. 6. Rebalance the tree.
      *
+     * @param vComp the item's compare value.
      * @param v the item to insert.
      * @return whether the item was inserted correctly.
      */
-    public final boolean insert(T v) {
+    public final boolean insert(final int vComp, final T v) {
         if (treePtr > MAX_CAPACITY - 1) {
             return false;
         }
@@ -224,7 +227,6 @@ public class FastTree<T extends IntValue<T>> {
         int insertPtr = rootPtr;
         int parentPtr;
         int lrPtr;
-        final int vComp = v.value();
 
         int choosePtr;
         while (true) {
@@ -294,28 +296,24 @@ public class FastTree<T extends IntValue<T>> {
         return true;
     }
 
-    public final boolean contains(T val) {
-        final int vComp = val.value();
+    public final T find(final int val) {
+        final int vComp = val;
         int currPtr = rootPtr;
         int currVal;
         
         while(true) {
             currVal = tree[currPtr + ROOT_VAL];
             if(currPtr < 0) {
-                return false;
+                return null;
             } else if(vComp > currVal) {
                 currPtr = tree[currPtr + RIGHT];
             } else if(vComp < currVal) {
                 currPtr = tree[currPtr + LEFT];
             } else {
-                return true;
+                return data[tree[currPtr] & KEY_MASK];
             }
         }
         
-    }
-
-    public final T higher(T thr) {
-        return null;
     }
 
     @Override
@@ -352,7 +350,7 @@ public class FastTree<T extends IntValue<T>> {
 
     public final String printTree(int consoleWidth) {
         StringBuilder sb = new StringBuilder();
-        FastQueue<QueueItem> queue = new FastQueue<>(8);
+        RefQueue<QueueItem> queue = new RefQueue<>(8);
         queue.push(new QueueItem(rootPtr, 0, 0));
 
         int currHeight = -1;
