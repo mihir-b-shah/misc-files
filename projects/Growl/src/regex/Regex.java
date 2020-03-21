@@ -6,6 +6,7 @@ import utils.vector.SmallArray;
 import utils.queue.IntQueue;
 import java.util.Arrays;
 import java.util.PriorityQueue;
+import java.util.TreeSet;
 
 public class Regex {
     
@@ -102,7 +103,7 @@ public class Regex {
     
     public static final void genAutomaton(String regex) {
         IntStack stack = new IntStack();
-        TreeSet<NFAPool> freeStorage = new PriorityQueue<>();
+        TreeSet<NFAPool> freeStorage = new TreeSet<>();
 
         int pos = 0;
         int startPos;
@@ -175,8 +176,8 @@ public class Regex {
     
     public static void main(String[] args) {
         String regex = "ab+cqe?";
-        NFAPool gen = genLinearAutomaton(regex, new NFAPool());
-        System.out.println(gen);
-        System.out.println(check("abbbbbcqee", gen));
+        // NFAPool gen = genLinearAutomaton(regex, new NFAPool());
+        // System.out.println(gen);
+        // System.out.println(check("abbbbbcqee", gen));
     }
 }

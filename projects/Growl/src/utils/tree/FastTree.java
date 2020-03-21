@@ -1,12 +1,13 @@
 package utils.tree;
 
-import java.util.Random;
-import java.util.TreeSet;
 import utils.queue.FastQueue;
 
 /**
  * Implements an optimized red-black binary search tree. MAX CAPACITY OF 400
  * million nodes.
+ * 
+ * Benchmarked as 1-1.5x faster for contains() and 1-2x faster for insert
+ * than TreeSet. Based on current results, not slower for add/contains.
  *
  * @author mihir
  * @param <T> the type.
@@ -69,6 +70,27 @@ public class FastTree<T extends IntValue<T>> {
     public FastTree(T root) {
         data = (T[]) new IntValue[4];
         tree = new int[20];
+
+        data[ROOT_PTR] = root;
+        dataPtr = 1;
+        treePtr = BLK_SIZE;
+        tree[ROOT_VAL] = root.value();
+        tree[LEFT] = NULL;
+        tree[RIGHT] = NULL;
+        tree[ROOT_PTR] |= BSHIFT;
+        tree[PARENT] = NULL;
+        rootPtr = 0;
+    }
+    
+    /**
+     * Constructs a FastTree object.
+     * 
+     * @param root the root of the tree.
+     * @param capacity the capacity of the array
+     */
+    public FastTree(T root, int capacity) {
+        data = (T[]) new IntValue[capacity];
+        tree = new int[BLK_SIZE*capacity];
 
         data[ROOT_PTR] = root;
         dataPtr = 1;
@@ -375,33 +397,5 @@ public class FastTree<T extends IntValue<T>> {
 
     private int convert(double w, int h, int j) {
         return (int) (w * ((j << 1) + 1) / (1 << (h + 1)));
-    }
-
-    static class IntWrapper implements IntValue<IntWrapper>,Comparable<IntWrapper> {
-
-        private final int c;
-
-        public IntWrapper(int c) {
-            this.c = c;
-        }
-
-        @Override
-        public int value() {
-            return c;
-        }
-
-        @Override
-        public String toString() {
-            return "" + c;
-        }
-        
-        @Override
-        public int compareTo(IntWrapper other) {
-            return value()-other.value();
-        }
-    }
-
-    public static void main(String[] args) {
-
     }
 }

@@ -36,10 +36,10 @@ class RegexTests {
             
             st = StringUtils.tokenize(line, '\t');
             regex = st.next();
-            nfa = Regex.genAutomaton(regex);
+            // nfa = Regex.genAutomaton(regex);
             
             while(st.hasNext()) {
-                if((res = Regex.check(buf1 = st.next(), nfa)) 
+                if((res = Regex.check(buf1 = st.next(), null))  // fix
                         != ((buf2 = st.next()).charAt(0) == '1')) {
                     System.err.printf("Failed regex: %s, string %s. Should be "
                             + "%b, matched as %b.%n", regex, buf1, 
