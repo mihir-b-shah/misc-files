@@ -5,17 +5,21 @@ using namespace std;
 #include <fstream>
 #include <array>
 #include <vector>
+#include <Eigen/Dense>
+#include <Eigen/SVD>
 
 class POINT {
     private:
         double x1,x2,x3,x4,x5;
+        double y;
     public:
         void compress(int N, double* buffer);
 };
 
 void POINT::compress(int N, double* buffer) {
     if(N > 5) {
-        // perform a principal component analysis
+        // pca
+
     } else {
         switch(N) {
             case 5:
@@ -34,27 +38,32 @@ void POINT::compress(int N, double* buffer) {
 }
 
 int main(int argc, char** argv) {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    cerr.tie(NULL);
-
     if(argc != 2) {
         cerr << "Please enter a data file.\n";
     }
 
-    ifstream fin(argv[1]);
-    fin.tie(NULL);
-    int buf; double buf2,buf3;
+    std::ifstream fin(argv[1]);
+    int buf; double buf2;
     fin >> buf;
-
     const int N = buf;
-    vector<POINT> points(N);
 
-    for(int i = 0; i<N; ++i) {
-        fin >> buf2 >> buf3;
-        points[i] = {buf2,buf3};
+    fin >> buf;
+    const int D = buf;
+
+    std::vector<POINT> points(N);
+    if(D > 5) {
+        Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic> matrix;
+        matrix.resize(N,D);
+        for(int i = 0; i<N; ++i) {
+            for(int j = 0; j<D; ++j) {
+                fin >> buf2;
+                matrix(i,j) = buf2;
+            }
+        }
+        Eigen::Matrix<double, 5,5> xTx;
+        xTx.noalias() = matrix.transpose()*matrix;
+        Eigen::EigenSolver<Eigen::MatrixXd> es(xTx);
+        Eigen::MatrixXcd vects = es.eigenvectors();
+        
     }
-
-
 }
