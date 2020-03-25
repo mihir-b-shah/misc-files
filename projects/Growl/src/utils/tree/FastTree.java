@@ -1,5 +1,7 @@
 package utils.tree;
 
+import java.util.Random;
+import java.util.TreeSet;
 import java.util.function.ToIntFunction;
 import utils.queue.RefQueue;
 
@@ -149,11 +151,9 @@ public class FastTree<T> {
 
         tree[pp + PARENT] = parentPtr | RIGHT - 2 << SHIFT;
         tree[pp + LEFT] = tree[parentPtr + RIGHT];
-        tree[pp] |= TOGGLE;
 
         tree[parentPtr + PARENT] = PP_PARENT;
         tree[parentPtr + RIGHT] = pp;
-        tree[parentPtr] &= KEY_MASK;
     }
 
     /**
@@ -194,7 +194,6 @@ public class FastTree<T> {
         // modify pp
         tree[pp + PARENT] = insertPtr | (RIGHT - 2) << SHIFT;
         tree[pp + LEFT] = tree[insertPtr + RIGHT];
-        tree[pp] |= TOGGLE;
 
         // modify parent
         tree[parentPtr + PARENT] = insertPtr | (LEFT - 2) << SHIFT;
@@ -204,9 +203,31 @@ public class FastTree<T> {
         tree[insertPtr + PARENT] = PP_PARENT;
         tree[insertPtr + LEFT] = parentPtr;
         tree[insertPtr + RIGHT] = pp;
-        tree[insertPtr] &= KEY_MASK;
     }
 
+    private void reverseRotate(boolean LR, int highChild, int sibling) {
+        final int LEFT, RIGHT;
+        if (LR) {
+            LEFT = FastTree.LEFT;
+            RIGHT = FastTree.RIGHT;
+        } else {
+            RIGHT = FastTree.LEFT;
+            LEFT = FastTree.RIGHT;
+        }
+        
+        final int sibParent = tree[sibling + PARENT];
+        final int T2 = tree[highChild + RIGHT];
+        if (T2 != NULL) {
+            tree[T2 + PARENT] = sibling | LEFT - 2 << SHIFT;
+        }
+        
+        tree[sibling + PARENT] = highChild | RIGHT - 2 << SHIFT;
+        tree[sibling + LEFT] = tree[highChild + RIGHT];
+        
+        tree[highChild + PARENT] = sibParent;
+        tree[highChild + RIGHT] = sibling;
+    }
+    
     /**
      * Inserts an item into the BST.
      *
@@ -274,15 +295,23 @@ public class FastTree<T> {
                         + (tree[insertPtr + PARENT] >>> SHIFT)) {
                     case LEFT_LEFT:
                         pureRotate(true, parentPtr, pp);
+                        tree[pp] |= TOGGLE;
+                        tree[parentPtr] &= KEY_MASK;
                         break;
                     case LEFT_RIGHT:
                         mixedRotate(true, insertPtr, parentPtr, pp);
+                        tree[pp] |= TOGGLE;
+                        tree[insertPtr] &= KEY_MASK;
                         break;
                     case RIGHT_LEFT:
                         mixedRotate(false, insertPtr, parentPtr, pp);
+                        tree[pp] |= TOGGLE;
+                        tree[insertPtr] &= KEY_MASK;
                         break;
                     case RIGHT_RIGHT:
                         pureRotate(false, parentPtr, pp);
+                        tree[pp] |= TOGGLE;
+                        tree[parentPtr] &= KEY_MASK;
                         break;
                 }
                 break;
@@ -389,14 +418,15 @@ public class FastTree<T> {
                     
                     // pointer to the sibling
                     final int lrPtr = BLK_SIZE - 2 - (parent >>> SHIFT);
+                    final boolean lr = lrPtr == LEFT;
                     final int sIndex = tree[(parent & KEY_MASK) + lrPtr];
                     boolean pass = false;
                     
-                    // consider the reverse cases too
-                    // java's excuse for a goto statement
-
+                    // considers the reverse cases too
+                    // remedy for a switch statement
+                    
                     deleteCases: {
-                        // case 1, completed
+                        // case 1
                         if(childPtr == rootPtr) {
                             break deleteCases;
                         }
@@ -404,7 +434,9 @@ public class FastTree<T> {
                         // case 2
                         if(tree[parent] >>> SHIFT == BLACK && 
                                 sIndex != -1 && tree[sIndex] >>> SHIFT == RED) {
-                            pureRotate(false, sIndex, parent);
+                            pureRotate(lr, sIndex, parent);
+                            tree[parent] |= TOGGLE;
+                            tree[sIndex] &= KEY_MASK;
                             pass = true;
                         }
 
@@ -422,7 +454,7 @@ public class FastTree<T> {
                             right = tree[right];
                         }
                         
-                        // case 3, completed
+                        // case 3
                         if(pass || tree[parent] >>> SHIFT == BLACK && 
                                 sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK
                                 && hasLeft && left >>> SHIFT == BLACK
@@ -431,33 +463,35 @@ public class FastTree<T> {
                             pass = true;
                         }
 
-                        // case 4, completed
+                        // case 4
                         if(pass || tree[parent] >>> SHIFT == RED && 
                                 sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK
                                 && hasLeft && left >>> SHIFT == BLACK
                                 && hasRight && right >>> SHIFT == BLACK) {
-                            tree[parent] ^= TOGGLE;
+                            tree[parent] &= KEY_MASK;
                             tree[sIndex] |= TOGGLE;
                             break deleteCases;
                         }
                         
-                        // case 5:
+                        // case 5
                         if(tree[parent] >>> SHIFT == BLACK && 
                                 sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK) {
                             if(lrPtr == RIGHT && hasLeft && left >>> SHIFT == RED
                                 && hasRight && right >>> SHIFT == BLACK) {
-                                
+                                reverseRotate(true, left, sIndex);
                                 pass = true;
                             } else if(lrPtr == LEFT && hasLeft && left >>> SHIFT == BLACK
                                 && hasRight && right >>> SHIFT == RED) {
-                                
+                                reverseRotate(true, right, sIndex);
                                 pass = true;
                             }
                         }
 
-                        // case 6:
+                        // case 6
                         if(pass || sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK
-                                && hasRight && right >>> SHIFT == BLACK) {
+                                && hasRight && right >>> SHIFT == RED) {
+                            pureRotate(lr, sIndex, parent);
+                            tree[right] &= KEY_MASK;
                             break deleteCases;
                         }
                     }
