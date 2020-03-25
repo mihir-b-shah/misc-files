@@ -3,7 +3,9 @@ package utils.tree;
 import java.util.Random;
 import java.util.TreeSet;
 import java.util.function.ToIntFunction;
-import utils.queue.RefQueue;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+import utils.queue.FastQueue;
 
 /**
  * Implements an optimized red-black binary search tree. The type of the input
@@ -91,7 +93,7 @@ public class FastTree<T> {
         data = (T[]) new Object[4];
         tree = new int[20];
         compGenerator = intFx;
-        init(intFx.applyAsInt(root), root);
+        init(root);
     }
 
     /**
@@ -105,14 +107,14 @@ public class FastTree<T> {
         data = (T[]) new Object[capacity];
         tree = new int[BLK_SIZE * capacity];
         compGenerator = intFx;
-        init(intFx.applyAsInt(root), root);
+        init(root);
     }
 
-    private void init(int comp, T root) {
+    private void init(T root) {
         data[ROOT_PTR] = root;
         dataPtr = 1;
         treePtr = BLK_SIZE;
-        tree[ROOT_VAL] = comp;
+        tree[ROOT_VAL] = compGenerator.applyAsInt(root);
         tree[LEFT] = NULL;
         tree[RIGHT] = NULL;
         tree[ROOT_PTR] |= BSHIFT;
@@ -488,6 +490,7 @@ public class FastTree<T> {
                         }
 
                         // case 6
+                        // fix
                         if(pass || sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK
                                 && hasRight && right >>> SHIFT == RED) {
                             pureRotate(lr, sIndex, parent);
@@ -533,7 +536,7 @@ public class FastTree<T> {
 
     public final String printTree(int consoleWidth) {
         StringBuilder sb = new StringBuilder();
-        RefQueue<QueueItem> queue = new RefQueue<>(8);
+        FastQueue<QueueItem> queue = new FastQueue<>(8);
         queue.push(new QueueItem(rootPtr, 0, 0));
 
         int currHeight = -1;
@@ -582,27 +585,42 @@ public class FastTree<T> {
 
     public static void main(String[] args) {
         FastTree<Integer> tree = new FastTree<>(Integer::intValue, 5);
-        tree.insert(10);
-        tree.insert(30);
-        tree.insert(0);
-        tree.insert(2);
-        tree.insert(20);
-        tree.insert(100);
-        tree.insert(65);
-        tree.insert(70);
-        tree.insert(45);
-        tree.insert(32);
-        tree.insert(16);
-        tree.insert(17);
-        tree.insert(21);
-        tree.insert(78);
-        tree.insert(90);
-        tree.insert(85);
+        TreeSet<Integer> comp = new TreeSet<>();
+        comp.add(5);
         
+        Random rng = new Random();
+        final int SIZE = 10;
+        final int CONSOLE_WIDTH = 80; 
+        final int MAX_NUM = 50;
+        
+        int[] insert = IntStream.generate(()->rng.nextInt(MAX_NUM)).limit(SIZE).toArray();
+        for(int e: insert) {
+            tree.insert(e); comp.add(e);
+        }
+        
+        System.out.println(tree.printTree(CONSOLE_WIDTH));
+        System.out.println(tree);
+        for(int i = 0; i<SIZE >>> 1; ++i) {
+            int el = insert[rng.nextInt(SIZE)];
+            tree.erase(el);
+            comp.remove(el);
+            System.out.println("Element: " + el);
+            System.out.println(tree.printTree(CONSOLE_WIDTH));
+            System.out.println(tree);
+        }
+      
+        for(int i = 0; i<20; ++i) {
+             int el = insert[rng.nextInt(SIZE)];
+             if(comp.contains(el) != (tree.find(el) != null)) {
+                 System.out.println("HI");
+             }
+        }
+        
+        /*
         System.out.println(tree.printTree(80));
         System.out.println(tree);
         System.out.println(tree.erase(70));
         System.out.println(tree.printTree(80));
-        System.out.println(tree);
+        System.out.println(tree); */
     }
 }

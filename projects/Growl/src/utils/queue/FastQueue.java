@@ -10,13 +10,13 @@ package utils.queue;
  * @param <T> the type parameter
  */
 
-public class RefQueue<T> implements Queue<T> {
+public class FastQueue<T> implements Queue<T> {
     private T[] queue;
     private int front,back;
     private int size;
     private int MASK;
 
-    public RefQueue(int N) {
+    public FastQueue(int N) {
         queue = (T[]) new Object[highPow2(N)];
         MASK = queue.length-1;
     }
