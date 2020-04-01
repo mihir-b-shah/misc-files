@@ -1,7 +1,7 @@
 package utils.tree;
 
+import java.io.PrintStream;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Random;
 import java.util.TreeSet;
 import java.util.function.ToIntFunction;
@@ -39,7 +39,7 @@ import utils.queue.FastQueue;
  * @author mihir
  * @param <T> the type.
  */
-public class FastTree<T> {
+public class FastTree<T> implements Cloneable {
 
     private int[] tree; // a vector
     private int treePtr;
@@ -226,6 +226,19 @@ public class FastTree<T> {
         tree[highChild + RIGHT] = sibling;
     }
 
+    @Override
+    public FastTree clone() throws CloneNotSupportedException {
+        super.clone();
+        FastTree<T> clTree = new FastTree<>(compGenerator, size);
+        clTree.data = data;
+        clTree.tree = this.tree;
+        clTree.dataPtr = dataPtr;
+        clTree.rootPtr = rootPtr;
+        clTree.treePtr = treePtr;
+        clTree.size = size;
+        return clTree;
+    }
+    
     /**
      * Inserts an item into the BST.
      *
@@ -348,6 +361,7 @@ public class FastTree<T> {
      * @return <code>true</code> if found
      */
     public final boolean find(final T key) {
+        long T = System.currentTimeMillis();
         final int vComp = compGenerator.applyAsInt(key);
         int currPtr = rootPtr;
         int currVal;
@@ -366,7 +380,7 @@ public class FastTree<T> {
             }
         }
     }
-
+    
     /**
      * Removes the node from the tree.
      *
@@ -425,113 +439,185 @@ public class FastTree<T> {
             childPtr = tree[currPtr + RIGHT];
             childLR = FROM_RIGHT;
         }
-        
-        
-        int childPtr = tree[currPtr + RIGHT] > tree[currPtr + LEFT] ? 
-                tree[currPtr + RIGHT] : tree[currPtr + LEFT];
-        
-        // if the child is on the left/right
-        final int childLR = childPtr == tree[currPtr + LEFT] ? 1 : 0;
-        
+
         // color of the child, accounts for null case
         final int childColor = childPtr == -1 ? 0 : tree[childPtr] >>> SHIFT;
         
         int auxPtr = -1;
         
         // pointer to the parent
-        final int parentPtr = tree[currPtr + PARENT];
+        int parent = tree[currPtr + PARENT];
         
         // whether the parent is left/right on me
-        final int pIndex = (parentPtr & KEY_MASK) + 2 + (parentPtr >>> SHIFT);
-        
+        final int pIndex = (parent & KEY_MASK) + 2 + (parent >>> SHIFT);
+        //// System.out.println("parent: " + parent + "pIndex: " + pIndex);
         switch ((nodeColor << 1) + childColor) {
             case BLACK_RED:
-                // System.out.println("BLACK RED" + data[tree[currPtr]&KEY_MASK]);
+                // // System.out.println("BLACK RED" + data[tree[currPtr]&KEY_MASK]);
                 tree[childPtr] &= KEY_MASK;
             case RED_RED:
-                // System.out.println("RED RED" + data[tree[currPtr]&KEY_MASK]);
+                // // System.out.println("RED RED" + data[tree[currPtr]&KEY_MASK]);
             case RED_BLACK:
-                // System.out.println("RED BLACK" + data[tree[currPtr]&KEY_MASK]);
-                tree[pIndex] = childPtr;
+                // // System.out.println("RED BLACK" + data[tree[currPtr]&KEY_MASK]);
+                if(parent != -1) {
+                    tree[pIndex] = childPtr;
+                }
                 if(childPtr != -1) {
-                    tree[childPtr + PARENT] = childLR << SHIFT | parentPtr & KEY_MASK;
+                    tree[childPtr + PARENT] = tree[currPtr + PARENT] & TOGGLE | parent & KEY_MASK;
                 }
                 break;
             case BLACK_BLACK:
+                final boolean nullModif;
+                boolean skipTo5 = false;      
+                int extraPtr = NULL;
+                int pp = NULL;
+                pp = tree[currPtr + PARENT] & KEY_MASK;
+                if(pp != -1) {
+                    pp = tree[pp + PARENT] & KEY_MASK;
+                }
+                        
                 if(childPtr != -1) {
-                    tree[pIndex] = childPtr;
-                    tree[childPtr + PARENT] = childLR << SHIFT | parentPtr & KEY_MASK;
+                    nullModif = false;
+                    if(parent != -1) {
+                        tree[pIndex] = childPtr;
+                    }
+                    tree[childPtr + PARENT] = tree[currPtr + PARENT] & TOGGLE | parent & KEY_MASK;
                 } else {
+                    nullModif = true;
                     // modify hierarchy
                     auxPtr = childPtr;
                     childPtr = currPtr;
                 }
                 // considers the reverse cases too
                 // remedy for a goto statement
+                // System.out.println(this.printTree(70));
                 deleteCases:
                 {
                     // case 1
-                    if (childPtr == rootPtr) {
-                        System.out.println("Case 1");
+                    if (parent == -1) {
+                        // System.out.println("Case 1");
+                        rootPtr = childPtr;
+                        tree[childPtr + PARENT] = NULL;
                         break deleteCases;
                     }
 
                     // pointer to the parent
-                    int parent = tree[childPtr + PARENT];
+                    parent = tree[childPtr + PARENT];
 
-                    // pointer to the sibling
-                    final int lrPtr = BLK_SIZE - 2 - (parent >>> SHIFT);
-                    final boolean lr = lrPtr == LEFT;
+                    // these are the sibling's left and right
+                    int lrPtr = BLK_SIZE - 2 - (parent >>> SHIFT);
+                    boolean lr = lrPtr == LEFT;
                     int sIndex = tree[(parent &= KEY_MASK) + lrPtr];
-                    // System.out.println("data[5]: " + data[5]);
+                    // // System.out.println("data[5]: " + data[5]);
                     boolean pass = false;
+                    
+                    /*
+                    there are 7 variables that **might** need updating:
+                    1. the double black node (childPtr)
+                    2. its parent (parent)
+                    3. the sibling (sIndex)
+                    4. its left (left)
+                    5. its right (right)
+                    6. hasLeft
+                    7. hasRight
+                    */
 
                     // case 2
                     if (tree[parent] >>> SHIFT == BLACK
                             && sIndex != -1 && tree[sIndex] >>> SHIFT == RED) {
-                        System.out.println("Case 2");
+                        // System.out.println("Case 2");
                         pureRotate(lr, sIndex, parent);
                         tree[parent] |= TOGGLE;
                         tree[sIndex] &= KEY_MASK;
+                        
+                        /*
+                        parent stays same
+                        sibling index becomes prev lrPtr
+                        */
                         sIndex = tree[parent + lrPtr];
                         pass = true;
                     }
 
                     // auxilliary
                     boolean hasLeft = false;
-                    int left = tree[sIndex + LEFT];
-                    if (left != -1) {
+                    int left = sIndex == -1 ? -1 : tree[sIndex + LEFT];
+                    if (sIndex != -1 && left != -1) {
                         hasLeft = true;
                     }
                     
                     boolean hasRight = false;
-                    int right = tree[sIndex + RIGHT];
-                    if (right != -1) {
+                    int right = sIndex == -1 ? -1 : tree[sIndex + RIGHT];
+                    if (sIndex != -1 && right != -1) {
                         hasRight = true;
                     }
-                    
+
                     // case 3
                     if (tree[parent] >>> SHIFT == BLACK
-                            && sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK
+                            && (sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK)
                             && (!hasLeft || tree[left] >>> SHIFT == BLACK)
                             && (!hasRight || tree[right] >>> SHIFT == BLACK)) {
-                        System.out.println("Case 3");
-                        tree[sIndex] |= TOGGLE;
+                        // System.out.println("Case 3");
+                        if(hasLeft || hasRight) {
+                            tree[sIndex] |= TOGGLE;
+                        }                
+                        // adjust ptrs
+                        childPtr = parent & KEY_MASK;
+                        parent = tree[childPtr + PARENT];
+                        
+                        if(parent != -1) {
+                            lrPtr = BLK_SIZE - 2 - (parent >>> SHIFT);
+                            sIndex = tree[(parent &= KEY_MASK) + lrPtr];
+                            hasLeft = false;
+                            left = tree[sIndex + LEFT];
+                            if (left != -1) {
+                                hasLeft = true;
+                            }
+
+                            hasRight = false;
+                            right = tree[sIndex + RIGHT];
+                            if (right != -1) {
+                                hasRight = true;
+                            }
+                        }
+
                         pass = true;
+                    } else if(tree[parent] >>> SHIFT == BLACK
+                            && sIndex == -1) {
+                        skipTo5 = true;
+                        extraPtr = childPtr;
+                        parent = pp;
+                        
+                        if(parent != -1) {
+                            lrPtr = BLK_SIZE - 2 - (parent >>> SHIFT);
+                            sIndex = tree[(parent &= KEY_MASK) + lrPtr];
+                            hasLeft = false;
+                            left = tree[sIndex + LEFT];
+                            if (left != -1) {
+                                hasLeft = true;
+                            }
+
+                            hasRight = false;
+                            right = tree[sIndex + RIGHT];
+                            if (right != -1) {
+                                hasRight = true;
+                            }
+                        }
                     }
                     
                     // case 4
-                    if (tree[parent] >>> SHIFT == RED
-                            && sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK
+                    if (parent > -1 && tree[parent & KEY_MASK] >>> SHIFT == RED
+                            && (sIndex == -1 || tree[sIndex] >>> SHIFT == BLACK)
                             && (!hasLeft || tree[left] >>> SHIFT == BLACK) 
                             && (!hasRight || tree[right] >>> SHIFT == BLACK)) {
-                        System.out.println("Case 4");
+                        // System.out.println("Case 4");
                         tree[parent] &= KEY_MASK;
-                        tree[sIndex] |= TOGGLE;
+                        if(sIndex > -1) {
+                            tree[sIndex] |= TOGGLE;
+                        }
                         pass = true;
                     }
-                    
-                    if(pass) {
+
+                    if(pass && !skipTo5) {
                         break deleteCases;
                     }
                     
@@ -539,13 +625,46 @@ public class FastTree<T> {
                     if (sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK) {
                         if (lrPtr == RIGHT && hasLeft && tree[left] >>> SHIFT == RED
                                 && (!hasRight || tree[right] >>> SHIFT == BLACK)) {
-                            System.out.println("Case 5(1)");
+                            // System.out.println("Case 5(1)");
                             reverseRotate(true, left & KEY_MASK, sIndex);
+                            tree[left & KEY_MASK] &= KEY_MASK;
+                            tree[sIndex] |= TOGGLE;
+
+                            sIndex = tree[(parent &= KEY_MASK) + lrPtr];
+                            hasLeft = false;
+                            left = tree[sIndex + LEFT];
+                            if (left != -1) {
+                                hasLeft = true;
+                            }
+
+                            hasRight = false;
+                            right = tree[sIndex + RIGHT];
+                            if (right != -1) {
+                                hasRight = true;
+                            }
+                            
                             pass = true;
                         } else if (lrPtr == LEFT && (!hasLeft || tree[left] >>> SHIFT == BLACK)
                                 && hasRight && tree[right] >>> SHIFT == RED) {
-                            System.out.println("Case 5(2)");
-                            reverseRotate(true, right & KEY_MASK, sIndex);
+                            // System.out.println("Case 5(2)");
+                            reverseRotate(false, right & KEY_MASK, sIndex);
+                            
+                            tree[right & KEY_MASK] &= KEY_MASK;
+                            tree[sIndex] |= TOGGLE;
+                            
+                            sIndex = tree[(parent &= KEY_MASK) + lrPtr];
+                            hasLeft = false;
+                            left = tree[sIndex + LEFT];
+                            if (left != -1) {
+                                hasLeft = true;
+                            }
+
+                            hasRight = false;
+                            right = tree[sIndex + RIGHT];
+                            if (right != -1) {
+                                hasRight = true;
+                            }
+                            
                             pass = true;
                         }
                     }
@@ -554,8 +673,8 @@ public class FastTree<T> {
                     if (sIndex != -1 && tree[sIndex] >>> SHIFT == BLACK) {
                         // the left actually
                         if(lrPtr == RIGHT && hasRight && tree[right] >>> SHIFT == RED) {
-                            System.out.println("Case 6 (1)");
-                            pureRotate(lr, sIndex, parent);
+                            // System.out.println("Case 6 (1)");
+                            pureRotate(lr, sIndex, parent &= KEY_MASK);
 
                             int temp = tree[parent];
                             tree[parent] = (tree[sIndex] & TOGGLE) + (tree[parent] & KEY_MASK);
@@ -563,8 +682,8 @@ public class FastTree<T> {
                             tree[tree[sIndex + RIGHT]] &= KEY_MASK;
                             pass = true;
                         } else if(lrPtr == LEFT && hasLeft && tree[left] >>> SHIFT == RED) {
-                            System.out.println("Case 6 (2)");
-                            pureRotate(lr, sIndex, parent);
+                            // System.out.println("Case 6 (2)");
+                            pureRotate(lr, sIndex, parent &= KEY_MASK);
 
                             int temp = tree[parent];
                             tree[parent] = (tree[sIndex] & TOGGLE) + (tree[parent] & KEY_MASK);
@@ -575,12 +694,16 @@ public class FastTree<T> {
                         
                     }
                     
+                    if(skipTo5) {
+                        tree[extraPtr] |= TOGGLE; 
+                    }
+                    
                     if(pass) {
                         break deleteCases;
                     }
                 }
                 
-                if(auxPtr == -1) {
+                if(nullModif && pIndex > -1) {
                     tree[pIndex] = auxPtr;
                 } 
                 break;
@@ -588,7 +711,7 @@ public class FastTree<T> {
         --size;
         return null;
     }
-
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -683,48 +806,70 @@ public class FastTree<T> {
     public static void main(String[] args) {    
         /*
         FastTree<Integer> tree = new FastTree<>(Integer::intValue);
-        int[] insert = {20,5,13,6,7,8,9,10,11,12};
-        int[] remove = {6};
+        int[] insert = {706, 94, 75, 472, 762, 178, 399, 160, 153, 297};
+        int[] remove = {762, 399, 75, 472, 706};
         
         for(int e: insert) {
             tree.insert(e);
         }
-        tree.erase(12);
-        tree.erase(5); tree.erase(7);
         
-        System.out.println(tree.printTree(70));
+        //tree.erase(3);
+        System.out.println(tree.printTree(80));
         System.out.println(tree);
         
         for(int e: remove) {
             tree.erase(e);
-            System.out.println(tree.printTree(70));
+            System.out.println("ELEMENT: " + e);
+            System.out.println(tree.printTree(80));
             System.out.println(tree);
         }
         */
         
-        while(true) {
-            FastTree<Integer> tree = new FastTree<>(Integer::intValue);
-            Random rng = new Random();
-            final int SIZE = 10;
-            final int CONSOLE_WIDTH = 70;
-            final int MAX_NUM = 1_000;      
+        for(int j = 0; j<10; ++j) {
+            int ct = 0;
+            for(int it = 0; it<100000; ++it) {
+                FastTree<Integer> tree = new FastTree<>(Integer::intValue);
+                TreeSet<Integer> correct = new TreeSet<>();
 
-            int[] insert = IntStream.generate(()->rng.nextInt(MAX_NUM)).limit(SIZE).toArray();
-            for(int e: insert) {
-                tree.insert(e);
-            }
-            
-            for(int i = 0; i<SIZE >>> 1; ++i) {
-                int el = insert[rng.nextInt(SIZE)];
-                try {
-                    tree.erase(el);
-                } catch (Exception e) {
-                    System.exit(0);
+                Random rng = new Random();
+                final int SIZE = 10;
+                final int CONSOLE_WIDTH = 70;
+                final int MAX_NUM = 1000;      
+
+                int[] insert = IntStream.generate(()->rng.nextInt(MAX_NUM)).limit(SIZE).toArray();
+                for(int e: insert) {
+                    tree.insert(e);
+                    correct.add(e);
                 }
-                //System.out.println("ELEMENT: " + el);
-                //System.out.println();
 
+                int[] remove = new int[SIZE >>> 1];
+
+                // // System.out.println(tree.printTree(CONSOLE_WIDTH));
+
+
+                for(int i = 0; i<SIZE >>> 1; ++i) {
+                    int el = insert[rng.nextInt(SIZE)];
+                    remove[i] = el;
+                    tree.erase(el);
+                    correct.remove(el);
+
+
+                    // System.out.println("ELEMENT: " + el);
+                    // System.out.println(tree.printTree(CONSOLE_WIDTH));
+                    // System.out.println(tree); 
+                }
+
+                for(int i = 0; i<SIZE; ++i) {
+                    int el = insert[rng.nextInt(SIZE)];
+                    if(tree.find(el) != correct.contains(el)) {
+                        ++ct;
+                        System.out.println(Arrays.toString(remove));
+                    }
+                }
             }
+
+            System.out.println("ERROR: " + (double) ct/1000000);
         }
+       
     }
 }
