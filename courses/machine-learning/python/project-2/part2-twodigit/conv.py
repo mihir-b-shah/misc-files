@@ -13,19 +13,22 @@ nb_epoch = 30
 num_classes = 10
 img_rows, img_cols = 42, 28 # input image dimensions
 
-
-
 class CNN(nn.Module):
 
     def __init__(self, input_dimension):
         super(CNN, self).__init__()
-        # TODO initialize model layers here
-
+        self.net = nn.Sequential(nn.Conv2d(1, 32, (3, 3)),
+                                 nn.ReLU(),
+                                 nn.MaxPool2d((2,2)),
+                                 nn.Conv2d(32, 64, (3, 3)),
+                                 Flatten(),
+                                 nn.Linear(2880, 64),
+                                 nn.Dropout(p = 0.5),
+                                 nn.Linear(64, 20),)
+                                 
     def forward(self, x):
-
-        # TODO use model layers to predict the two digits
-
-        return out_first_digit, out_second_digit
+        result = net(x)
+        return result[:,:10], result[:,10:]
 
 def main():
     X_train, y_train, X_test, y_test = U.get_data(path_to_data_dir, use_mini_dataset)
