@@ -4,8 +4,8 @@ import java.util.regex.Pattern;
 class LexTypes {
     static enum Operator {
         INCREMENT("++"), DECREMENT("--"), MINUS("-"), BIT_NOT("~"), LOG_NOT("!"),
-        DEREFERENCE("."), MULTIPLY("*"), DIVIDE("/"), MODULUS("%"), ADD("+"),
-        SUBTRACT("-"), BIT_LEFT("<<"), SBIT_RIGHT(">>"), UBIT_RIGHT(">>>"),
+        ACCESS("."), MULTIPLY_DEREFERENCE("*"), DIVIDE("/"), MODULUS("%"), ADD("+"),
+        SUBTRACT_NEGATE("-"), BIT_LEFT("<<"), SBIT_RIGHT(">>"), UBIT_RIGHT(">>>"),
         LESS("<"), GREATER(">"), LESS_EQ("<="), GREATER_EQ(">="), EQUAL("=="),
         BIT_AND("&"), BIT_OR("|"), BIT_XOR("^"), LOG_AND("&&"), LOG_OR("||"), ASSIGN("=");
 
@@ -29,9 +29,9 @@ class LexTypes {
                 case "!":
                     return Operator.LOG_NOT;
                 case ".":
-                    return Operator.DEREFERENCE;
+                    return Operator.ACCESS;
                 case "*":
-                    return Operator.MULTIPLY;
+                    return Operator.MULTIPLY_DEREFERENCE;
                 case "/":
                     return Operator.DIVIDE;
                 case "%":
@@ -39,7 +39,7 @@ class LexTypes {
                 case "+":
                     return Operator.ADD;
                 case "-":
-                    return Operator.SUBTRACT;
+                    return Operator.SUBTRACT_NEGATE;
                 case "<<":
                     return Operator.BIT_LEFT;
                 case ">>":
@@ -148,7 +148,7 @@ class LexTypes {
         BOOL_TRUE, BOOL_FALSE, INT, STRING, CHAR, FLOAT;
 
         static final Pattern LITERAL_REGEX = Pattern.compile("(true)|(false)|(\".*\")"
-                + "|(\'.\')|(((0b[01]+)|(0x[0-9a-f]+)|([0-9]+))[SL]?)|(\\d+(\\.\\d+)?)");
+                + "|('(\\\\)?.')|(((0b[01]+)|(0x[0-9a-f]+)|([0-9]+))[SL]?)|(\\d+(\\.\\d+)?)");
         
         static LiteralType createLiteral(String s) {
             switch (s.charAt(0)) {

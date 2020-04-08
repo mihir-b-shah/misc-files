@@ -1,5 +1,4 @@
 
-import java.io.*;
 import java.util.*;
 import java.util.regex.*;
 
@@ -39,7 +38,7 @@ public class Lexer {
         }
     }
     
-    private static List<Lexeme> lex(String program) {
+    static List<Lexeme> lex(String program) {
         List<Lexeme> lexemes = new ArrayList<>();
         final Matcher[] matchers = {LexTypes.Operator.OPERATOR_REGEX.matcher(program),
                                     LexTypes.Control.CONTROL_REGEX.matcher(program),
@@ -84,6 +83,7 @@ public class Lexer {
             }
         }
 
+        specifyLexemes(out);
         return out;
     }
     
@@ -110,19 +110,5 @@ public class Lexer {
                     break;
             }
         }
-    }
-
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("testprog.txt"));
-        StringBuilder sb = new StringBuilder();
-        String line;
-        while ((line = br.readLine()) != null) {
-            sb.append(line);
-            sb.append('\n');
-        }
-
-        List<Lexeme> lexemes = lex(sb.toString());
-        specifyLexemes(lexemes);
-        printLexemes(lexemes);
     }
 }
