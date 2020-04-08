@@ -80,7 +80,7 @@ class LexTypes {
     }
 
     static class DataType {
-        static final Pattern TYPE_REGEX = Pattern.compile("((struct\\s+\\w[\\w\\d]*)|"
+        static final Pattern TYPE_REGEX = Pattern.compile("((struct\\s+[\\w&&\\D][\\w]*)|"
                     + "(int)|(long)|(char)|(float)|(bool)|(void))(\\*)*");
         int ptrLvl;
         BaseType base;
