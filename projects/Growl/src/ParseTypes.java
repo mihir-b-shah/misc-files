@@ -74,11 +74,12 @@ public class ParseTypes {
     }
 
     static class Bool extends Primitive {
-        
+        // just a marker class for the loop/branch conditions
     }
 
     static class Primitive extends Value {
         
+        LexTypes.DataType type;
         Expression supplier;
     }
 
