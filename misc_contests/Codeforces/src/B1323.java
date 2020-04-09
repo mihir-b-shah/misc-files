@@ -80,11 +80,13 @@ public class B1323 {
         int[] prefixB = new int[factorsB.firstKey()];
         
         for(int i = 0; i<prefixA.length; ++i) {
-            prefixA[i] = (i>=1 ? 1+prefixA[i-1] : 0)+ (factorsA.containsKey(prefixA.length-i) ? factorsA.get(prefixA.length-i) : 0);
+            prefixA[i] = (i>=1 ? 1+prefixA[i-1] : 0)+ (factorsA.containsKey(prefixA.length-i) 
+                    ? factorsA.get(prefixA.length-i) : 0);
         }
         
         for(int i = 0; i<prefixB.length; ++i) {
-            prefixB[i] = (i>=1 ? 1+prefixB[i-1] : 0) + (factorsB.containsKey(prefixB.length-i) ? factorsB.get(prefixB.length-i) : 0);
+            prefixB[i] = (i>=1 ? 1+prefixB[i-1] : 0) + (factorsB.containsKey(prefixB.length-i) 
+                    ? factorsB.get(prefixB.length-i) : 0);
         }
         
         int sum = 0;

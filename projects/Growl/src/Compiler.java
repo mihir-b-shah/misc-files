@@ -15,6 +15,8 @@ public class Compiler {
             sb.append('\n');
         }
 
-        List<Lexer.Lexeme> lexemes = Lexer.lex(sb.toString());
+        String program = sb.toString();
+        List<Lexer.Lexeme> lexemes = Lexer.lex(program);
+        
     }    
 }

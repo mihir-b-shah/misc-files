@@ -1,11 +1,11 @@
 
 int len(char* str) {
-	int ct = 0;
-	while(!(*str == '\0')) {
-		++str;
-		++ct;
-	}
-	return ct;
+    int ct = 0;
+    while(!(*str == '\0')) {
+            ++str;
+            ++ct;
+    }
+    return ct;
 }
 
 int main() {

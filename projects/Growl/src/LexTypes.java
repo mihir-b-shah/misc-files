@@ -1,16 +1,18 @@
 
+
+
 import java.util.regex.Pattern;
 
-class LexTypes {
-    static enum Operator {
+public class LexTypes {
+    public static enum Operator {
         INCREMENT("++"), DECREMENT("--"), MINUS("-"), BIT_NOT("~"), LOG_NOT("!"),
         ACCESS("."), MULTIPLY_DEREFERENCE("*"), DIVIDE("/"), MODULUS("%"), ADD("+"),
         SUBTRACT_NEGATE("-"), BIT_LEFT("<<"), SBIT_RIGHT(">>"), UBIT_RIGHT(">>>"),
-        LESS("<"), GREATER(">"), LESS_EQ("<="), GREATER_EQ(">="), EQUAL("=="),
-        BIT_AND("&"), BIT_OR("|"), BIT_XOR("^"), LOG_AND("&&"), LOG_OR("||"), ASSIGN("=");
+        LESS("<"), GREATER(">"), EQUAL("=="), ANDBITS_ADDRESS("&"), BIT_OR("|"), 
+        BIT_XOR("^"), LOG_AND("&&"), LOG_OR("||"), ASSIGN("=");
 
         static final Pattern OPERATOR_REGEX = Pattern.compile("[\\.\\[\\]!~/%\\*\\^]"
-                + "|(\\+{1,2})|(\\-{1,2})|(<{1,2})|(>{1,3})|(<=)|(>=)|(\\&{1,2})|(\\"
+                + "|(\\+{1,2})|(\\-{1,2})|(<{1,2})|(>{1,3})|(\\&{1,2})|(\\"
                 + "|{1,2})|(\\=){1,2}");
 
         String token;
@@ -50,14 +52,10 @@ class LexTypes {
                     return Operator.LESS;
                 case ">":
                     return Operator.GREATER;
-                case "<=":
-                    return Operator.LESS_EQ;
-                case ">=":
-                    return Operator.GREATER_EQ;
                 case "==":
                     return Operator.EQUAL;
                 case "&":
-                    return Operator.BIT_AND;
+                    return Operator.ANDBITS_ADDRESS;
                 case "|":
                     return Operator.BIT_OR;
                 case "^":
@@ -74,12 +72,12 @@ class LexTypes {
         }
     }
 
-    static class Id {
+    public static class Id {
         static final Pattern ID_REGEX
                 = Pattern.compile("[\\w&&\\D][\\w]*");
     }
 
-    static class DataType {
+    public static class DataType {
         static final Pattern TYPE_REGEX = Pattern.compile("((struct\\s+[\\w&&\\D][\\w]*)|"
                     + "(int)|(long)|(char)|(float)|(bool)|(void))(\\*)*");
         int ptrLvl;
@@ -144,7 +142,7 @@ class LexTypes {
         }
     }
    
-    static enum LiteralType {
+    public static enum LiteralType {
         BOOL_TRUE, BOOL_FALSE, INT, STRING, CHAR, FLOAT;
 
         static final Pattern LITERAL_REGEX = Pattern.compile("(true)|(false)|(\".*\")"
@@ -170,7 +168,7 @@ class LexTypes {
         }
     }
 
-    static enum Group {
+    public static enum Group {
         OPEN_PAREN("("), CLOSE_PAREN(")"), COLON(":"), OPEN_BRACKET("{"),
         CLOSE_BRACKET("}"), COMMA(","), SEMICOLON(";");
 
@@ -203,11 +201,12 @@ class LexTypes {
         }
     }
 
-    static enum Control {
-        IF("if"), ELSE("else"), GOTO("goto"), RETURN("return"), WHILE("while");
+    public static enum Control {
+        IF("if"), ELSE("else"), GOTO("goto"), RETURN("return"), WHILE("while"),
+        SWITCH("switch"), CASE("case"), DEFAULT("default");
 
         static final Pattern CONTROL_REGEX = Pattern.compile("(else)|(goto)|(if)"
-                + "|(return)|(void)|(while)");
+                + "|(return)|(void)|(while)|(switch)|(case)|(default)");
 
         String token;
         Control(String s) {
@@ -226,6 +225,12 @@ class LexTypes {
                     return Control.RETURN;
                 case "while":
                     return Control.WHILE;
+                case "switch":
+                    return Control.SWITCH;
+                case "case":
+                    return Control.CASE;
+                case "default":
+                    return Control.DEFAULT;
                 default:
                     return null;
             }

@@ -1,16 +1,18 @@
 
+
+
 import java.util.*;
 import java.util.regex.*;
 
 public class Lexer {
 
-    private static enum LexType {
+    public static enum LexType {
         OPERATOR, CONTROL, GROUP, TYPE, ID, LITERAL;
     }
 
     private static final LexType[] LEXTYPE_TABLE = LexType.values();
 
-    static class Lexeme {
+    public static class Lexeme {
 
         LexType type;
         Object subType; // either class or enum
@@ -38,7 +40,7 @@ public class Lexer {
         }
     }
     
-    static List<Lexeme> lex(String program) {
+    public static List<Lexeme> lex(String program) {
         List<Lexeme> lexemes = new ArrayList<>();
         final Matcher[] matchers = {LexTypes.Operator.OPERATOR_REGEX.matcher(program),
                                     LexTypes.Control.CONTROL_REGEX.matcher(program),
