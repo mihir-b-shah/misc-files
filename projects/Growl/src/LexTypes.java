@@ -5,21 +5,28 @@ import java.util.regex.Pattern;
 
 public class LexTypes {
     public static enum Operator {
-        INCREMENT("++"), DECREMENT("--"), MINUS("-"), BIT_NOT("~"), LOG_NOT("!"),
-        ACCESS("."), MULTIPLY_DEREFERENCE("*"), DIVIDE("/"), MODULUS("%"), ADD("+"),
-        SUBTRACT_NEGATE("-"), BIT_LEFT("<<"), SBIT_RIGHT(">>"), UBIT_RIGHT(">>>"),
-        LESS("<"), GREATER(">"), EQUAL("=="), ANDBITS_ADDRESS("&"), BIT_OR("|"), 
-        BIT_XOR("^"), LOG_AND("&&"), LOG_OR("||"), ASSIGN("=");
+        INCREMENT, DECREMENT, BIT_NOT, LOG_NOT,
+        ACCESS, MULTIPLY, DEREFERENCE, DIVIDE, MODULUS, ADD,
+        SUBTRACT, BIT_LEFT, SBIT_RIGHT, UBIT_RIGHT,
+        LESS, GREATER, EQUAL, ADDRESS, BIT_AND, BIT_OR, 
+        BIT_XOR, LOG_AND, LOG_OR, ASSIGN;
 
         static final Pattern OPERATOR_REGEX = Pattern.compile("[\\.\\[\\]!~/%\\*\\^]"
                 + "|(\\+{1,2})|(\\-{1,2})|(<{1,2})|(>{1,3})|(\\&{1,2})|(\\"
-                + "|{1,2})|(\\=){1,2}");
+                + "|{1,2})|(\\=){1,2}|@|\\$");
 
-        String token;
-        Operator(String s) {
-            token = s;
-        }
-
+        // returns 0 for confused, 1 for unary, returns 2 for binary
+        /*int type() {
+            switch(this) {
+                case INCREMENT:
+                case DECREMENT:
+                case BIT_NOT:
+                case LOG_NOT:
+                case DEREFERENCE:
+                
+            }
+        } */
+        
         static Operator createOperator(String s) {
             switch(s) {
                 case "++":
@@ -33,7 +40,7 @@ public class LexTypes {
                 case ".":
                     return Operator.ACCESS;
                 case "*":
-                    return Operator.MULTIPLY_DEREFERENCE;
+                    return Operator.MULTIPLY;
                 case "/":
                     return Operator.DIVIDE;
                 case "%":
@@ -41,7 +48,7 @@ public class LexTypes {
                 case "+":
                     return Operator.ADD;
                 case "-":
-                    return Operator.SUBTRACT_NEGATE;
+                    return Operator.SUBTRACT;
                 case "<<":
                     return Operator.BIT_LEFT;
                 case ">>":
@@ -55,7 +62,7 @@ public class LexTypes {
                 case "==":
                     return Operator.EQUAL;
                 case "&":
-                    return Operator.ANDBITS_ADDRESS;
+                    return Operator.BIT_AND;
                 case "|":
                     return Operator.BIT_OR;
                 case "^":
@@ -66,18 +73,22 @@ public class LexTypes {
                     return Operator.LOG_OR;
                 case "=":
                     return Operator.ASSIGN;
+                case "@":
+                    return Operator.ADDRESS;
+                case "$":
+                    return Operator.DEREFERENCE;
                 default:
                     return null;
             }
         }
     }
 
-    public static class Id {
+    public static final class Id {
         static final Pattern ID_REGEX
                 = Pattern.compile("[\\w&&\\D][\\w]*");
     }
 
-    public static class DataType {
+    public static final class DataType {
         static final Pattern TYPE_REGEX = Pattern.compile("((struct\\s+[\\w&&\\D][\\w]*)|"
                     + "(int)|(long)|(char)|(float)|(bool)|(void))(\\*)*");
         int ptrLvl;
@@ -87,13 +98,8 @@ public class LexTypes {
             this.ptrLvl = ptrLvl;
         }
         
-        static enum BaseType {
-            VOID("void"), BOOL("bool"), I8("char"), I32("int"), I64("long"), F64("float");
-
-            String token;
-            BaseType(String s) {
-                token = s;
-            }
+        public static enum BaseType {
+            VOID, BOOL, I8, I32, I64, F64, STRUCT;
         }
         
         static DataType createDataType(String s) {
@@ -123,7 +129,11 @@ public class LexTypes {
                     ret.base = BaseType.F64;
                     break;
                 default:
-                    ret.base = BaseType.VOID;
+                    if(s.substring(0,6).equals("struct")) {
+                        ret.base = BaseType.STRUCT;
+                    } else {
+                        ret.base = BaseType.VOID;
+                    }  
                     break;
             }
             return ret;
@@ -146,7 +156,7 @@ public class LexTypes {
         BOOL_TRUE, BOOL_FALSE, INT, STRING, CHAR, FLOAT;
 
         static final Pattern LITERAL_REGEX = Pattern.compile("(true)|(false)|(\".*\")"
-                + "|('(\\\\)?.')|(((0b[01]+)|(0x[0-9a-f]+)|([0-9]+))[SL]?)|(\\d+(\\.\\d+)?)");
+                + "|('(\\\\)?.')|(((\\-)?(0b[01]+)|((\\-)?0x[0-9a-f]+)|((\\-)?[0-9]+))[SL]?)|((\\-)?\\d+(\\.\\d+)?)");
         
         static LiteralType createLiteral(String s) {
             switch (s.charAt(0)) {
@@ -169,15 +179,10 @@ public class LexTypes {
     }
 
     public static enum Group {
-        OPEN_PAREN("("), CLOSE_PAREN(")"), COLON(":"), OPEN_BRACKET("{"),
-        CLOSE_BRACKET("}"), COMMA(","), SEMICOLON(";");
+        OPEN_PAREN, CLOSE_PAREN, COLON, OPEN_BRACKET,
+        CLOSE_BRACKET, COMMA, SEMICOLON;
 
         static final Pattern GROUP_REGEX = Pattern.compile(":|\\{|\\}|,|\\(|\\)|;");
-
-        String token;
-        Group(String s) {
-            token = s;
-        }
 
         static Group createGroup(String s) {
             switch(s) {
@@ -202,16 +207,11 @@ public class LexTypes {
     }
 
     public static enum Control {
-        IF("if"), ELSE("else"), GOTO("goto"), RETURN("return"), WHILE("while"),
-        SWITCH("switch"), CASE("case"), DEFAULT("default");
+        IF, ELSE, GOTO, RETURN, WHILE,
+        SWITCH, CASE, DEFAULT;
 
         static final Pattern CONTROL_REGEX = Pattern.compile("(else)|(goto)|(if)"
                 + "|(return)|(void)|(while)|(switch)|(case)|(default)");
-
-        String token;
-        Control(String s) {
-            token = s;
-        }
 
         static Control createControl(String s) {
             switch(s) {

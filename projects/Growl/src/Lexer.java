@@ -34,7 +34,7 @@ public class Lexer {
         }
     }
     
-    private static void printLexemes(List<Lexeme> lexemes) {
+    public static void printLexemes(List<Lexeme> lexemes) {
         for(Lexeme lex: lexemes) {
             System.out.println(lex);
         }

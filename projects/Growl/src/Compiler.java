@@ -17,6 +17,6 @@ public class Compiler {
 
         String program = sb.toString();
         List<Lexer.Lexeme> lexemes = Lexer.lex(program);
-        
+        Lexer.printLexemes(lexemes);
     }    
 }
