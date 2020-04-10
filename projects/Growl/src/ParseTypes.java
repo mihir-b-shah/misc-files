@@ -75,6 +75,10 @@ public class ParseTypes {
 
     static class Bool extends Primitive {
         // just a marker class for the loop/branch conditions
+        Bool() {
+            type.base = LexTypes.DataType.BaseType.BOOL;
+            type.ptrLvl = 0;
+        }
     }
 
     static class Primitive extends Value {

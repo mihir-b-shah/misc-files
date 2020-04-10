@@ -1,6 +1,4 @@
 
-
-
 import java.util.*;
 import java.util.regex.*;
 
@@ -12,6 +10,13 @@ public class Lexer {
 
     private static final LexType[] LEXTYPE_TABLE = LexType.values();
 
+    public static class LexError extends Error {
+        @Override
+        public String getMessage() {
+            return "1 or more invalid tokens encountered";
+        }
+    }
+    
     public static class Lexeme {
 
         LexType type;
@@ -85,6 +90,8 @@ public class Lexer {
             }
         }
 
+        // scan 
+        
         specifyLexemes(out);
         return out;
     }
