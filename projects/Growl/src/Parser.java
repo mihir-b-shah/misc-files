@@ -189,7 +189,10 @@ public class Parser {
         return null;
     }
     
+    // supports all operators on INTEGER types.
+    // so operands can be i8, i32, i64, f64
     private static ParseTypes.Expression parseExpr(int start, int end) {
+        
         return null;
     }
 }

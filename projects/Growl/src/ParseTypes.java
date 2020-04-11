@@ -8,20 +8,32 @@ public class ParseTypes {
 
     }
 
-    abstract static class Op extends AST {
+    static enum OpType {
+        UNARY, BINARY;
+    }
+    
+    abstract static class Op<T extends AST> extends AST {
+        
+        LexTypes.Operator operator;
+        abstract OpType type();
     }
 
-    static class UnaryOp extends Op {
-
-        LexTypes.Operator operator;
-        AST op;
+    // T allows customizing to a constexpr
+    static class UnaryOp<T extends AST> extends Op<T> {
+        
+        T op;
+        OpType type() {
+            return OpType.UNARY;
+        }
     }
 
-    static class BinaryOp extends Op {
+    static class BinaryOp<T extends AST> extends Op<T> {
 
-        LexTypes.Operator operator;
-        AST op1;
-        AST op2;
+        T op1;
+        T op2;
+        OpType type() {
+            return OpType.BINARY;
+        }
     }
 
     abstract static class Control extends AST {
@@ -117,6 +129,7 @@ public class ParseTypes {
         String value;
         
         Literal() {
+            
         }
         
         Literal(Lexer.Lexeme lexeme) {
@@ -127,6 +140,6 @@ public class ParseTypes {
     }
     
     static class ConstExpr extends Expression {
-        
+        Op<ConstExpr> tree;
     }
 }
