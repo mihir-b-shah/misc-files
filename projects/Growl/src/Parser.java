@@ -52,6 +52,7 @@ public class Parser {
             final Lexer.Lexeme lex2;
             int match;
             ParseTypes.AST result;
+            int parenClose,brackClose;
 
             switch(lex1.type) {
                 case ID:
@@ -77,29 +78,83 @@ public class Parser {
                             // if/else statement
                             ParseTypes.Branch block = new ParseTypes.Branch(); 
                             // correct type will parse until the curly brace open/close
-                            int parenClose = GroupFinder.findMatch(parsePtr+1);
+                            parenClose = GroupFinder.findMatch(parsePtr+1);
                             ParseTypes.Bool filter = new ParseTypes.Bool();
                             filter.supplier = parseExpr(parsePtr+2, parenClose);
                             // curly brace next.
+                            brackClose = GroupFinder.findMatch(parenClose+1);
+                            ParseTypes.AST body = parseAST(parenClose+2, brackClose);
+                            block.condition = filter;
+                            block.ifBranch = body;
+                            parsePtr = brackClose+1;
+                            if(lexemes.get(parsePtr).type == Lexer.LexType.CONTROL
+                                && (((LexTypes.Control)(lexemes.get(parsePtr)).subType))
+                                    == LexTypes.Control.ELSE) {
+                                // continue parsing the else statement
+                                brackClose = GroupFinder.findMatch(parsePtr+1);
+                                body = parseAST(parsePtr+2, brackClose);
+                                block.elseBranch = body;
+                                parsePtr = brackClose+1;
+                            }
                             break;
                         case SWITCH:
                             // switch statement
-                            
+                            parenClose = GroupFinder.findMatch(parsePtr+1);
+                            ParseTypes.Switch switchBlock = new ParseTypes.Switch();
+                            ParseTypes.Primitive switchExpr = 
+                                    (ParseTypes.Primitive) parseExpr(parsePtr+2, parenClose);
+                            switchBlock.switchVal = switchExpr;
+                            int switchPtr = parenClose+2;
+                            int endPtr;
+                            brackClose = GroupFinder.findMatch(parenClose+1);
+                            while(switchPtr < brackClose && 
+                                    lexemes.get(switchPtr).subType == LexTypes.Control.class
+                                 && ((LexTypes.Control) lexemes.get(switchPtr).subType) 
+                                    == LexTypes.Control.CASE) {
+                                Lexer.Lexeme literal = lexemes.get(switchPtr+1);
+                                switchBlock.cases.add(new ParseTypes.Literal(literal));
+                                endPtr = GroupFinder.findNextCase(switchPtr+2, brackClose);
+                                ParseTypes.AST jump = parseAST(switchPtr+3, endPtr);
+                                switchBlock.jumps.add(jump);
+                                if(endPtr == brackClose) {
+                                    break;
+                                }
+                                switchPtr = endPtr;
+                            }
+                            // check for default case
+                            if(switchPtr < brackClose) {
+                                ParseTypes.AST jump = parseAST(switchPtr+2, brackClose);
+                                switchBlock.jumps.add(jump);
+                            }
                             break;
                         case WHILE:
                             // while statement
+                            ParseTypes.Loop whileBlock = new ParseTypes.Loop(); 
+                            // correct type will parse until the curly brace open/close
+                            parenClose = GroupFinder.findMatch(parsePtr+1);
+                            ParseTypes.Bool whileFilter = new ParseTypes.Bool();
+                            whileFilter.supplier = parseExpr(parsePtr+2, parenClose);
+                            // curly brace next.
+                            brackClose = GroupFinder.findMatch(parenClose+1);
+                            ParseTypes.AST whileBody = parseAST(parenClose+2, brackClose);
+                            whileBlock.condition = whileFilter;
+                            whileBlock.body = whileBody;
+                            parsePtr = brackClose+1;
                             break;
                     }
                 case TYPE:
-                    if(start>end-3) {
+                    if(parsePtr>end-3) {
                         break;
                     }
-                    lex2 = lexemes.get(start+1);
-                    final Lexer.Lexeme lex3 = lexemes.get(start+2);
+                    lex2 = lexemes.get(parsePtr+1);
+                    final Lexer.Lexeme lex3 = lexemes.get(parsePtr+2);
                     if(lex2.subType.getClass() == LexTypes.Id.class 
                             && lex3.subType.getClass() == LexTypes.Group.class 
                             && ((LexTypes.Group) lex3.subType) == LexTypes.Group.OPEN_PAREN) {
                         // function definition
+                        int paramEnd = GroupFinder.findMatch(parsePtr+3);
+                        // enum parameters
+                        
                     } else if(((LexTypes.DataType) lex1.subType).base 
                             == LexTypes.DataType.BaseType.STRUCT) {
                         // struct declaration

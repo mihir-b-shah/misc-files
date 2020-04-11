@@ -208,10 +208,10 @@ public class LexTypes {
 
     public static enum Control {
         IF, ELSE, GOTO, RETURN, WHILE,
-        SWITCH, CASE, DEFAULT;
+        SWITCH, CASE, DEFAULT, BREAK;
 
         static final Pattern CONTROL_REGEX = Pattern.compile("(else)|(goto)|(if)"
-                + "|(return)|(void)|(while)|(switch)|(case)|(default)");
+                + "|(return)|(void)|(while)|(switch)|(case)|(default)|(break)");
 
         static Control createControl(String s) {
             switch(s) {
@@ -231,6 +231,8 @@ public class LexTypes {
                     return Control.CASE;
                 case "default":
                     return Control.DEFAULT;
+                case "break":
+                    return Control.BREAK;
                 default:
                     return null;
             }

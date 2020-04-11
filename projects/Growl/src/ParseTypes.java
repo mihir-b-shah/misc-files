@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParseTypes {
 
     public static class AST {
@@ -34,8 +37,13 @@ public class ParseTypes {
     static class Switch extends Control {
 
         Primitive switchVal;
-        LexTypes.LiteralType[] cases;
-        AST[] jumps;
+        List<Literal> cases;
+        List<AST> jumps;
+        
+        Switch() {
+            cases = new ArrayList<>();
+            jumps = new ArrayList<>();
+        }
     }
 
     static class Loop extends Control {
@@ -53,18 +61,30 @@ public class ParseTypes {
     abstract class UserDef extends AST {
     }
 
+    static class Parameter {
+        String id;
+        LexTypes.DataType type;
+    }
+    
     static class StructDef extends UserDef {
         
         String name;
-        String[] ids;
-        Value[] values;
+        List<Parameter> params;
+        
+        StructDef() {
+            params = new ArrayList<>();
+        }
     }
 
     static class FunctionDef extends UserDef {
 
         Value returnVal;
         AST body;
-        Value[] parameters;
+        List<Parameter> parameters;
+        
+        FunctionDef() {
+            parameters = new ArrayList<>();
+        }
     }
     
     static class Expression extends AST {
@@ -91,5 +111,23 @@ public class ParseTypes {
 
         Expression supplier;
         StructDef definition;
+    }
+    
+    static class Literal {
+        LexTypes.LiteralType type;
+        String value;
+        
+        Literal() {
+        }
+        
+        Literal(Lexer.Lexeme lexeme) {
+            assert(lexeme.type == Lexer.LexType.LITERAL);
+            type = ((LexTypes.LiteralType) lexeme.subType);
+            value = lexeme.token;
+        }
+    }
+    
+    static class ConstExpr extends Expression {
+        
     }
 }

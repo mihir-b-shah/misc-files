@@ -15,6 +15,16 @@ public class GroupFinder {
         lookup = new HashMap<>();
     }
     
+    static class Case {
+        final int pos;
+        final int lvl;
+        
+        Case(int p, int l) {
+            pos = p;
+            lvl = l;
+        }
+    }
+    
     static class Stack<T> {
         private T[] array;
         private int ctr;
@@ -35,6 +45,33 @@ public class GroupFinder {
         T pop() {
             return array[--ctr];
         }
+        
+        int size() {
+            return ctr;
+        }
+    }
+    
+    static class StringFinder {
+        
+        final String find;
+        final String document;
+        int pos;
+        int ret;
+        
+        StringFinder(String find, String document) {
+            this.find = find;
+            this.document = document;
+        }
+        
+        boolean hasNext() {
+            ret = document.indexOf(find, pos);
+            pos = ret+find.length();
+            return ret != -1 && pos < document.length()-find.length();
+        }
+        
+        int next() {
+            return ret;
+        }
     }
     
     public static void initialize(String document) {
@@ -49,7 +86,24 @@ public class GroupFinder {
         int semiPos = -1;
         int pos;
         
+        StringFinder caseFinder = new StringFinder("case", document);
+        // not optimal, could use an arraylist with skip spots.
+        HashMap<Integer, Integer> currCase = new HashMap<>();
+        int casePos = -1;
+        
         for(int i = 0; i<document.length(); ++i) {
+            if(casePos < i && caseFinder.hasNext()) {
+                casePos = caseFinder.next();
+            } else if(casePos == i) {
+                int lvl = bracketStack.size();
+                Integer prCase = currCase.get(lvl);
+                if(prCase == null) {
+                    currCase.put(lvl, casePos);
+                } else {
+                    lookup.put(prCase, casePos);
+                    currCase.put(lvl, casePos);
+                }
+            }
             switch(document.charAt(i)) {
                 case '(':
                     parenStack.push(i);
@@ -73,13 +127,20 @@ public class GroupFinder {
                     lookup.put(semiPos, i);
                     semiPos = i;
                     break;
+                
             }
         }
+        
         // remove the random key we inserted
         lookup.remove(-1);
     }
 
     public static int findMatch(int pos) {
         return lookup.get(pos);
+    }
+    
+    public static int findNextCase(int pos, int stop) {
+        Integer ret = lookup.get(pos);
+        return ret == null || ret >= stop ? stop : ret;
     }
 }
