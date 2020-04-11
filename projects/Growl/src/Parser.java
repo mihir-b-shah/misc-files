@@ -152,12 +152,35 @@ public class Parser {
                             && lex3.subType.getClass() == LexTypes.Group.class 
                             && ((LexTypes.Group) lex3.subType) == LexTypes.Group.OPEN_PAREN) {
                         // function definition
+                        ParseTypes.FunctionDef func = new ParseTypes.FunctionDef();
                         int paramEnd = GroupFinder.findMatch(parsePtr+3);
-                        // enum parameters
-                        
+                        parsePtr += 4;
+                        while(parsePtr < paramEnd) {
+                            ParseTypes.Parameter param = new ParseTypes.Parameter();
+                            param.type = (LexTypes.DataType) (lexemes.get(parsePtr).subType);
+                            param.id = lexemes.get(parsePtr+1).token;
+                            func.parameters.add(param);
+                            parsePtr += 2;
+                        }
+                        brackClose = GroupFinder.findMatch(paramEnd+1);
+                        ParseTypes.AST funcBody = parseAST(paramEnd+2, brackClose);
+                        func.body = funcBody;
+                        parsePtr = brackClose+1;
+                        // fix func.return() statement
                     } else if(((LexTypes.DataType) lex1.subType).base 
                             == LexTypes.DataType.BaseType.STRUCT) {
                         // struct declaration
+                        ParseTypes.StructDef struct = new ParseTypes.StructDef();
+                        struct.name = lex1.token.substring(7);
+                        brackClose = GroupFinder.findMatch(parsePtr+1);
+                        while(parsePtr < brackClose) {
+                            ParseTypes.Parameter param = new ParseTypes.Parameter();
+                            param.type = (LexTypes.DataType) (lexemes.get(parsePtr).subType);
+                            param.id = lexemes.get(parsePtr+1).token;
+                            struct.params.add(param);
+                            parsePtr += 2;
+                        }
+                        parsePtr = brackClose+1;
                     }
                     break;
             }
