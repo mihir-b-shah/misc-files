@@ -9,14 +9,14 @@ import lextypes.LiteralType;
  * @author mihir
  */
 public class Literal extends Expression {
-    LiteralType type;
-    String value;
+    public LiteralType type;
+    public String value;
 
-    Literal() {
+    public Literal() {
         tree = null;
     }
 
-    Literal(Lexer.Lexeme lexeme) {
+    public Literal(Lexer.Lexeme lexeme) {
         this();
         assert(lexeme.type == Lexer.LexType.LITERAL);
         type = ((LiteralType) lexeme.subType);

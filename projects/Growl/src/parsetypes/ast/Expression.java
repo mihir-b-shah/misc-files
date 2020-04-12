@@ -8,9 +8,9 @@ import compiler.Lexer;
  * @author mihir
  */
 public class Expression extends AST {
-    Op<Expression> tree;
+    public Op<Expression> tree;
 
-    static Expression genLitVal(Lexer.Lexeme lexeme) {
+    public static Expression genLitVal(Lexer.Lexeme lexeme) {
         switch(lexeme.type) {
             case LITERAL:
                 return new Literal(lexeme);

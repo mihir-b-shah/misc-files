@@ -10,6 +10,6 @@ import java.util.List;
  */
 public class StructDef extends UserDef {
         
-    String name;
-    List<Parameter> params = new ArrayList<>();
+    public String name;
+    public List<Parameter> params = new ArrayList<>();
 }

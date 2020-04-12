@@ -5,8 +5,8 @@ package parsetypes.ast;
  *
  * @author mihir
  */
-class Loop extends Control {
+public class Loop extends ControlStr {
 
-    Bool condition;
-    AST body;
+    public Bool condition;
+    public AST body;
 }

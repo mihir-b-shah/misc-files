@@ -9,18 +9,19 @@ import parsetypes.enums.OpType;
  * Binary operator
  * 
  * @author mihir
+ * @param <T> tag
  */
-class BinaryOp<T extends AST> extends Op<T> {
+public class BinaryOp<T extends AST> extends Op<T> {
 
-    T op1;
-    T op2;
+    public T op1;
+    public T op2;
 
     @Override
-    OpType type() {
+    public OpType type() {
         return OpType.BINARY;
     }
 
-    BinaryOp(Lexer.Lexeme lexeme) {
+    public BinaryOp(Lexer.Lexeme lexeme) {
         Operator ope = (Operator) lexeme.subType;
         operator = ope;
     }

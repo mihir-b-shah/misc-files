@@ -5,9 +5,9 @@ package parsetypes.ast;
  *
  * @author mihir
  */
-class Branch extends Control {
+public class Branch extends ControlStr {
 
-    Bool condition;
-    AST ifBranch;
-    AST elseBranch;
+    public Bool condition;
+    public AST ifBranch;
+    public AST elseBranch;
 }

@@ -59,7 +59,7 @@ public class Parser {
             final Lexer.Lexeme lex1 = lexemes.get(parsePtr);
             final Lexer.Lexeme lex2;
             int match;
-            ParseTypes.AST result;
+            AST result;
             int parenClose,brackClose;
 
             switch(lex1.type) {
@@ -108,21 +108,21 @@ public class Parser {
                         case SWITCH:
                             // switch statement
                             parenClose = GroupFinder.findMatch(parsePtr+1);
-                            ParseTypes.Switch switchBlock = new ParseTypes.Switch();
-                            ParseTypes.Primitive switchExpr = 
-                                    (ParseTypes.Primitive) parseExpr(parsePtr+2, parenClose);
+                            Switch switchBlock = new Switch();
+                            Primitive switchExpr = 
+                                    (Primitive) parseExpr(parsePtr+2, parenClose);
                             switchBlock.switchVal = switchExpr;
                             int switchPtr = parenClose+2;
                             int endPtr;
                             brackClose = GroupFinder.findMatch(parenClose+1);
                             while(switchPtr < brackClose && 
-                                    lexemes.get(switchPtr).subType == LexTypes.Control.class
-                                 && ((LexTypes.Control) lexemes.get(switchPtr).subType) 
-                                    == LexTypes.Control.CASE) {
+                                    lexemes.get(switchPtr).subType == Control.class
+                                 && ((Control) lexemes.get(switchPtr).subType) 
+                                    == Control.CASE) {
                                 Lexer.Lexeme literal = lexemes.get(switchPtr+1);
-                                switchBlock.cases.add(new ParseTypes.Literal(literal));
+                                switchBlock.cases.add(new Literal(literal));
                                 endPtr = GroupFinder.findNextCase(switchPtr+2, brackClose);
-                                ParseTypes.AST jump = parseAST(switchPtr+3, endPtr);
+                                AST jump = parseAST(switchPtr+3, endPtr);
                                 switchBlock.jumps.add(jump);
                                 if(endPtr == brackClose) {
                                     break;
@@ -131,20 +131,20 @@ public class Parser {
                             }
                             // check for default case
                             if(switchPtr < brackClose) {
-                                ParseTypes.AST jump = parseAST(switchPtr+2, brackClose);
+                                AST jump = parseAST(switchPtr+2, brackClose);
                                 switchBlock.jumps.add(jump);
                             }
                             break;
                         case WHILE:
                             // while statement
-                            ParseTypes.Loop whileBlock = new ParseTypes.Loop(); 
+                            Loop whileBlock = new Loop(); 
                             // correct type will parse until the curly brace open/close
                             parenClose = GroupFinder.findMatch(parsePtr+1);
-                            ParseTypes.Bool whileFilter = new ParseTypes.Bool();
+                            Bool whileFilter = new Bool();
                             whileFilter.supplier = parseExpr(parsePtr+2, parenClose);
                             // curly brace next.
                             brackClose = GroupFinder.findMatch(parenClose+1);
-                            ParseTypes.AST whileBody = parseAST(parenClose+2, brackClose);
+                            AST whileBody = parseAST(parenClose+2, brackClose);
                             whileBlock.condition = whileFilter;
                             whileBlock.body = whileBody;
                             parsePtr = brackClose+1;
@@ -156,34 +156,34 @@ public class Parser {
                     }
                     lex2 = lexemes.get(parsePtr+1);
                     final Lexer.Lexeme lex3 = lexemes.get(parsePtr+2);
-                    if(lex2.subType.getClass() == LexTypes.Id.class 
-                            && lex3.subType.getClass() == LexTypes.Group.class 
-                            && ((LexTypes.Group) lex3.subType) == LexTypes.Group.OPEN_PAREN) {
+                    if(lex2.subType.getClass() == Id.class 
+                            && lex3.subType.getClass() == Group.class 
+                            && ((Group) lex3.subType) == Group.OPEN_PAREN) {
                         // function definition
-                        ParseTypes.FunctionDef func = new ParseTypes.FunctionDef();
+                        FunctionDef func = new FunctionDef();
                         int paramEnd = GroupFinder.findMatch(parsePtr+3);
                         parsePtr += 4;
                         while(parsePtr < paramEnd) {
-                            ParseTypes.Parameter param = new ParseTypes.Parameter();
-                            param.type = (LexTypes.DataType) (lexemes.get(parsePtr).subType);
+                            Parameter param = new Parameter();
+                            param.type = (DataType) (lexemes.get(parsePtr).subType);
                             param.id = lexemes.get(parsePtr+1).token;
                             func.parameters.add(param);
                             parsePtr += 2;
                         }
                         brackClose = GroupFinder.findMatch(paramEnd+1);
-                        ParseTypes.AST funcBody = parseAST(paramEnd+2, brackClose);
+                        AST funcBody = parseAST(paramEnd+2, brackClose);
                         func.body = funcBody;
                         parsePtr = brackClose+1;
                         // fix func.return() statement
-                    } else if(((LexTypes.DataType) lex1.subType).base 
-                            == LexTypes.DataType.BaseType.STRUCT) {
+                    } else if(((DataType) lex1.subType).base 
+                            == DataType.BaseType.STRUCT) {
                         // struct declaration
-                        ParseTypes.StructDef struct = new ParseTypes.StructDef();
+                        StructDef struct = new StructDef();
                         struct.name = lex1.token.substring(7);
                         brackClose = GroupFinder.findMatch(parsePtr+1);
                         while(parsePtr < brackClose) {
-                            ParseTypes.Parameter param = new ParseTypes.Parameter();
-                            param.type = (LexTypes.DataType) (lexemes.get(parsePtr).subType);
+                            Parameter param = new Parameter();
+                            param.type = (DataType) (lexemes.get(parsePtr).subType);
                             param.id = lexemes.get(parsePtr+1).token;
                             struct.params.add(param);
                             parsePtr += 2;
@@ -197,80 +197,100 @@ public class Parser {
         return null;
     }
     
+    public static Expression parseExpr(List<Lexer.Lexeme> lexemes) {
+        Parser.lexemes = lexemes;
+        return parseExpr(0, lexemes.size());
+    }
+    
     // supports operators on NUMERICAL types.
     // so operands can be i8 (bool), i32, i64, f64
     // operators supported: (,),++,--!,~,*,/,%,+,-,<<,>>,>>>,<,>,==,&,|,^,&&,||
     // expression tree consists solely of operators
-    private static ParseTypes.Expression parseExpr(int start, int end) {
-        ParseTypes.Expression expr = new ParseTypes.Expression();
-        Stack<ParseTypes.Expression> stack = new Stack<>();
+    private static Expression parseExpr(int start, int end) {
+        Expression expr = new Expression();
+        Stack<Expression> stack = new Stack<>();
         stack.push(expr);
         for(int ptr = start; ptr<end; ++ptr) {
             Lexer.Lexeme lexeme = lexemes.get(ptr);
             switch(lexeme.type) {
                 case GROUP:
                     int parenClose = GroupFinder.findMatch(ptr);
-                    ParseTypes.Expression loc = parseExpr(ptr+1, parenClose);
+                    Expression loc = parseExpr(ptr+1, parenClose);
                     ptr = parenClose;
                     stack.push(loc);
                     break;
                 case ID:
-                    ParseTypes.Variable var = symbolTable.get(lexeme.token);
+                    Variable var = symbolTable.get(lexeme.token);
                     stack.push(var);
                     break;
                 case LITERAL:
-                    ParseTypes.Literal lit = new ParseTypes.Literal();
-                    lit.type = (LexTypes.LiteralType) lexeme.subType;
+                    Literal lit = new Literal();
+                    lit.type = (LiteralType) lexeme.subType;
                     lit.value = lexeme.token;
+                    stack.push(lit);
                     break;
                 case OPERATOR:
-                    if(ptr < end-1 && lexemes.get(ptr+1).subType.getClass() == LexTypes.Group.class && 
-                            ((LexTypes.Group) lexemes.get(ptr+1).subType) == LexTypes.Group.OPEN_PAREN) {
+                    if(ptr < end-1 && lexemes.get(ptr+1).subType.getClass() == Group.class && 
+                            ((Group) lexemes.get(ptr+1).subType) == Group.OPEN_PAREN) {
                         parenClose = GroupFinder.findMatch(ptr+1);
                         stack.push(parseExpr(ptr+2, parenClose));
                         break;
                     }
-                    switch(((LexTypes.Operator) lexeme.subType).type()) {
+                    switch(((Operator) lexeme.subType).type()) {
                         case UNARY:
-                            if(ptr < end-2 && lexemes.get(ptr+2).subType.getClass() == LexTypes.Operator.class) {
-                                LexTypes.Operator second = (LexTypes.Operator) lexemes.get(ptr+2).subType;
-                                LexTypes.Operator first = (LexTypes.Operator) lexemes.get(ptr).subType;
-                                if(first.precedence() < second.precedence()) {
+                            if(ptr < end-2 && lexemes.get(ptr+2).subType.getClass() == Operator.class) {
+                                Operator second = (Operator) lexemes.get(ptr+2).subType;
+                                Operator first = (Operator) lexemes.get(ptr).subType;
+                                if(first.precedence() == second.precedence()) {
                                     switch(first.associate()) {
                                         case LEFT_TO_RIGHT:
                                         case NONE:
-                                            ParseTypes.Expression operand = 
-                                                    ParseTypes.Expression.genLitVal(lexemes.get(ptr+1));
-                                            ParseTypes.UnaryOp<ParseTypes.Expression> comp 
-                                                    = new ParseTypes.UnaryOp<>(lexeme);
+                                            Expression operand = 
+                                                    Expression.genLitVal(lexemes.get(ptr+1));
+                                            UnaryOp<Expression> comp 
+                                                    = new UnaryOp<>(lexeme);
                                             comp.op = operand;
                                         case RIGHT_TO_LEFT:
                                             // to be implemented
                                     }
+                                } else if(first.precedence() < second.precedence()) {
+                                    Expression operand = 
+                                            Expression.genLitVal(lexemes.get(ptr+1));
+                                    UnaryOp<Expression> comp 
+                                            = new UnaryOp<>(lexeme);
+                                    comp.op = operand;
                                 } else {
-                                    stack.push(new ParseTypes.UnaryOp<>(lexemes.get(ptr)));
+                                    stack.push(new UnaryOp<>(lexemes.get(ptr)));
                                 }
                             }
                         case BINARY:
-                            if(ptr < end-2 && lexemes.get(ptr+2).subType.getClass() == LexTypes.Operator.class) {
-                                LexTypes.Operator second = (LexTypes.Operator) lexemes.get(ptr+2).subType;
-                                LexTypes.Operator first = (LexTypes.Operator) lexemes.get(ptr).subType;
-                                if(first.precedence() < second.precedence()) {
+                            if(ptr < end-2 && lexemes.get(ptr+2).subType.getClass() == Operator.class) {
+                                Operator second = (Operator) lexemes.get(ptr+2).subType;
+                                Operator first = (Operator) lexemes.get(ptr).subType;
+                                if(first.precedence() == second.precedence()) {
                                     switch(first.associate()) {
                                         case LEFT_TO_RIGHT:
                                         case NONE:
-                                            ParseTypes.Expression operand1 = stack.pop();
-                                            ParseTypes.Expression operand2 = 
-                                                    ParseTypes.Expression.genLitVal(lexemes.get(ptr+1));
-                                            ParseTypes.BinaryOp<ParseTypes.Expression> comp 
-                                                    = new ParseTypes.BinaryOp<>(lexeme);
+                                            Expression operand1 = stack.pop();
+                                            Expression operand2 = 
+                                                    Expression.genLitVal(lexemes.get(ptr+1));
+                                            BinaryOp<Expression> comp 
+                                                    = new BinaryOp<>(lexeme);
                                             comp.op1 = operand1;
                                             comp.op2 = operand2;
                                         case RIGHT_TO_LEFT:
                                             // to be implemented
                                     }
+                                } else if(first.precedence() == second.precedence()) {
+                                    Expression operand1 = stack.pop();
+                                    Expression operand2 = 
+                                            Expression.genLitVal(lexemes.get(ptr+1));
+                                    BinaryOp<Expression> comp 
+                                            = new BinaryOp<>(lexeme);
+                                    comp.op1 = operand1;
+                                    comp.op2 = operand2;
                                 } else {
-                                    stack.push(new ParseTypes.BinaryOp<>(lexemes.get(ptr)));
+                                    stack.push(new BinaryOp<>(lexemes.get(ptr)));
                                 }
                             }
                         default:
@@ -282,10 +302,10 @@ public class Parser {
     }
     
     public static void main(String[] args) {
-        ParseTypes pt = new ParseTypes();
         String program = "14/2%5";
         GroupFinder.initialize(program);
         List<Lexer.Lexeme> lexes = Lexer.lex(program);
         Lexer.printLexemes(lexes);
+        Expression expr = parseExpr(lexes);
     }
 }

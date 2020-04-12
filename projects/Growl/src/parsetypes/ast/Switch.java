@@ -8,13 +8,13 @@ import java.util.List;
  *
  * @author mihir
  */
-public class Switch extends Control {
+public class Switch extends ControlStr {
 
-    Primitive switchVal;
-    List<Literal> cases;
-    List<AST> jumps;
+    public Primitive switchVal;
+    public List<Literal> cases;
+    public List<AST> jumps;
 
-    Switch() {
+    public Switch() {
         cases = new ArrayList<>();
         jumps = new ArrayList<>();
     }

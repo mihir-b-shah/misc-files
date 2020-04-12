@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class FunctionDef extends UserDef {
 
-    Value returnVal;
-    AST body;
-    List<Parameter> parameters = new ArrayList<>();
+    public Value returnVal;
+    public AST body;
+    public List<Parameter> parameters = new ArrayList<>();
 }

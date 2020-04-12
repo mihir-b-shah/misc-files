@@ -5,6 +5,6 @@ package parsetypes.ast;
  *
  * @author mihir
  */
-abstract class Control extends AST {
+abstract class ControlStr extends AST {
     
 }

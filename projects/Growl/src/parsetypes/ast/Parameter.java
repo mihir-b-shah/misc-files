@@ -9,6 +9,6 @@ import lextypes.DataType;
  */
 public class Parameter {
     
-    String id;
-    DataType type;
+    public String id;
+    public DataType type;
 }
