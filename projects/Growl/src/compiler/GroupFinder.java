@@ -1,3 +1,5 @@
+package compiler;
+
 
 import java.util.HashMap;
 
@@ -24,33 +26,7 @@ public class GroupFinder {
             lvl = l;
         }
     }
-    
-    static class Stack<T> {
-        private T[] array;
-        private int ctr;
 
-        Stack() {
-            array = (T[]) new Object[10];
-        }
-
-        void push(T obj) {
-            if(ctr == array.length) {
-                T[] aux = (T[]) new Object[ctr << 1];
-                System.arraycopy(array, 0, aux, 0, ctr);
-                array = aux;
-            }
-            array[ctr++] = obj;
-        }
-
-        T pop() {
-            return array[--ctr];
-        }
-        
-        int size() {
-            return ctr;
-        }
-    }
-    
     static class StringFinder {
         
         final String find;

@@ -1,6 +1,10 @@
 
+package compiler;
+
 import java.util.*;
 import java.util.regex.*;
+
+import lextypes.*;
 
 public class Lexer {
 
@@ -19,9 +23,9 @@ public class Lexer {
     
     public static class Lexeme {
 
-        LexType type;
-        Object subType; // either class or enum
-        String token;
+        public LexType type;
+        public Object subType; // either class or enum
+        public String token;
         int start;
         int end;
 
@@ -47,12 +51,12 @@ public class Lexer {
     
     public static List<Lexeme> lex(String program) {
         List<Lexeme> lexemes = new ArrayList<>();
-        final Matcher[] matchers = {LexTypes.Operator.OPERATOR_REGEX.matcher(program),
-                                    LexTypes.Control.CONTROL_REGEX.matcher(program),
-                                    LexTypes.Group.GROUP_REGEX.matcher(program),
-                                    LexTypes.DataType.TYPE_REGEX.matcher(program),
-                                    LexTypes.Id.ID_REGEX.matcher(program),
-                                    LexTypes.LiteralType.LITERAL_REGEX.matcher(program)};
+        final Matcher[] matchers = {Operator.OPERATOR_REGEX.matcher(program),
+                                    Control.CONTROL_REGEX.matcher(program),
+                                    Group.GROUP_REGEX.matcher(program),
+                                    DataType.TYPE_REGEX.matcher(program),
+                                    Id.ID_REGEX.matcher(program),
+                                    LiteralType.LITERAL_REGEX.matcher(program)};
 
         for (int i = 0; i < matchers.length; ++i) {
             Matcher matcher = matchers[i];
@@ -101,19 +105,19 @@ public class Lexer {
         for (Lexeme lexeme : lexemes) {
             switch (lexeme.type) {
                 case OPERATOR:
-                    lexeme.subType = LexTypes.Operator.createOperator(lexeme.token);
+                    lexeme.subType = Operator.createOperator(lexeme.token);
                     break;
                 case CONTROL:
-                    lexeme.subType = LexTypes.Control.createControl(lexeme.token);
+                    lexeme.subType = Control.createControl(lexeme.token);
                     break;
                 case GROUP:
-                    lexeme.subType = LexTypes.Group.createGroup(lexeme.token);
+                    lexeme.subType = Group.createGroup(lexeme.token);
                     break;
                 case TYPE:
-                    lexeme.subType = LexTypes.DataType.createDataType(lexeme.token);
+                    lexeme.subType = DataType.createDataType(lexeme.token);
                     break;
                 case LITERAL:
-                    lexeme.subType = LexTypes.LiteralType.createLiteral(lexeme.token);
+                    lexeme.subType = LiteralType.createLiteral(lexeme.token);
                     break;
                 default:
                     break;
