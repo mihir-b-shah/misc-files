@@ -207,9 +207,7 @@ public class Parser {
     // operators supported: (,),++,--!,~,*,/,%,+,-,<<,>>,>>>,<,>,==,&,|,^,&&,||
     // expression tree consists solely of operators
     private static Expression parseExpr(int start, int end) {
-        Expression expr = new Expression();
         Stack<Expression> stack = new Stack<>();
-        stack.push(expr);
         for(int ptr = start; ptr<end; ++ptr) {
             Lexer.Lexeme lexeme = lexemes.get(ptr);
             switch(lexeme.type) {
@@ -250,6 +248,7 @@ public class Parser {
                                             UnaryOp<Expression> comp 
                                                     = new UnaryOp<>(lexeme);
                                             comp.op = operand;
+                                            stack.push(comp);
                                         case RIGHT_TO_LEFT:
                                             // to be implemented
                                     }
@@ -259,6 +258,7 @@ public class Parser {
                                     UnaryOp<Expression> comp 
                                             = new UnaryOp<>(lexeme);
                                     comp.op = operand;
+                                    stack.push(comp);
                                 } else {
                                     stack.push(new UnaryOp<>(lexemes.get(ptr)));
                                 }
@@ -278,6 +278,7 @@ public class Parser {
                                                     = new BinaryOp<>(lexeme);
                                             comp.op1 = operand1;
                                             comp.op2 = operand2;
+                                            stack.push(comp);
                                         case RIGHT_TO_LEFT:
                                             // to be implemented
                                     }
@@ -289,6 +290,7 @@ public class Parser {
                                             = new BinaryOp<>(lexeme);
                                     comp.op1 = operand1;
                                     comp.op2 = operand2;
+                                    stack.push(comp);
                                 } else {
                                     stack.push(new BinaryOp<>(lexemes.get(ptr)));
                                 }
@@ -307,5 +309,6 @@ public class Parser {
         List<Lexer.Lexeme> lexes = Lexer.lex(program);
         Lexer.printLexemes(lexes);
         Expression expr = parseExpr(lexes);
+        System.out.println(expr);
     }
 }
