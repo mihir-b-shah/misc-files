@@ -1,7 +1,10 @@
 package compiler;
 
+import compiler.Lexer.LexType;
+import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Queue;
 
 import lextypes.*;
 import parsetypes.ast.*;
@@ -202,113 +205,112 @@ public class Parser {
         return parseExpr(0, lexemes.size());
     }
     
+    public static int nextOperator(int ptr) {
+        ++ptr;
+        while(ptr < lexemes.size() && lexemes.get(ptr).type != Lexer.LexType.OPERATOR) {
+            ++ptr;
+        }
+        return ptr;
+    }
+    
+    private static void construct(Stack<Expression> output, Operator top) {
+        Expression op1, op2;
+        switch(top.type()) {
+            case UNARY:
+                op1 = output.pop();
+                UnaryOp<Expression> uop = new UnaryOp<>();
+                uop.operator = top;
+                uop.op = op1;
+                output.push(uop);
+                break;
+            case BINARY:
+                op2 = output.pop();
+                op1 = output.pop();
+                BinaryOp<Expression> bop = new BinaryOp<>();
+                bop.operator = top;
+                bop.op1 = op1;
+                bop.op2 = op2;
+                output.push(bop);
+                break;
+            default:
+                // parse error
+                break;
+        }
+    } 
+    
     // supports operators on NUMERICAL types.
     // so operands can be i8 (bool), i32, i64, f64
     // operators supported: (,),++,--!,~,*,/,%,+,-,<<,>>,>>>,<,>,==,&,|,^,&&,||
     // expression tree consists solely of operators
     private static Expression parseExpr(int start, int end) {
-        Stack<Expression> stack = new Stack<>();
+        // stack can only contain groups and operators
+        Stack<Lexer.Lexeme> stack = new Stack<>();
+        Stack<Expression> output = new Stack<>();
+        
+        // need to add functions
+        // https://en.wikipedia.org/wiki/Shunting-yard_algorithm
         for(int ptr = start; ptr<end; ++ptr) {
             Lexer.Lexeme lexeme = lexemes.get(ptr);
             switch(lexeme.type) {
-                case GROUP:
-                    int parenClose = GroupFinder.findMatch(ptr);
-                    Expression loc = parseExpr(ptr+1, parenClose);
-                    ptr = parenClose;
-                    stack.push(loc);
-                    break;
                 case ID:
-                    Variable var = symbolTable.get(lexeme.token);
-                    stack.push(var);
-                    break;
+                    Variable var = new Variable(lexeme);
+                    output.push(var);
                 case LITERAL:
-                    Literal lit = new Literal();
-                    lit.type = (LiteralType) lexeme.subType;
-                    lit.value = lexeme.token;
-                    stack.push(lit);
+                    Literal lit = new Literal(lexeme);
+                    output.push(lit);
                     break;
                 case OPERATOR:
-                    if(ptr < end-1 && lexemes.get(ptr+1).subType.getClass() == Group.class && 
-                            ((Group) lexemes.get(ptr+1).subType) == Group.OPEN_PAREN) {
-                        parenClose = GroupFinder.findMatch(ptr+1);
-                        stack.push(parseExpr(ptr+2, parenClose));
-                        break;
+                    Operator me = (Operator) lexeme.subType;
+                    Operator top;
+                    // watch out for associative
+                    while(stack.size() > 0 && stack.peek().type == LexType.OPERATOR 
+                            && ((top = (Operator) stack.peek().subType).precedence() 
+                            > me.precedence() || top.precedence() == me.precedence() 
+                            && me.associate() == Associativity.LEFT_TO_RIGHT)) {
+                        stack.pop();
+                        construct(output, top);
                     }
-                    switch(((Operator) lexeme.subType).type()) {
-                        case UNARY:
-                            if(ptr < end-2 && lexemes.get(ptr+2).subType.getClass() == Operator.class) {
-                                Operator second = (Operator) lexemes.get(ptr+2).subType;
-                                Operator first = (Operator) lexemes.get(ptr).subType;
-                                if(first.precedence() == second.precedence()) {
-                                    switch(first.associate()) {
-                                        case LEFT_TO_RIGHT:
-                                        case NONE:
-                                            Expression operand = 
-                                                    Expression.genLitVal(lexemes.get(ptr+1));
-                                            UnaryOp<Expression> comp 
-                                                    = new UnaryOp<>(lexeme);
-                                            comp.op = operand;
-                                            stack.push(comp);
-                                        case RIGHT_TO_LEFT:
-                                            // to be implemented
-                                    }
-                                } else if(first.precedence() < second.precedence()) {
-                                    Expression operand = 
-                                            Expression.genLitVal(lexemes.get(ptr+1));
-                                    UnaryOp<Expression> comp 
-                                            = new UnaryOp<>(lexeme);
-                                    comp.op = operand;
-                                    stack.push(comp);
-                                } else {
-                                    stack.push(new UnaryOp<>(lexemes.get(ptr)));
-                                }
+                    stack.push(lexeme); 
+                    break;
+                case GROUP:
+                    switch((Group) lexeme.subType) {
+                        case OPEN_PAREN:
+                            stack.push(lexeme);
+                            break;
+                        case CLOSE_PAREN:
+                            boolean flg = false;
+                            while(stack.size() > 0 && (stack.peek().type != LexType.GROUP
+                                    || ((Group) stack.peek().subType) != Group.OPEN_PAREN)) {
+                                flg = true;
+                                construct(output, (Operator) stack.pop().subType);
                             }
-                        case BINARY:
-                            if(ptr < end-2 && lexemes.get(ptr+2).subType.getClass() == Operator.class) {
-                                Operator second = (Operator) lexemes.get(ptr+2).subType;
-                                Operator first = (Operator) lexemes.get(ptr).subType;
-                                if(first.precedence() == second.precedence()) {
-                                    switch(first.associate()) {
-                                        case LEFT_TO_RIGHT:
-                                        case NONE:
-                                            Expression operand1 = stack.pop();
-                                            Expression operand2 = 
-                                                    Expression.genLitVal(lexemes.get(ptr+1));
-                                            BinaryOp<Expression> comp 
-                                                    = new BinaryOp<>(lexeme);
-                                            comp.op1 = operand1;
-                                            comp.op2 = operand2;
-                                            stack.push(comp);
-                                        case RIGHT_TO_LEFT:
-                                            // to be implemented
-                                    }
-                                } else if(first.precedence() == second.precedence()) {
-                                    Expression operand1 = stack.pop();
-                                    Expression operand2 = 
-                                            Expression.genLitVal(lexemes.get(ptr+1));
-                                    BinaryOp<Expression> comp 
-                                            = new BinaryOp<>(lexeme);
-                                    comp.op1 = operand1;
-                                    comp.op2 = operand2;
-                                    stack.push(comp);
-                                } else {
-                                    stack.push(new BinaryOp<>(lexemes.get(ptr)));
-                                }
+                            // only case, if hit paren
+                            if(stack.size() > 0) {
+                                stack.pop();
                             }
+                            if(!flg) {
+                                // parse error, no matching paren
+                            }
+                            break;
                         default:
+                            // parse error
                             break;
                     }
             }
         }
-        return stack.pop();
+        while(stack.size() > 0) {
+            construct(output, (Operator) stack.pop().subType);
+        }
+        assert(output.size() == 1);
+        return output.pop();
     }
-    
+
     public static void main(String[] args) {
-        String program = "14/2%5";
+        String program = "3+(~5+2&4)/4>>>0";
         GroupFinder.initialize(program);
         List<Lexer.Lexeme> lexes = Lexer.lex(program);
-        Lexer.printLexemes(lexes);
-        Expression expr = parseExpr(lexes);
-        System.out.println(expr);
+        Parser.lexemes = lexes;
+        Expression expr = parseExpr(0, lexemes.size());
+        System.out.println(expr.evalConstExpr());
     }
 }

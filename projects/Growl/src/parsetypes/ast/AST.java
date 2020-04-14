@@ -5,6 +5,5 @@ package parsetypes.ast;
  *
  * @author mihir
  */
-public class AST {
-    
+public abstract class AST {
 }

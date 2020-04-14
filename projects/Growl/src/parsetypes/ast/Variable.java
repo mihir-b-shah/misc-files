@@ -2,24 +2,34 @@
 package parsetypes.ast;
 
 import compiler.Lexer;
+import debug.Debug;
 import lextypes.LiteralType;
+import lextypes.Operator;
 
 /**
  *
  * @author mihir
  */
 public class Variable extends Expression {
-    LiteralType type;
-    String id;
+    public LiteralType type;
+    public String id;
 
-    Variable() {
-        tree = null;
+    public Variable() {
     }
 
-    Variable(Lexer.Lexeme lexeme) {
-        this();
+    public Variable(Lexer.Lexeme lexeme) {
         assert(lexeme.type == Lexer.LexType.ID);
         type = ((LiteralType) lexeme.subType);
         id = lexeme.token;
+    }
+
+    @Override
+    public int evalConstExpr() {
+        return Operator.UNSUPPORTED;
+    }
+
+    @Override
+    public String display(int pos, int width) {
+        return Debug.UNSUPPORTED;
     }
 }

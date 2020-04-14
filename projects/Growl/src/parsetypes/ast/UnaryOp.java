@@ -7,6 +7,7 @@ package parsetypes.ast;
 
 import lextypes.*;
 import compiler.*;
+import debug.Debug;
 import parsetypes.enums.OpType;
 
 /**
@@ -24,8 +25,25 @@ public class UnaryOp<T extends AST> extends Op<T> {
         return OpType.UNARY;
     }
 
+    public UnaryOp() {
+    }
+    
     public UnaryOp(Lexer.Lexeme lexeme) {
         Operator ope = (Operator) lexeme.subType;
         operator = ope;
+    }
+    
+    @Override
+    public int evalConstExpr() {
+        if(op instanceof Expression) {
+            int res = operator.evaluateUnary(((Expression) op).evalConstExpr());
+            return res;
+        }
+        return Operator.UNSUPPORTED;
+    }
+
+    @Override
+    public String display(int pos, int width) {
+        return Debug.UNSUPPORTED;
     }
 }

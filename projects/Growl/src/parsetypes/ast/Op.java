@@ -9,8 +9,8 @@ import parsetypes.enums.OpType;
  * 
  * @author mihir
  */
-abstract class Op<T extends AST> extends Expression {
+public abstract class Op<T extends AST> extends Expression {
         
-    Operator operator;
-    abstract OpType type();
+    public Operator operator;
+    public abstract OpType type();
 }

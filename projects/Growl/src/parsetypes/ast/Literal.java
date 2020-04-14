@@ -2,6 +2,7 @@
 package parsetypes.ast;
 
 import compiler.Lexer;
+import debug.Debug;
 import lextypes.LiteralType;
 
 /**
@@ -13,13 +14,21 @@ public class Literal extends Expression {
     public String value;
 
     public Literal() {
-        tree = null;
     }
 
     public Literal(Lexer.Lexeme lexeme) {
-        this();
         assert(lexeme.type == Lexer.LexType.LITERAL);
         type = ((LiteralType) lexeme.subType);
         value = lexeme.token;
+    }
+
+    @Override
+    public int evalConstExpr() {
+        return Integer.parseInt(value);
+    }
+
+    @Override
+    public String display(int pos, int width) {
+       return value;
     }
 }

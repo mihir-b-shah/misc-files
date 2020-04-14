@@ -11,11 +11,23 @@ import parsetypes.enums.*;
  * @author mihir
  */
 public enum Operator {
-    INCREMENT, DECREMENT, BIT_NOT, LOG_NOT,
-    ACCESS, MULTIPLY, DEREFERENCE, DIVIDE, MODULUS, ADD,
-    SUBTRACT, BIT_LEFT, SBIT_RIGHT, UBIT_RIGHT,
-    LESS, GREATER, EQUAL, ADDRESS, BIT_AND, BIT_OR, 
-    BIT_XOR, LOG_AND, LOG_OR, ASSIGN;
+    INCREMENT("++"), DECREMENT("--"), BIT_NOT("~"), LOG_NOT("!"),
+    ACCESS("."), MULTIPLY("*"), DEREFERENCE("$"), DIVIDE("/"), MODULUS("%"), ADD("+"),
+    SUBTRACT("-"), BIT_LEFT("<<"), SBIT_RIGHT(">>"), UBIT_RIGHT(">>>"),
+    LESS("<"), GREATER(">"), EQUAL("=="), ADDRESS("@"), BIT_AND("&"), BIT_OR("|"), 
+    BIT_XOR("^"), LOG_AND("&&"), LOG_OR("||"), ASSIGN("=");
+    
+    String token;
+    Operator(String s) {
+        token = s;
+    }
+    
+    @Override
+    public String toString() {
+        return token;
+    }
+    
+    public static final int UNSUPPORTED = 0x7f7f7f7f;
 
     public static final Pattern OPERATOR_REGEX = Pattern.compile("[\\.\\[\\]!~/%\\*\\^]"
             + "|(\\+{1,2})|(\\-{1,2})|(<{1,2})|(>{1,3})|(\\&{1,2})|(\\"
@@ -41,44 +53,44 @@ public enum Operator {
             case ACCESS:
             case DEREFERENCE:
             case ADDRESS:
-                return 1;
+                return 15;
             case INCREMENT:
             case DECREMENT:
-                return 2;
+                return 14;
             case LOG_NOT:
             case BIT_NOT:
-                return 3;
+                return 13;
             case MULTIPLY:
             case DIVIDE:
             case MODULUS:
-                return 5;
+                return 12;
             case ADD:
             case SUBTRACT:
-                return 6;
+                return 11;
             case BIT_LEFT:
             case SBIT_RIGHT:
             case UBIT_RIGHT:
-                return 7;
+                return 10;
             case LESS:
-                return 8;
+                return 9;
             case GREATER:
                 return 8;
             case EQUAL:
-                return 9;
+                return 7;
             case BIT_AND:
-                return 10;
+                return 6;
             case BIT_XOR:
-                return 11;
+                return 5;
             case BIT_OR:
-                return 12;
+                return 4;
             case LOG_AND:
-                return 13;
+                return 3;
             case LOG_OR:
-                return 14;
+                return 2;
             case ASSIGN:
-                return 15;
+                return 1;
             default:
-                return Integer.MAX_VALUE;
+                return 0;
         }
     }
 
@@ -155,6 +167,46 @@ public enum Operator {
                 return Operator.DEREFERENCE;
             default:
                 return null;
+        }
+    }
+    
+    public int evaluateUnary(int a) {
+        switch(this) {
+            case BIT_NOT:
+                return ~a;
+            default:
+                return UNSUPPORTED;
+                
+        }
+    }
+    
+    public int evaluateBinary(int a, int b) {
+        switch(this) {
+            case MULTIPLY:
+                return a*b;
+            case DIVIDE:
+                return a/b;
+            case MODULUS:
+                return a%b;
+            case ADD:
+                return a+b;
+            case SUBTRACT:
+                return a-b;
+            case BIT_LEFT:
+                return a << b;
+            case SBIT_RIGHT:
+                return a >> b;
+            case UBIT_RIGHT:
+                return a >>> b;
+            case BIT_AND:
+                return a&b;
+            case BIT_XOR:
+                return a^b;
+            case BIT_OR:
+                return a|b;
+            default:
+                return UNSUPPORTED;
+                
         }
     }
 }

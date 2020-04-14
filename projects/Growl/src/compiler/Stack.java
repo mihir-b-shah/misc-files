@@ -22,6 +22,14 @@ public class Stack<T> {
     public T pop() {
         return array[--ctr];
     }
+    
+    public T peek() {
+        return array[ctr-1];
+    }
+    
+    public T peekTwo() {
+        return array[ctr-2];
+    }
 
     public int size() {
         return ctr;
