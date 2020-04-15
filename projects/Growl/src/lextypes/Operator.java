@@ -1,6 +1,7 @@
 
 package lextypes;
 
+import compiler.Lexer;
 import java.util.regex.Pattern;
 
 import parsetypes.enums.*;
@@ -166,7 +167,7 @@ public enum Operator {
             case "$":
                 return Operator.DEREFERENCE;
             default:
-                return null;
+                throw new Lexer.LexError();
         }
     }
     

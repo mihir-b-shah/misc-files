@@ -1,6 +1,7 @@
 
 package lextypes;
 
+import compiler.Lexer;
 import java.util.regex.Pattern;
 
 public enum Control {
@@ -31,7 +32,7 @@ public enum Control {
             case "break":
                 return Control.BREAK;
             default:
-                return null;
+                throw new Lexer.LexError();
         }
     }
 }

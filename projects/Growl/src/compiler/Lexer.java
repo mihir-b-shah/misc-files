@@ -120,7 +120,7 @@ public class Lexer {
                     lexeme.subType = LiteralType.createLiteral(lexeme.token);
                     break;
                 default:
-                    break;
+                    throw new LexError();
             }
         }
     }

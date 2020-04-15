@@ -1,10 +1,8 @@
 package compiler;
 
 import compiler.Lexer.LexType;
-import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Queue;
 
 import lextypes.*;
 import parsetypes.ast.*;
@@ -49,6 +47,14 @@ public class Parser {
     
     7] Expression/Computation    
     */
+    
+    public static class ParseError extends Error {
+        @Override
+        public String getMessage() {
+            return "Parse error encountered.";
+        }
+    }
+    
     public static AST parse(List<Lexer.Lexeme> lexemes) {
         Parser.lexemes = lexemes;
         Parser.symbolTable = new HashMap<>();
@@ -289,12 +295,11 @@ public class Parser {
                                 stack.pop();
                             }
                             if(!flg) {
-                                // parse error, no matching paren
+                                throw new ParseError();
                             }
                             break;
                         default:
-                            // parse error
-                            break;
+                            throw new ParseError();
                     }
             }
         }

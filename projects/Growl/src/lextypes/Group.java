@@ -1,6 +1,7 @@
 
 package lextypes;
 
+import compiler.Lexer;
 import java.util.regex.Pattern;
 
 /**
@@ -31,7 +32,7 @@ public enum Group {
             case ";":
                 return Group.SEMICOLON;
             default:
-                return null;
+                throw new Lexer.LexError();
         }
     }
 }

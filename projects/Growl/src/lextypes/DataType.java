@@ -1,6 +1,7 @@
 
 package lextypes;
 
+import compiler.Lexer;
 import java.util.regex.Pattern;
 
 public final class DataType {
@@ -43,12 +44,17 @@ public final class DataType {
             case "float":
                 ret.base = BaseType.F64;
                 break;
+            case "void":
+                ret.base = BaseType.VOID;
+                if(ret.ptrLvl == 0) {
+                    throw new Lexer.LexError();
+                }
             default:
                 if(s.substring(0,6).equals("struct")) {
                     ret.base = BaseType.STRUCT;
                 } else {
-                    ret.base = BaseType.VOID;
-                }  
+                    throw new Lexer.LexError();
+                }
                 break;
         }
         return ret;
