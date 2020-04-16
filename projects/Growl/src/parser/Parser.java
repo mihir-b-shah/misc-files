@@ -6,10 +6,8 @@ import docutils.Stack;
 import lexer.Lexeme;
 import docutils.GroupFinder;
 
-import java.util.HashMap;
 import java.util.List;
 import lexer.LexType;
-import lexer.Lexer;
 import parser.parsetypes.enums.Associativity;
 
 
@@ -20,9 +18,28 @@ import parser.parsetypes.enums.Associativity;
  */
 public class Parser {
 
-    static List<Lexeme> lexemes;
-    static HashMap<String, Variable> symbolTable;
-
+    private final List<Lexeme> lexemes;
+    private final AST syntaxTree;
+    
+    private static Parser instance = null;
+    
+    private Parser(List<Lexeme> lexes) {
+        lexemes = lexes;
+        syntaxTree = parse();
+    }
+    
+    public static Parser getInstance() {
+        return instance;
+    }
+    
+    public AST getAST() {
+        return syntaxTree;
+    }
+    
+    public static void initialize(List<Lexeme> lexemes) {
+        instance = new Parser(lexemes);
+    }
+    
     /*
     Currently scans for these control flow patterns:
     
@@ -60,14 +77,12 @@ public class Parser {
         }
     }
     
-    public static AST parse(List<Lexeme> lexemes) {
-        Parser.lexemes = lexemes;
-        Parser.symbolTable = new HashMap<>();
+    private AST parse() {
         return parseAST(0, lexemes.size());
     }
     
     // inclusive, exclusive bounds
-    private static AST parseAST(int start, int end) {
+    private AST parseAST(int start, int end) {
         int parsePtr = start;
         while(parsePtr < end) {
             final Lexeme lex1 = lexemes.get(parsePtr);
@@ -211,12 +226,7 @@ public class Parser {
         return null;
     }
     
-    public static Expression parseExpr(List<Lexeme> lexemes) {
-        Parser.lexemes = lexemes;
-        return parseExpr(0, lexemes.size());
-    }
-    
-    public static int nextOperator(int ptr) {
+    private int nextOperator(int ptr) {
         ++ptr;
         while(ptr < lexemes.size() && lexemes.get(ptr).type != LexType.OPERATOR) {
             ++ptr;
@@ -224,7 +234,7 @@ public class Parser {
         return ptr;
     }
     
-    private static void construct(Stack<Expression> output, Operator top) {
+    private void construct(Stack<Expression> output, Operator top) {
         Expression op1, op2;
         switch(top.type()) {
             case UNARY:
@@ -253,7 +263,7 @@ public class Parser {
     // so operands can be i8 (bool), i32, i64, f64
     // operators supported: (,),++,--!,~,*,/,%,+,-,<<,>>,>>>,<,>,==,&,|,^,&&,||
     // expression tree consists solely of operators
-    private static Expression parseExpr(int start, int end) {
+    private Expression parseExpr(int start, int end) {
         // stack can only contain groups and operators
         Stack<Lexeme> stack = new Stack<>();
         Stack<Expression> output = new Stack<>();
@@ -313,14 +323,5 @@ public class Parser {
         }
         assert(output.size() == 1);
         return output.pop();
-    }
-
-    public static void main(String[] args) {
-        String program = "3+(~5+2&4)/4>>>0";
-        List<Lexeme> lexes = Lexer.lex(program);
-        GroupFinder.initialize(lexes);
-        Parser.lexemes = lexes;
-        Expression expr = parseExpr(0, lexemes.size());
-        System.out.println(expr.evalConstExpr());
     }
 }

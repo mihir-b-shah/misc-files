@@ -1,5 +1,7 @@
 package docutils;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import lexer.Lexeme;
@@ -16,12 +18,14 @@ import lexer.lextypes.Group;
 public class GroupFinder {
     
     private final List<Lexeme> document;
+    private final ArrayList<Integer> positions;
     private final HashMap<Integer, Integer> lookup;
     private static GroupFinder instance = null;
 
     private GroupFinder(List<Lexeme> doc) {
         document = doc;
         lookup = new HashMap<>();
+        positions = new ArrayList<>();
         parseDoc();
     }
     
@@ -30,7 +34,7 @@ public class GroupFinder {
         // not optimizing this for primitives noooooooooo
         Stack<Integer> parenStack = new Stack<>();
         Stack<Integer> bracketStack = new Stack<>();
-        
+
         int commaPos = -1;
         int semiPos = -1;
         int pos;
@@ -65,6 +69,7 @@ public class GroupFinder {
                         break;
                     case OPEN_BRACKET:
                         bracketStack.push(i);
+                        positions.add(i);
                         break;
                     case CLOSE_BRACKET:
                         pos = bracketStack.pop();
@@ -131,8 +136,9 @@ public class GroupFinder {
     }
     
     // O(lg n) lookup within a block
-    public int getBlock() {
-        return 0;
+    public int getBlock(int pos) {
+        int ret = Collections.binarySearch(positions, pos);
+        return ret < 0 ? ~ret-1 : ret == 0 ? -1 : ret;
     }
     
     public int findNextCase(int pos, int stop) {

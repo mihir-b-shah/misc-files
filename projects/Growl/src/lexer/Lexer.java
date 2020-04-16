@@ -10,10 +10,24 @@ import lexer.lextypes.LiteralType;
 import java.util.*;
 import java.util.regex.*;
 
-
 public class Lexer {
 
     private static final LexType[] LEXTYPE_TABLE = LexType.values();
+    private static Lexer instance = null;
+    
+    private final List<Lexeme> lexemes;
+    
+    private Lexer(String program) {
+        lexemes = lex(program);
+    }
+    
+    public static void initialize(String program) {
+        instance = new Lexer(program);
+    }
+    
+    public static Lexer getInstance() {
+        return instance;
+    }
 
     public static class LexError extends Error {
         @Override
@@ -21,14 +35,8 @@ public class Lexer {
             return "1 or more invalid tokens encountered";
         }
     }
-    
-    public static void printLexemes(List<Lexeme> lexemes) {
-        for(Lexeme lex: lexemes) {
-            System.out.println(lex);
-        }
-    }
-    
-    public static List<Lexeme> lex(String program) {
+
+    private List<Lexeme> lex(String program) {
         List<Lexeme> lexemes = new ArrayList<>();
         final Matcher[] matchers = {Operator.OPERATOR_REGEX.matcher(program),
                                     Control.CONTROL_REGEX.matcher(program),
@@ -79,8 +87,12 @@ public class Lexer {
         return out;
     }
     
+    public List<Lexeme> getLexemes() {
+        return lexemes;
+    }
+    
     // either i dont understand java enums or theyre really screwed up
-    private static void specifyLexemes(List<Lexeme> lexemes) {
+    private void specifyLexemes(List<Lexeme> lexemes) {
         for (Lexeme lexeme : lexemes) {
             switch (lexeme.type) {
                 case OPERATOR:

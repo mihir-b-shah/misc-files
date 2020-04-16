@@ -21,8 +21,8 @@ public class Compiler {
         }
 
         String program = sb.toString();
-        List<Lexeme> lexemes = Lexer.lex(program);
+        Lexer.initialize(program);
+        List<Lexeme> lexemes = Lexer.getInstance().getLexemes();
         GroupFinder.initialize(lexemes);
-        Lexer.printLexemes(lexemes);
     }    
 }
