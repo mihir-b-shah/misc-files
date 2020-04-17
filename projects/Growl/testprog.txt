@@ -2,8 +2,8 @@
 int len(char* str) {
     int ct = 0;
     while(!(*str == '\0')) {
-            ++str;
-            ++ct;
+        ++str;
+        ++ct;
     }
     return ct;
 }

@@ -58,6 +58,9 @@ public class GroupFinder {
                     currCase.put(lvl, casePos);
                 }
             }
+            if(lexeme.subType == null) {
+                continue;
+            }
             if(lexeme.subType.getClass() == Group.class) {
                 switch((Group) lexeme.subType) {
                     case OPEN_PAREN:
@@ -106,7 +109,7 @@ public class GroupFinder {
         final T find;
         final List<Lexeme> document;
         int pos;
-        int ret;
+        int ret; // mark for deletion
         
         KeywordFinder(T find, List<Lexeme> document) {
             this.find = find;
@@ -114,7 +117,8 @@ public class GroupFinder {
         }
         
         boolean hasNext() {
-            while(pos < document.size() && (document.get(pos).subType.getClass() != find.getClass() 
+            while(pos < document.size() && (document.get(pos).subType == null
+                    || document.get(pos).subType.getClass() != find.getClass() 
                     || ((T) document.get(pos).subType) != find)) {
                 ++pos;
             }

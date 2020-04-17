@@ -3,6 +3,8 @@ package lexer.lextypes;
 
 import lexer.Lexer;
 import java.util.regex.Pattern;
+import lexer.token.StringToken;
+import lexer.token.Token;
 
 public final class DataType {
     public static final Pattern TYPE_REGEX = Pattern.compile("((struct\\s+[\\w&&\\D][\\w]*)|"
@@ -18,7 +20,9 @@ public final class DataType {
         VOID, BOOL, I8, I32, I64, F64, STRUCT;
     }
 
-    public static DataType createDataType(String s) {
+    public static DataType createDataType(Token tok) {
+        assert(tok.getClass() == StringToken.class);
+        String s = ((StringToken) tok).token;
         int idx;
         DataType ret;
         if((idx = s.indexOf('*')) == -1) {
@@ -27,7 +31,6 @@ public final class DataType {
             ret = new DataType(s.length()-idx);
             s = s.substring(0, idx);
         }
-
         switch(s) {
             case "bool":
                 ret.base = BaseType.BOOL;

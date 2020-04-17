@@ -1,6 +1,8 @@
 
 package lexer;
 
+import lexer.token.Token;
+
 /**
  * Encapsulates tokens from program.
  * 
@@ -10,11 +12,11 @@ public class Lexeme {
 
     public LexType type;
     public Object subType; // either class or enum
-    public String token;
+    public Token token;
     int start;
     int end;
 
-    Lexeme(LexType type, String token, int start, int end) {
+    Lexeme(LexType type, Token token, int start, int end) {
         this.type = type;
         this.token = token;
         this.start = start;

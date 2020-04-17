@@ -3,6 +3,8 @@ package lexer.lextypes;
 
 import lexer.Lexer;
 import java.util.regex.Pattern;
+import lexer.token.StringToken;
+import lexer.token.Token;
 
 /**
  * Group enum
@@ -15,8 +17,9 @@ public enum Group {
 
     public static final Pattern GROUP_REGEX = Pattern.compile(":|\\{|\\}|,|\\(|\\)|;");
 
-    public static Group createGroup(String s) {
-        switch(s) {
+    public static Group createGroup(Token s) {
+        assert(s.getClass() == StringToken.class);
+        switch(((StringToken) s).token) {
             case "(":
                 return Group.OPEN_PAREN;
             case ")":

@@ -4,6 +4,8 @@ package lexer.lextypes;
 import parser.parsetypes.enums.*;
 import lexer.Lexer;
 import java.util.regex.Pattern;
+import lexer.token.Token;
+import lexer.token.StringToken;
 
 
 /**
@@ -116,8 +118,9 @@ public enum Operator {
         }
     }
 
-    public static Operator createOperator(String s) {
-        switch(s) {
+    public static Operator createOperator(Token s) {
+        assert(s.getClass() == StringToken.class);
+        switch(((StringToken) s).token) {
             case "++":
                 return Operator.INCREMENT;
             case "--":

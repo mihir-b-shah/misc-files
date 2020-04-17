@@ -4,6 +4,7 @@ package parser.parsetypes.ast;
 import lexer.LexType;
 import lexer.Lexeme;
 import lexer.lextypes.LiteralType;
+import lexer.token.StringToken;
 
 /**
  * @author mihir
@@ -18,7 +19,7 @@ public class Literal extends Expression {
     public Literal(Lexeme lexeme) {
         assert(lexeme.type == LexType.LITERAL);
         type = ((LiteralType) lexeme.subType);
-        value = lexeme.token;
+        value = ((StringToken) lexeme.token).token;
     }
 
     @Override

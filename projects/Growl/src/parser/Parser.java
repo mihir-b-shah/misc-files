@@ -8,6 +8,7 @@ import docutils.GroupFinder;
 
 import java.util.List;
 import lexer.LexType;
+import lexer.token.StringToken;
 import parser.parsetypes.enums.Associativity;
 
 
@@ -78,7 +79,7 @@ public class Parser {
     }
     
     private AST parse() {
-        return parseAST(0, lexemes.size());
+        return parseExpr(0, lexemes.size());
     }
     
     // inclusive, exclusive bounds
@@ -105,7 +106,7 @@ public class Parser {
                         match = GroupFinder.getInstance().findMatch(parsePtr+2);
                         result = parseAST(parsePtr+3, match);
                         block.block = result;
-                        block.label = lex1.token;
+                        block.label = ((StringToken) lex1.token).token;
                         parsePtr = match+1;
                     }
                     break;
@@ -195,7 +196,7 @@ public class Parser {
                         while(parsePtr < paramEnd) {
                             Parameter param = new Parameter();
                             param.type = (DataType) (lexemes.get(parsePtr).subType);
-                            param.id = lexemes.get(parsePtr+1).token;
+                            param.id = ((StringToken) lexemes.get(parsePtr+1).token).token;
                             func.parameters.add(param);
                             parsePtr += 2;
                         }
@@ -208,12 +209,12 @@ public class Parser {
                             == DataType.BaseType.STRUCT) {
                         // struct declaration
                         StructDef struct = new StructDef();
-                        struct.name = lex1.token.substring(7);
+                        struct.name = ((StringToken) lex1.token).token.substring(7);
                         brackClose = GroupFinder.getInstance().findMatch(parsePtr+1);
                         while(parsePtr < brackClose) {
                             Parameter param = new Parameter();
                             param.type = (DataType) (lexemes.get(parsePtr).subType);
-                            param.id = lexemes.get(parsePtr+1).token;
+                            param.id = ((StringToken) lexemes.get(parsePtr+1).token).token;
                             struct.params.add(param);
                             parsePtr += 2;
                         }

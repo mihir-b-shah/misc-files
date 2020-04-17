@@ -9,6 +9,7 @@ import lexer.lextypes.DataType;
 import lexer.lextypes.LiteralType;
 import java.util.*;
 import java.util.regex.*;
+import lexer.token.Token;
 
 public class Lexer {
 
@@ -49,7 +50,7 @@ public class Lexer {
             Matcher matcher = matchers[i];
             int ptr = 0;
             while (matcher.find(ptr)) {
-                lexemes.add(new Lexeme(LEXTYPE_TABLE[i], matcher.group(),
+                lexemes.add(new Lexeme(LEXTYPE_TABLE[i], Token.genToken(matcher.group()),
                         matcher.start(), matcher.end()));
                 ptr = matcher.end();
             }
@@ -111,7 +112,7 @@ public class Lexer {
                     lexeme.subType = LiteralType.createLiteral(lexeme.token);
                     break;
                 default:
-                    throw new LexError();
+                    break;
             }
         }
     }

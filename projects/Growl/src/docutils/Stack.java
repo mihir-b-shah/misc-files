@@ -32,6 +32,6 @@ public class Stack<T> {
     }
     
     public boolean empty() {
-        return ctr > 0;
+        return ctr == 0;
     }
 }

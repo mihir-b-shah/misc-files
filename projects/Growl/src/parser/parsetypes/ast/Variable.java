@@ -5,6 +5,7 @@ import lexer.*;
 import debug.Debug;
 import lexer.lextypes.LiteralType;
 import lexer.lextypes.Operator;
+import lexer.token.StringToken;
 
 /**
  * @author mihir
@@ -19,7 +20,7 @@ public class Variable extends Expression {
     public Variable(Lexeme lexeme) {
         assert(lexeme.type == LexType.ID);
         type = ((LiteralType) lexeme.subType);
-        id = lexeme.token;
+        id = ((StringToken) lexeme.token).token;
     }
 
     @Override
