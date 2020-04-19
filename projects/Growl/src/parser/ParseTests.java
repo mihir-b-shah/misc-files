@@ -20,18 +20,26 @@ public class ParseTests {
         String expr;
         String res;
         while((expr = br.readLine()) != null) {
-            // this is so troll, using regex in a regex tester
             res = br.readLine();
             Lexer.initialize(expr);
             List<Lexeme> lexemes = Lexer.getInstance().getLexemes();
             Parser.initialize(lexemes);
             Expression expression = (Expression) Parser.getInstance().getAST();
-            int genRes = expression.evalConstExpr();
-            if(genRes != Integer.parseInt(res)) {
-                System.out.printf("TEST FAILED, expr: %s, expected: %s, actual: %d%n",
-                        expr, res, genRes);
-            } else {
-                System.out.printf("TEST OK, expr: %s%n", expr);
+            Number genRes = expression.evalConstExpr();
+            if(genRes.getClass() == Long.class) {
+                if((Long) genRes != Long.parseLong(res)) {
+                    System.out.printf("TEST FAILED, expr: %s, expected: %s, actual: %d%n",
+                            expr, res, genRes);
+                } else {
+                    System.out.printf("TEST OK, expr: %s%n", expr);
+                }
+            } else if(genRes.getClass() == Double.class) {
+                if((Double) genRes != Double.parseDouble(res)) {
+                    System.out.printf("TEST FAILED, expr: %s, expected: %s, actual: %d%n",
+                            expr, res, genRes);
+                } else {
+                    System.out.printf("TEST OK, expr: %s%n", expr);
+                }
             }
         }
         

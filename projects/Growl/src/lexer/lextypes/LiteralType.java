@@ -9,9 +9,9 @@ import lexer.token.*;
  * @author mihir
  */
 public enum LiteralType {
-    BOOL_TRUE, BOOL_FALSE, INT, STRING, FLOAT;
+    BOOL_TRUE, BOOL_FALSE, INT, FLOAT;
 
-    public static final Pattern LITERAL_REGEX = Pattern.compile("(true)|(false)|(\".*\")"
+    public static final Pattern LITERAL_REGEX = Pattern.compile("(true)|(false)"
             + "|('(\\\\)?.')|(((\\-)?(0b[01]+)|((\\-)?0x[0-9a-f]+)|((\\-)?[0-9]+))[SL]?)|((\\-)?\\d+\\.\\d+)");
 
     public static LiteralType createLiteral(Token s) {
@@ -41,7 +41,8 @@ public enum LiteralType {
         } else if(s.getClass() == FloatToken.class) {
             return LiteralType.FLOAT;
         } else {
-            return LiteralType.STRING;
+            // later, the string will rise...
+            throw new Lexer.LexError();
         }
     }
 }

@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lexer.token;
+
+import parser.Parser;
 
 /**
  * This class is not meant to be used. 
@@ -15,6 +13,11 @@ public class StringToken extends Token {
     public String token;
     
     public StringToken(String tok) {
-        token = null;
+        token = tok;
     } 
+    
+    @Override
+    public Number getValue() {
+        throw new Parser.ParseError();
+    }
 }

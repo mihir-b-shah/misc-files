@@ -14,7 +14,7 @@ public class Struct extends Value {
     StructDef definition;
 
     @Override
-    public int evalConstExpr() {
+    public Number evalConstExpr() {
         return Operator.UNSUPPORTED;
     }
 

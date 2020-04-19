@@ -15,7 +15,7 @@ public class Primitive extends Value {
     public Expression supplier;
 
     @Override
-    public int evalConstExpr() {
+    public Number evalConstExpr() {
         return Operator.UNSUPPORTED;
     }
 

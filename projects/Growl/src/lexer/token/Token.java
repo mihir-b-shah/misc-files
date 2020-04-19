@@ -9,11 +9,11 @@ package lexer.token;
  */
 public abstract class Token {
 
-    private static final char QUOTE = '"';
     private static final String FLOAT_REGEX = "(\\-)?\\d+\\.\\d+";
+    private static final String INT_REGEX = "((\\-)?(0b[01]+)|((\\-)?0x[0-9a-f]+)|((\\-)?[0-9]+))[SL]?";
     
-    private static boolean isString(String str) {
-        return str.charAt(0) == QUOTE && str.indexOf(QUOTE, 1) == str.length()-1;
+    private static boolean isInt(String str) {
+        return str.matches(INT_REGEX);
     }
     
     private static boolean isFloat(String str) {
@@ -21,12 +21,14 @@ public abstract class Token {
     }
     
     public static Token genToken(String str) {
-        if(isString(str)) {
-            return new StringToken(str);
+        if(isInt(str)) {
+            return new IntToken(str);
         } else if(isFloat(str)) {
             return new FloatToken(str);
         } else {
-            return new IntToken(str);
+            return new StringToken(str);
         }
     }
+    
+    public abstract Number getValue();
 }

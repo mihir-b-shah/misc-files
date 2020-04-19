@@ -12,7 +12,7 @@ public class ConstExpr extends Expression {
     Op<ConstExpr> tree;
 
     @Override
-    public int evalConstExpr() {
+    public Number evalConstExpr() {
         return Operator.UNSUPPORTED;
     }
 

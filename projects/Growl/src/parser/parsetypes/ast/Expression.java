@@ -19,7 +19,7 @@ public abstract class Expression extends AST {
         }
     }
     
-    public abstract int evalConstExpr();
+    public abstract Number evalConstExpr();
     
     // very inefficient but its fine in a debugging utility
     @Override

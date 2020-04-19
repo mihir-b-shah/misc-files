@@ -32,9 +32,9 @@ public class BinaryOp<T extends AST> extends Op<T> {
     }
 
     @Override
-    public int evalConstExpr() {
+    public Number evalConstExpr() {
         if(op1 instanceof Expression && op2 instanceof Expression) {
-            int res = operator.evaluateBinary(((Expression) op1).evalConstExpr(), 
+            Number res = operator.evaluateBinary(((Expression) op1).evalConstExpr(), 
                     ((Expression) op2).evalConstExpr());
             return res;
         }

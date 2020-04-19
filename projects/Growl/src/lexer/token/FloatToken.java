@@ -12,4 +12,9 @@ public class FloatToken extends Token {
     public FloatToken(String tok) {
         token = Double.parseDouble(tok);
     }
+    
+    @Override
+    public Double getValue() {
+        return token;
+    }
 }

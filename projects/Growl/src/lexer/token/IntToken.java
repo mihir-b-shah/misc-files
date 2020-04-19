@@ -11,17 +11,20 @@ public class IntToken extends Token {
     public int size;
     public boolean bool;
     
-    private long parse(String s, int radix) {
+    private void parse(String s, int radix) {
         switch(s.charAt(s.length()-1)) {
             case 'S':
                 size = Limits.CHAR_SIZE;
-                return Long.parseLong(s.substring(0, s.length()-1), radix);
+                token = Long.parseLong(s.substring(0, s.length()-1), radix);
+                break;
             case 'L':
                 size = Limits.LONG_SIZE;
-                return Long.parseLong(s.substring(0, s.length()-1), radix);
+                token = Long.parseLong(s.substring(0, s.length()-1), radix);
+                break;
             default:
                 size = Limits.INT_SIZE;
-                return Long.parseLong(s, radix);
+                token = Long.parseLong(s, radix);
+                break;
         }
     }
     
@@ -56,13 +59,19 @@ public class IntToken extends Token {
                         break;
                     default:
                         // octal
-                        parse(val.substring(2), 8);
+                        parse(val.substring(1), 8);
                         break;
                 }
+                break;
             default:
                 // decimal number
-                parse(val.substring(2), 10);
+                parse(val.substring(0), 10);
                 break;
         }
+    }
+    
+    @Override
+    public Number getValue() {
+        return token;
     }
 }

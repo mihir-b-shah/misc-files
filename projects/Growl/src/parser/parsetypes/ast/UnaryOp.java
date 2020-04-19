@@ -34,9 +34,9 @@ public class UnaryOp<T extends AST> extends Op<T> {
     }
     
     @Override
-    public int evalConstExpr() {
+    public Number evalConstExpr() {
         if(op instanceof Expression) {
-            int res = operator.evaluateUnary(((Expression) op).evalConstExpr());
+            Number res = operator.evaluateUnary(((Expression) op).evalConstExpr());
             return res;
         }
         return Operator.UNSUPPORTED;

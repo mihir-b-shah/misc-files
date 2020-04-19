@@ -24,7 +24,7 @@ public class Variable extends Expression {
     }
 
     @Override
-    public int evalConstExpr() {
+    public Number evalConstExpr() {
         return Operator.UNSUPPORTED;
     }
 

@@ -1,6 +1,7 @@
 
 package lexer.lextypes;
 
+import parser.Parser;
 import parser.parsetypes.enums.*;
 import lexer.Lexer;
 import java.util.regex.Pattern;
@@ -174,43 +175,107 @@ public enum Operator {
         }
     }
     
-    public int evaluateUnary(int a) {
+    public Number evaluateUnary(Number a) {
+        if(a.getClass() != Long.class) {
+            throw new Parser.ParseError();
+        }
+        Long cast = (Long) a;
         switch(this) {
             case BIT_NOT:
-                return ~a;
+                return ~cast;
             default:
-                return UNSUPPORTED;
-                
+                return UNSUPPORTED; 
         }
     }
     
-    public int evaluateBinary(int a, int b) {
+    private Long evalLongOp(Long a, Long b) {
+        Long ret;
         switch(this) {
             case MULTIPLY:
-                return a*b;
+                ret = a*b;
+                break;
             case DIVIDE:
-                return a/b;
+                ret = a/b;
+                break;
             case MODULUS:
-                return a%b;
+                ret = a%b;
+                break;
             case ADD:
-                return a+b;
+                ret = a+b;
+                break;
             case SUBTRACT:
-                return a-b;
+                ret = a-b;
+                break;
             case BIT_LEFT:
-                return a << b;
+                ret = a << b;
+                break;
             case SBIT_RIGHT:
-                return a >> b;
+                ret = a >> b;
+                break;
             case UBIT_RIGHT:
-                return a >>> b;
+                ret = a >>> b;
+                break;
             case BIT_AND:
-                return a&b;
+                ret = a&b;
+                break;
             case BIT_XOR:
-                return a^b;
+                ret = a^b;
+                break;
             case BIT_OR:
-                return a|b;
+                ret = a|b;
+                break;
+            default:
+                throw new Parser.ParseError();
+        }
+        return ret;
+    }
+    
+    private Double evalDoubleOp(Double a, Double b) {
+        Double ret;
+        switch(this) {
+            case MULTIPLY:
+                ret = a*b;
+                break;
+            case DIVIDE:
+                ret = a/b;
+                break;
+            case MODULUS:
+                ret = a%b;
+                break;
+            case ADD:
+                ret = a+b;
+                break;
+            case SUBTRACT:
+                ret = a-b;
+                break;
+            default:
+                throw new Parser.ParseError();
+        }
+        return ret;
+    }
+    
+    public Number evaluateBinary(Number aRaw, Number bRaw) {
+        Number ret;
+        switch(this) {
+            case MULTIPLY:
+            case DIVIDE:
+            case MODULUS:
+            case ADD:
+            case SUBTRACT:
+                if(aRaw.getClass() == Double.class && bRaw.getClass() == Double.class) {
+                    return evalDoubleOp((Double) aRaw, (Double) bRaw);
+                }
+            case BIT_LEFT:
+            case SBIT_RIGHT:
+            case UBIT_RIGHT:
+            case BIT_AND:
+            case BIT_XOR:
+            case BIT_OR:
+                if(aRaw.getClass() == Long.class && bRaw.getClass() == Long.class) {
+                    return evalLongOp((Long) aRaw, (Long) bRaw);
+                } else throw new Parser.ParseError();
             default:
                 return UNSUPPORTED;
-                
         }
     }
 }
