@@ -43,19 +43,19 @@ static inline Type checkType(char* ptr) {
 
 /* treat like a gate, black-box implementation, 
    this is meant to teach me, how many gates are used. */
-static inline bit nand(bit a, bit b) {
+static inline bit nand(const bit a, const bit b) {
 	return a&b^1;
 }
 
-static inline bit not(bit a) {
+static inline bit not(const bit a) {
 	return nand(a, a);
 }
 
-static inline bit and(bit a, bit b) {
+static inline bit and(const bit a, const bit b) {
 	return not(nand(a, b));
 }
 
-static inline bit or(bit a, bit b) {
+static inline bit or(const bit a, const bit b) {
 	return nand(not(a), not(b));
 }
 
@@ -64,12 +64,24 @@ static inline bit xor(bit a, bit b) {
 	return nand(nand(a, share), nand(b, share));
 }
 
+/*
+Act as if 
+*/
+
 static inline long intAdd(long a, long b) {
 	return a+b;
 }
 
-long intSub(long a, long b) {
-	return a-b;
+static inline long intNeg(const long a) {
+	const int size = sizeof(a);
+	long ret = 0;
+	for(int i = 0; i<size; ++i) {
+		ret |= not(a >> i);
+	} 
+}
+
+static inline long intSub(long a, long b) {
+	return intAdd(a,-b);
 }
 
 long intMult(long a, long b) {
