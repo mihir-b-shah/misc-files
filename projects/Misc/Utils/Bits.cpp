@@ -41,22 +41,23 @@ uint16_t BitField<N>::popCount() const {
 	for(int i = 0; i<SET_SIZE; ++i) {
 		accm += popcnt(bits[i]);
 	}
-	
+	return accm;
 }
 
-template<uint16_t N>
-static inline char BitField<N>::popcnt(unsigned long long word) const {
+static inline char popcnt(unsigned long long word) const {
 	#if __has_builtin(__builtin_popcountll)
 		return __builtin_popcountll(word);
 	#else
-		unsigned long long copy = word;
-		copy = (copy & 0x5555555555555555LL) + ((copy >> 1) & 0x5555555555555555LL);
-		copy = (copy & 0x3333333333333333LL) + ((copy >> 2) & 0x3333333333333333LL);
-		copy = (copy & 0x0F0F0F0F0F0F0F0FLL) + ((copy >> 4) & 0x0F0F0F0F0F0F0F0FLL);
-		copy = (copy & 0x00FF00FF00FF00FFLL) + ((copy >> 8) & 0x00FF00FF00FF00FFLL);
-		copy = (copy & 0x0000FFFF0000FFFFLL) + ((copy >> 16) & 0x0000FFFF0000FFFFLL);
-		copy = (copy & 0x00000000FFFFFFFFLL) + ((copy >> 32) & 0x00000000FFFFFFFF);
-		return copy;
+		 unsigned long long y = word >>> 32;
+         word -= ((word >>> 1) & 0x55555555);
+         word = (word & 0x33333333) + ((word >>> 2) & 0x33333333);
+         y -= ((y >>> 1) & 0x55555555);
+         y = (y & 0x33333333) + ((y >>> 2) & 0x33333333);
+         word += y;
+         word = (word & 0x0F0F0F0F) + ((x >>> 4) & 0x0F0F0F0F);
+         word += word >>> 8;
+         word += word >>> 16;
+         return word & 0x0000007F;
 	#endif
 }
 
@@ -64,5 +65,5 @@ int main() {
 	BitField<64> bits;
 	bits.set(1);
 	bits.set(2);
-	printf("%d", bits.check(2));
+	printf("%d", bits.popcnt()
 }
