@@ -1,6 +1,3 @@
-
-// NOTES: I CODED THE SUBROUTINES **ONLY**
-
 // CALCULATOR.ASM
 //==========================================================
 	.orig	x3000
@@ -326,25 +323,69 @@ DIGITr1	.fill #0	// Allocates space for saving R1 in TODIGIT
 //                R2 = y, where y >= 0
 // Postcondition: R0 = Math.pow(x,y)
 //                Registers R1 through R7 remain unchanged
-POW	// todo
 
+POW	ST R2 Pr2
+	ST R3 Pr3
+	ST R1 Pr1
+	ST R7 Pr7
+	AND R0 R0 #0
+	AND R3 R3 #0
+	AND R2 R2 #0
+	ADD R2 R2 #1
+	LD R3 Pr2
+		
+LPG	ADD R3 R3 #0
+	BRz EXR
+	JSR MULT
+	AND R2 R2 #0
+	ADD R2 R0 R2
+	ADD R3 R3 #-1
+	BRnzp LPG
+
+EXR	LD R2 Pr2
+	LD R1 Pr1
+	LD R3 Pr3
+	LD R7 Pr7
 	RET
 
 // DATA FOR THE EXPONENTIATION SUBROUTINE...
 
-
+Pr1	.fill #0
+Pr2	.fill #0
+Pr3	.fill #0
+Pr7	.fill #0
 
 // FACTORIAL...
 //  Precondition: R1 = x, where x >= 0
 // Postcondition: R0 = x!
 //                Registers R1 through R7 remain unchanged
-FACT	// todo
 
+FACT	ST R1 PRt1
+	ST R2 PRt2
+	ST R7 PRt7
+	AND R2 R2 #0
+	ADD R2 R2 #1
+	AND R0 R0 #0
+	ADD R0 R0 #1
+	
+OPR	ADD R1 R1 #0
+	BRz DN
+	JSR MULT
+	AND R2 R2 #0
+	ADD R2 R0 R2
+	ADD R1 R1 #-1
+	BRnzp OPR
+	
+DN	LD R1 PRt1
+	LD R2 PRt2
+	LD R7 PRt7
 	RET
 
 // DATA FOR THE FACTORIAL SUBROUTINE...
 
-
+PRt1	.fill #0
+PRt2	.fill #0
+PRt7	.fill #0
 
 // CUSTOM ROUTINE...Define an operation of your choice.
 //  Precondition: ... insert your precondition here ...

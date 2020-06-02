@@ -11,12 +11,11 @@ class BitField {
 		static const char MASK = 0x3f;
 		static const uint16_t SET_SIZE = (N >> LL_SIZE) + ((N & MASK) != 0);
 		uint64_t bits[SET_SIZE];
-		static inline char popcnt(unsigned long long) const; 
     public:
         BitField();
         bool check(uint16_t bit) const;
         void set(uint16_t bit);
-        uint16_t popCount() const;
+        //uint16_t popCount() const;
 };
 
 template<uint16_t N>
@@ -35,6 +34,7 @@ void BitField<N>::set(uint16_t bit) {
     bits[bit >> LL_SIZE] |= 1LL << (bit & MASK);
 }
 
+/*
 template<uint16_t N>
 uint16_t BitField<N>::popCount() const {
 	uint16_t accm = 0;
@@ -44,11 +44,11 @@ uint16_t BitField<N>::popCount() const {
 	return accm;
 }
 
-static inline char popcnt(unsigned long long word) const {
+static inline char popcnt(uint64_t word) const {
 	#if __has_builtin(__builtin_popcountll)
 		return __builtin_popcountll(word);
 	#else
-		 unsigned long long y = word >>> 32;
+		 uint64_t y = word >>> 32;
          word -= ((word >>> 1) & 0x55555555);
          word = (word & 0x33333333) + ((word >>> 2) & 0x33333333);
          y -= ((y >>> 1) & 0x55555555);
@@ -60,10 +60,11 @@ static inline char popcnt(unsigned long long word) const {
          return word & 0x0000007F;
 	#endif
 }
+*/
 
 int main() {
 	BitField<64> bits;
 	bits.set(1);
 	bits.set(2);
-	printf("%d", bits.popcnt()
+	printf("%d", bits.check(1));
 }
