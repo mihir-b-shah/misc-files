@@ -1,12 +1,7 @@
-package utils.tree;
 
-import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.TreeSet;
 import java.util.function.ToIntFunction;
-import java.util.stream.IntStream;
-import utils.queue.FastQueue;
+import java.util.Queue;
+import java.util.ArrayDeque;
 
 /**
  * Implements an optimized red-black binary search tree. The type of the input
@@ -755,14 +750,14 @@ public class FastTree<T> implements Cloneable {
      */
     public final String printTree(int consoleWidth) {
         StringBuilder sb = new StringBuilder();
-        FastQueue<QueueItem> queue = new FastQueue<>(8);
-        queue.push(new QueueItem(rootPtr, 0, 0));
+        Queue<QueueItem> queue = new ArrayDeque<>(8);
+        queue.offer(new QueueItem(rootPtr, 0, 0));
 
         int currHeight = -1;
         int currJustif = 0;
 
         while (queue.size() > 0) {
-            QueueItem obj = queue.pop();
+            QueueItem obj = queue.poll();
 
             if (currHeight != obj.height) {
                 sb.append('\n');
@@ -787,11 +782,11 @@ public class FastTree<T> implements Cloneable {
 
             currJustif = amt;
             if (tree[LEFT + obj.bt] != NULL) {
-                queue.push(new QueueItem(tree[LEFT + obj.bt],
+                queue.offer(new QueueItem(tree[LEFT + obj.bt],
                         obj.height + 1, 2 * obj.xJust + 0));
             }
             if (tree[RIGHT + obj.bt] != NULL) {
-                queue.push(new QueueItem(tree[RIGHT + obj.bt],
+                queue.offer(new QueueItem(tree[RIGHT + obj.bt],
                         obj.height + 1, 2 * obj.xJust + 1));
             }
         }
@@ -804,72 +799,5 @@ public class FastTree<T> implements Cloneable {
     }
 
     public static void main(String[] args) {    
-        /*
-        FastTree<Integer> tree = new FastTree<>(Integer::intValue);
-        int[] insert = {706, 94, 75, 472, 762, 178, 399, 160, 153, 297};
-        int[] remove = {762, 399, 75, 472, 706};
-        
-        for(int e: insert) {
-            tree.insert(e);
-        }
-        
-        //tree.erase(3);
-        System.out.println(tree.printTree(80));
-        System.out.println(tree);
-        
-        for(int e: remove) {
-            tree.erase(e);
-            System.out.println("ELEMENT: " + e);
-            System.out.println(tree.printTree(80));
-            System.out.println(tree);
-        }
-        */
-        
-        for(int j = 0; j<10; ++j) {
-            int ct = 0;
-            for(int it = 0; it<100000; ++it) {
-                FastTree<Integer> tree = new FastTree<>(Integer::intValue);
-                TreeSet<Integer> correct = new TreeSet<>();
-
-                Random rng = new Random();
-                final int SIZE = 10;
-                final int CONSOLE_WIDTH = 70;
-                final int MAX_NUM = 1000;      
-
-                int[] insert = IntStream.generate(()->rng.nextInt(MAX_NUM)).limit(SIZE).toArray();
-                for(int e: insert) {
-                    tree.insert(e);
-                    correct.add(e);
-                }
-
-                int[] remove = new int[SIZE >>> 1];
-
-                // // System.out.println(tree.printTree(CONSOLE_WIDTH));
-
-
-                for(int i = 0; i<SIZE >>> 1; ++i) {
-                    int el = insert[rng.nextInt(SIZE)];
-                    remove[i] = el;
-                    tree.erase(el);
-                    correct.remove(el);
-
-
-                    // System.out.println("ELEMENT: " + el);
-                    // System.out.println(tree.printTree(CONSOLE_WIDTH));
-                    // System.out.println(tree); 
-                }
-
-                for(int i = 0; i<SIZE; ++i) {
-                    int el = insert[rng.nextInt(SIZE)];
-                    if(tree.find(el) != correct.contains(el)) {
-                        ++ct;
-                        System.out.println(Arrays.toString(remove));
-                    }
-                }
-            }
-
-            System.out.println("ERROR: " + (double) ct/1000000);
-        }
-       
     }
 }
